@@ -1,0 +1,80 @@
+/* ==========================================================================
+   GLOBAL DESIGN SYSTEM & VARIABLES (root.css)
+   ========================================================================== */
+
+/* Modern Premium Typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Font Families */
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Plus Jakarta Sans', sans-serif;
+
+  /* Harmonious, Curated Color Palette (#002e84 as primary, #46aefd as secondary) */
+  --primary-hsl: 219, 100%, 26%; /* #002e84 */
+  --primary: hsl(var(--primary-hsl));
+  --primary-hover: hsl(219, 100%, 18%);
+  --primary-light: hsl(219, 90%, 94%);
+  
+  --secondary-hsl: 206, 98%, 63%; /* #46aefd */
+  --secondary: hsl(var(--secondary-hsl));
+  --secondary-hover: hsl(206, 98%, 53%);
+  --secondary-light: hsl(206, 98%, 90%);
+
+  /* Accent & Gradients */
+  --accent: #ff7b00;
+  --accent-hover: #e06c00;
+  --gradient-primary: linear-gradient(135deg, hsl(219, 100%, 26%) 0%, hsl(206, 98%, 63%) 100%);
+  --gradient-dark: radial-gradient(circle at 10% 20%, rgb(15, 23, 42) 0%, rgb(11, 19, 32) 90%);
+  --gradient-glow: linear-gradient(135deg, rgba(0, 46, 132, 0.15) 0%, rgba(70, 174, 253, 0.15) 100%);
+
+  /* Neutral Theme Colors (Sleek Dark Mode base for white text readability) */
+  --dark-bg: #0f172b;
+  --dark-bg-hover: #1e293b;
+  --body-bg: #0f172a; /* Slate 900 for modern premium dark background */
+  --section-bg: #00358a; /* Section background color */
+  --card-bg: #1e293b; /* Slate 800 for card container contrast */
+  --card-bg-glass: rgba(30, 41, 59, 0.7);
+  --navbar-bg: #ffffff;
+
+  /* Status Colors */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+
+  /* Typography Text Colors (Set to White and high-contrast light shades) */
+  --text-main: #ffffff;
+  --text-muted: #cbd5e1; /* Slate 300 for readable descriptions */
+  --text-light: #94a3b8; /* Slate 400 */
+  --text-white: #ffffff;
+
+  /* Borders and Dividers */
+  --border: #e2e8f0;
+  --border-focus: #3b82f6;
+  --border-glass: rgba(255, 255, 255, 0.2);
+
+  /* Elevation & Shadows (For Premium Glassmorphism & Depth) */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+  --shadow-glow: 0 0 15px rgba(0, 91, 164, 0.2);
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Smooth Micro-Animations & Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.4s ease;
+  --transition-spring: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Layout & Spacing */
+  --header-height: 80px;
+  --topbar-height: 40px;
+  --container-width: 1280px;
+}
