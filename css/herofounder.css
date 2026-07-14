@@ -1,0 +1,379 @@
+/* ==========================================================================
+   FOUNDERS MESSAGE SLIDER SECTION
+   Full-bleed deep-blue section (no white card/gap): bordered founder
+   portrait on one side, quote and stats on the other. Auto-sliding
+   between founders, no manual arrows — dots only indicate position.
+   ========================================================================== */
+
+.fm-section {
+  --fm-bg: #003389;
+  --fm-bg-soft: #0a3ea0;
+  --fm-gold: #b98125;
+  --fm-white: #ffffff;
+  --fm-white-muted: rgba(255, 255, 255, 0.68);
+  --fm-white-faint: rgba(255, 255, 255, 0.48);
+  --fm-highlight: #6fb1ff;
+  --fm-radius-photo: 16px;
+  --fm-font: "Poppins", "Segoe UI", sans-serif;
+
+  width: 100%;
+  padding: 48px 5vw;
+  background-color: var(--fm-bg) !important;
+  background-clip: padding-box;
+  font-family: var(--fm-font);
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  transform: translateZ(0);
+}
+
+/* Dot pattern drawn as its own layer instead of section background-image.
+   Keeping it as an absolutely-positioned, clipped pseudo-element avoids the
+   subpixel/anti-aliasing gap that let the page's background colour peek
+   through the rounded corners on some browsers. */
+.fm-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px
+  );
+  background-size: 18px 18px;
+  background-repeat: repeat;
+  background-color: var(--fm-bg);
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.fm-section * {
+  box-sizing: border-box;
+}
+
+.fm-container {
+  width: 100%;
+  max-width: 1441px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Slider viewport ---------- */
+
+.fm-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.fm-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+  will-change: transform;
+}
+
+.fm-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* ---------- Photo side ---------- */
+
+.fm-photo-wrap {
+  position: relative;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fm-slide.is-active .fm-photo-wrap {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* The offset frame: a gold-bordered rectangle sitting behind/right of the
+   photo so only a sliver peeks out on the right + bottom edges. */
+.fm-photo-wrap::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: -12px;
+  bottom: -12px;
+  border: 2px solid var(--fm-gold);
+  border-radius: var(--fm-radius-photo);
+  z-index: 0;
+}
+
+.fm-photo {
+  position: relative;
+  z-index: 1;
+  border-radius: var(--fm-radius-photo);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background-color: var(--fm-bg-soft);
+  background-image: none;
+}
+
+.fm-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.fm-photo::after {
+  /* soft gradient so the caption text stays readable over any photo */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 15, 45, 0.92) 0%,
+    rgba(0, 15, 45, 0.4) 34%,
+    transparent 58%
+  );
+  pointer-events: none;
+}
+
+.fm-caption {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 18px;
+  z-index: 2;
+}
+
+.fm-name {
+  font-family: var(--fm-font);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--fm-white);
+  margin: 0 0 4px;
+  line-height: 1.25;
+}
+
+.fm-role {
+  font-family: var(--fm-font);
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--fm-gold);
+  margin: 0 0 3px;
+}
+
+.fm-sub {
+  font-family: var(--fm-font);
+  font-weight: 400;
+  font-size: 0.7rem;
+  color: var(--fm-white-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ---------- Content side ---------- */
+
+.fm-content {
+  opacity: 0;
+  transform: translateX(20px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s,
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+}
+
+.fm-slide.is-active .fm-content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fm-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--fm-font);
+  font-weight: 600;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fm-gold);
+  margin-bottom: 14px;
+}
+
+.fm-eyebrow i {
+  font-size: 0.68rem;
+}
+
+.fm-quote {
+  font-family: var(--fm-font);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.1vw, 1.85rem);
+  line-height: 1.36;
+  color: var(--fm-white);
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+
+.fm-highlight {
+  color: var(--fm-highlight);
+}
+
+.fm-body {
+  font-family: var(--fm-font);
+  font-weight: 400;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: var(--fm-white-muted);
+  margin: 0 0 22px;
+  max-width: 58ch;
+}
+
+.fm-stats {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.fm-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fm-stat-num {
+  font-family: var(--fm-font);
+  font-weight: 500;
+  font-size: 1.75rem;
+  color: var(--fm-white);
+  line-height: 1;
+}
+
+.fm-stat-label {
+  font-family: var(--fm-font);
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--fm-white-faint);
+}
+
+/* ---------- Controls: dots (auto-slider position indicator) ---------- */
+
+.fm-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.fm-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fm-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+}
+
+.fm-dot.is-active {
+  width: 26px;
+  background: var(--fm-gold);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fm-track,
+  .fm-photo-wrap,
+  .fm-content,
+  .fm-dot {
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .fm-section {
+    padding: 44px 6vw;
+  }
+  .fm-slide {
+    grid-template-columns: 340px 1fr;
+    gap: 40px;
+  }
+  .fm-quote {
+    font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+  }
+}
+
+@media (max-width: 800px) {
+  .fm-slide {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .fm-photo-wrap {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .fm-content {
+    text-align: left;
+  }
+  .fm-stats {
+    gap: 26px;
+  }
+  .fm-controls {
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fm-section {
+    padding: 36px 6vw;
+    border-radius: 18px;
+  }
+  .fm-photo-wrap {
+    max-width: 260px;
+  }
+  .fm-name {
+    font-size: 0.98rem;
+  }
+  .fm-quote {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  .fm-body {
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+  }
+  .fm-stats {
+    gap: 18px;
+  }
+  .fm-stat-num {
+    font-size: 1.4rem;
+  }
+  .fm-stat-label {
+    font-size: 0.7rem;
+  }
+  .fm-controls {
+    margin-top: 14px;
+  }
+}

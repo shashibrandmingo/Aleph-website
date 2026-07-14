@@ -1,7 +1,9 @@
-@import 'root.css';
+@import "root.css";
 
 /* Reset & Base Styles */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -37,7 +39,8 @@ button {
   outline: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -56,7 +59,12 @@ img {
 }
 
 /* Typography Utility */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   color: var(--dark-bg);
   line-height: 1.25;
@@ -150,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cta-secondary {
-  border: 1.5px solid rgba(255,255,255,0.2);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
   color: white;
   padding: 0.8rem 2rem;
   border-radius: 50px;
@@ -170,7 +178,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2.5rem;
   border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .visual-card h3 {
@@ -277,7 +285,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   border-color: var(--primary);
 }
 
@@ -308,7 +316,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 2.5rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
 
 .styled-form {
@@ -336,7 +344,9 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-main);
 }
 
-.form-group input, .form-group select, .form-group textarea {
+.form-group input,
+.form-group select,
+.form-group textarea {
   border: 1px solid var(--border);
   padding: 0.75rem 1rem;
   border-radius: 6px;
@@ -347,7 +357,9 @@ h1, h2, h3, h4, h5, h6 {
   transition: all var(--transition-fast);
 }
 
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
   border-color: var(--primary);
   background: white;
   box-shadow: 0 0 0 3px rgba(0, 91, 164, 0.1);
@@ -494,8 +506,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 1024px) {
@@ -505,7 +523,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
-  .hero-grid, .two-col-grid {
+  .hero-grid,
+  .two-col-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }

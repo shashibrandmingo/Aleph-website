@@ -1,0 +1,515 @@
+/* ==========================================================================
+   LATEST UPDATES + UPCOMING EVENTS SECTION
+   Two independent, self-contained sliders inside matching white cards.
+   Built to sit on the page's existing --font-primary / --font-secondary
+   tokens where available, with safe fallbacks so it also works standalone.
+   ========================================================================== */
+
+.updates-events-section {
+  --ue-blue: #1264ea;
+  --ue-blue-soft: rgba(18, 100, 234, 0.1);
+  --ue-orange: #f0992d;
+  --ue-orange-soft: rgba(240, 153, 45, 0.12);
+  --ue-bg: #f7fafd;
+  --ue-text-dark: #101828;
+  --ue-text-muted: #667085;
+  --ue-border: #e7ebf3;
+  --ue-radius-card: 20px;
+  --ue-radius-item: 14px;
+  --ue-font-heading: var(--font-primary, "Poppins", "Segoe UI", sans-serif);
+  --ue-font-body: var(--font-secondary, "Inter", "Segoe UI", sans-serif);
+
+  width: 100%;
+  padding: 56px 5vw;
+  background: var(--ue-bg);
+  font-family: var(--ue-font-body);
+  box-sizing: border-box;
+}
+
+.updates-events-section * {
+  box-sizing: border-box;
+}
+
+.updates-events-container {
+  width: 100%;
+  max-width: var(--container-width, 1320px);
+  margin: 0 auto;
+}
+
+.updates-events-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: stretch; /* both cards stretch to equal height */
+}
+
+/* ---------- Card shell ---------- */
+
+.ue-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: var(--ue-radius-card);
+  padding: 24px 24px 22px;
+  border: 1px solid var(--ue-border);
+  box-shadow: 0 4px 24px rgba(16, 24, 40, 0.05);
+  overflow: hidden;
+  animation: ueFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  /* Flex column so the dots row always sits flush at the bottom of the
+     card, regardless of how tall the slider content is. This is what
+     keeps both cards' bottoms level with each other. */
+  display: flex;
+  flex-direction: column;
+}
+
+.ue-card--updates {
+  animation-delay: 0.02s;
+}
+
+.ue-card--events {
+  animation-delay: 0.12s;
+}
+
+/* subtle tinted corner glow, matches the soft gradient look in the reference */
+.ue-card::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  filter: blur(10px);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ue-card--updates::before {
+  background: radial-gradient(circle, var(--ue-blue-soft) 0%, transparent 70%);
+}
+
+.ue-card--events::before {
+  background: radial-gradient(
+    circle,
+    var(--ue-orange-soft) 0%,
+    transparent 70%
+  );
+}
+
+/* ---------- Card header ---------- */
+
+.ue-card-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.ue-card-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1rem;
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.35s ease;
+}
+
+.ue-card-icon--blue {
+  background: var(--ue-blue-soft);
+  color: var(--ue-blue);
+}
+
+.ue-card-icon--orange {
+  background: var(--ue-orange-soft);
+  color: var(--ue-orange);
+}
+
+.ue-card:hover .ue-card-icon {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.ue-card--updates:hover .ue-card-icon {
+  box-shadow: 0 0 0 8px var(--ue-blue-soft);
+}
+
+.ue-card--events:hover .ue-card-icon {
+  box-shadow: 0 0 0 8px var(--ue-orange-soft);
+}
+
+.ue-card-title {
+  /* Reduced size + weight so the header reads lighter and the whole
+     card feels more compact. */
+  flex: 1;
+  min-width: 0;
+  font-family: var(--ue-font-heading);
+  font-weight: 600;
+  font-size: 0.98rem;
+  line-height: 1.3;
+  color: var(--ue-text-dark);
+  margin: 0;
+}
+
+.ue-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  font-family: var(--ue-font-heading);
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    gap 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.ue-view-all i {
+  font-size: 0.7rem;
+  transition: transform 0.25s ease;
+}
+
+.ue-view-all:hover {
+  gap: 9px;
+}
+
+.ue-view-all:hover i {
+  transform: translateX(2px);
+}
+
+.ue-view-all--blue {
+  color: var(--ue-blue);
+}
+
+.ue-view-all--orange {
+  color: var(--ue-orange);
+}
+
+/* ---------- Slider ---------- */
+
+.ue-slider {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  flex: 1; /* let the slider fill remaining card height */
+}
+
+.ue-slider-track {
+  display: flex;
+  gap: 16px;
+  will-change: transform;
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+  cursor: grab;
+  user-select: none;
+}
+
+.ue-slider-track:active {
+  cursor: grabbing;
+}
+
+.ue-slider-track.is-dragging {
+  transition: none;
+}
+
+/* ---------- Prev / Next nav arrows ---------- */
+
+.ue-nav {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--ue-border);
+  background: #ffffff;
+  color: var(--ue-text-dark);
+  font-size: 0.78rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(16, 24, 40, 0.12);
+  opacity: 0;
+  transition:
+    opacity 0.25s ease,
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ue-slider:hover .ue-nav {
+  opacity: 1;
+}
+
+.ue-nav--prev {
+  left: -4px;
+}
+
+.ue-nav--next {
+  right: -4px;
+}
+
+.ue-nav:hover {
+  transform: translateY(-50%) scale(1.06);
+}
+
+.ue-card--updates .ue-nav:hover {
+  background: var(--ue-blue);
+  color: #ffffff;
+  box-shadow: 0 6px 18px var(--ue-blue-soft);
+}
+
+.ue-card--events .ue-nav:hover {
+  background: var(--ue-orange);
+  color: #ffffff;
+  box-shadow: 0 6px 18px var(--ue-orange-soft);
+}
+
+.ue-nav:disabled {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+/* Always show nav arrows on touch devices, since there's no hover state */
+@media (hover: none) {
+  .ue-nav {
+    opacity: 1;
+  }
+}
+
+/* ---------- Item card ---------- */
+
+.ue-item {
+  position: relative;
+  flex: 0 0 calc((100% - 2 * 16px) / 3);
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid var(--ue-border);
+  border-radius: var(--ue-radius-item);
+  padding: 14px 14px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition:
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.ue-card--updates .ue-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(18, 100, 234, 0.14);
+  border-color: rgba(18, 100, 234, 0.25);
+}
+
+.ue-card--events .ue-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(240, 153, 45, 0.16);
+  border-color: rgba(240, 153, 45, 0.28);
+}
+
+.ue-card--updates .ue-item:hover .ue-item-arrow {
+  transform: translateX(3px);
+  opacity: 1;
+}
+
+.ue-card--events .ue-item:hover .ue-item-arrow {
+  transform: translateX(3px);
+  opacity: 1;
+}
+
+.ue-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  font-family: var(--ue-font-heading);
+  font-weight: 600;
+  font-size: 0.62rem;
+  letter-spacing: 0.03em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  color: #ffffff;
+}
+
+.ue-badge--blue {
+  background: var(--ue-blue);
+}
+
+.ue-badge--orange {
+  background: var(--ue-orange);
+}
+
+.ue-item-title {
+  /* Reduced size + weight to make each card more compact. */
+  font-family: var(--ue-font-heading);
+  font-weight: 500;
+  font-size: 0.84rem;
+  line-height: 1.38;
+  color: var(--ue-text-dark);
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.ue-item-arrow {
+  flex-shrink: 0;
+  margin-top: 3px;
+  font-size: 0.7rem;
+  color: var(--ue-text-muted);
+  opacity: 0.6;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.ue-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.76rem;
+  color: var(--ue-text-muted);
+}
+
+.ue-item-meta i {
+  font-size: 0.74rem;
+  flex-shrink: 0;
+}
+
+.ue-card--updates .ue-item-meta i {
+  color: var(--ue-blue);
+}
+
+.ue-card--events .ue-item-meta i {
+  color: var(--ue-orange);
+}
+
+/* ---------- Dots (slider position indicator) ---------- */
+
+.ue-dots {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 18px;
+}
+
+.ue-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--ue-border);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+}
+
+.ue-card--updates .ue-dot.is-active {
+  width: 22px;
+  background: var(--ue-blue);
+}
+
+.ue-card--events .ue-dot.is-active {
+  width: 22px;
+  background: var(--ue-orange);
+}
+
+@keyframes ueFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ue-card {
+    animation: none !important;
+  }
+  .ue-slider-track {
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+/* Two items visible per view on tablets */
+@media (max-width: 1180px) {
+  .ue-item {
+    flex: 0 0 calc((100% - 16px) / 2);
+  }
+}
+
+@media (max-width: 1024px) {
+  .updates-events-section {
+    padding: 48px 6vw;
+  }
+  .updates-events-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+@media (max-width: 640px) {
+  .updates-events-section {
+    padding: 40px 6vw;
+  }
+  .ue-card {
+    padding: 20px 16px 18px;
+    border-radius: 16px;
+  }
+  .ue-card-header {
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .ue-card-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 0.92rem;
+  }
+  .ue-card-title {
+    font-size: 0.9rem;
+  }
+  .ue-view-all span {
+    display: none;
+  }
+  .ue-view-all {
+    font-size: 0.78rem;
+  }
+  /* One item visible per view on phones */
+  .ue-item {
+    flex: 0 0 100%;
+  }
+  .ue-item-title {
+    font-size: 0.82rem;
+  }
+  .ue-nav {
+    width: 30px;
+    height: 30px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .ue-card-title {
+    font-size: 0.86rem;
+  }
+}

@@ -1,0 +1,362 @@
+/* ==========================================================================
+   OUR ACHIEVEMENTS — SLIDER SECTION
+   Uses tokens from root.css (font-primary, font-secondary, primary,
+   secondary, border, shadow-*, radius-*, transition-*). No variable is
+   redefined here — only new component-scoped classes are added, so this
+   file cannot override anything already declared in root.css.
+   ========================================================================== */
+
+.achv-section {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  padding: 96px 24px;
+  overflow: hidden;
+  font-family: var(--font-secondary);
+}
+
+.achv-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ---------- Header ---------- */
+
+.achv-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+
+.achv-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.achv-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  display: inline-block;
+}
+
+/* Heading: lighter weight + slightly smaller size, as requested */
+.achv-title {
+  font-family: var(--font-primary);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--dark-bg);
+  margin: 0 0 16px;
+  letter-spacing: normal;
+}
+
+.achv-highlight {
+  color: var(--primary);
+}
+
+.achv-subtitle {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-light);
+  margin: 0;
+}
+
+/* ---------- Slider shell ---------- */
+
+.achv-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.achv-viewport {
+  overflow: hidden;
+  width: 100%;
+  border-radius: var(--radius-lg);
+}
+
+.achv-track {
+  display: flex;
+  will-change: transform;
+  /* Smooth, premium easing — this is what actually makes the slide feel
+     buttery instead of linear/robotic. Single source of truth for timing. */
+  transition: transform 650ms cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.achv-track.no-transition {
+  transition: none !important;
+}
+
+.achv-track.is-dragging {
+  transition: none !important;
+}
+
+.achv-slide {
+  flex: 0 0 auto;
+  padding: 6px 12px;
+  box-sizing: border-box;
+}
+
+/* ---------- Card ---------- */
+
+.achv-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal),
+    border-color var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+}
+
+.achv-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--secondary-light);
+}
+
+.achv-card-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 14px;
+  box-sizing: border-box;
+}
+
+.achv-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform var(--transition-slow);
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.achv-card:hover .achv-card-image img {
+  transform: scale(1.04);
+}
+
+.achv-card-body {
+  padding: 20px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.achv-card-tag {
+  align-self: flex-start;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: 14px;
+}
+
+.achv-card-title {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 15.5px;
+  line-height: 1.4;
+  color: var(--dark-bg);
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.achv-card-divider {
+  width: 32px;
+  height: 3px;
+  border-radius: var(--radius-full);
+  background: var(--gradient-primary);
+  margin-bottom: 12px;
+}
+
+.achv-card-desc {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-light);
+  margin: 0;
+  flex: 1;
+}
+
+/* ---------- Arrows ---------- */
+
+.achv-arrow {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  z-index: 2;
+}
+
+.achv-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.achv-arrow:hover {
+  background: var(--gradient-primary);
+  color: #ffffff;
+  box-shadow: var(--shadow-glow);
+  transform: scale(1.06);
+}
+
+.achv-arrow:active {
+  transform: scale(0.96);
+}
+
+.achv-arrow:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.achv-arrow[disabled] {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ---------- Dots ---------- */
+
+.achv-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 36px;
+}
+
+.achv-dot-btn {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--secondary-light);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    width var(--transition-normal),
+    background var(--transition-normal);
+}
+
+.achv-dot-btn:hover {
+  background: var(--secondary);
+}
+
+.achv-dot-btn.is-active {
+  width: 24px;
+  background: var(--gradient-primary);
+}
+
+.achv-dot-btn:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* ---------- Responsive: slide widths per breakpoint ----------
+   4 up on desktop, 3 up on small-desktop/large-tablet,
+   2 up on tablet, 1 up on mobile. JS reads getPerView() to keep
+   the clone-count logic in sync with this. */
+
+.achv-slide {
+  width: 25%;
+}
+
+@media (max-width: 1180px) {
+  .achv-slide {
+    width: 33.3333%;
+  }
+}
+
+@media (max-width: 860px) {
+  .achv-slide {
+    width: 50%;
+  }
+  .achv-section {
+    padding: 72px 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .achv-slide {
+    width: 100%;
+  }
+  .achv-arrow {
+    width: 40px;
+    height: 40px;
+  }
+  .achv-arrow svg {
+    width: 17px;
+    height: 17px;
+  }
+  .achv-header {
+    margin-bottom: 40px;
+  }
+  .achv-title {
+    font-size: clamp(21px, 6vw, 26px);
+  }
+}
+
+@media (max-width: 420px) {
+  .achv-slider {
+    gap: 8px;
+  }
+  .achv-arrow {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .achv-track,
+  .achv-card,
+  .achv-card-image img,
+  .achv-arrow {
+    transition: none !important;
+  }
+}
