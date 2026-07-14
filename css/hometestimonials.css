@@ -1,0 +1,309 @@
+:root {
+  --test-font-heading: var(--font-primary, "Poppins", sans-serif);
+  --test-font-body: var(--font-secondary, "Plus Jakarta Sans", sans-serif);
+
+  --test-text-dark: #12172b;
+  --test-text-muted: #6b7280;
+  --test-border: #ececf1;
+  --test-bg: #ffffff;
+  --test-star: var(--primary, #003198);
+
+  --test-primary: var(--primary, #003198);
+  --test-accent: var(--secondary, #46aefd);
+}
+
+.testimonials-section {
+  background: var(--test-bg);
+  padding: 0 24px 88px;
+  font-family: var(--test-font-body);
+}
+
+.testimonials-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===================== Card shell ===================== */
+
+.testimonials-card {
+  display: grid;
+  grid-template-columns: 220px 1px 1fr 1px 200px;
+  align-items: center;
+  gap: 36px;
+  background: #fff;
+  border: 1px solid var(--test-border);
+  border-radius: 22px;
+  padding: 40px 44px;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.05);
+}
+
+.testimonials-divider {
+  width: 1px;
+  height: 100px;
+  background: var(--test-border);
+  justify-self: center;
+}
+
+/* ===================== Left: rating ===================== */
+
+.testimonials-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.testimonials-google-icon {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.testimonials-rating-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--test-text-dark);
+  margin-bottom: 6px;
+}
+
+.testimonials-rating-score {
+  font-family: var(--test-font-heading);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--test-text-dark);
+  margin-bottom: 10px;
+}
+
+.testimonials-stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--test-star);
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.testimonials-rating-count {
+  font-size: 12.5px;
+  color: #5b6472;
+  font-weight: 500;
+}
+
+/* ===================== Middle: testimonial slider ===================== */
+
+.testimonials-slider {
+  position: relative;
+  min-width: 0;
+}
+
+.testimonials-quote-icon {
+  font-size: 26px;
+  color: var(--test-primary);
+  opacity: 0.9;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.testimonials-track-wrap {
+  overflow: hidden;
+  min-height: 108px;
+  cursor: grab;
+  user-select: none;
+}
+
+.testimonials-track-wrap.is-dragging {
+  cursor: grabbing;
+}
+
+.testimonials-track {
+  display: flex;
+  will-change: transform;
+}
+
+.testimonials-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding-right: 8px;
+  opacity: 0.35;
+  transform: translateY(6px);
+  transition:
+    opacity 0.6s ease 0.15s,
+    transform 0.6s ease 0.15s;
+  pointer-events: none;
+}
+
+.testimonials-slide.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* While actively dragging, show all slides at full opacity — the
+   whole point of live-follow dragging is that content is always
+   visible under the pointer, never faded/blank mid-motion. */
+.testimonials-track-wrap.is-dragging .testimonials-slide {
+  opacity: 1;
+  transform: translateY(0);
+  transition: none;
+}
+
+.testimonials-quote-text {
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--test-text-dark);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.testimonials-author-name {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--test-text-dark);
+  margin-bottom: 2px;
+}
+
+.testimonials-author-role {
+  font-size: 13px;
+  color: var(--test-text-muted);
+  font-weight: 500;
+}
+
+.testimonials-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 22px;
+}
+
+.testimonials-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--test-border);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    width 0.25s ease;
+}
+
+.testimonials-dot:hover {
+  background: var(--test-accent);
+}
+
+.testimonials-dot.is-active {
+  width: 22px;
+  border-radius: 999px;
+  background: var(--test-primary);
+}
+
+/* ===================== Right: source badge ===================== */
+
+.testimonials-source {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonials-source-badge {
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.testimonials-source-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.testimonials-source-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--test-text-dark);
+  margin-bottom: 2px;
+}
+
+.testimonials-source-value {
+  font-size: 13px;
+  color: var(--test-text-muted);
+  font-weight: 500;
+}
+
+/* ========================================================================
+   RESPONSIVE
+   ======================================================================== */
+
+@media (max-width: 980px) {
+  .testimonials-card {
+    grid-template-columns: 200px 1px 1fr;
+    gap: 28px;
+  }
+
+  .testimonials-divider-right,
+  .testimonials-source {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .testimonials-section {
+    padding: 0 20px 64px;
+  }
+
+  .testimonials-card {
+    grid-template-columns: 1fr;
+    padding: 32px 26px;
+    gap: 0;
+    border-radius: 18px;
+  }
+
+  .testimonials-divider {
+    width: 100%;
+    height: 1px;
+    margin: 26px 0;
+  }
+
+  .testimonials-rating {
+    padding-bottom: 0;
+  }
+
+  .testimonials-quote-text {
+    font-size: 15.5px;
+  }
+
+  .testimonials-rating-score {
+    font-size: 34px;
+  }
+
+  .testimonials-google-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-card {
+    padding: 26px 20px;
+  }
+
+  .testimonials-quote-icon {
+    font-size: 22px;
+  }
+
+  .testimonials-quote-text {
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonials-track {
+    transition: none !important;
+  }
+}

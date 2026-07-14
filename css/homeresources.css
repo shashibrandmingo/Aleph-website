@@ -1,0 +1,767 @@
+:root {
+  --res-font-heading: var(--font-primary, "Poppins", sans-serif);
+  --res-font-body: var(--font-secondary, "Plus Jakarta Sans", sans-serif);
+
+  --res-text-dark: #12172b;
+  --res-text-muted: #6b7280;
+  --res-border: #e7e9f0;
+  --res-bg: #ffffff;
+  --res-chip-bg: #f5f6fa;
+
+  --res-primary: var(--primary, #003198);
+  --res-primary-hover: #00276f;
+  --res-accent: var(--secondary, #46aefd);
+
+  /* Colorful per-topic accent colors, used for chip icons (inactive state) */
+  --res-c-bis: #2f6fed;
+  --res-c-cdsco: #1fa855;
+  --res-c-wpc: #d99a2b;
+  --res-c-tec: #6d5ce7;
+  --res-c-emiemc: #9b3fd9;
+  --res-c-iso: #e0507e;
+}
+
+.resources-section {
+  background: var(--res-bg);
+  padding: 88px 24px 110px;
+  font-family: var(--res-font-body);
+}
+
+.resources-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===================== Header ===================== */
+
+.resources-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 34px;
+}
+
+.resources-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--res-font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  color: var(--res-primary);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.resources-eyebrow-line {
+  width: 22px;
+  height: 1px;
+  background: var(--res-primary);
+  opacity: 0.35;
+}
+
+.resources-heading {
+  font-family: var(--res-font-heading);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--res-text-dark);
+  margin: 0 0 16px;
+}
+
+.resources-subtitle {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--res-text-muted);
+  font-weight: 400;
+}
+
+/* ===================== Filter bar ===================== */
+
+.resources-filterbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid var(--res-border);
+  border-radius: 14px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+}
+
+.resources-filterbar-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--res-text-dark);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.resources-topics {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.resources-topic-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--res-font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--res-text-dark);
+  background: var(--res-chip-bg);
+  border: 1px solid transparent;
+  padding: 7px 13px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Colorful icons — each chip's icon keeps its own brand color even in the
+   default (inactive) state, matching the reference UI. */
+.resources-topic-chip i {
+  font-size: 11px;
+  color: var(--res-chip-icon-color, var(--res-primary));
+}
+
+.resources-topic-chip[data-topic="bis"] {
+  --res-chip-icon-color: var(--res-c-bis);
+}
+.resources-topic-chip[data-topic="cdsco"] {
+  --res-chip-icon-color: var(--res-c-cdsco);
+}
+.resources-topic-chip[data-topic="wpc"] {
+  --res-chip-icon-color: var(--res-c-wpc);
+}
+.resources-topic-chip[data-topic="tec"] {
+  --res-chip-icon-color: var(--res-c-tec);
+}
+.resources-topic-chip[data-topic="emiemc"] {
+  --res-chip-icon-color: var(--res-c-emiemc);
+}
+.resources-topic-chip[data-topic="iso"] {
+  --res-chip-icon-color: var(--res-c-iso);
+}
+
+.resources-topic-chip:hover {
+  transform: translateY(-1px);
+  border-color: var(--res-primary);
+  color: var(--res-primary);
+}
+
+.resources-topic-chip.is-active {
+  background: var(--res-primary);
+  color: #fff;
+  border-color: var(--res-primary);
+}
+
+.resources-topic-chip.is-active i {
+  color: #fff;
+}
+
+/* ===================== "All Topics" dropdown ===================== */
+
+.resources-alltopics-wrap {
+  position: relative;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.resources-alltopics {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--res-font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--res-text-dark);
+  background: #fff;
+  border: 1px solid var(--res-border);
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.resources-alltopics i {
+  font-size: 10px;
+  color: var(--res-text-muted);
+  transition: transform 0.25s ease;
+}
+
+.resources-alltopics:hover {
+  border-color: var(--res-primary);
+  background: var(--res-chip-bg);
+}
+
+.resources-alltopics-wrap.is-open .resources-alltopics {
+  border-color: var(--res-primary);
+  background: var(--res-chip-bg);
+  color: var(--res-primary);
+}
+
+.resources-alltopics-wrap.is-open .resources-alltopics .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+.resources-alltopics-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 250px;
+  background: #fff;
+  border: 1px solid var(--res-border);
+  border-radius: 16px;
+  box-shadow:
+    0 24px 48px -14px rgba(15, 23, 42, 0.22),
+    0 6px 14px -6px rgba(15, 23, 42, 0.1);
+  padding: 8px;
+  z-index: 40;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px) scale(0.98);
+  transform-origin: top right;
+  transition:
+    opacity 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0.2s;
+}
+
+.resources-alltopics-wrap.is-open .resources-alltopics-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Small header label inside the menu for extra polish */
+.resources-alltopics-menu-label {
+  font-family: var(--res-font-body);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--res-text-muted);
+  padding: 8px 12px 6px;
+}
+
+.resources-alltopics-scroll {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 2px;
+  /* custom slim scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--res-border) transparent;
+}
+
+.resources-alltopics-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+.resources-alltopics-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.resources-alltopics-scroll::-webkit-scrollbar-thumb {
+  background: var(--res-border);
+  border-radius: 999px;
+}
+.resources-alltopics-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--res-text-muted);
+}
+
+.resources-alltopics-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  font-family: var(--res-font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--res-text-dark);
+  background: none;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 2px;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    padding-left 0.15s ease;
+}
+
+.resources-alltopics-item .resources-alltopics-item-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--res-border);
+  flex-shrink: 0;
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+.resources-alltopics-item:hover {
+  background: var(--res-chip-bg);
+  color: var(--res-primary);
+  padding-left: 15px;
+}
+
+.resources-alltopics-item:hover .resources-alltopics-item-dot {
+  background: var(--res-primary);
+  transform: scale(1.3);
+}
+
+.resources-alltopics-item.is-active {
+  background: var(--res-primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+.resources-alltopics-item.is-active .resources-alltopics-item-dot {
+  background: #fff;
+  transform: scale(1.3);
+}
+
+.resources-alltopics-item.is-active:hover {
+  padding-left: 12px;
+}
+
+.resources-alltopics-footer {
+  padding: 4px;
+}
+
+.resources-alltopics-item--link {
+  justify-content: space-between;
+  font-weight: 600;
+  color: var(--res-primary);
+}
+
+.resources-alltopics-item--link:hover {
+  background: var(--res-primary-light, rgba(0, 46, 132, 0.08));
+  color: var(--res-primary);
+  padding-left: 12px;
+}
+
+.resources-alltopics-item--link i {
+  font-size: 11px;
+  color: var(--res-primary);
+  opacity: 0.7;
+}
+
+/* ========================================================================
+   STACKED / SWIPE CARDS CAROUSEL
+   ------------------------------------------------------------------------
+   Matches the reference "swipe-stack" design: cards are stacked with a
+   right-hand offset (front card flush left, subsequent cards peeking out
+   further right and slightly scaled down / faded), a circular arrow
+   button on the active card advances to the next card, and the whole
+   front card also supports manual drag/swipe (mouse + touch) as an
+   equivalent way to advance or go back — both are wired up in
+   resources-section.js, fully independent of each other.
+   ========================================================================== */
+
+.swipe-stack-outer-frame {
+  position: relative;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  height: 400px;
+}
+
+.cards-stack-deck {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Layered stack offsets — each card shifts right and scales/fades down
+   based on its --card-index custom property (0 = front/active). */
+.stack-card-node {
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  background-color: #0c1524;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.18);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 48px;
+  color: #ffffff;
+  cursor: grab;
+
+  transform: translateX(
+      calc((var(--card-index) * 200px) + var(--res-drag, 0px))
+    )
+    scale(calc(1 - (var(--card-index) * 0.08)));
+  transform-origin: center right;
+  z-index: calc(10 - var(--card-index));
+  opacity: calc(1 - (var(--card-index) * 0.35));
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.5s ease,
+    z-index 0.5s;
+}
+
+.cards-stack-deck.is-dragging .stack-card-node.active-front {
+  cursor: grabbing;
+  transition:
+    opacity 0.5s ease,
+    z-index 0.5s;
+}
+
+/* Front card active overlay focus specs */
+.stack-card-node.active-front {
+  width: 65%;
+  transform: translateX(var(--res-drag, 0px)) scale(1);
+  opacity: 1;
+}
+
+.stack-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+.stack-card-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    15deg,
+    rgba(8, 15, 30, 0.98) 15%,
+    rgba(12, 21, 36, 0.8) 45%,
+    transparent 100%
+  );
+  z-index: 2;
+}
+
+.stack-card-content {
+  position: relative;
+  z-index: 3;
+  max-width: 580px;
+  pointer-events: none;
+}
+
+.featured-update-badge {
+  background-color: rgba(0, 49, 152, 0.2);
+  border: 1px solid rgba(0, 49, 152, 0.3);
+  color: #4d8cf0;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/* Explicit, high-specificity white so this can never be repainted by a
+   generic global heading color rule (e.g. h3{color:...}) from elsewhere
+   on the page — the element+class combo plus !important guarantees this
+   wins regardless of load order. */
+h3.stack-card-title,
+.stack-card-node .stack-card-title {
+  font-family: var(--res-font-heading);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 14px;
+  letter-spacing: -0.8px;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff;
+}
+
+.stack-card-desc {
+  font-size: 15.5px;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.stack-card-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.stack-card-meta-row .meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stack-card-meta-row i {
+  color: #4d8cf0;
+  font-size: 15px;
+}
+
+/* Circular action button — advances to the next card on click. Only the
+   active/front card's button is interactive; buttons on the cards behind
+   it are faded and inert. */
+.stack-action-swipe-btn {
+  position: absolute;
+  bottom: 48px;
+  right: 48px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--res-primary);
+  color: #ffffff;
+  border: none;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 4px 18px rgba(0, 49, 152, 0.4);
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+  pointer-events: auto;
+}
+
+.stack-action-swipe-btn:hover {
+  background-color: var(--res-primary-hover);
+  transform: scale(1.06);
+}
+
+.stack-action-swipe-btn:active {
+  transform: scale(0.96);
+}
+
+/* Cards behind the front one: fully inert, faded button, no pointer
+   interaction so drag/click only ever targets the active card. */
+.stack-card-node:not(.active-front) .stack-action-swipe-btn,
+.stack-card-node:not(.active-front) .stack-card-content {
+  pointer-events: none;
+}
+
+.stack-card-node:not(.active-front) .stack-action-swipe-btn {
+  opacity: 0.3;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+
+/* Exit-left animation state, applied for one cycle when advancing to the
+   next card (either via button click or a left swipe/drag). */
+.stack-card-node.swipe-exit-active {
+  transform: translateX(-300px) scale(0.85) rotate(-6deg) !important;
+  opacity: 0 !important;
+  z-index: 30 !important;
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.5s ease !important;
+}
+
+/* Exit-right animation state, applied for one cycle when going back to
+   the previous card (right swipe/drag or dot navigation backwards). */
+.stack-card-node.swipe-exit-reverse {
+  transform: translateX(300px) scale(0.85) rotate(6deg) !important;
+  opacity: 0 !important;
+  z-index: 30 !important;
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.5s ease !important;
+}
+
+/* ----- Dots indicator (below the stack) ----- */
+
+.stack-dots-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  margin-top: 22px;
+}
+
+.stack-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--res-border);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    width 0.25s ease;
+}
+
+.stack-dot.is-active {
+  background: var(--res-primary);
+  width: 20px;
+  border-radius: 4px;
+}
+
+/* ========================================================================
+   RESPONSIVE
+   ======================================================================== */
+
+@media (max-width: 1100px) {
+  .swipe-stack-outer-frame {
+    height: 400px;
+  }
+  .stack-card-node {
+    padding: 40px;
+  }
+  h3.stack-card-title,
+  .stack-card-node .stack-card-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  .resources-section {
+    padding: 64px 20px 90px;
+  }
+
+  .resources-heading {
+    font-size: 30px;
+  }
+
+  .resources-filterbar {
+    padding: 12px 14px;
+  }
+
+  .resources-alltopics-wrap {
+    margin-left: 0;
+  }
+
+  .resources-alltopics-menu {
+    right: auto;
+    left: 0;
+  }
+
+  /* Below this width, side-by-side peeking cards get visually cramped —
+     switch to a single full-width card per view (the rest still exist
+     and are reachable the same way: button, drag, or dots), matching
+     the reference's mobile behavior. */
+  .swipe-stack-outer-frame {
+    height: 360px;
+  }
+  .stack-card-node {
+    width: 100% !important;
+    transform: none !important;
+    opacity: 0;
+    z-index: 1;
+    padding: 32px;
+  }
+  .stack-card-node.active-front {
+    opacity: 1;
+    z-index: 5;
+    transform: translateX(var(--res-drag, 0px)) !important;
+  }
+  .stack-card-node.swipe-exit-active {
+    transform: translateX(-120%) !important;
+    opacity: 0 !important;
+  }
+  .stack-card-node.swipe-exit-reverse {
+    transform: translateX(120%) !important;
+    opacity: 0 !important;
+  }
+  .stack-action-swipe-btn {
+    bottom: 32px;
+    right: 32px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+  h3.stack-card-title,
+  .stack-card-node .stack-card-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 640px) {
+  .resources-section {
+    padding: 52px 16px 70px;
+  }
+
+  .resources-heading {
+    font-size: 26px;
+  }
+
+  .resources-subtitle {
+    font-size: 14px;
+  }
+
+  .resources-filterbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .resources-filterbar-label {
+    margin-bottom: 2px;
+  }
+
+  .resources-alltopics {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .resources-alltopics-menu {
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .swipe-stack-outer-frame {
+    height: 380px;
+  }
+  .stack-card-node {
+    padding: 26px;
+  }
+  h3.stack-card-title,
+  .stack-card-node .stack-card-title {
+    font-size: 19px;
+  }
+  .stack-card-desc {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .stack-action-swipe-btn {
+    bottom: 24px;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stack-card-node,
+  .stack-action-swipe-btn {
+    transition: none !important;
+  }
+}

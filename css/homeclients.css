@@ -1,0 +1,220 @@
+:root {
+  --cli-font-heading: var(--font-primary, "Poppins", sans-serif);
+  --cli-font-body: var(--font-secondary, "Plus Jakarta Sans", sans-serif);
+
+  --cli-text-dark: #12172b;
+  --cli-text-muted: #6b7280;
+  --cli-border: #e7e9f0;
+  --cli-bg: #ffffff;
+  --cli-card-bg: #ffffff;
+
+  --cli-primary: var(--primary, #003198);
+  --cli-accent: var(--secondary, #46aefd);
+}
+
+.clients-section {
+  background: var(--cli-bg);
+  padding: 72px 24px 80px;
+  font-family: var(--cli-font-body);
+}
+
+.clients-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===================== Header ===================== */
+
+.clients-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.clients-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--cli-font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  color: var(--cli-primary);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.clients-eyebrow-line {
+  width: 22px;
+  height: 1px;
+  background: var(--cli-primary);
+  opacity: 0.4;
+}
+
+.clients-heading {
+  font-family: var(--cli-font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--cli-text-dark);
+  margin: 0;
+}
+
+/* ===================== Track / auto-scrolling marquee ===================== */
+
+.clients-track-wrap {
+  position: relative;
+}
+
+.clients-viewport {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+}
+
+.clients-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  cursor: grab;
+  user-select: none;
+  will-change: transform;
+}
+
+.clients-track.is-dragging {
+  cursor: grabbing;
+}
+
+.clients-track img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  pointer-events: none;
+}
+
+.clients-card {
+  flex: 0 0 auto;
+  width: 190px;
+  height: 120px;
+  background: var(--cli-card-bg);
+  border: 1px solid var(--cli-border);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  box-shadow: 0 2px 10px rgba(20, 20, 43, 0.04);
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.clients-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0, 46, 132, 0.12);
+  border-color: rgba(0, 49, 152, 0.15);
+}
+
+.clients-card img {
+  max-width: 100%;
+  max-height: 42px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.clients-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ===================== Footer tagline ===================== */
+
+.clients-tagline {
+  text-align: center;
+  font-size: 14.5px;
+  color: var(--cli-text-muted);
+  font-weight: 400;
+  margin-top: 32px;
+}
+
+/* ========================================================================
+   RESPONSIVE
+   ======================================================================== */
+
+@media (max-width: 1024px) {
+  .clients-card {
+    width: 170px;
+    height: 110px;
+  }
+}
+
+@media (max-width: 860px) {
+  .clients-section {
+    padding: 56px 20px 64px;
+  }
+
+  .clients-heading {
+    font-size: 27px;
+  }
+
+  .clients-card {
+    width: 150px;
+    height: 100px;
+    padding: 18px;
+  }
+
+  .clients-card img {
+    max-height: 34px;
+  }
+}
+
+@media (max-width: 640px) {
+  .clients-section {
+    padding: 48px 16px 56px;
+  }
+
+  .clients-header {
+    margin-bottom: 28px;
+  }
+
+  .clients-heading {
+    font-size: 23px;
+  }
+
+  .clients-card {
+    width: 130px;
+    height: 88px;
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .clients-card img {
+    max-height: 28px;
+  }
+
+  .clients-track {
+    gap: 14px;
+  }
+
+  .clients-tagline {
+    font-size: 13px;
+    margin-top: 24px;
+    padding: 0 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clients-card {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,502 @@
+:root {
+  --con-font-heading: var(--font-primary, "Poppins", sans-serif);
+  --con-font-body: var(--font-secondary, "Plus Jakarta Sans", sans-serif);
+
+  --con-text-dark: #12172b;
+  --con-text-muted: #6b7280;
+  --con-border: #e5e7eb;
+  --con-bg-soft: #f4f6fb;
+  --con-placeholder: #9aa1b0;
+  --con-error: #e0342c;
+  --con-success-bg: #eafaf0;
+  --con-success-border: #cdeedb;
+  --con-success-text: #157a45;
+  --con-whatsapp: #25d366;
+
+  --con-primary: var(--primary, #003198);
+  --con-primary-hover: var(--primary-hover, #00256f);
+  --con-accent: var(--secondary, #46aefd);
+}
+
+.consultation-section {
+  background: var(--con-bg-soft);
+  padding: 80px 24px;
+  font-family: var(--con-font-body);
+  position: relative;
+  overflow: hidden;
+}
+
+.consultation-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 46%;
+  height: 100%;
+  background-image: url("../image/bgimages/formsectinbgimg.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: contain;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.consultation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.consultation-grid {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ===================== Left: form card ===================== */
+
+.consultation-form-card {
+  background: #fff;
+  border: 1px solid var(--con-border);
+  border-radius: 20px;
+  padding: 36px 40px 32px;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.05);
+}
+
+.consultation-form-title {
+  font-family: var(--con-font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--con-text-dark);
+  margin: 0 0 6px;
+}
+
+.consultation-form-subtitle {
+  font-size: 14px;
+  color: var(--con-text-muted);
+  margin-bottom: 26px;
+}
+
+.consultation-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.consultation-field {
+  margin-bottom: 18px;
+  width: 100%;
+}
+
+.consultation-field label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--con-text-dark);
+  margin-bottom: 7px;
+}
+
+.consultation-required {
+  color: var(--con-error);
+}
+
+.consultation-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.consultation-input-wrap > i:first-child {
+  position: absolute;
+  left: 14px;
+  font-size: 13.5px;
+  color: var(--con-text-muted);
+  pointer-events: none;
+}
+
+.consultation-input-wrap input,
+.consultation-input-wrap select {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px 0 40px;
+  border: 1px solid var(--con-border);
+  border-radius: 10px;
+  font-family: var(--con-font-body);
+  font-size: 13.5px;
+  color: var(--con-text-dark);
+  background: #fff;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  appearance: none;
+  box-sizing: border-box;
+}
+
+.consultation-input-wrap select {
+  padding-right: 36px;
+  cursor: pointer;
+  color: var(--con-placeholder);
+}
+
+.consultation-input-wrap select.has-value {
+  color: var(--con-text-dark);
+}
+
+.consultation-select-arrow {
+  position: absolute;
+  right: 14px;
+  font-size: 11px;
+  color: var(--con-text-muted);
+  pointer-events: none;
+}
+
+.consultation-input-wrap input::placeholder,
+.consultation-input-wrap textarea::placeholder {
+  color: var(--con-placeholder);
+}
+
+.consultation-input-wrap input:focus,
+.consultation-input-wrap select:focus,
+.consultation-input-wrap textarea:focus {
+  outline: none;
+  border-color: var(--con-primary);
+  box-shadow: 0 0 0 3px rgba(0, 49, 152, 0.1);
+}
+
+.consultation-field.has-error .consultation-input-wrap input,
+.consultation-field.has-error .consultation-input-wrap select,
+.consultation-field.has-error .consultation-input-wrap textarea {
+  border-color: var(--con-error);
+}
+
+.consultation-field.has-error .consultation-input-wrap input:focus,
+.consultation-field.has-error .consultation-input-wrap select:focus,
+.consultation-field.has-error .consultation-input-wrap textarea:focus {
+  box-shadow: 0 0 0 3px rgba(224, 52, 44, 0.1);
+}
+
+.consultation-textarea-wrap {
+  align-items: flex-start;
+  width: 100%;
+}
+
+.consultation-textarea-wrap > i:first-child {
+  top: 15px;
+  left: 14px;
+}
+
+.consultation-textarea-wrap textarea {
+  width: 100%;
+  height: auto;
+  min-height: 110px;
+  padding: 13px 14px 13px 42px;
+  resize: vertical;
+  line-height: 1.6;
+  font-family: var(--con-font-body);
+  font-size: 13.5px;
+  color: var(--con-text-dark);
+  background: #fff;
+  border: 1px solid var(--con-border);
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: block;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.consultation-textarea-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.consultation-char-count {
+  font-size: 11.5px;
+  color: var(--con-text-muted);
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+.consultation-error {
+  font-size: 12px;
+  color: var(--con-error);
+  margin-top: 5px;
+  min-height: 0;
+  display: none;
+}
+
+.consultation-field.has-error .consultation-error {
+  display: block;
+}
+
+.consultation-submit-btn {
+  width: 100%;
+  height: 50px;
+  background: var(--con-primary);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--con-font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  cursor: pointer;
+  margin-top: 6px;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  box-shadow: 0 10px 24px rgba(0, 49, 152, 0.2);
+}
+
+.consultation-submit-btn:hover {
+  background: var(--con-primary-hover);
+  transform: translateY(-2px);
+}
+
+.consultation-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.consultation-confidential {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--con-success-text);
+  margin-top: 12px;
+}
+
+.consultation-confidential i {
+  font-size: 11px;
+}
+
+.consultation-whatsapp-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--con-success-bg);
+  border: 1px solid var(--con-success-border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-top: 20px;
+}
+
+.consultation-whatsapp-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--con-whatsapp);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.consultation-whatsapp-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--con-text-dark);
+  line-height: 1.4;
+  margin-bottom: 2px;
+}
+
+.consultation-whatsapp-text {
+  font-size: 12px;
+  color: var(--con-text-muted);
+}
+
+/* ===================== Right: info card ===================== */
+
+.consultation-info-card {
+  background: linear-gradient(
+    150deg,
+    #002d8a 0%,
+    var(--con-primary) 55%,
+    #0a3fae 100%
+  );
+  border-radius: 20px;
+  padding: 32px 30px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* Fixed height so the card stays compact instead of stretching
+     to match the (taller) form card via align-items:stretch. */
+  height: 560px;
+  max-height: 560px;
+}
+
+.consultation-info-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 85% 15%,
+    rgba(255, 255, 255, 0.08),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+.consultation-info-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../image/bgimages/formsectinbgimg_transparent.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 230% auto;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.consultation-info-title {
+  font-family: var(--con-font-heading);
+  font-size: 21px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  position: relative;
+  color: #ffffff;
+}
+
+.consultation-info-underline {
+  display: block;
+  width: 40px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--con-accent);
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.consultation-info-list {
+  display: flex;
+  flex-direction: column;
+  /* Was "space-between", which stretched items apart to fill the
+     card's full height, creating the big empty gaps. A fixed,
+     compact gap keeps items close together regardless of card height. */
+  justify-content: flex-start;
+  gap: 6px;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.consultation-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.consultation-info-item:first-child {
+  padding-top: 0;
+}
+
+.consultation-info-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.consultation-info-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.consultation-info-item-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #ffffff;
+}
+
+.consultation-info-item-text {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ========================================================================
+   RESPONSIVE
+   ======================================================================== */
+
+@media (max-width: 1024px) {
+  .consultation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-info-card {
+    height: auto;
+    max-height: none;
+  }
+
+  .consultation-info-list {
+    overflow: visible;
+  }
+}
+
+@media (max-width: 720px) {
+  .consultation-section {
+    padding: 56px 18px;
+  }
+
+  .consultation-form-card {
+    padding: 28px 22px 26px;
+    border-radius: 16px;
+  }
+
+  .consultation-form-title {
+    font-size: 22px;
+  }
+
+  .consultation-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .consultation-info-card {
+    padding: 28px 22px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .consultation-form-title {
+    font-size: 20px;
+  }
+
+  .consultation-input-wrap input,
+  .consultation-input-wrap select {
+    font-size: 13px;
+  }
+
+  .consultation-submit-btn {
+    font-size: 13.5px;
+  }
+}
