@@ -1,0 +1,218 @@
+/* ==========================================================================
+   WHY PARTNER WITH US — SECTION 9
+   File: css/about/why-partner.css
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@400;500;600&display=swap');
+
+:root {
+  --wp-blue:       #002e84;
+  --wp-accent:     #005bfa;
+  --wp-bg:         #eef4ff;
+  --wp-card-bg:    #ffffff;
+  --wp-text-dark:  #0f1f5c;
+  --wp-text-grey:  #64748b;
+  --wp-border:     rgba(0, 46, 132, 0.10);
+  --wp-font-head:  'Inter', sans-serif;
+  --wp-font-body:  'Nunito', sans-serif;
+}
+
+/* ── Section wrapper ────────────────────────────────────────────────────── */
+.why-partner-section {
+  background-color: white;
+  padding: 2rem 0 3rem;
+}
+
+/* ── Centered "WHY PARTNER WITH US?" header ─────────────────────────────── */
+.why-partner-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.why-partner-line {
+  flex: 1;
+  max-width: 70px;
+  height: 2px;
+  background-color: var(--wp-accent);
+  opacity: 0.55;
+  border-radius: 2px;
+}
+
+.why-partner-eyebrow {
+  font-family: var(--wp-font-head);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--wp-accent);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ── 5-column grid ──────────────────────────────────────────────────────── */
+.why-partner-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  background-color: var(--wp-card-bg);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 46, 132, 0.07);
+  border: 1px solid var(--wp-border);
+  overflow: hidden;
+}
+
+/* ── Individual card ────────────────────────────────────────────────────── */
+.why-partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 1rem 1.3rem;
+  border-right: 1px solid var(--wp-border);
+  transition: background-color 0.28s ease;
+  position: relative;
+}
+
+.why-partner-card:last-child {
+  border-right: none;
+}
+
+.why-partner-card:hover {
+  background-color: #f5f8ff;
+}
+
+/* ── Icon circle ─────────────────────────────────────────────────────────── */
+.why-partner-icon-wrapper {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background-color: rgba(0, 91, 250, 0.06);
+  border: 1.5px solid rgba(0, 91, 250, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+  transition: background-color 0.28s ease, transform 0.28s ease, border-color 0.28s ease;
+}
+
+.why-partner-card:hover .why-partner-icon-wrapper {
+  background-color: var(--wp-accent);
+  border-color: var(--wp-accent);
+  transform: translateY(-4px) scale(1.06);
+}
+
+.why-partner-icon-img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
+  transition: filter 0.28s ease;
+}
+
+.why-partner-card:hover .why-partner-icon-img {
+  filter: brightness(0) invert(1); /* White icon on hover */
+}
+
+/* ── Title ───────────────────────────────────────────────────────────────── */
+.why-partner-title {
+  font-family: var(--wp-font-head);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--wp-text-dark);
+  margin: 0 0 0.4rem;
+  line-height: 1.3;
+}
+
+/* ── Description ─────────────────────────────────────────────────────────── */
+.why-partner-desc {
+  font-family: var(--wp-font-body);
+  font-size: 0.7rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--wp-text-grey);
+  margin: 0;
+  flex: 1;
+}
+
+/* ── Bottom blue accent bar ──────────────────────────────────────────────── */
+.why-partner-bar {
+  width: 24px;
+  height: 2.5px;
+  background-color: var(--wp-accent);
+  border-radius: 2px;
+  margin-top: 1rem;
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: width 0.28s ease, opacity 0.28s ease;
+}
+
+.why-partner-card:hover .why-partner-bar {
+  width: 44px;
+  opacity: 1;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+/* Tablet: 3 columns */
+@media (max-width: 992px) {
+  .why-partner-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .why-partner-card {
+    border-right: none;
+    border-bottom: 1px solid var(--wp-border);
+  }
+
+  .why-partner-card:nth-child(3n) {
+    border-right: none;
+  }
+
+  .why-partner-card:not(:nth-child(3n)) {
+    border-right: 1px solid var(--wp-border);
+  }
+
+  .why-partner-card:nth-last-child(-n+2):nth-child(3n+1),
+  .why-partner-card:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Mobile: 2 columns */
+@media (max-width: 640px) {
+  .why-partner-section {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .why-partner-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-partner-card:nth-child(3n) {
+    border-right: 1px solid var(--wp-border);
+  }
+
+  .why-partner-card:nth-child(even) {
+    border-right: none;
+  }
+
+  .why-partner-card {
+    padding: 1.75rem 1rem 1.5rem;
+  }
+}
+
+/* Small mobile: 1 column */
+@media (max-width: 400px) {
+  .why-partner-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-partner-card {
+    border-right: none !important;
+  }
+}

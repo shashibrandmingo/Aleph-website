@@ -3,7 +3,7 @@
 .site-footer {
   background-color: #ffffff;
   color: #475569;
-  border-top: 4px solid var(--primary);
+  /* border-top: rgb(175, 173, 173); */
   padding: 4rem 0 0 0;
   font-size: 0.8rem;
   border-bottom: 1px solid #f1f5f9;

@@ -1,0 +1,760 @@
+@import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
+
+/* ==========================================================================
+   ABOUT US FOURTH SECTION (Who We Are Stylesheet)
+   ========================================================================== */
+
+:root {
+  --about-who-primary: #0a2540;
+  --about-who-accent-blue: #005bfa;
+  --about-who-text-dark: #002e84;
+  --about-who-text-muted: #64748b;
+  --about-who-bg: #ffffff;
+  --about-who-font-primary: 'Poppins', sans-serif;
+  --about-who-font-secondary: 'Plus Jakarta Sans', sans-serif;
+}
+
+.about-who-we-are-section {
+  background-image: url('../../image/about-us-image/about4-section.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #ffffff;
+  padding: 6rem 0;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .about-who-we-are-section {
+    padding: 2.5rem 0;
+  }
+}
+
+.who-we-are-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 4.5rem;
+  width: 100%;
+}
+
+/* Left Column (Text and Features) */
+.who-we-are-left-col {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+}
+
+.who-we-are-header {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.who-we-are-title {
+  font-family: var(--about-who-font-primary);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--about-who-text-dark);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.15;
+}
+
+.who-we-are-underline {
+  width: 60px;
+  height: 4px;
+  background-color: var(--about-who-accent-blue);
+  position: relative;
+  border-radius: 2px;
+}
+
+.who-we-are-underline::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--about-who-accent-blue);
+}
+
+.who-we-are-desc {
+  font-family: var(--about-who-font-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+}
+
+.who-we-are-desc .highlight-blue {
+  color: var(--about-who-accent-blue);
+  font-weight: 700;
+}
+
+/* Features List */
+.who-we-are-features {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+.who-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px dashed rgba(0, 46, 132, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.who-feature-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.who-feature-item:first-child {
+  padding-top: 0;
+}
+
+.who-feature-item:hover {
+  transform: translateX(5px);
+}
+
+.who-feature-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--about-who-text-dark);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  box-shadow: 0 6px 15px rgba(0, 46, 132, 0.15);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.who-feature-item:hover .who-feature-icon-wrapper {
+  background-color: var(--about-who-accent-blue);
+  transform: scale(1.08);
+}
+
+.who-feature-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.who-feature-title {
+  font-family: var(--about-who-font-primary);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--about-who-text-dark);
+  margin: 0 0 0.5rem 0;
+}
+
+.who-feature-desc {
+  font-family: var(--about-who-font-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--about-who-text-muted);
+  margin: 0;
+}
+
+/* Right Column (Image Container and Stats) */
+.who-we-are-right-col {
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.who-image-container {
+  position: relative;
+  width: 100%;
+}
+
+.who-main-image {
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(0, 46, 132, 0.08);
+  display: block;
+}
+
+/* Floating Card */
+.who-floating-card {
+  position: absolute;
+  bottom: -50px;
+  right: -2rem;
+  background-color: var(--about-who-primary);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.who-floating-card:hover {
+  transform: translateY(-5px);
+}
+
+.who-floating-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.who-floating-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.who-floating-title {
+  font-family: var(--about-who-font-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.who-floating-desc {
+  font-family: var(--about-who-font-secondary);
+  font-size: 0.8rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Stats Card */
+.who-stats-card {
+  background-color: var(--about-who-bg);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 46, 132, 0.05);
+  border: 1px solid rgba(0, 46, 132, 0.04);
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Force 4 exactly equal columns for perfect icon-text centering */
+  align-items: center;
+  margin-top: 2.5rem;
+  width: 100%;
+}
+
+.who-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-right: 1px solid rgba(0, 46, 132, 0.08);
+  width: 100%;
+}
+
+.who-stat-item:last-child {
+  border-right: none;
+}
+
+.who-stat-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f3f7fd; /* Soft, light blue circle background */
+  color: var(--about-who-text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem; /* Increased icon font-size for better visibility */
+  margin-bottom: 0.75rem;
+  border: 1px solid rgba(0, 91, 250, 0.08);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.who-stat-item:hover .who-stat-icon-wrapper {
+  background-color: var(--about-who-accent-blue);
+  color: #ffffff;
+  transform: translateY(-3px) scale(1.08);
+}
+
+.who-stat-number {
+  font-family: var(--about-who-font-primary);
+  font-size: 1rem; /* Decreased font size for a cleaner look */
+  font-weight: 600; /* Decreased font weight from 800 to 700 */
+  color: var(--about-who-text-dark);
+  margin-bottom: 0.25rem;
+  white-space: nowrap; /* Prevent PAN India from wrapping into two lines */
+}
+
+.who-stat-label {
+  font-family: var(--about-who-font-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--about-who-text-muted);
+  line-height: 1.3;
+  padding: 0 0.5rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .who-we-are-row {
+    gap: 3rem;
+  }
+
+  .who-floating-card {
+    right: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-who-we-are-section {
+    padding: 4.5rem 0;
+  }
+
+  .who-we-are-row {
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .who-we-are-left-col,
+  .who-we-are-right-col {
+    width: 100%;
+    flex: none;
+  }
+
+  .who-we-are-title {
+    font-size: 2.3rem;
+  }
+
+  .who-floating-card {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .who-stats-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 0;
+    padding: 2rem 1rem;
+  }
+
+  .who-stat-item {
+    border-right: none;
+  }
+
+  .who-stat-item:nth-child(odd) {
+    border-right: 1px solid rgba(0, 46, 132, 0.08);
+  }
+}
+
+@media (max-width: 480px) {
+  .who-stats-card {
+    grid-template-columns: repeat(2, 1fr); /* 2×2 grid on mobile */
+    gap: 1.25rem 0;
+    padding: 1.5rem 0.75rem;
+  }
+
+  .who-stat-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 46, 132, 0.08);
+    padding-bottom: 1rem;
+  }
+
+  /* Left column items get right border */
+  .who-stat-item:nth-child(odd) {
+    border-right: 1px solid rgba(0, 46, 132, 0.08) !important;
+  }
+
+  /* Bottom row (3rd & 4th) remove bottom border */
+  .who-stat-item:nth-child(3),
+  .who-stat-item:nth-child(4) {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .who-floating-card {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin: 1.5rem auto 0 auto;
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   ABOUT US FIFTH SECTION (Our Vision & Quality Policy Stylesheet)
+   ========================================================================== */
+
+.about-commitment-section {
+  background-image: url('../../image/about-us-image/about5-section.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #ffffff;
+  padding: 6rem 0;
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .about-commitment-section {
+    padding: 2.5rem 0;
+  }
+}
+
+.commitment-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.commitment-eyebrow {
+  display: block;
+  font-family: var(--about-who-font-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--about-who-accent-blue);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.commitment-title {
+  font-family: var(--about-who-font-primary);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--about-who-text-dark);
+  margin: 0 0 1.25rem 0;
+  line-height: 1.2;
+}
+
+.commitment-title .highlight {
+  color: var(--about-who-accent-blue);
+}
+
+.commitment-desc {
+  font-family: var(--about-who-font-secondary);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #4a5568;
+  max-width: 720px;
+  margin: 0;
+}
+
+.commitment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  width: 100%;
+}
+
+/* Base card layout */
+.commitment-card {
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 15px 45px rgba(0, 46, 132, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.commitment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 55px rgba(0, 46, 132, 0.08);
+}
+
+/* Vision Card (Dark Blue) */
+.commitment-card.vision-card {
+  background-color: #00235a; /* Deep corporate navy blue */
+  color: #ffffff;
+}
+
+/* Quality Card (White) */
+.commitment-card.quality-card {
+  background-color: #ffffff;
+  color: #2d3748;
+  border: 1px solid rgba(0, 46, 132, 0.05);
+}
+
+/* Card Header */
+.card-header-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.card-header-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--about-who-accent-blue);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 6px 15px rgba(0, 91, 250, 0.25);
+  flex-shrink: 0;
+}
+
+.card-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header-eyebrow {
+  font-family: var(--about-who-font-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--about-who-accent-blue);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.card-header-title {
+  font-family: var(--about-who-font-primary);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.vision-card .card-header-title {
+  color: #ffffff;
+}
+
+.quality-card .card-header-title {
+  color: var(--about-who-text-dark);
+}
+
+/* Quote icon graphic in background */
+.card-quote-icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  font-size: 7rem; /* Large elegant quotation mark */
+  font-family: Georgia, serif; /* Serif font for beautiful curly quotes */
+  font-weight: 700;
+  line-height: 1;
+  user-select: none;
+  z-index: 1;
+}
+
+.vision-card .card-quote-icon {
+  color: rgba(255, 255, 255, 0.05);
+}
+
+.quality-card .card-quote-icon {
+  color: rgba(0, 46, 132, 0.04);
+}
+
+/* Card Body Items list */
+.card-body-list {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  flex-grow: 1;
+}
+
+.card-body-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.75rem 0;
+}
+
+.vision-card .card-body-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.quality-card .card-body-item {
+  border-top: 1px solid rgba(0, 46, 132, 0.06);
+}
+
+.card-body-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.card-item-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+.vision-card .card-item-icon-wrapper {
+  background-color: transparent; /* Hollow circular border */
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.quality-card .card-item-icon-wrapper {
+  background-color: transparent; /* Hollow circular border */
+  border: 1.5px solid rgba(0, 46, 132, 0.12);
+  color: var(--about-who-accent-blue);
+}
+
+.card-item-text {
+  font-family: var(--about-who-font-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.vision-card .card-item-text {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.quality-card .card-item-text {
+  color: #4a5568;
+}
+
+/* Signature block */
+.card-signature-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  height: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.signature-font {
+  font-family: 'Mrs Saint Delafield', cursive;
+  font-size: 4rem;
+  line-height: 1;
+  user-select: none;
+}
+
+.vision-card .signature-font {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.quality-card .signature-font {
+  color: var(--about-who-accent-blue);
+}
+
+/* Card Footer */
+.card-footer-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Split into two halves */
+  align-items: center;
+  padding-top: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.vision-card .card-footer-wrapper {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.quality-card .card-footer-wrapper {
+  border-top: 1px solid rgba(0, 46, 132, 0.06);
+}
+
+.card-footer-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--about-who-font-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.card-footer-item:first-child {
+  border-right: 1px solid rgba(0, 46, 132, 0.08); /* Vertical divider in the middle */
+}
+
+.vision-card .card-footer-item:first-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.08); /* Vertical divider in the middle */
+}
+
+.vision-card .card-footer-item {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.quality-card .card-footer-item {
+  color: var(--about-who-text-muted);
+}
+
+.card-footer-item i {
+  font-size: 0.95rem;
+}
+
+.vision-card .card-footer-item i {
+  color: var(--about-who-accent-blue);
+}
+
+.quality-card .card-footer-item i {
+  color: var(--about-who-accent-blue);
+}
+
+/* Responsive styles for Commitment Section */
+@media (max-width: 992px) {
+  .commitment-title {
+    font-size: 2.3rem;
+  }
+
+  .commitment-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .commitment-card {
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .commitment-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .card-header-wrapper {
+    margin-bottom: 2rem;
+  }
+
+  .card-footer-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card-footer-item {
+    justify-content: flex-start;
+  }
+
+  .card-footer-item:first-child {
+    border-right: none !important;
+  }
+}
