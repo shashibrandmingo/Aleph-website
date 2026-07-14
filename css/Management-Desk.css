@@ -1,0 +1,933 @@
+/* ==========================================================================
+   MANAGEMENT DESK — HERO SECTION (Management-Desk.css)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --mgmt-blue:       #002e84;
+  --mgmt-accent:     #005bfa;
+  --mgmt-light:      #eef4ff;
+  --mgmt-text-dark:  #0a1f5c;
+  --mgmt-text-muted: #475569;
+  --mgmt-font-head:  'Inter', sans-serif;
+  --mgmt-font-body:  'Plus Jakarta Sans', sans-serif;
+}
+
+/* ── Section wrapper ────────────────────────────────────────────────────── */
+.mgmt-hero-section {
+  padding: 1.5rem 0 2rem 0;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* ── Hero Card: holds background map + border-radius ─────────────────────── */
+.mgmt-hero-card {
+  background-color: #eef4ff;
+  background-image: url('../image/Management-desk-image/hero-image.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+  border: 1px solid rgba(0, 46, 132, 0.08);
+  border-radius: 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  min-height: 410px;
+  padding: 0 4rem;
+  width: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ── Left content column ────────────────────────────────────────────────── */
+.mgmt-hero-content {
+  flex: 0 0 48%;
+  max-width: 480px;
+  padding: 2.2rem 0 2.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+  align-self: flex-start;
+}
+
+/* ── Breadcrumb ─────────────────────────────────────────────────────────── */
+.mgmt-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.mgmt-breadcrumb-link {
+  color: var(--mgmt-accent);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.mgmt-breadcrumb-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.mgmt-breadcrumb-link:hover {
+  opacity: 0.7;
+}
+
+.mgmt-breadcrumb-sep {
+  font-size: 0.8rem;
+  color: var(--mgmt-text-muted);
+}
+
+.mgmt-breadcrumb-current {
+  font-family: var(--mgmt-font-body);
+  font-size: 0.8rem;
+  color: var(--mgmt-text-muted);
+  font-weight: 500;
+}
+
+/* ── Eyebrow ─────────────────────────────────────────────────────────────── */
+.mgmt-hero-eyebrow {
+  font-family: var(--mgmt-font-head);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--mgmt-accent);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+/* ── Main Heading ─────────────────────────────────────────────────────────── */
+.mgmt-hero-title {
+  font-family: var(--mgmt-font-head);
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--mgmt-text-dark);
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.mgmt-hero-title-accent {
+  color: var(--mgmt-accent);
+}
+
+/* ── Underline bar ─────────────────────────────────────────────────────────── */
+.mgmt-hero-underline {
+  width: 50px;
+  height: 3px;
+  background-color: var(--mgmt-accent);
+  border-radius: 2px;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.mgmt-hero-underline::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: -2.5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--mgmt-accent);
+}
+
+/* ── Description ─────────────────────────────────────────────────────────── */
+.mgmt-hero-desc {
+  font-family: var(--mgmt-font-body);
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--mgmt-text-muted);
+  margin: 0;
+  max-width: 380px;
+}
+
+/* ── Right image column ─────────────────────────────────────────────────── */
+.mgmt-hero-image-col {
+  flex: 0 0 52%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-right: 0;
+  z-index: 2;
+  position: relative;
+}
+
+.mgmt-hero-desk-img {
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: bottom right;
+  align-self: flex-end;
+}
+
+.mgmt-content-section {
+  background-color: #ffffff;
+}
+
+.mgmt-desk-full-layout {
+  width: 100%;
+}
+
+.mgmt-desk-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* ── Profile 1: Mr. Binod Kumar Sinha ──────────────────────────────────── */
+.mgmt-profile-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.mgmt-profile-quote-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mgmt-timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.mgmt-timeline-label {
+  font-family: var(--mgmt-font-head);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--mgmt-accent);
+  white-space: nowrap;
+}
+
+.mgmt-timeline-line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: var(--mgmt-accent);
+  opacity: 0.5;
+  position: relative;
+  border-radius: 2px;
+}
+
+.mgmt-timeline-line::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--mgmt-accent);
+}
+
+.mgmt-profile-grid {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+/* Quote box (Left side) */
+.mgmt-quote-box {
+  flex: 1;
+  position: relative;
+  padding: 1.5rem 2rem;
+}
+
+.quote-symbol {
+  font-family: Georgia, serif;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--mgmt-accent);
+  opacity: 0.35;
+  position: absolute;
+}
+
+.quote-symbol.open-quote {
+  top: -1.1rem;
+  left: 0;
+}
+
+.quote-symbol.close-quote {
+  bottom: -1.1rem;
+  right: 0.5rem;
+}
+
+.quote-content p {
+  font-family: var(--mgmt-font-body);
+  font-size: 0.86rem;
+  line-height: 1.7;
+  color: var(--mgmt-text-muted);
+  margin-bottom: 1rem;
+}
+
+.quote-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Badge Card (Right side) */
+.mgmt-badge-card {
+  flex: 0 0 45%;
+  max-width: 450px;
+  background: linear-gradient(135deg, #f6f9fe 0%, #eef4ff 100%);
+  border: 1px solid rgba(0, 91, 250, 0.08);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: left;
+  box-shadow: 0 8px 30px rgba(0, 46, 132, 0.08);
+}
+
+.mgmt-badge-avatar-wrapper {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 46, 132, 0.1);
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.mgmt-badge-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mgmt-badge-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.mgmt-badge-name {
+  font-family: var(--mgmt-font-head);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--mgmt-accent);
+  margin: 0 0 0.4rem;
+}
+
+.mgmt-badge-role {
+  font-family: var(--mgmt-font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+.mgmt-badge-divider {
+  width: 40px;
+  height: 2px;
+  background-color: var(--mgmt-accent);
+  margin-bottom: 0.8rem;
+  opacity: 0.6;
+}
+
+.mgmt-badge-subtext {
+  font-family: var(--mgmt-font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--mgmt-text-muted);
+  line-height: 1.4;
+}
+
+
+/* ── Profile 2: Mr. Sunjay Kumar ────────────────────────────────────────── */
+.mgmt-profile-card-full {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 46, 132, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 8px 30px rgba(0, 46, 132, 0.08);
+  padding: 1.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.mgmt-full-card-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 2fr 1.3fr;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+}
+
+/* Col 1: Decorative Image Area */
+.mgmt-image-decor-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 180px;
+}
+
+.mgmt-avatar-circle-wrapper {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  box-shadow: 0 8px 25px rgba(0, 46, 132, 0.12);
+  z-index: 2;
+  background-color: #ffffff;
+}
+
+.mgmt-avatar-circle {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.decor-circle-ring {
+  position: absolute;
+  width: 164px;
+  height: 164px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(0, 91, 250, 0.25);
+  animation: rotateRing 30s linear infinite;
+  z-index: 1;
+}
+
+@keyframes rotateRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.decor-dot-grid {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 90px);
+  width: 60px;
+  height: 60px;
+  background-image: radial-gradient(rgba(0, 91, 250, 0.15) 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+/* Col 2: Quote Box */
+.mgmt-full-quote-col {
+  position: relative;
+  padding: 0 1rem;
+}
+
+.quote-symbol-small {
+  font-family: Georgia, serif;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--mgmt-accent);
+  opacity: 0.35;
+  position: absolute;
+}
+
+.quote-symbol-small:first-child {
+  top: -1rem;
+  left: -0.5rem;
+}
+
+.quote-symbol-small.close-quote-pos {
+  bottom: -1.2rem;
+  right: -0.5rem;
+}
+
+.quote-content-small p {
+  font-family: var(--mgmt-font-body);
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--mgmt-text-muted);
+  margin-bottom: 0.8rem;
+}
+
+.quote-content-small p:last-child {
+  margin-bottom: 0;
+}
+
+/* Col 3: Bio Details */
+.mgmt-full-bio-col {
+  border-left: 1px solid rgba(0, 46, 132, 0.08);
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mgmt-bio-name {
+  font-family: var(--mgmt-font-head);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--mgmt-accent);
+  margin: 0 0 0.4rem;
+}
+
+.mgmt-bio-role {
+  font-family: var(--mgmt-font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.mgmt-bio-divider {
+  width: 40px;
+  height: 2px;
+  background-color: var(--mgmt-accent);
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.mgmt-bio-subtext {
+  font-family: var(--mgmt-font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--mgmt-text-muted);
+  line-height: 1.4;
+}
+
+
+/* ── Profile 3: Kumar S. (FROM 2019 TO 2022) ────────────────────────────── */
+.mgmt-timeline-center-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.timeline-center-text {
+  font-family: var(--mgmt-font-head);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--mgmt-accent);
+  white-space: nowrap;
+}
+
+.timeline-center-line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: var(--mgmt-accent);
+  opacity: 0.25;
+  border-radius: 2px;
+}
+
+.timeline-center-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--mgmt-accent);
+  flex-shrink: 0;
+}
+
+.mgmt-kumar-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  gap: 3rem;
+  width: 100%;
+}
+
+.mgmt-kumar-quote-col {
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+.mgmt-kumar-bio-col {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+}
+
+/* Vertical divider with blue highlight */
+.mgmt-vertical-divider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  width: 4px;
+}
+
+.vertical-divider-line {
+  width: 1px;
+  height: 120px;
+  background-color: rgba(0, 46, 132, 0.08);
+  position: relative;
+}
+
+.vertical-divider-blue-bar {
+  width: 3px;
+  height: 50px;
+  background-color: var(--mgmt-accent);
+  position: absolute;
+  left: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 2px;
+}
+
+/* Bio Content area */
+.mgmt-kumar-bio-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  width: 100%;
+}
+
+/* Decorative Image Area */
+.mgmt-kumar-avatar-decor {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 170px;
+  margin-bottom: 1.25rem;
+  margin-left: 0;
+  width: 100%;
+}
+
+.mgmt-kumar-avatar-wrapper {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  box-shadow: 0 8px 25px rgba(0, 46, 132, 0.12);
+  z-index: 2;
+  background-color: #ffffff;
+}
+
+.mgmt-kumar-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.decor-circle-ring-kumar {
+  position: absolute;
+  width: 154px;
+  height: 154px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(0, 91, 250, 0.2);
+  animation: rotateRing 30s linear infinite;
+  z-index: 1;
+}
+
+.decor-dot-grid-kumar {
+  position: absolute;
+  top: 15px;
+  left: calc(50% - 85px);
+  width: 60px;
+  height: 60px;
+  background-image: radial-gradient(rgba(0, 91, 250, 0.15) 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+.mgmt-kumar-name {
+  font-family: var(--mgmt-font-head);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--mgmt-text-dark);
+  margin: 0 0 0.4rem;
+}
+
+.mgmt-kumar-role {
+  font-family: var(--mgmt-font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.mgmt-kumar-divider {
+  width: 40px;
+  height: 2px;
+  background-color: var(--mgmt-accent);
+  margin: 0 auto 1rem auto;
+  opacity: 0.6;
+}
+
+.mgmt-kumar-subtext {
+  font-family: var(--mgmt-font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--mgmt-text-muted);
+  line-height: 1.4;
+}
+
+/* Diagonal Striped Background elements */
+.mgmt-card-stripe-decor {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(0, 91, 250, 0.03),
+    rgba(0, 91, 250, 0.03) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.mgmt-card-stripe-decor.bottom-left {
+  bottom: 0;
+  left: 0;
+  border-bottom-left-radius: 24px;
+}
+
+.mgmt-card-stripe-decor.bottom-right {
+  bottom: 0;
+  right: 0;
+  border-bottom-right-radius: 24px;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .mgmt-hero-card {
+    width: 100%;
+    left: auto;
+    transform: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .mgmt-hero-card {
+    min-height: 340px;
+    padding: 0 2rem;
+    width: 100%;
+    left: auto;
+    transform: none;
+  }
+
+  .mgmt-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .mgmt-hero-content {
+    flex: 0 0 52%;
+  }
+
+  .mgmt-hero-image-col {
+    flex: 0 0 46%;
+  }
+
+  /* Profiles overrides */
+  .mgmt-profile-grid {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .mgmt-badge-card {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .mgmt-full-card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .mgmt-image-decor-col {
+    order: 1;
+    min-height: unset;
+  }
+
+  .mgmt-full-bio-col {
+    order: 2;
+    border-left: none;
+    border-bottom: 1px solid rgba(0, 46, 132, 0.08);
+    padding-left: 0;
+    padding-bottom: 1.5rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .mgmt-full-quote-col {
+    order: 3;
+    padding-top: 0.5rem;
+  }
+
+  /* Kumar S. overrides */
+  .mgmt-kumar-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .mgmt-kumar-bio-col {
+    order: 1;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 46, 132, 0.08);
+    padding-bottom: 1.5rem;
+  }
+
+  .mgmt-kumar-quote-col {
+    order: 2;
+    padding-top: 0.5rem;
+  }
+
+  .mgmt-vertical-divider-wrapper {
+    display: none;
+  }
+
+  .mgmt-kumar-bio-details {
+    align-items: center;
+    border-top: none;
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .mgmt-kumar-avatar-decor {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .mgmt-hero-section {
+    padding: 1rem 0 1.5rem 0;
+  }
+
+  .mgmt-hero-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.5rem 2rem 0;
+    min-height: unset;
+    background-position: right center;
+    background-size: 140%;
+  }
+
+  .mgmt-hero-content {
+    flex: none;
+    max-width: 100%;
+    padding: 0 0 1.5rem 0;
+  }
+
+  .mgmt-hero-title {
+    font-size: 1.9rem;
+  }
+
+  .mgmt-hero-image-col {
+    flex: none;
+    width: 100%;
+    justify-content: center;
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .mgmt-hero-desk-img {
+    width: 100%;
+    max-width: 340px;
+    height: 220px;
+    object-fit: cover;
+    object-position: center bottom;
+  }
+
+  /* Profiles overrides */
+  .mgmt-profile-card-full {
+    padding: 2rem 1.25rem;
+  }
+  .mgmt-timeline-header {
+    margin-bottom: 1.25rem;
+  }
+  .quote-symbol {
+    font-size: 4rem;
+  }
+  .mgmt-quote-box {
+    padding: 1rem 1rem;
+  }
+
+  /* Kumar S. overrides */
+  .mgmt-timeline-center-header {
+    margin-bottom: 1.5rem;
+    gap: 0.8rem;
+  }
+  .timeline-center-text {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mgmt-hero-card {
+    padding: 2rem 1.25rem 0;
+  }
+
+  .mgmt-hero-title {
+    font-size: 1.6rem;
+  }
+
+  .mgmt-hero-desc {
+    font-size: 0.82rem;
+  }
+
+  .mgmt-hero-image-col {
+    height: 120px;
+  }
+
+  .mgmt-hero-desk-img {
+    max-width: 270px;
+    height: 185px;
+  }
+
+  /* Badge Card Mobile overrides */
+  .mgmt-badge-card {
+    padding: 1.25rem 1rem;
+    gap: 1.25rem;
+  }
+  .mgmt-badge-avatar-wrapper {
+    width: 90px;
+    height: 90px;
+  }
+  .mgmt-badge-name {
+    font-size: 1rem;
+  }
+  .mgmt-badge-role {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .mgmt-badge-divider {
+    margin-bottom: 0.5rem;
+  }
+  .mgmt-badge-subtext {
+    font-size: 0.68rem;
+  }
+}
