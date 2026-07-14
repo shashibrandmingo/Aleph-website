@@ -301,6 +301,9 @@ function performPJAXNavigation(url, pushToHistory = true) {
           history.pushState({}, '', url);
         }
         
+        // Update stylesheets dynamically
+        updateStylesheets(newDocument);
+        
         // Re-evaluate active link markers in header
         updateActiveLinks();
         
@@ -318,6 +321,32 @@ function performPJAXNavigation(url, pushToHistory = true) {
       console.warn('Flicker-free navigation failed. Loading page normally.', error);
       window.location.href = url;
     });
+}
+
+// Helper to sync stylesheets dynamically between PJAX page loads
+function updateStylesheets(newDoc) {
+  const currentLinks = Array.from(document.head.querySelectorAll('link[rel="stylesheet"]'));
+  const newLinks = Array.from(newDoc.head.querySelectorAll('link[rel="stylesheet"]'));
+
+  // Get absolute/resolved href values for comparison
+  const currentHrefs = currentLinks.map(link => link.href);
+  const newHrefs = newLinks.map(link => link.href);
+
+  // Remove current stylesheets that are not in the new document's head
+  currentLinks.forEach(link => {
+    // Keep external fonts/icons just in case, but sync local stylesheets
+    if (!newHrefs.includes(link.href) && !link.href.includes('fonts.googleapis') && !link.href.includes('cdnjs.cloudflare')) {
+      link.parentNode.removeChild(link);
+    }
+  });
+
+  // Add new stylesheets that are not present in the current head
+  newLinks.forEach(link => {
+    if (!currentHrefs.includes(link.href)) {
+      const clonedLink = link.cloneNode(true);
+      document.head.appendChild(clonedLink);
+    }
+  });
 }
 
 // Retrigger init functions for newly loaded content if needed
