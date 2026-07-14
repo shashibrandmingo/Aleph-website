@@ -1,0 +1,654 @@
+/* ==========================================================================
+   ABOUT US - GROUP COMPANIES, PROFILE AND HIGHLIGHTS (our-vision.css)
+   ========================================================================== */
+
+:root {
+  --about-vision-primary: #0a2540;
+  --about-vision-accent-blue: #005bfa;
+  --about-vision-text-dark: #002e84;
+  --about-vision-text-muted: #64748b;
+  --about-vision-bg: #ffffff;
+  --about-vision-font-primary: 'Poppins', sans-serif;
+  --about-vision-font-secondary: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ==========================================================================
+   SECTION 6: OUR GROUP COMPANIES
+   ========================================================================== */
+
+.about-companies-section {
+  background-color: #f8fafc;
+  padding: 5rem 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .about-companies-section {
+    padding: 2.5rem 0;
+  }
+  .companies-header {
+    margin-bottom: 1.75rem;
+  }
+}
+
+.companies-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.companies-eyebrow {
+  display: block;
+  font-family: var(--about-vision-font-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--about-vision-accent-blue);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.companies-title {
+  font-family: var(--about-vision-font-primary);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--about-vision-primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.companies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  width: 100%;
+}
+
+/* Company Card */
+.company-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 46, 132, 0.03);
+  border: 1px solid rgba(0, 46, 132, 0.04);
+  border-left: 5px solid var(--about-vision-accent-blue); /* Distinct left border stripe */
+  padding: 1.6rem 1.5rem; /* Reduced padding for smaller card height */
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.company-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 46, 132, 0.08);
+}
+
+/* Pure CSS rendered Logos */
+.company-logo-wrapper {
+  width: 76px; /* Decreased circle size */
+  height: 76px; /* Decreased circle size */
+  border-radius: 50%;
+  border: 1px solid rgba(0, 91, 250, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.logo-letter-a {
+  font-family: var(--about-vision-font-primary);
+  font-size: 1.8rem; /* Adjusted font size */
+  font-weight: 800;
+  color: var(--about-vision-accent-blue);
+  line-height: 0.9;
+}
+
+.logo-subtext-bold {
+  font-family: var(--about-vision-font-primary);
+  font-size: 0.52rem; /* Adjusted font size */
+  font-weight: 800;
+  color: var(--about-vision-primary);
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+.logo-subtext-light {
+  font-family: var(--about-vision-font-primary);
+  font-size: 0.42rem; /* Adjusted font size */
+  font-weight: 600;
+  color: var(--about-vision-text-muted);
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+/* Stylized Logo U Shape */
+.logo-shape-u {
+  width: 25px; /* Adjusted U size */
+  height: 26px; /* Adjusted U size */
+  border: 5.5px solid var(--about-vision-accent-blue);
+  border-top: none;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  margin-bottom: 2px;
+  position: relative;
+}
+
+/* Card Content details */
+.company-card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.company-card-title {
+  font-family: var(--about-vision-font-primary);
+  font-size: 1.05rem; /* Adjusted font size */
+  font-weight: 700;
+  color: var(--about-vision-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.company-card-separator {
+  width: 30px;
+  height: 2px;
+  background-color: var(--about-vision-accent-blue);
+  margin: 0.4rem 0; /* Reduced margin */
+}
+
+.company-card-desc {
+  font-family: var(--about-vision-font-secondary);
+  font-size: 0.8rem; /* Adjusted font size */
+  line-height: 1.5;
+  color: #4a5568;
+  margin: 0 0 1rem 0; /* Reduced margin */
+  flex-grow: 1;
+}
+
+/* Card Footer link & chevron */
+.company-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.company-learn-link {
+  font-family: var(--about-vision-font-primary);
+  font-size: 0.82rem; /* Adjusted font size */
+  font-weight: 700;
+  color: var(--about-vision-accent-blue);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.company-learn-link:hover {
+  opacity: 0.8;
+}
+
+.company-circle-arrow {
+  width: 26px; /* Adjusted arrow button size */
+  height: 26px; /* Adjusted arrow button size */
+  border-radius: 50%;
+  background-color: var(--about-vision-accent-blue);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.company-card:hover .company-circle-arrow {
+  transform: translateX(4px);
+  background-color: var(--about-vision-primary);
+}
+
+
+/* ==========================================================================
+   SECTION 7: GENERAL INFO & STATUTORY PROFILE
+   ========================================================================== */
+
+.about-profile-section {
+  background-color: #ffffff;
+  padding: 6rem 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .about-profile-section {
+    padding: 2.5rem 0;
+  }
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  width: 100%;
+}
+
+/* Card wrapper */
+.profile-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 15px 45px rgba(0, 46, 132, 0.04);
+  border: 1px solid rgba(0, 46, 132, 0.04);
+  overflow: hidden;
+}
+
+/* Card Header Gradient Bar */
+.profile-card-header {
+  background: linear-gradient(90deg, #001f54 0%, #003580 100%);
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.profile-header-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--about-vision-accent-blue);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 91, 250, 0.2);
+  flex-shrink: 0;
+}
+
+.profile-header-title {
+  font-family: var(--about-vision-font-primary);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Body list rows */
+.profile-card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-row {
+  display: grid;
+  grid-template-columns: 260px 40px 1fr;
+  align-items: center;
+  padding: 1.1rem 2rem;
+  border-bottom: 1px solid rgba(0, 46, 132, 0.05);
+}
+
+.profile-row:last-child {
+  border-bottom: none;
+}
+
+.profile-key {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: var(--about-vision-font-primary);
+  font-size: 0.92rem;
+  font-weight: 600; /* Decreased font weight from 700 to 600 */
+  color: #1e293b; /* Slate dark blue/grey matching the mockup text */
+}
+
+.profile-key i {
+  color: var(--about-vision-text-dark); /* Use the exact same color as key text */
+  font-size: 1.05rem;
+  width: 22px;
+  text-align: center;
+}
+
+/* Custom CSS outlines for Rupee circle, percent box, and text box tags */
+.rupee-circle-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  flex-shrink: 0;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+.percent-box-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  border: 1.5px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  flex-shrink: 0;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+.text-box-icon {
+  font-family: var(--about-vision-font-primary);
+  font-size: 0.52rem;
+  font-weight: 800;
+  border: 1.5px solid currentColor;
+  border-radius: 4px;
+  padding: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  width: 22px;
+  height: 22px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.profile-dot {
+  color: var(--about-vision-accent-blue);
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.profile-value {
+  font-family: var(--about-vision-font-secondary);
+  font-size: 0.92rem;
+  font-weight: 500; /* Decreased font weight from 600 to 500 */
+  color: #475569; /* Slate grey matching mockup value color */
+  line-height: 1.4;
+}
+
+
+/* ==========================================================================
+   SECTION 8: BOTTOM SEVEN HIGHLIGHTS CARD
+   ========================================================================== */
+
+.highlights-card {
+  background-color:#f4f9fe;
+  border-radius: 20px;
+  box-shadow: 0 15px 45px rgba(0, 46, 132, 0.04);
+  border: 1px solid rgba(0, 46, 132, 0.04);
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 equal columns on desktop */
+  align-items: flex-start;
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.highlight-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 0.5rem;
+  border-right: 1px solid rgba(0, 46, 132, 0.08);
+  width: 100%;
+}
+
+.highlight-item:last-child {
+  border-right: none;
+}
+
+.highlight-icon-wrapper {
+  width: 60px; /* Increased wrapper circle size for a more generous layout */
+  height: 60px; /* Increased wrapper circle size for a more generous layout */
+  border-radius: 50%;
+  background-color: #f3f7fd; /* Soft light blue circle background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(0, 91, 250, 0.06);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.highlight-icon-img {
+  width: 35px; /* Increased icon image size to 32px as requested */
+  height: 35px; /* Increased icon image size to 32px as requested */
+  object-fit: contain;
+  display: block;
+  margin: 0;
+  padding: 0;
+  transition: filter 0.3s ease;
+  flex-shrink: 0;
+}
+
+.highlight-item:hover .highlight-icon-wrapper {
+  background-color: var(--about-vision-accent-blue);
+  transform: translateY(-3px) scale(1.08);
+}
+
+.highlight-item:hover .highlight-icon-img {
+  filter: brightness(0) invert(1); /* Turns PNG icon white when background circle turns blue on hover */
+}
+
+.highlight-title {
+  font-family: var(--about-vision-font-primary);
+  font-size: 0.82rem; /* Clean compact size */
+  font-weight: 600; /* Decreased font weight from 700 to 600 */
+  color: var(--about-vision-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.highlight-desc {
+  font-family: var(--about-vision-font-secondary);
+  font-size: 0.72rem;
+  font-weight: 400; /* Light weight for clean card detail flow */
+  line-height: 1.5;
+  color: #64748b; /* Clean grey matching the mockup */
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .companies-grid {
+    gap: 1.5rem;
+  }
+
+  .company-card {
+    padding: 2rem 1.5rem;
+    gap: 1.25rem;
+  }
+
+  .profile-grid {
+    gap: 2rem;
+  }
+
+  .profile-row {
+    grid-template-columns: 220px 30px 1fr;
+    padding: 1rem 1.25rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .companies-grid {
+    grid-template-columns: 1fr; /* Single column on tablet/mobile */
+    gap: 1rem;
+  }
+
+  .company-card {
+    padding: 1rem 1.1rem;
+    gap: 0.9rem;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .highlights-card {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on tablet */
+    gap: 2.5rem 0;
+  }
+
+  .highlight-item {
+    border-right: none;
+  }
+
+  /* Add border separators for 4-column tablet grid */
+  .highlight-item:nth-child(4n) {
+    border-right: none;
+  }
+  .highlight-item:not(:nth-child(4n)) {
+    border-right: 1px solid rgba(0, 46, 132, 0.08);
+  }
+}
+
+@media (max-width: 768px) {
+  .companies-title {
+    font-size: 2rem;
+  }
+
+  .companies-grid {
+    grid-template-columns: 1fr; /* single column */
+    gap: 0.85rem;
+  }
+
+  .company-card {
+    padding: 0.85rem 1rem;
+    gap: 0.8rem;
+    border-left-width: 4px;
+  }
+
+  .company-logo-wrapper {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+  }
+
+  .logo-letter-a {
+    font-size: 1.3rem;
+  }
+
+  .company-card-title {
+    font-size: 0.88rem;
+  }
+
+  .company-card-desc {
+    font-size: 0.73rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .company-learn-link {
+    font-size: 0.75rem;
+  }
+
+  .company-circle-arrow {
+    width: 22px;
+    height: 22px;
+    font-size: 0.55rem;
+  }
+
+  .profile-row {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .profile-dot {
+    display: none;
+  }
+
+  .highlights-card {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 0;
+  }
+
+  .highlight-item {
+    border-right: none !important;
+  }
+
+  .highlight-item:nth-child(odd) {
+    border-right: 1px solid rgba(0, 46, 132, 0.08) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .companies-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .company-card {
+    padding: 0.75rem 0.9rem;
+    gap: 0.7rem;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .company-logo-wrapper {
+    width: 44px;
+    height: 44px;
+  }
+
+  .logo-letter-a {
+    font-size: 1.1rem;
+  }
+
+  .logo-subtext-bold,
+  .logo-subtext-light {
+    display: none;
+  }
+
+  .company-card-title {
+    font-size: 0.82rem;
+  }
+
+  .company-card-desc {
+    font-size: 0.7rem;
+    margin-bottom: 0.35rem;
+    line-height: 1.4;
+  }
+
+  .company-card-footer {
+    margin-top: 0.4rem;
+  }
+
+  .company-card-separator {
+    margin: 0.3rem 0;
+  }
+
+  .highlights-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .highlight-item {
+    border-right: none !important;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px dashed rgba(0, 46, 132, 0.08);
+  }
+
+  .highlight-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}

@@ -1,0 +1,314 @@
+/* ==========================================================================
+   ABOUT US - GLOBAL PRESENCE SECTION (out-global.css)
+   ========================================================================== */
+
+:root {
+  --global-primary: #0a2540;
+  --global-accent-blue: #005bfa;
+  --global-text-dark: #002e84;
+  --global-text-muted: #64748b;
+  --global-font-primary: 'Poppins', sans-serif;
+  --global-font-secondary: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ==========================================================================
+   SECTION 8: OUR GLOBAL PRESENCE
+   ========================================================================== */
+
+.about-global-section {
+  position: relative;
+  background-color: #ffffff;
+  background-image: url('../../image/about-us-image/about6-section.png');
+  background-repeat: no-repeat;
+  background-position: 100% center; /* Shift map slightly to match mockup bleeding behind text */
+  background-size: 70% auto; /* Generous size to allow bleeding */
+  padding-bottom: 30px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.global-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr; /* Split layout columns */
+  gap: 3rem; /* Tighter gap */
+  align-items: center;
+  width: 100%;
+}
+
+.global-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.global-eyebrow {
+  display: block;
+  font-family: var(--global-font-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--global-accent-blue);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.global-title {
+  font-family: var(--global-font-primary);
+  font-size: 2.8rem; /* Tighter font size */
+  font-weight: 800;
+  color: var(--global-primary);
+  line-height: 1.25;
+  margin: 0.4rem 0;
+}
+
+.global-title .text-highlight {
+  color: var(--global-accent-blue);
+}
+
+.global-title-underline {
+  width: 65px;
+  height: 3px;
+  background-color: var(--global-accent-blue);
+  margin-bottom: 2rem;
+  position: relative;
+  border-radius: 2px;
+}
+
+.global-title-underline::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: -2.5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--global-accent-blue);
+}
+
+.global-desc-text {
+  font-family: var(--global-font-secondary);
+  font-size: 0.9rem; /* Adjusted text size */
+  line-height: 1.6;
+  color: #475569;
+  margin: 0 0 2rem 0;
+}
+
+/* Global Features List */
+.global-features-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.global-feature-item {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 0; /* Reduced padding for compact list height */
+  border-bottom: 1px solid rgba(0, 46, 132, 0.06); /* Lighter border line */
+}
+
+.global-feature-item:last-child {
+  border-bottom: none;
+}
+
+.global-feature-icon-wrapper {
+  width: 38px; /* Tighter wrapper circle size */
+  height: 38px; /* Tighter wrapper circle size */
+  border-radius: 50%;
+  background-color: var(--global-text-dark); /* Royal/medium blue background circle */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem; /* Adjusted icon size */
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 91, 250, 0.15);
+}
+
+.global-feature-text {
+  font-family: var(--global-font-primary);
+  font-size: 0.88rem; /* Adjusted text size */
+  font-weight: 500; /* Lighter font weight */
+  color: var(--global-primary);
+  margin-left: 1.25rem;
+}
+
+/* Whitespace Map column to match grid layout */
+.global-map-area {
+  min-height: 400px;
+}
+
+/* ==========================================================================
+   FLOATING STATS CARD
+   ========================================================================== */
+
+.global-stats-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 45px rgba(0, 46, 132, 0.05);
+  border: 1px solid #e2e8f0; /* Soft gray border to match mockup */
+  padding: 0.9rem 1rem; /* Reduced height by shrinking vertical padding */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+  align-items: center;
+  margin-top: 4.5rem;
+  width: 60%; /* Compact card only on the right side of the container */
+  margin-left: auto; /* Push it to align with the right side */
+  position: relative;
+  z-index: 5;
+}
+
+.global-stat-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem; /* Tighter padding for compact layout */
+  border-right: 1px solid #e2e8f0; /* Clean vertical line separator */
+  gap: 0.7rem; /* Space between circle and text */
+}
+
+.global-stat-col:last-child {
+  border-right: none;
+}
+
+.global-stat-icon-wrapper {
+  width: 38px; /* Shrunk wrapper circle size */
+  height: 38px; /* Shrunk wrapper circle size */
+  border-radius: 50%;
+  background-color: var(--global-text-dark); /* Solid dark navy circle background */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem; /* Smaller icon size */
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(10, 37, 64, 0.1);
+}
+
+.global-stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.global-stat-number {
+  font-family: var(--global-font-primary);
+  font-size: 1.35rem; /* Reduced font size */
+  font-weight: 700;
+  color: var(--global-primary);
+  line-height: 1.1;
+}
+
+.global-stat-label {
+  font-family: var(--global-font-secondary);
+  font-size: 0.72rem; /* Reduced font size */
+  font-weight: 600;
+  color: #475569; /* Slate grey label text */
+  line-height: 1.25;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .global-layout {
+    gap: 2rem;
+  }
+
+  .global-stat-col {
+    padding: 0 1rem;
+  }
+
+  .global-stat-number {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-global-section {
+    background-size: 70% auto;
+    background-position: center bottom;
+    padding: 5rem 0;
+  }
+
+  .global-layout {
+    grid-template-columns: 1fr; /* Stack columns vertically on tablet */
+    gap: 3rem;
+  }
+
+  .global-map-area {
+    display: none; /* Hide empty whitespace column */
+  }
+
+  .global-stats-card {
+    width: 100%; /* Stretch to full width on tablet vertical stack */
+    margin-left: 0;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid on tablet */
+    gap: 2.5rem 0;
+    margin-top: 4rem;
+    padding: 1.8rem 1.5rem;
+  }
+
+  .global-stat-col {
+    border-right: none;
+  }
+
+  /* Separate columns in 2x2 layout on tablet */
+  .global-stat-col:nth-child(odd) {
+    border-right: 1px solid rgba(148, 163, 184, 0.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-global-section {
+    background-image: none;
+    padding: 3rem 0;
+  }
+
+  .global-title {
+    font-size: 2rem;
+  }
+
+  .global-desc-text {
+    font-size: 0.82rem;
+  }
+
+  .global-stats-card {
+    grid-template-columns: repeat(2, 1fr); /* 2×2 compact grid on mobile */
+    gap: 0;
+    padding: 0.75rem 0.5rem;
+    margin-top: 2rem;
+  }
+
+  .global-stat-col {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    padding: 0.75rem 0.6rem;
+    gap: 0.55rem;
+    justify-content: flex-start;
+  }
+
+  /* Left column items keep right border */
+  .global-stat-col:nth-child(odd) {
+    border-right: 1px solid rgba(148, 163, 184, 0.2) !important;
+  }
+
+  /* Bottom row (3rd & 4th): no bottom border */
+  .global-stat-col:nth-child(3),
+  .global-stat-col:nth-child(4) {
+    border-bottom: none;
+  }
+
+  .global-stat-icon-wrapper {
+    width: 32px;
+    height: 32px;
+    font-size: 0.75rem;
+  }
+
+  .global-stat-number {
+    font-size: 1.1rem;
+  }
+
+  .global-stat-label {
+    font-size: 0.62rem;
+  }
+}
