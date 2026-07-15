@@ -1,0 +1,489 @@
+/* ==========================================================================
+   ASSOCIATION HERO SECTION (Association.css)
+   ========================================================================== */
+
+:root {
+  --assoc-primary: #002e84;
+  --assoc-secondary: #2563eb;
+  --assoc-accent: #3b82f6;
+  --assoc-text-dark: #0f172a;
+  --assoc-text-muted: #475569;
+  --assoc-card-bg: linear-gradient(135deg, #f0f6ff 0%, #f9fbff 100%);
+  --assoc-card-border: rgba(0, 46, 132, 0.08);
+}
+
+body {
+  background-color: #ffffff;
+  color: var(--assoc-text-dark);
+}
+.card-wrapper {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.section-padding {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.assoc-hero-section {
+  padding: 1.5rem 0 2rem 0;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.assoc-hero-card {
+  background: var(--assoc-card-bg);
+  border: 1px solid var(--assoc-card-border);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  min-height: 410px;
+  padding: 0 0 0 4rem; /* Right padding is 0 to let the cropped image touch the edge */
+  width: 100%;
+  box-shadow: 0 12px 34px rgba(0, 46, 132, 0.04);
+}
+
+/* Left Content Column */
+.assoc-hero-content {
+  flex: 0 0 55%;
+  max-width: 600px;
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+/* Breadcrumb */
+.assoc-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.assoc-breadcrumb-link {
+  color: var(--assoc-secondary);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.assoc-breadcrumb-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.assoc-breadcrumb-link:hover {
+  opacity: 0.8;
+}
+
+.assoc-breadcrumb-sep {
+  font-size: 0.9rem;
+  color: var(--assoc-secondary);
+  font-weight: 500;
+  font-family: var(--font-secondary), sans-serif;
+}
+
+.assoc-breadcrumb-current {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.9rem;
+  color: var(--assoc-secondary);
+  font-weight: 500;
+}
+
+/* Eyebrow with Lines */
+.assoc-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.2rem;
+}
+
+.assoc-hero-eyebrow .eyebrow-line {
+  display: inline-block;
+  width: 25px;
+  height: 2px;
+  background-color: var(--assoc-secondary);
+}
+
+.assoc-hero-eyebrow .eyebrow-text {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--assoc-secondary);
+  text-transform: uppercase;
+}
+
+/* Title styling */
+.assoc-hero-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--assoc-text-dark);
+  line-height: 1.25;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.assoc-hero-title-accent {
+  color: var(--assoc-secondary);
+}
+
+/* Underline below title */
+.assoc-hero-underline {
+  width: 45px;
+  height: 3px;
+  background-color: var(--assoc-secondary);
+  margin: 1.5rem 0;
+  border-radius: 2px;
+}
+
+/* Description styling */
+.assoc-hero-desc {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--assoc-text-muted);
+  margin: 0;
+  max-width: 450px;
+}
+
+/* Right Column with Image and Shapes */
+.assoc-hero-image-col {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+/* Image Wrapper */
+.assoc-hero-img-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 18% 100%, 8% 70%, 8% 30%);
+  z-index: 3;
+  background-image: url('../image/Association-image/Association hero.png');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+
+
+.assoc-dots-grey {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .assoc-hero-card {
+    flex-direction: column;
+    padding: 2.5rem;
+    min-height: auto;
+    align-items: stretch;
+  }
+  
+  .assoc-hero-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 0 2rem 0;
+  }
+  
+  .assoc-hero-image-col {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    height: 300px;
+    align-self: auto;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  
+  .assoc-hero-bg-shape,
+  .assoc-hero-stroke,
+  .assoc-hero-img-wrap {
+    clip-path: none;
+    border-radius: 16px;
+  }
+  
+  .assoc-hero-img-wrap {
+    z-index: 1;
+  }
+  
+  .assoc-hero-bg-shape,
+  .assoc-hero-stroke {
+    display: none;
+  }
+  
+  .assoc-dots-grey {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .assoc-hero-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+  .assoc-hero-title {
+    font-size: 2.2rem;
+  }
+  .assoc-hero-image-col {
+    display: none;
+  }
+  .assoc-hero-content {
+    padding-bottom: 0;
+  }
+}
+
+/* ==========================================================================
+   OUR ASSOCIATIONS GRID SECTION
+   ========================================================================== */
+
+.assoc-grid-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Eyebrow Label with Lines */
+.assoc-grid-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.assoc-grid-eyebrow .grid-eyebrow-line {
+  display: inline-block;
+  width: 25px;
+  height: 2px;
+  background-color: var(--assoc-secondary);
+}
+
+.assoc-grid-eyebrow .grid-eyebrow-text {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--assoc-secondary);
+  text-transform: uppercase;
+}
+
+/* Heading styling */
+.assoc-grid-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--assoc-text-dark);
+  line-height: 1.3;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+}
+
+.assoc-grid-title-accent {
+  color: var(--assoc-secondary);
+}
+
+/* Underline Divider */
+.assoc-grid-underline {
+  width: 45px;
+  height: 3px;
+  background-color: var(--assoc-secondary);
+  margin-top: 1.5rem;
+  border-radius: 2px;
+}
+
+/* Description styling */
+.assoc-grid-desc {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--assoc-text-muted);
+  margin: 0 auto;
+  max-width: 650px;
+}
+
+/* Logos Grid Layout (5 columns) */
+.assoc-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Logo Card */
+.assoc-logo-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 46, 132, 0.06);
+  border-radius: 16px;
+  padding: 1.8rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  box-shadow: 0 4px 4px rgba(0, 46, 132, 0.07);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.assoc-logo-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(37, 99, 235, 0.2);
+  box-shadow: 0 12px 30px rgba(0, 46, 132, 0.06);
+}
+
+/* Image Container */
+.assoc-logo-img-box {
+  width: 100%;
+  height: 80px;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.assoc-logo-img-box img {
+  max-width: 85%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(10%) contrast(100%);
+  transition: filter 0.3s ease;
+}
+
+.assoc-logo-card:hover .assoc-logo-img-box img {
+  filter: grayscale(0%) contrast(105%);
+}
+
+/* Title and Subtitle */
+.assoc-logo-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--assoc-text-dark);
+  margin: 0 0 0.3rem 0;
+  line-height: 1.3;
+}
+
+.assoc-logo-subtitle {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.75rem;
+  color: var(--assoc-text-muted);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Grid Footer Pill */
+.assoc-grid-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.assoc-footer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #f8fafc;
+  border: 1px solid rgba(0, 46, 132, 0.05);
+  padding: 10px 24px;
+  border-radius: 9999px;
+  box-shadow: 0 2px 10px rgba(0, 46, 132, 0.01);
+}
+
+.assoc-footer-icon {
+  display: flex;
+  align-items: center;
+  color: var(--assoc-secondary);
+}
+
+.assoc-footer-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.assoc-footer-text {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--assoc-text-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .assoc-logos-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .assoc-logos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+  .assoc-grid-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .assoc-logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .assoc-logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .assoc-logo-card {
+    padding: 1.2rem 0.5rem;
+    border-radius: 12px;
+  }
+  .assoc-logo-img-box {
+    height: 60px;
+    margin-bottom: 0.8rem;
+  }
+  .assoc-logo-title {
+    font-size: 0.75rem;
+  }
+  .assoc-logo-subtitle {
+    font-size: 0.65rem;
+  }
+  .assoc-grid-title {
+    font-size: 1.5rem;
+  }
+  .assoc-footer-badge {
+    padding: 8px 18px;
+    width: 100%;
+    justify-content: center;
+  }
+  .assoc-footer-text {
+    font-size: 0.8rem;
+  }
+}
