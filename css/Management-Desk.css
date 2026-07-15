@@ -37,7 +37,7 @@
   position: relative;
   min-height: 410px;
   padding: 0 4rem;
-  width: 120%;
+  width: 100%;
   left: 50%;
   transform: translateX(-50%);
 }

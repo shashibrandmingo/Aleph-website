@@ -48,7 +48,7 @@
   overflow: hidden;
   position: relative;
   min-height: 450px;
-  width: 120%;
+  width: 100%;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -97,7 +97,7 @@
 
 .about-hero-title {
   font-family: var(--about-hero-font-primary);
-  font-size: 3.8rem;
+  font-size: 3rem;
   font-weight: 700;
   color: var(--about-hero-text-dark);
   line-height: 1.1;
