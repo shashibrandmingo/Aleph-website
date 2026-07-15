@@ -288,34 +288,58 @@ function performPJAXNavigation(url, pushToHistory = true) {
         return;
       }
       
-      // Wait for fade-out animation to end, then swap content and update URL
-      setTimeout(() => {
-        // Swap core content
-        mainContent.innerHTML = newMainContent.innerHTML;
-        
-        // Update browser tab title
-        document.title = newDocument.title;
-        
-        // Update address bar history
-        if (pushToHistory) {
-          history.pushState({}, '', url);
-        }
-        
-        // Update stylesheets dynamically
-        updateStylesheets(newDocument);
-        
-        // Re-evaluate active link markers in header
-        updateActiveLinks();
-        
-        // Scroll view back to top
-        window.scrollTo({ top: 0, behavior: 'instant' });
-        
-        // Fade content back in
-        mainContent.classList.remove('page-fade-out');
-        
-        // Fire loaded events on new content
-        retriggerInit();
-      }, 150); // Matches transition duration in index.css
+      // Temporarily disable transitions during style recalculations and stylesheet swaps
+      document.documentElement.classList.add('no-transitions');
+      
+      // Start loading new stylesheets and create a minimum transition delay (150ms)
+      const stylesheetLoadPromise = updateStylesheets(newDocument);
+      const transitionDelayPromise = new Promise(resolve => setTimeout(resolve, 150));
+      
+      // Wait for both new stylesheets to load and the fade-out to finish
+      Promise.all([stylesheetLoadPromise, transitionDelayPromise])
+        .then(() => {
+          // Swap core content
+          mainContent.innerHTML = newMainContent.innerHTML;
+          
+          // Update browser tab title
+          document.title = newDocument.title;
+          
+          // Update address bar history
+          if (pushToHistory) {
+            history.pushState({}, '', url);
+          }
+          
+          // Re-evaluate active link markers in header
+          updateActiveLinks();
+          
+          // Scroll view back to top
+          window.scrollTo({ top: 0, behavior: 'instant' });
+          
+          // Force layout reflow to apply styling immediately and prevent transition jumps
+          void document.documentElement.offsetHeight;
+          
+          // Fade content back in
+          mainContent.classList.remove('page-fade-out');
+          
+          // Fire loaded events on new content
+          retriggerInit();
+          
+          // Safely re-enable transitions after browser has had a moment to paint the new DOM
+          setTimeout(() => {
+            document.documentElement.classList.remove('no-transitions');
+          }, 50);
+        })
+        .catch(err => {
+          console.warn('Stylesheets sync failed. Swapping content anyway.', err);
+          mainContent.innerHTML = newMainContent.innerHTML;
+          document.title = newDocument.title;
+          if (pushToHistory) history.pushState({}, '', url);
+          updateActiveLinks();
+          window.scrollTo({ top: 0, behavior: 'instant' });
+          mainContent.classList.remove('page-fade-out');
+          retriggerInit();
+          document.documentElement.classList.remove('no-transitions');
+        });
     })
     .catch(error => {
       console.warn('Flicker-free navigation failed. Loading page normally.', error);
@@ -323,7 +347,7 @@ function performPJAXNavigation(url, pushToHistory = true) {
     });
 }
 
-// Helper to sync stylesheets dynamically between PJAX page loads
+// Helper to sync stylesheets dynamically between PJAX page loads and return a Promise that resolves when new styles load
 function updateStylesheets(newDoc) {
   const currentLinks = Array.from(document.head.querySelectorAll('link[rel="stylesheet"]'));
   const newLinks = Array.from(newDoc.head.querySelectorAll('link[rel="stylesheet"]'));
@@ -332,20 +356,27 @@ function updateStylesheets(newDoc) {
   const currentHrefs = currentLinks.map(link => link.href);
   const newHrefs = newLinks.map(link => link.href);
 
-  // Remove current stylesheets that are not in the new document's head
-  currentLinks.forEach(link => {
-    // Keep external fonts/icons just in case, but sync local stylesheets
-    if (!newHrefs.includes(link.href) && !link.href.includes('fonts.googleapis') && !link.href.includes('cdnjs.cloudflare')) {
-      link.parentNode.removeChild(link);
-    }
+  // Identify stylesheets to load and remove
+  const linksToLoad = newLinks.filter(link => !currentHrefs.includes(link.href));
+  const linksToRemove = currentLinks.filter(link => !newHrefs.includes(link.href) && !link.href.includes('fonts.googleapis') && !link.href.includes('cdnjs.cloudflare'));
+
+  // Create loading promises for new stylesheets
+  const loadPromises = linksToLoad.map(link => {
+    return new Promise((resolve) => {
+      const clonedLink = link.cloneNode(true);
+      clonedLink.onload = () => resolve();
+      clonedLink.onerror = () => resolve(); // Resolve anyway on error to prevent blocking page transitions
+      document.head.appendChild(clonedLink);
+    });
   });
 
-  // Add new stylesheets that are not present in the current head
-  newLinks.forEach(link => {
-    if (!currentHrefs.includes(link.href)) {
-      const clonedLink = link.cloneNode(true);
-      document.head.appendChild(clonedLink);
-    }
+  // Resolve after new sheets are loaded, then remove old sheets to avoid unstyled moments
+  return Promise.all(loadPromises).then(() => {
+    linksToRemove.forEach(link => {
+      if (link.parentNode) {
+        link.parentNode.removeChild(link);
+      }
+    });
   });
 }
 

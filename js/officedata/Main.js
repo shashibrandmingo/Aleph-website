@@ -9,7 +9,7 @@
    ========================================================================== */
 
 import { Globe } from "./globe.js";
-import { Popup } from "./popup.js";
+import { Popup } from "./Popup.js";
 import {
   OFFICES,
   HEAD_OFFICE,

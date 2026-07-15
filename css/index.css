@@ -82,6 +82,20 @@ h6 {
   opacity: 0;
 }
 
+/* Prevent transitions/animations flicker during dynamic page styling updates */
+.no-transitions,
+.no-transitions * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+  animation: none !important;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
