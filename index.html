@@ -22,7 +22,11 @@
     <link rel="stylesheet" href="css/homeconsultationsection.css">
     <link rel="stylesheet" href="css/Header.css">
     <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/homegobaloffice.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- globel section  -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </head>
 <body>
 
@@ -2116,6 +2120,165 @@
 </section>
 
 
+<!-- globel section  -->
+  <section class="global-presence">
+      <div class="global-presence__container">
+        <!-- ================= LEFT COLUMN ================= -->
+        <div class="global-presence__left">
+          <span class="global-presence__eyebrow">
+            <i class="fa-solid fa-globe"></i>
+            GLOBAL PRESENCE
+            <span class="global-presence__eyebrow-line"></span>
+          </span>
+
+          <h2 class="global-presence__heading">
+            Where Compliance<br />
+            <span style="color: var(--gp-primary);">Meets Global Confidence.</span>
+          </h2>
+
+          <p class="global-presence__description">
+            Aleph India delivers end-to-end compliance and regulatory solutions
+            with a network of experts across the world.
+          </p>
+
+          <!-- ===== Feature cards ===== -->
+          <div class="gp-features">
+            <div class="gp-feature">
+              <span class="gp-feature__icon">
+                <i class="fa-solid fa-users"></i>
+              </span>
+              <p class="gp-feature__title">Global Coverage</p>
+              <p class="gp-feature__text">Experts in 10+ countries</p>
+            </div>
+
+            <div class="gp-feature">
+              <span class="gp-feature__icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </span>
+              <p class="gp-feature__title">Deep Expertise</p>
+              <p class="gp-feature__text">
+                In-depth knowledge of local regulations
+              </p>
+            </div>
+
+            <div class="gp-feature">
+              <span class="gp-feature__icon">
+                <i class="fa-solid fa-circle-check"></i>
+              </span>
+              <p class="gp-feature__title">Trusted by Businesses</p>
+              <p class="gp-feature__text">
+                Reliable. Responsive. Results-driven.
+              </p>
+            </div>
+          </div>
+
+          <!-- ===== Explore our presence: country buttons ===== -->
+          <div class="gp-explore">
+            <p class="gp-explore__label">EXPLORE OUR PRESENCE</p>
+
+            <div class="gp-country-buttons" id="gpCountryButtons">
+              <!-- buttons injected by main.js from office-data.js -->
+            </div>
+
+            <p class="gp-explore__footer">
+              <i class="fa-solid fa-location-dot"></i>
+              <span id="gpCountryFooterList"></span>
+            </p>
+          </div>
+
+          <!-- ===== Explore our offices CTA card ===== -->
+          <div class="gp-cta-card">
+            <div class="gp-cta-card__top">
+              <span class="gp-cta-card__icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </span>
+              <div class="gp-cta-card__text">
+                <p class="gp-cta-card__title">Explore Our Offices</p>
+                <p class="gp-cta-card__subtitle">
+                  Click any marker on the map to view office details and connect
+                  with our local experts.
+                </p>
+              </div>
+            </div>
+
+            <a
+              class="gp-cta-button"
+              id="gpMapsButton"
+              href="https://www.google.com/maps"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="gp-cta-button__inner">
+                <i class="fa-regular fa-map"></i>
+                View On Google Maps
+              </span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- ================= RIGHT COLUMN ================= -->
+        <div class="global-presence__right">
+          <span class="global-presence__eyebrow">
+            <i class="fa-solid fa-share-nodes"></i>
+            OUR GLOBAL NETWORK
+            <span class="global-presence__eyebrow-line"></span>
+          </span>
+
+          <div class="gp-globe-stage" id="gpGlobeStage">
+            <canvas id="gpGlobeCanvas" class="gp-globe-canvas"></canvas>
+
+            <!-- ===== Office info popup (positioned by popup.js) ===== -->
+            <div class="globe-popup arrow-left" id="gpPopup" aria-hidden="true">
+              <button
+                type="button"
+                class="globe-popup__close"
+                aria-label="Close"
+              >
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+
+              <div class="globe-popup__header">
+                <span class="globe-popup__icon"></span>
+                <div class="globe-popup__header-text">
+                  <p class="globe-popup__name"></p>
+                  <p class="globe-popup__location"></p>
+                </div>
+              </div>
+
+              <a class="globe-popup__phone-link" href="#">
+                <i class="fa-solid fa-phone"></i>
+                <span class="globe-popup__phone"></span>
+              </a>
+
+              <a class="globe-popup__email" href="#"></a>
+
+              <button type="button" class="globe-popup__view-btn">
+                View Office Details
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- ===== Legend ===== -->
+          <div class="gp-legend">
+            <span class="gp-legend__item">
+              <span class="gp-legend__dot gp-legend__dot--head"></span>
+              Head Office
+            </span>
+            <span class="gp-legend__item">
+              <span class="gp-legend__dot gp-legend__dot--branch"></span>
+              Our Offices
+            </span>
+            <span class="gp-legend__item">
+              <span class="gp-legend__dot gp-legend__dot--line"></span>
+              Connected Regions
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
 <!-- form section  -->
 <section class="consultation-section">
   <div class="consultation-container">
@@ -2618,6 +2781,16 @@
      <script src="/js/homeclients.js"></script>
      <script src="/js/hometestimonials.js"></script>
      <script src="/js/homeconsultationsection.js"></script>
+
+     <!-- globle section js -->
+       <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+        }
+      }
+    </script>
+    <script type="module" src="/js/officedata/Main.js"></script>
 
 </body>
 </html>
