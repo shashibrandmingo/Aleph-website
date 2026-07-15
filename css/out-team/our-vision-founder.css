@@ -1,0 +1,660 @@
+/* ==========================================================================
+   OUR TEAM HERO SECTION (our-vision-founder.css)
+   ========================================================================== */
+
+:root {
+  --team-primary: #002e84;
+  --team-secondary: #2563eb;
+  --team-accent: #3b82f6;
+  --team-text-dark: #0f172a;
+  --team-text-muted: #475569;
+  --team-card-bg: linear-gradient(135deg, #f0f6ff 0%, #f9fbff 100%);
+  --team-card-border: rgba(0, 46, 132, 0.08);
+}
+
+body {
+  background-color: #ffffff !important;
+  color: var(--team-text-dark) !important;
+}
+
+.full-width-team-layout {
+  width: 100%;
+}
+
+.team-hero-section {
+  padding: 1.5rem 0 2rem 0;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* Container Card */
+.team-hero-card {
+  background: url('../../image/our-team-image/out-team-hero.png') no-repeat center center;
+  background-size: cover;
+  border: 1px solid var(--team-card-border);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  min-height: 410px;
+  padding: 0 0 0 4rem; /* Right padding is 0 to let the cropped image touch the edge */
+  width: 100%;
+  box-shadow: 0 12px 34px rgba(0, 46, 132, 0.04);
+}
+
+.team-hero-card::before {
+  content: '';
+  position: absolute;
+  top: 2.5rem;
+  left: 3.5rem;
+  width: 160px;
+  height: 35px;
+  background-color: #f6f9fe; /* Matches card background color to mask baked image breadcrumbs */
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Left Content Column */
+.team-hero-content {
+  flex: 0 0 45%;
+  max-width: 500px;
+  padding: 3rem 0; /* Reset to standard symmetrical padding */
+  position: relative;
+  z-index: 5;
+  margin-top: -3.2rem; /* Shifting the entire text block upwards */
+}
+
+/* Breadcrumbs navigation */
+.team-hero-breadcrumb {
+  display: flex; /* Restored to make the Home icon and Our Team links clickable on desktop */
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.4rem; /* Reduced from 1.5rem to pull the text up */
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: #f6f9fe; /* Mask color to cover baked-in image breadcrumbs */
+  padding: 4px 8px;
+  margin-left: -8px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.team-hero-breadcrumb a.home-icon {
+  color: var(--team-secondary);
+  display: flex;
+  align-items: center;
+  transition: color var(--transition-fast);
+}
+
+.team-hero-breadcrumb a.home-icon:hover {
+  color: var(--team-primary);
+}
+
+.team-hero-breadcrumb a.home-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.team-hero-breadcrumb .separator {
+  color: #94a3b8;
+}
+
+.team-hero-breadcrumb .current {
+  color: var(--team-secondary);
+}
+
+/* Title Styling */
+.team-hero-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--team-text-dark);
+  line-height: 1.25;
+  margin: 0 0 1.2rem 0;
+  letter-spacing: -0.02em;
+}
+
+.team-hero-accent {
+  color: var(--team-secondary);
+}
+
+/* Paragraph Description */
+.team-hero-desc {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--team-text-muted);
+  margin: 0;
+  max-width: 480px;
+}
+
+/* Right Column with Image (Hidden on desktop since the card uses the full image background) */
+.team-hero-image-col {
+  display: none;
+}
+
+.team-hero-img-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .team-hero-card {
+    background: var(--team-card-bg); /* Revert to standard card gradient on tablets */
+    flex-direction: column;
+    padding: 2.5rem;
+    min-height: auto;
+    align-items: stretch;
+  }
+
+  .team-hero-card::before {
+    display: none; /* Hide the background mask overlay on mobile stack */
+  }
+  
+  .team-hero-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 1.5rem 0 2rem 0;
+    opacity: 1; /* Restore visual text on mobile viewports */
+    pointer-events: auto;
+    margin-top: 0; /* Reset top margin shift on stacked layout */
+  }
+  
+  .team-hero-breadcrumb {
+    display: flex; /* Restore HTML breadcrumbs on mobile viewport stack */
+  }
+  
+  .team-hero-image-col {
+    display: block; /* Show the image block under the text column */
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    height: 320px;
+    align-self: auto;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  
+  .team-hero-img-wrap {
+    background: url('../../image/our-team-image/out-team-hero.png');
+    background-size: cover;
+    background-position: 80% center; /* Focus on hands on tablets */
+    background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 576px) {
+  .team-hero-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+  .team-hero-title {
+    font-size: 2.2rem;
+  }
+  .team-hero-image-col {
+    display: none;
+  }
+  .team-hero-content {
+    padding-bottom: 0;
+  }
+}
+
+/* ==========================================================================
+   OUR FOUNDERS SECTION STYLING
+   ========================================================================== */
+
+.founders-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 5;
+}
+
+.founders-subtitle-tag {
+  color: var(--team-secondary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+
+.founders-main-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--team-text-dark);
+  margin: 0 0 1.2rem 0;
+  letter-spacing: -0.02em;
+}
+
+.founders-desc-wrap {
+  color: var(--team-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.founders-desc-wrap p {
+  margin: 0;
+}
+
+.founders-header-line {
+  width: 50px;
+  height: 3px;
+  background-color: var(--team-secondary);
+  margin: 1.5rem auto 0 auto;
+  border-radius: 2px;
+}
+
+.founders-grid-container {
+  display: flex;
+  gap: 6.5rem; /* Increased gap to give the floating center badge breathing room and prevent text overlap */
+  justify-content: center; /* Centered instead of space-between to look clean with narrow cards */
+  align-items: stretch;
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  width: 100%;
+}
+
+.founder-card-wrapper {
+  flex: 1 1 45%;
+  max-width: 480px; /* Reduced card width to prevent stretched text */
+  width: 100%;
+  position: relative;
+}
+
+/* Background offset block visible on hover */
+.founder-card-bg-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  border-radius: 20px;
+  background-color: var(--team-primary); /* Changed to darker corporate blue */
+  opacity: 0;
+  transform: scale(0.95) translate(0, 0);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+/* Left Card Hover Effects */
+.left-side:hover .founder-card-bg-effect {
+  opacity: 1; /* Solid dark blue shape sticking out */
+  transform: translate(-20px, 12px) rotate(-3deg) scaleY(0.96);
+}
+
+.left-side:hover .founder-card {
+  transform: translateY(-8px) translateX(6px);
+  box-shadow: 0 20px 40px rgba(0, 46, 132, 0.08);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+/* Right Card Hover Effects */
+.right-side:hover .founder-card-bg-effect {
+  opacity: 1; /* Solid dark blue shape sticking out */
+  transform: translate(20px, 12px) rotate(3deg) scaleY(0.96);
+}
+
+.right-side:hover .founder-card {
+  transform: translateY(-8px) translateX(-6px);
+  box-shadow: 0 20px 40px rgba(0, 46, 132, 0.08);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+/* Main Card */
+.founder-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 46, 132, 0.08);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 8px 30px rgba(0, 46, 132, 0.03);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Header Part of the Card */
+.founder-card-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2.5rem 3rem 1.8rem 3rem;
+}
+
+.founder-avatar-wrap {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.founder-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 46, 132, 0.08);
+  position: relative;
+  z-index: 3;
+}
+
+/* Rotating thin blue border ring */
+.founder-avatar-ring {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid transparent;
+  border-top-color: var(--team-secondary);
+  border-bottom-color: var(--team-secondary);
+  border-radius: 50%;
+  z-index: 2;
+  animation: spin-ring 10s linear infinite;
+}
+
+@keyframes spin-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.founder-info-meta {
+  flex-grow: 1;
+}
+
+.founder-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.founder-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--team-secondary);
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: 30px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.15);
+}
+
+.founder-badge-pill svg {
+  width: 12px;
+  height: 12px;
+}
+
+.founder-linkedin {
+  color: #0a66c2;
+  display: inline-flex;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.founder-linkedin:hover {
+  color: var(--team-primary);
+  transform: scale(1.15);
+}
+
+.founder-linkedin svg {
+  width: 21px;
+  height: 21px;
+}
+
+.founder-name {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--team-text-dark);
+  margin: 0 0 5px 0;
+  letter-spacing: -0.01em;
+}
+
+.founder-role {
+  font-size: 0.8rem;
+  color: var(--team-secondary);
+  font-weight: 500;
+  margin: 0 0 2px 0;
+}
+
+.founder-company {
+  font-size: 0.7rem;
+  color: var(--team-text-muted);
+  margin: 0;
+}
+
+.founder-dash {
+  width: 32px;
+  height: 2px;
+  background-color: var(--team-secondary);
+  margin-top: 0.8rem;
+  border-radius: 1px;
+}
+
+/* Bottom Description Part of Card */
+.founder-card-body {
+  display: flex;
+  gap: 1.2rem;
+  padding: 1rem 2rem !important; /* Top/Bottom: 1.8rem | Left/Right: 2.5rem */
+  background-color: #f8faff;
+  border-bottom-left-radius: 19px;
+  border-bottom-right-radius: 19px;
+  border-top: 1px solid rgba(0, 46, 132, 0.04);
+  flex-grow: 1;
+  align-items: flex-start;
+}
+
+.founder-body-icon-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--team-secondary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  position: relative;
+  margin-top: 2px;
+}
+
+/* Concentric white inner border ring line inside the icon circle */
+.founder-body-icon-container::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.founder-body-icon-container svg {
+  width: 18px;
+  height: 18px;
+}
+
+.founder-bio-text {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--team-text-muted);
+  margin: 0;
+}
+
+/* Absolute Center Badge */
+.founder-center-badge {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 46, 132, 0.08);
+  box-shadow: 0 12px 35px rgba(0, 46, 132, 0.09), 0 4px 15px rgba(0, 0, 0, 0.02); /* Enhanced float shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Inner border ring for the center badge */
+.founder-center-badge::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  border: 1px solid rgba(0, 46, 132, 0.06);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.founder-center-badge:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 16px 45px rgba(0, 46, 132, 0.12), 0 6px 20px rgba(0, 0, 0, 0.03);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+.founder-badge-icon {
+  color: var(--team-secondary);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.founder-badge-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.founder-badge-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--team-text-dark);
+  line-height: 1.35;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1200px) {
+  .founder-center-badge {
+    width: 125px;
+    height: 125px;
+    padding: 0.8rem;
+  }
+  .founder-badge-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  .founder-badge-label {
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .founders-grid-container {
+    flex-direction: column;
+    gap: 1.5rem; /* Reduced gap since we have overlapping margins */
+    align-items: stretch;
+  }
+
+  .founder-card-wrapper {
+    flex: 1 1 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .founder-center-badge {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    margin: -50px auto; /* Overlap cards above and below */
+    width: 130px;
+    height: 130px;
+    box-shadow: 0 12px 32px rgba(0, 46, 132, 0.12);
+    z-index: 5; /* Ensure badge sits on top of cards */
+  }
+
+  .founder-center-badge:hover {
+    transform: scale(1.05);
+  }
+
+  .left-side:hover .founder-card-bg-effect,
+  .right-side:hover .founder-card-bg-effect {
+    transform: translateY(12px) scaleY(0.97) scaleX(0.99);
+    opacity: 1;
+  }
+
+  .left-side:hover .founder-card,
+  .right-side:hover .founder-card {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 576px) {
+  .founders-main-title {
+    font-size: 2rem;
+  }
+  
+  .founder-card-header {
+    flex-direction: column;
+    align-items: center; /* Center photo and text */
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .founder-info-area {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .founder-card-meta {
+    justify-content: center !important;
+    gap: 12px;
+    width: 100%;
+  }
+  
+  .founder-dash {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  .founder-card-body {
+    padding: 1.5rem;
+  }
+}

@@ -10,6 +10,108 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/Header.css">
     <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/out-team/our-vision-founder.css?v=5">
+    <link rel="stylesheet" href="css/out-team/our-dir-team-v2.css">
+    <style>
+        /* Force correct rendering of photo arcs and circles, bypassing browser cache */
+        .dir-photo-arc, .team-photo-arc {
+            position: absolute !important;
+            top: 50% !important;
+            left: 50% !important;
+            width: 114px !important;
+            height: 114px !important;
+            border-radius: 50% !important;
+            z-index: 2 !important;
+            margin: 0 !important;
+            pointer-events: none !important;
+        }
+        .dir-photo-arc {
+            border: 3px solid transparent !important;
+            border-bottom-color: #2563eb !important;
+            border-left-color: #2563eb !important;
+            transform: translate(-50%, -50%) rotate(-15deg) !important;
+        }
+        .team-photo-arc {
+            border: 3px solid transparent !important;
+            border-bottom-color: #2563eb !important;
+            border-left-color: #2563eb !important;
+            transform: translate(-50%, -50%) rotate(-15deg) !important;
+        }
+        .dir-photo-circle, .team-photo-circle {
+            width: 100px !important;
+            height: 100px !important;
+            border-radius: 50% !important;
+            border: 3.5px solid #ffffff !important;
+            box-shadow: 0 4px 12px rgba(0, 46, 132, 0.1) !important;
+            position: relative !important;
+            z-index: 3 !important;
+            margin: 0 !important;
+        }
+        .dir-photo-linkedin, .team-photo-linkedin {
+            position: absolute !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(34px, 34px) !important;
+            z-index: 5 !important;
+            width: 24px !important;
+            height: 24px !important;
+            background-color: #2563eb !important;
+            border-radius: 50% !important;
+            border: 2px solid #ffffff !important;
+            box-shadow: 0 2px 6px rgba(0, 46, 132, 0.18) !important;
+        }
+
+        /* Responsive Overrides (Forced Cache Bypass) */
+        @media (max-width: 992px) {
+            .founders-grid-container {
+                flex-direction: column !important;
+                gap: 1.5rem !important;
+                align-items: stretch !important;
+            }
+            .founder-card-wrapper {
+                flex: 1 1 100% !important;
+                width: 100% !important;
+                position: relative !important;
+                z-index: 1 !important;
+            }
+            .founder-center-badge {
+                position: relative !important;
+                left: 0 !important;
+                top: 0 !important;
+                transform: none !important;
+                margin: -50px auto !important; /* Pull up/down to overlap */
+                width: 130px !important;
+                height: 130px !important;
+                box-shadow: 0 12px 32px rgba(0, 46, 132, 0.12) !important;
+                z-index: 5 !important;
+            }
+        }
+        @media (max-width: 576px) {
+            .founder-card-header {
+                flex-direction: column !important;
+                align-items: center !important; /* Center the headshot and text */
+                text-align: center !important;
+                gap: 1rem !important;
+                padding: 1.5rem !important;
+            }
+            .founder-info-area {
+                text-align: center !important;
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+            .founder-card-meta {
+                justify-content: center !important;
+                gap: 12px !important;
+                width: 100% !important;
+            }
+            .founder-dash {
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -318,59 +420,493 @@
 
     <!-- Main Container -->
     <main id="main-content">
-        <!-- Page Header Section -->
-        <section class="page-header-section">
+        <!-- START TEAM HERO SECTION -->
+        <section class="team-hero-section">
             <div class="container">
-                <nav class="breadcrumb"><a href="index.html">Home</a> &gt; <span>Our Team</span></nav>
-                <h1>Our Team</h1>
-                <p>Welcome to the official page of Our Team. Standard regulations, guidelines, and compliance details.</p>
+                <div class="team-hero-card">
+                    <!-- Left: Text Content -->
+                    <div class="team-hero-content">
+                        <!-- Breadcrumbs -->
+                        <nav class="team-hero-breadcrumb">
+                            <a href="index.html" class="home-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                    <polyline points="9 22 9 12 15 12 15 22" />
+                                </svg>
+                            </a>
+                            <span class="separator">/</span>
+                            <span class="current">Our Team</span>
+                        </nav>
+
+                        <!-- Heading -->
+                        <h1 class="team-hero-title">
+                            One Team. One <span class="team-hero-accent">Vision</span>.<br>
+                            One <span class="team-hero-accent">Mission</span>.
+                        </h1>
+
+                        <!-- Description -->
+                        <p class="team-hero-desc">
+                            United by trust, driven by purpose, and committed to delivering excellence every day.
+                        </p>
+                    </div>
+
+                    <!-- Right: Curved team image presentation -->
+                    <div class="team-hero-image-col">
+                        <!-- Image wrapper -->
+                        <div class="team-hero-img-wrap"></div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Page Content Section -->
         <section class="section-padding">
             <div class="container">
-                <div class="subpage-layout">
-                    <!-- Left Sidebar Menu -->
-                    <aside class="subpage-sidebar">
-                        <nav class="sidebar-menu">
-                            <a href="About-Us.html" class="sidebar-link ">
-                                <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" /></svg>
-                                <span>About Us</span>
-                            </a>
-                            <a href="Management-Desk.html" class="sidebar-link ">
-                                <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" /></svg>
-                                <span>Management Desk</span>
-                            </a>
-                            <a href="Our-Team.html" class="sidebar-link active">
-                                <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" /></svg>
-                                <span>Our Team</span>
-                            </a>
-                            <a href="Association.html" class="sidebar-link ">
-                                <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" /></svg>
-                                <span>Association</span>
-                            </a>
-                            <a href="Achievements-and-Awards.html" class="sidebar-link ">
-                                <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" /></svg>
-                                <span>Achievement & Award</span>
-                            </a>
-                            <a href="Media-Presence.html" class="sidebar-link ">
-                                <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" /></svg>
-                                <span>Our Media Presence</span>
-                            </a>
-                        </nav>
-                    </aside>
-
+                <div class="full-width-team-layout">
                     <!-- Right Main Content -->
-                    <div class="card-wrapper" style="padding: 3rem 2rem;">
-                        <h3>Our Team Content</h3>
-                        <p style="color: var(--text-muted); margin-top: 1rem;">
-                            This section is ready for custom content related to Our Team. You can insert text, grids, tables, or list items here.
-                        </p>
+                    <div class="card-wrapper" style="padding: 0; background: transparent; border: none; box-shadow: none;">
+                        <!-- Grid Header -->
+                        <div class="founders-header">
+                            <span class="founders-subtitle-tag">— OUR FOUNDERS —</span>
+                            <h2 class="founders-main-title">Visionaries. Building <span style="color: var(--team-secondary);">Excellence.</span></h2>
+                            <div class="founders-desc-wrap">
+                                <p>Guided by experience. Driven by purpose.</p>
+                                <p>Committed to raising standards, delivering trust.</p>
+                            </div>
+                            <div class="founders-header-line"></div>
+                        </div>
+
+                        <!-- Founders Cards Container -->
+                        <div class="founders-grid-container">
+                            <!-- Left Card: Mr. Sunjay Kumar -->
+                            <div class="founder-card-wrapper left-side">
+                                <!-- Background offset block visible on hover -->
+                                <div class="founder-card-bg-effect"></div>
+                                
+                                <!-- Main Card -->
+                                <div class="founder-card">
+                                    <div class="founder-card-header">
+                                        <!-- Avatar with spinning arcs -->
+                                        <div class="founder-avatar-wrap">
+                                            <div class="founder-avatar-ring"></div>
+                                            <img src="image/our-team-image/sunjay.png" alt="Mr. Sunjay Kumar" class="founder-photo">
+                                        </div>
+
+                                        <div class="founder-info-meta">
+                                            <div class="founder-meta-top">
+                                                <span class="founder-badge-pill">
+                                                    <!-- Icon -->
+                                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                                                    </svg>
+                                                    Founder
+                                                </span>
+                                                <a href="https://linkedin.com" target="_blank" class="founder-linkedin" aria-label="LinkedIn Profile">
+                                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                            <h3 class="founder-name">Mr. Sunjay Kumar</h3>
+                                            <p class="founder-role">Chief Advisor,</p>
+                                            <p class="founder-company">Aleph INDIA Group</p>
+                                            <div class="founder-dash"></div>
+                                        </div>
+                                    </div>
+                                    <div class="founder-card-body">
+                                        <div class="founder-body-icon-container">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 2C8.13 2 5 5.13 5 9c0 2.61 1.43 4.88 3.54 6.08L6 22l6-2.5 6 2.5-2.54-6.92C17.57 13.88 19 11.61 19 9c0-3.87-3.13-7-7-7zm0 11c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+                                                <path d="M12 6.5l.85 1.72 1.9.28-1.37 1.34.32 1.9-1.7-1-1.7 1 .32-1.9-1.37-1.34 1.9-.28z"/>
+                                            </svg>
+                                        </div>
+                                        <p class="founder-bio-text">
+                                            Over 35 years of expertise in standardization, marketing, and quality certification. Former Deputy Director General at BIS, he has played a pivotal role in enhancing BIS and spearheading various initiatives in standardization.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Center Badge -->
+                            <div class="founder-center-badge">
+                                <div class="founder-badge-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                        <circle cx="9" cy="7" r="4" />
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                    </svg>
+                                </div>
+                                <span class="founder-badge-label">Leadership Rooted in Experience</span>
+                            </div>
+
+                            <!-- Right Card: Mr. Binod Kumar Sinha -->
+                            <div class="founder-card-wrapper right-side">
+                                <!-- Background offset block visible on hover -->
+                                <div class="founder-card-bg-effect"></div>
+                                
+                                <!-- Main Card -->
+                                <div class="founder-card">
+                                    <div class="founder-card-header">
+                                        <!-- Avatar with spinning arcs -->
+                                        <div class="founder-avatar-wrap">
+                                            <div class="founder-avatar-ring"></div>
+                                            <img src="image/our-team-image/bindo.png" alt="Mr. Binod Kumar Sinha" class="founder-photo">
+                                        </div>
+
+                                        <div class="founder-info-meta">
+                                            <div class="founder-meta-top">
+                                                <span class="founder-badge-pill">
+                                                    <!-- Icon -->
+                                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                                                    </svg>
+                                                    Founder
+                                                </span>
+                                                <a href="https://linkedin.com" target="_blank" class="founder-linkedin" aria-label="LinkedIn Profile">
+                                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                            <h3 class="founder-name">Mr. Binod Kumar Sinha</h3>
+                                            <p class="founder-role">Director (Global Operations),</p>
+                                            <p class="founder-company">Aleph INDIA Group</p>
+                                            <div class="founder-dash"></div>
+                                        </div>
+                                    </div>
+                                    <div class="founder-card-body">
+                                        <div class="founder-body-icon-container">
+                                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                                            </svg>
+                                        </div>
+                                        <p class="founder-bio-text">
+                                            Over 36 years of distinguished service at BIS. Former Deputy Director General with expertise in standardization, audits, lab testing, and calibration including NABL processes.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- ===== OUR DIRECTORS SECTION ===== -->
+        <section class="directors-section">
+            <div class="container">
+
+                <!-- Section Header -->
+                <div class="directors-header">
+                    <span class="directors-subtitle-tag">— OUR DIRECTORS —</span>
+                    <h2 class="directors-main-title">Experienced Leaders. Driving <span class="dir-accent">Excellence.</span></h2>
+                    <div class="directors-desc">
+                        <p>Our directors bring deep expertise, strong leadership<br>and a commitment to global standards.</p>
+                    </div>
+                    <div class="directors-header-line"></div>
+                </div>
+
+                <!-- Directors Cards Grid -->
+                <div class="directors-grid">
+
+                    <!-- Card 1: Mr. Gurdeep Cheema -->
+                    <div class="dir-card-wrap">
+                        <div class="dir-card">
+                            <!-- Custom Corner Ribbon with Dots (Top-Left) -->
+                            <div class="dir-corner-ribbon-dots"></div>
+
+                            <!-- Hover-Triggered LinkedIn Corner Ribbon (Top-Right) -->
+                            <div class="dir-corner-ribbon-li">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </div>
+
+                            <!-- Photo Area -->
+                            <div class="dir-photo-wrap">
+                                <div class="dir-photo-arc"></div>
+                                <img src="image/our-team-image/gurdeep01.webp" alt="Mr. Gurdeep Cheema" class="dir-photo-circle">
+                                <a href="https://linkedin.com" target="_blank" class="dir-photo-linkedin" aria-label="LinkedIn">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                </a>
+                            </div>
+
+                            <!-- Card Body -->
+                            <div class="dir-card-body">
+                                <h3 class="dir-name">Mr. Gurdeep Cheema</h3>
+                                <p class="dir-role">Director</p>
+                                <div class="dir-divider"></div>
+                                <p class="dir-bio">Dedicated, ambitious, and result-driven leader with strong expertise in Business Administration and Technology. He holds a Bachelor's degree in Technology and a Master's degree in Business Administration.</p>
+                                <a href="#" class="dir-btn">
+                                    View Profile
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </a>
+                            </div>
+                            
+                            <!-- Custom Bottom Dots Shape -->
+                            <div class="dir-bottom-dots"></div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Mr. Yogesh Kant Tiwari (featured / center) -->
+                    <div class="dir-card-wrap">
+                        <div class="dir-card">
+                            <!-- Custom Corner Shapes (Top-Left and Top-Right) -->
+                            <div class="dir-corner-triangles-grey"></div>
+                            <div class="dir-corner-ribbon-li">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </div>
+
+                            <!-- Photo Area -->
+                            <div class="dir-photo-wrap">
+                                <div class="dir-photo-arc"></div>
+                                <img src="image/our-team-image/yogesh01.png" alt="Mr. Yogesh Kant Tiwari" class="dir-photo-circle">
+                                <a href="https://linkedin.com" target="_blank" class="dir-photo-linkedin" aria-label="LinkedIn">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                </a>
+                            </div>
+
+                            <div class="dir-card-body">
+                                <h3 class="dir-name">Mr. Yogesh Kant Tiwari</h3>
+                                <p class="dir-role">Director</p>
+                                <div class="dir-divider"></div>
+                                <p class="dir-bio">Highly competent businessman with a strong legal background in business and technology. He oversees international product certification operations across multiple countries and guides the company in regulatory compliance & strategic growth.</p>
+                                <a href="#" class="dir-btn">
+                                    View Profile
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </a>
+                            </div>
+                            
+                            <!-- Custom Bottom Lines Shape -->
+                            <div class="dir-bottom-lines"></div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Mr. Raghvendra Singh -->
+                    <div class="dir-card-wrap">
+                        <div class="dir-card">
+                            <!-- Custom Corner Dots (Top-Left) -->
+                            <div class="dir-card-corner-dots"></div>
+
+                            <!-- Hover-Triggered LinkedIn Corner Ribbon (Top-Right) -->
+                            <div class="dir-corner-ribbon-li">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </div>
+
+                            <!-- Photo Area -->
+                            <div class="dir-photo-wrap">
+                                <div class="dir-photo-arc"></div>
+                                <img src="image/our-team-image/ragh01.webp" alt="Mr. Raghvendra Singh" class="dir-photo-circle">
+                                <a href="https://linkedin.com" target="_blank" class="dir-photo-linkedin" aria-label="LinkedIn">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                </a>
+                            </div>
+
+                            <div class="dir-card-body">
+                                <h3 class="dir-name">Mr. Raghvendra Singh</h3>
+                                <p class="dir-role">Director</p>
+                                <div class="dir-divider"></div>
+                                <p class="dir-bio">Qualified professional with expertise in finance operations, project management, and global client engagement. He plays a key role in business growth, sales, contracting, and delivery of client solutions.</p>
+                                <a href="#" class="dir-btn">
+                                    View Profile
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </a>
+                            </div>
+                            
+                            <!-- Custom Bottom Circle Shape -->
+                            <div class="dir-bottom-circle"></div>
+                        </div>
+                    </div>
+
+                </div><!-- /directors-grid -->
+            </div><!-- /container -->
+        </section>
+        <!-- ===== END OUR DIRECTORS SECTION ===== -->
+
+        <!-- ===== OUR TEAM SECTION ===== -->
+        <section class="team-section">
+            <div class="container">
+
+                <!-- Section Header -->
+                <div class="team-header">
+                    <span class="team-subtitle-tag">OUR TEAM</span>
+                    <h2 class="team-main-title">Experts. Driven. <span class="team-accent">Committed.</span></h2>
+                    <div class="team-desc">
+                        <p>A passionate team of professionals driving innovation,<br>delivering excellence, and creating impact.</p>
+                    </div>
+                    <div class="team-header-line"></div>
+                </div>
+
+                <!-- Team Grid Container -->
+                <div class="team-grid">
+
+                    <!-- Card 1: Dr. Nataly Luzina -->
+                    <div class="team-card-wrap">
+                        <div class="team-card">
+                            <!-- Top-Left Corner Fold -->
+                            <div class="team-corner-fold"></div>
+                            <div class="team-card-number">01</div>
+
+                            <!-- Top-Right Hover Corner Star -->
+                            <div class="team-corner-star">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            </div>
+
+                            <!-- Photo Area -->
+                            <div class="team-photo-wrap">
+                                <div class="team-photo-arc"></div>
+                                <img src="image/our-team-image/nataly.png" alt="Dr. Nataly Luzina" class="team-photo-circle">
+                                <a href="https://linkedin.com" target="_blank" class="team-photo-linkedin" aria-label="LinkedIn">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                </a>
+                            </div>
+
+                            <!-- Card Body -->
+                            <div class="team-card-body">
+                                <!-- User Icon + Title Block -->
+                                <div class="team-title-block">
+                                    <div class="team-user-icon-circle">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    </div>
+                                    <div class="team-name-role">
+                                        <h3 class="team-name">Dr. Nataly Luzina</h3>
+                                        <span class="team-role">Global Compliance Consultant</span>
+                                    </div>
+                                </div>
+                                <div class="team-divider"></div>
+                                <p class="team-bio">Seasoned expert in risk assessment, project management, and technical safety, PhD in Engineering from TMU University and an MBA from Saint Petersburg State University of Finance and Economics. She has served as General Manager at RQC, Russia.</p>
+                                <a href="#" class="team-action-btn" aria-label="View Profile">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </a>
+                            </div>
+
+                            <!-- Bottom Corner Slice -->
+                            <div class="team-bottom-slice"></div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Ms. Liushu Ou -->
+                    <div class="team-card-wrap">
+                        <div class="team-card">
+                            <div class="team-corner-fold"></div>
+                            <div class="team-card-number">02</div>
+
+                            <div class="team-corner-star">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            </div>
+
+                            <div class="team-photo-wrap">
+                                <div class="team-photo-arc"></div>
+                                <img src="image/our-team-image/liushu.png" alt="Ms. Liushu Ou" class="team-photo-circle">
+                                <a href="https://linkedin.com" target="_blank" class="team-photo-linkedin" aria-label="LinkedIn">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                </a>
+                            </div>
+
+                            <div class="team-card-body">
+                                <div class="team-title-block">
+                                    <div class="team-user-icon-circle">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    </div>
+                                    <div class="team-name-role">
+                                        <h3 class="team-name">Ms. Liushu Ou</h3>
+                                        <span class="team-role">Associate Consultant</span>
+                                    </div>
+                                </div>
+                                <div class="team-divider"></div>
+                                <p class="team-bio">Master's in Chemistry from a prestigious Japanese university, Began her career as a Food R&D Engineer and Technical Translator in Japan. With strong academic background and industry experience, she brings technical and service-oriented skills.</p>
+                                <a href="#" class="team-action-btn" aria-label="View Profile">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </a>
+                            </div>
+
+                            <div class="team-bottom-slice"></div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Mr. Jun Chen (featured center card) -->
+                    <div class="team-card-wrap">
+                        <div class="team-card">
+                            <div class="team-corner-fold"></div>
+                            <div class="team-card-number">03</div>
+
+                            <!-- Featured star top-right by default -->
+                            <div class="team-corner-star">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            </div>
+
+                            <div class="team-photo-wrap">
+                                <div class="team-photo-arc"></div>
+                                <img src="image/our-team-image/jun.png" alt="Mr. Jun Chen" class="team-photo-circle">
+                                <a href="https://linkedin.com" target="_blank" class="team-photo-linkedin" aria-label="LinkedIn">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                </a>
+                            </div>
+
+                            <div class="team-card-body">
+                                <div class="team-title-block">
+                                    <div class="team-user-icon-circle">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    </div>
+                                    <div class="team-name-role">
+                                        <h3 class="team-name">Mr. Jun Chen</h3>
+                                        <span class="team-role">Associate Consultant</span>
+                                    </div>
+                                </div>
+                                <div class="team-divider"></div>
+                                <p class="team-bio">Dedicated Technical Engineer with a Bachelor's degree in Chemistry. Began his career in education before moving into chemical compliance. He plays a key role in ensuring technical documentation in China and compliance under EU, UK, and Turkey REACH regulations.</p>
+                                <a href="#" class="team-action-btn" aria-label="View Profile">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </a>
+                            </div>
+
+                            <div class="team-bottom-slice"></div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Mr. Murli Dhar Singh -->
+                    <div class="team-card-wrap">
+                        <div class="team-card">
+                            <div class="team-corner-fold"></div>
+                            <div class="team-card-number">04</div>
+
+                            <div class="team-corner-star">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            </div>
+
+                            <div class="team-photo-wrap">
+                                <div class="team-photo-arc"></div>
+                                <img src="image/our-team-image/murli.png" alt="Mr. Murli Dhar Singh" class="team-photo-circle">
+                                <a href="https://linkedin.com" target="_blank" class="team-photo-linkedin" aria-label="LinkedIn">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                </a>
+                            </div>
+
+                            <div class="team-card-body">
+                                <div class="team-title-block">
+                                    <div class="team-user-icon-circle">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    </div>
+                                    <div class="team-name-role">
+                                        <h3 class="team-name">Mr. Murli Dhar Singh</h3>
+                                        <span class="team-role">Technical Advisor EX-BIS</span>
+                                    </div>
+                                </div>
+                                <div class="team-divider"></div>
+                                <p class="team-bio">Technical Advisor at Aleph INDIA Group with over 30 years of experience from the Bureau of Indian Standards. Postgraduate in Chemistry and former Joint Director at BIS. Expertise covers laboratory testing, standard formulation, certification, and conformity assessment.</p>
+                                <a href="#" class="team-action-btn" aria-label="View Profile">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </a>
+                            </div>
+
+                            <div class="team-bottom-slice"></div>
+                        </div>
+                    </div>
+
+                </div><!-- /team-grid -->
+            </div><!-- /container -->
+        </section>
+        <!-- ===== END OUR TEAM SECTION ===== -->
+
     </main>
 
     <!-- Site Footer -->

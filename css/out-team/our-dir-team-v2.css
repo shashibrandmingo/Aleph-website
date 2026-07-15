@@ -1,0 +1,740 @@
+/* ==========================================================================
+   OUR DIRECTORS SECTION (our-dir-team-v2.css)
+   ========================================================================== */
+
+/* ── Section Wrapper ── */
+.directors-section {
+  padding: 0rem 0 rem 0; /* Reduced vertical padding */
+  background-color: #ffffff;
+  width: 100%;
+}
+
+/* ── Section Header ── */
+.directors-header {
+  text-align: center;
+  margin-bottom: 2.5rem; /* Reduced from 3.5rem */
+}
+
+.directors-subtitle-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2563eb;
+  margin-bottom: 0.8rem;
+}
+
+.directors-main-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 2.5rem; /* Shrunk from 2.6rem */
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+  margin: 0 0 0.8rem 0;
+  letter-spacing: -0.02em;
+}
+
+.directors-main-title .dir-accent {
+  color: #2563eb;
+}
+
+.directors-desc {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 480px;
+}
+
+.directors-header-line {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  border-radius: 2px;
+  margin: 1rem auto 0 auto;
+}
+
+/* ── Cards Grid ── */
+.directors-grid {
+  display: flex;
+  gap: 1.8rem;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+/* ── Single Director Card Wrapper ── */
+.dir-card-wrap {
+  position: relative;
+  flex: 1 1 250px;
+  max-width: 290px; /* Shrunk slightly for better compactness */
+  display: flex;
+}
+
+/* ── Main Card ── */
+.dir-card {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border: 1.5px solid rgba(0, 46, 132, 0.08); /* Faint gray-blue default border */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 46, 132, 0.03);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Hover Effects: Transform into Featured Style (solid blue border + solid blue button) */
+.dir-card-wrap:hover .dir-card {
+  transform: translateY(-6px); /* Reduced lift height */
+  box-shadow: 0 16px 40px rgba(0, 46, 132, 0.1);
+  border-color: #2563eb; /* Prominent bright blue border on hover */
+}
+
+.dir-card-wrap:hover .dir-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.dir-card-wrap:hover .dir-btn svg {
+  transform: translateX(4px);
+}
+
+/* ── Asymmetrical Corner & Background Decorations ── */
+
+/* 1. Gurdeep Cheema (Card 1) Corner Ribbon & Dots */
+.dir-corner-ribbon-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 52px;
+  height: 52px;
+  background-color: #2563eb;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  z-index: 4;
+}
+
+.dir-corner-ribbon-dots::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 20px;
+  height: 20px;
+  background-image: radial-gradient(circle, #ffffff 1.2px, transparent 1.2px);
+  background-size: 5px 5px;
+}
+
+/* 2. Yogesh Kant Tiwari (Card 2) Corner Ribbon & Grey Triangles */
+.dir-corner-ribbon-li {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 52px;
+  height: 52px;
+  background-color: #2563eb;
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  z-index: 4;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-top: 8px;
+  padding-right: 8px;
+  opacity: 0; /* Hidden by default */
+  transform: translate(8px, -8px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dir-card-wrap:hover .dir-corner-ribbon-li {
+  opacity: 1; /* Slide and fade in on card hover */
+  transform: translate(0, 0);
+}
+
+.dir-corner-ribbon-li svg {
+  width: 15px;
+  height: 15px;
+  color: #ffffff;
+}
+
+.dir-corner-triangles-grey {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, transparent 100%);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  z-index: 3;
+}
+
+/* 3. Raghvendra Singh (Card 3) Simple Dot Grid */
+.dir-card-corner-dots {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 44px;
+  height: 44px;
+  background-image: radial-gradient(circle, rgba(37, 99, 235, 0.3) 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+  z-index: 3;
+  opacity: 0.85;
+}
+
+/* ── Bottom Corner Decorative Shapes ── */
+.dir-bottom-dots {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  background-image: radial-gradient(circle, rgba(37, 99, 235, 0.25) 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.dir-bottom-lines {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 65px;
+  height: 65px;
+  background: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(37, 99, 235, 0.08) 5px, rgba(37, 99, 235, 0.08) 7px);
+  z-index: 1;
+  border-bottom-right-radius: 20px;
+  pointer-events: none;
+}
+
+.dir-bottom-circle {
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  width: 75px;
+  height: 75px;
+  background: radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.12) 0%, rgba(37, 99, 235, 0.04) 60%, transparent 100%);
+  z-index: 1;
+  border-bottom-right-radius: 20px;
+  pointer-events: none;
+}
+
+/* ── Photo Area ── */
+.dir-photo-wrap {
+  position: relative;
+  height: 140px; /* Reduced from 160px for compact card height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #eef3ff 0%, #f0f6ff 60%, #ffffff 100%);
+}
+
+/* Perfect circular concentric arc wrapping left/bottom sides of photo circle */
+.dir-photo-arc {
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  width: 114px !important;
+  height: 114px !important;
+  border: 3px solid transparent !important;
+  border-bottom-color: #2563eb !important;
+  border-left-color: #2563eb !important;
+  border-radius: 50% !important;
+  z-index: 2 !important;
+  transform: translate(-50%, -50%) rotate(-15deg) !important;
+  pointer-events: none !important;
+}
+
+.dir-photo-circle {
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  border: 3.5px solid #ffffff !important;
+  box-shadow: 0 4px 12px rgba(0, 46, 132, 0.1) !important;
+  position: relative !important;
+  z-index: 3 !important;
+  margin: 0 !important;
+}
+
+/* Precise positioning of small LinkedIn badge on photo border line */
+.dir-photo-linkedin {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(34px, 34px) !important;
+  z-index: 5 !important;
+  width: 24px !important;
+  height: 24px !important;
+  background-color: #2563eb !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 2px 6px rgba(0, 46, 132, 0.18) !important;
+  transition: transform 0.2s ease, background-color 0.2s ease !important;
+}
+
+.dir-photo-linkedin:hover {
+  transform: translate(34px, 34px) scale(1.15) !important;
+  background-color: #1d4ed8 !important;
+}
+
+.dir-photo-linkedin svg {
+  width: 11px !important;
+  height: 11px !important;
+}
+
+/* ── Card Body ── */
+.dir-card-body {
+  padding: 0.8rem 1.1rem 1.1rem 1.1rem; /* Tighter padding for maximum compactness */
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dir-name {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 3px 0;
+  letter-spacing: -0.01em;
+}
+
+.dir-role {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin: 0 0 5px 0;
+}
+
+.dir-divider {
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  border-radius: 1px;
+  margin: 0 auto 0.6rem auto;
+}
+
+.dir-bio {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: #475569;
+  margin: 0 0 1rem 0;
+  flex-grow: 1;
+  text-align: left;
+}
+
+/* ── View Profile Button ── */
+.dir-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border: 1.5px solid #2563eb;
+  border-radius: 6px;
+  color: #2563eb;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: transparent;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.dir-btn svg {
+  width: 13px;
+  height: 13px;
+  transition: transform 0.3s ease;
+}
+
+.dir-card-wrap:hover .dir-btn {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+
+/* ==========================================================================
+   OUR TEAM GRID SECTION (our-dir-team-v2.css)
+   ========================================================================== */
+
+.team-section {
+  padding: 4rem 0 5rem 0;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.team-subtitle-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2563eb;
+  margin-bottom: 0.8rem;
+}
+
+.team-subtitle-tag::before,
+.team-subtitle-tag::after {
+  content: '';
+  width: 16px;
+  height: 2px;
+  background-color: #2563eb;
+  display: inline-block;
+}
+
+.team-main-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+  margin: 0 0 0.8rem 0;
+  letter-spacing: -0.02em;
+}
+
+.team-main-title .team-accent {
+  color: #2563eb;
+}
+
+.team-desc {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 480px;
+}
+
+.team-header-line {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  border-radius: 2px;
+  margin: 1rem auto 0 auto;
+}
+
+/* ── Team Grid ── */
+.team-grid {
+  display: flex;
+  gap: 1.8rem;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+.team-card-wrap {
+  position: relative;
+  flex: 1 1 240px;
+  max-width: 280px;
+  display: flex;
+}
+
+.team-card {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border: 1.5px solid rgba(0, 46, 132, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 46, 132, 0.03);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.team-card-wrap:hover .team-card {
+  transform: translateY(-6px);
+  border-color: #2563eb;
+  box-shadow: 0 16px 40px rgba(0, 46, 132, 0.1);
+}
+
+/* ── Top-Left Corner Fold with Number ── */
+.team-corner-fold {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.16) 0%, transparent 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.team-card-number {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #2563eb;
+  font-family: var(--font-primary), sans-serif;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.team-card-number::after {
+  content: '';
+  width: 14px;
+  height: 1.5px;
+  background-color: #2563eb;
+  margin-top: 2px;
+  display: block;
+}
+
+/* ── Top-Right Hover Corner Star ── */
+.team-corner-star {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  background-color: #2563eb;
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  z-index: 4;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-top: 8px;
+  padding-right: 8px;
+  opacity: 0;
+  transform: translate(8px, -8px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-corner-star svg {
+  width: 13px;
+  height: 13px;
+  color: #ffffff;
+}
+
+.team-card-wrap:hover .team-corner-star {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ── Bottom Corner Diagonal Slice ── */
+.team-bottom-slice {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 15px;
+  background: linear-gradient(135deg, #a855f7 0%, #2563eb 100%);
+  clip-path: polygon(0 100%, 100% 100%, 0 0);
+  z-index: 1;
+  pointer-events: none;
+  transition: all 0.35s ease;
+}
+
+.team-card-wrap:hover .team-bottom-slice {
+  background: #2563eb;
+}
+
+/* ── Photo Area ── */
+.team-photo-wrap {
+  position: relative;
+  height: 140px; /* Reduced from 160px for compact card height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #eef3ff 0%, #f0f6ff 60%, #ffffff 100%);
+  padding-top: 0.5rem;
+}
+
+.team-photo-arc {
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  width: 114px !important;
+  height: 114px !important;
+  border: 3px solid transparent !important;
+  border-bottom-color: #2563eb !important;
+  border-left-color: #2563eb !important;
+  border-radius: 50% !important;
+  z-index: 2 !important;
+  transform: translate(-50%, -50%) rotate(-15deg) !important;
+  pointer-events: none !important;
+}
+
+.team-photo-circle {
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  border: 3.5px solid #ffffff !important;
+  box-shadow: 0 4px 12px rgba(0, 46, 132, 0.1) !important;
+  position: relative !important;
+  z-index: 3 !important;
+  margin: 0 !important;
+}
+
+.team-photo-linkedin {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(34px, 34px) !important;
+  z-index: 5 !important;
+  width: 24px !important;
+  height: 24px !important;
+  background-color: #2563eb !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 2px 6px rgba(0, 46, 132, 0.18) !important;
+  transition: transform 0.2s ease, background-color 0.2s ease !important;
+}
+
+.team-photo-linkedin:hover {
+  transform: translate(34px, 34px) scale(1.15) !important;
+  background-color: #1d4ed8 !important;
+}
+
+.team-photo-linkedin svg {
+  width: 11px !important;
+  height: 11px !important;
+}
+
+/* ── Card Body ── */
+.team-card-body {
+  padding: 0.8rem 1.1rem 1.1rem 1.1rem; /* Tighter padding for compact card body */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.team-title-block {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.6rem; /* Reduced margin */
+  text-align: left;
+}
+
+.team-user-icon-circle {
+  width: 28px;
+  height: 28px;
+  background-color: #2563eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.team-user-icon-circle svg {
+  width: 14px;
+  height: 14px;
+}
+
+.team-name-role {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-name {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.team-role {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin: 2px 0 0 0;
+}
+
+.team-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 46, 132, 0.06);
+  margin-bottom: 0.6rem;
+}
+
+.team-bio {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: #475569;
+  margin: 0 0 0.8rem 0; /* Reduced margin */
+  flex-grow: 1;
+  text-align: left;
+}
+
+/* ── Bottom Right Action Button ── */
+.team-action-btn {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid #2563eb;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  background: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+.team-action-btn svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+.team-card-wrap:hover .team-action-btn {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.team-card-wrap:hover .team-action-btn svg {
+  transform: translateX(2px);
+}
+
+@media (max-width: 900px) {
+  .team-grid {
+    gap: 1.5rem;
+  }
+  .team-card-wrap {
+    flex: 1 1 240px;
+  }
+}
+
+@media (max-width: 600px) {
+  .team-main-title {
+    font-size: 1.9rem;
+  }
+  .team-card-wrap {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
