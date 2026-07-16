@@ -1,0 +1,776 @@
+/* ==========================================================================
+   ACHIEVEMENTS HERO SECTION (Achievements-and-Awards.css)
+   ========================================================================== */
+
+@import "root.css";
+
+body {
+  background-color: #ffffff;
+  color: var(--award-text-dark);
+}
+
+:root {
+  --award-primary: #002e84;
+  --award-secondary: #0052cc;
+  --award-accent: #2563eb;
+  --award-text-dark: #0f172a;
+  --award-text-muted: #475569;
+  --award-card-border: rgba(0, 46, 132, 0.08);
+}
+
+.award-hero-section {
+  padding: 1.5rem 0 2rem 0;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.award-hero-card {
+  background-image: url('../image/Achievements-and-Awards/award-hero-image.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 1px solid var(--award-card-border);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 410px;
+  padding: 3rem 4.5rem;
+  width: 100%;
+  box-shadow: 0 12px 34px rgba(0, 46, 132, 0.1);
+}
+
+/* Left Content Column */
+.award-hero-content {
+  max-width: 50%; /* Keeps text on the left side of the background image */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+/* Breadcrumb */
+.award-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.award-breadcrumb-link {
+  color: var(--award-accent);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.award-breadcrumb-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.award-breadcrumb-link:hover {
+  opacity: 0.8;
+}
+
+.award-breadcrumb-sep {
+  font-size: 0.9rem;
+  color: var(--award-accent);
+  font-weight: 500;
+  font-family: var(--font-secondary), sans-serif;
+}
+
+.award-breadcrumb-current {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.9rem;
+  color: var(--award-accent);
+  font-weight: 600;
+}
+
+/* Eyebrow with Line */
+.award-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.2rem;
+}
+
+.award-hero-eyebrow .eyebrow-text {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--award-accent);
+  text-transform: uppercase;
+}
+
+.award-hero-eyebrow .eyebrow-line {
+  display: inline-block;
+  width: 25px;
+  height: 2px;
+  background-color: var(--award-accent);
+}
+
+/* Title styling */
+.award-hero-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--award-text-dark);
+  line-height: 1.25;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.award-hero-title-accent {
+  color: var(--award-accent);
+}
+
+/* Underline below title */
+.award-hero-underline {
+  width: 45px;
+  height: 3px;
+  background-color: var(--award-accent);
+  margin: 1.5rem 0;
+  border-radius: 2px;
+}
+
+/* Description styling */
+.award-hero-desc {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--award-text-muted);
+  margin: 0;
+  max-width: 450px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .award-hero-card {
+    padding: 2.5rem 2rem;
+    min-height: auto;
+    background-position: 70% center; /* Adjust image positioning to slide trophy right */
+  }
+  
+  .award-hero-content {
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Translucent overlay for readability */
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  }
+}
+
+@media (max-width: 576px) {
+  .award-hero-card {
+    padding: 2rem 1.5rem;
+    background-image: none !important;
+    background: #f8fafc;
+  }
+  .award-hero-title {
+    font-size: 2rem;
+  }
+  .award-hero-content {
+    background: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
+   MILESTONES & STATS GRID SECTION
+   ========================================================================== */
+
+.award-content-area {
+  padding: 0 0 0rem 0;
+  width: 100%;
+}
+
+.award-milestone-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.milestone-title-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 0.75rem;
+  justify-content: center;
+}
+
+.milestone-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.milestone-title .title-accent {
+  color: var(--award-accent);
+}
+
+.milestone-title-wrap .title-line {
+  display: inline-block;
+  width: 35px;
+  height: 2px;
+  background-color: var(--award-accent);
+}
+
+.milestone-desc {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 1rem;
+  color: #64748b;
+  margin: 0 auto;
+  max-width: 600px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Stats Grid */
+.award-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.award-stat-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 46, 132, 0.06);
+  border-radius: 16px;
+  padding: 2.25rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 46, 132, 0.09);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.award-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.15);
+}
+
+.award-stat-card .stat-icon-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #f0f6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: background 0.3s ease;
+}
+
+.award-stat-card:hover .stat-icon-box {
+  background: #e0eeff;
+}
+
+.award-stat-card .stat-icon-box i {
+  font-size: 1.6rem;
+  color: var(--award-accent);
+}
+
+.award-stat-card .stat-number {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #002e84;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.award-stat-card .stat-label {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.825rem;
+  font-weight: 400;
+  color: #475569;
+  line-height: 1.4;
+  margin: 0 0 1.5rem 0;
+  flex-grow: 1;
+}
+
+.award-stat-card .stat-card-line {
+  width: 24px;
+  height: 3px;
+  background-color: var(--award-accent);
+  border-radius: 2px;
+  margin-top: auto;
+}
+
+/* Footer Banner */
+.award-footer-banner {
+  max-width: 680px;
+  margin: 0 auto;
+  background: #f8fafc;
+  border: 1px solid rgba(0, 46, 132, 0.04);
+  border-radius: 16px;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+}
+
+.award-footer-banner .banner-left-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f0f6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.award-footer-banner .banner-left-icon i {
+  font-size: 1.3rem;
+  color: var(--award-accent);
+}
+
+.award-footer-banner .banner-divider {
+  width: 1px;
+  height: 35px;
+  background-color: #cbd5e1;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.award-footer-banner .banner-text-content {
+  flex-grow: 1;
+}
+
+.award-footer-banner .banner-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.25rem 0;
+}
+
+.award-footer-banner .banner-subtitle {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.award-footer-banner .banner-accent-bar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--award-accent);
+}
+
+/* Responsive Styles for grid and banner */
+@media (max-width: 1200px) {
+  .award-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .award-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .award-footer-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  
+  .award-footer-banner .banner-divider {
+    display: none;
+  }
+  
+  .award-footer-banner .banner-accent-bar {
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    width: auto;
+    height: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .award-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+    gap: 0.75rem;
+  }
+  
+  .award-stat-card {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .milestone-title {
+    font-size: 1.8rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+    display: inline-block;
+  }
+  
+  .milestone-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 2px;
+    background-color: var(--award-accent);
+  }
+  
+  .milestone-title-wrap .title-line {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   CERTIFICATES GALLERY & SHELVES SECTION
+   ========================================================================== */
+
+.award-certificates-section {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.award-tabs-link {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.award-tabs-link .tab-link-item {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--award-accent);
+  text-decoration: none;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--award-accent);
+  transition: opacity 0.2s ease;
+}
+
+.award-tabs-link .tab-link-item:hover {
+  opacity: 0.85;
+}
+
+/* Shelves Container */
+.award-shelves-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+}
+
+.award-shelf-row {
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.award-shelf-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+/* Row 4 centering with 4 cards */
+.award-shelf-cards.select-row-four {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.award-cert-card {
+  background: #ffffff;
+  border: 2px solid #d4af37; /* Elegant gold outer border frame */
+  border-radius: 8px;
+  padding: 6px; /* White margins inside the gold frame */
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  cursor: pointer;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.award-cert-card:hover {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow:
+    0 24px 40px rgba(0, 0, 0, 0.14),
+    0 0 0 2px rgba(212, 175, 55, 0.5); /* gold glow on hover */
+  z-index: 10;
+}
+
+.award-cert-card .cert-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Fit certificate inside the gold border without cropping */
+  border-radius: 4px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+/* Shelf Board Effect */
+.award-shelf-board {
+  height: 18px;
+  background: #ffffff;
+  border-radius: 0 0 6px 6px;
+  border: 1px solid #e2e8f0;
+  border-top: none;
+  margin-top: -2px;
+  position: relative;
+  z-index: 3;
+  box-shadow:
+    0 5px 0 0 #eaecef,
+    0 9px 0 0 #dde0e4,
+    0 14px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Features Info Bar */
+.award-features-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  background: #f8fafc;
+  border: 1px solid rgba(0, 46, 132, 0.04);
+  border-radius: 20px;
+  padding: 0.5rem 2.5rem;
+  margin-top: 3rem;
+}
+
+.feature-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.feature-icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #eef2ff;
+  border: 1.5px solid rgba(0, 46, 132, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #002e84;
+  font-size: 1.2rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.feature-bar-item:hover .feature-icon-circle {
+  background: #002e84;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.feature-bar-text h5 {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.25rem 0;
+}
+
+.feature-bar-text p {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.825rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+/* Image Lightbox Modal */
+.cert-lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 23, 42, 0.9);
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  padding: 2rem;
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 6px double #d4af37;
+  padding: 10px;
+  background: white;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  color: #f1f5f9;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  line-height: 1;
+}
+
+.lightbox-close:hover {
+  color: var(--award-accent);
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Styles for Certificate Section */
+@media (max-width: 1024px) {
+  .award-shelf-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .award-shelf-cards.select-row-four {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100%;
+  }
+  .award-features-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .award-shelf-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .award-shelf-cards.select-row-four {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .award-shelf-board {
+    display: none;
+  }
+  .award-shelf-row {
+    padding-bottom: 0;
+  }
+  .award-features-bar {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .award-shelf-cards {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+  .award-shelf-cards.select-row-four {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+  .lightbox-content {
+    max-width: 95%;
+    max-height: 75%;
+    border-width: 4px;
+  }
+  .lightbox-close {
+    top: 15px;
+    right: 20px;
+  }
+}
+
+/* ==========================================================================
+   PAGE SPACING OVERRIDES & GAP REDUCTIONS
+   ========================================================================== */
+
+/* Main Section padding override */
+.section-padding {
+  padding: 3rem 0;
+}
+
+/* Margins for the certificate section header */
+.cert-section-header {
+  margin-top: 4rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Gap between rows of shelves */
+.award-shelves-container {
+  gap: 3.5rem;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 2rem 0;
+  }
+  .cert-section-header {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  .award-shelves-container {
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-padding {
+    padding: 1.5rem 0;
+  }
+  .cert-section-header {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .award-shelves-container {
+    gap: 1.75rem;
+  }
+}
+
+
