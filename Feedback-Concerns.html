@@ -7,9 +7,12 @@
     <!-- Favicon -->
     <link rel="icon" href="image/headers-logo.png" type="image/png">
     <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/Header.css">
     <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/feedback/feedbackhero.css">
+    <link rel="stylesheet" href="css/feedback/feedbackform.css">
 </head>
 <body>
 
@@ -60,7 +63,7 @@
           </svg>
         </a>
       </div>
-      
+
       <div class="top-bar-divider"></div>
       <a href="CRM-Client-Login.html" class="client-login-btn">
         <!-- SVG User Icon -->
@@ -87,7 +90,7 @@
       <div class="nav-item" data-page="index">
         <a href="index.html" class="nav-link">Home</a>
       </div>
-      
+
       <!-- 2. About -->
       <div class="nav-item has-dropdown" data-page="about">
         <a href="#" class="nav-link">
@@ -278,7 +281,7 @@
         <path d="M5 12h14M12 5l7 7-7 7" />
       </svg>
     </a>
-    
+
     <div class="mobile-contact-info">
       <div class="mobile-contact-item">
         <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -316,51 +319,407 @@
 </div>
     </header>
 
-    <!-- Main Container -->
-    <main id="main-content">
-        
-        <section class="page-header-section">
-            <div class="container">
-                <nav class="breadcrumb"><a href="index.html">Home</a> &gt; <span>Feedback & Concerns</span></nav>
-                <h1>Feedback & Concerns</h1>
-                <p>We value your opinion. Help us improve our compliance services.</p>
-            </div>
-        </section>
-        <section class="section-padding">
-            <div class="container">
-                <div class="login-container" style="max-width: 700px; margin: 0 auto;">
-                    <div class="card-wrapper form-card">
-                        <h3>Feedback Submission Form</h3>
-                        <form class="styled-form" onsubmit="event.preventDefault(); alert('Thank you for your valuable feedback!');">
-                            <div class="form-group">
-                                <label for="client-name">Company Name</label>
-                                <input type="text" id="client-name" placeholder="Your company name">
-                            </div>
-                            <div class="form-group">
-                                <label for="rating">Rate our services *</label>
-                                <div class="rating-stars">
-                                    <select id="rating" required>
-                                        <option value="5">⭐⭐⭐⭐⭐ (Excellent)</option>
-                                        <option value="4">⭐⭐⭐⭐ (Very Good)</option>
-                                        <option value="3">⭐⭐⭐ (Good)</option>
-                                        <option value="2">⭐⭐ (Fair)</option>
-                                        <option value="1">⭐ (Poor)</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="comments">Your Feedback/Concerns *</label>
-                                <textarea id="comments" rows="6" required placeholder="Tell us about your experience or details of any concerns you faced during your project..."></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Submit Feedback</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-    </main>
 
+<section class="feedback-hero">
+  <div class="feedback-hero__banner">
+    <img
+      class="feedback-hero__bg"
+      src="image/feedback/feedback-bg.png"
+      alt=""
+      aria-hidden="true"
+    />
+
+    <div class="feedback-hero__content">
+      <h1 class="feedback-hero__heading">
+        We Value Your<br />
+        <span class="feedback-hero__heading-accent">Feedback &amp; Concerns</span>
+      </h1>
+
+      <p class="feedback-hero__text">
+        Your feedback helps us improve. Share your experience,
+        suggestions or concerns and our team will get back to you.
+      </p>
+
+      <!-- ---------- Mini feature row ---------- -->
+      <div class="feedback-hero__features">
+        <div class="feedback-hero__feature">
+          <span class="feedback-hero__feature-icon">
+            <i class="fa-regular fa-comments"></i>
+          </span>
+          <div class="feedback-hero__feature-text">
+            <p class="feedback-hero__feature-title">We Listen</p>
+            <p class="feedback-hero__feature-desc">Your voice matters to us.</p>
+          </div>
+        </div>
+
+        <div class="feedback-hero__feature">
+          <span class="feedback-hero__feature-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </span>
+          <div class="feedback-hero__feature-text">
+            <p class="feedback-hero__feature-title">We Act</p>
+            <p class="feedback-hero__feature-desc">We ensure quick resolution.</p>
+          </div>
+        </div>
+
+        <div class="feedback-hero__feature">
+          <span class="feedback-hero__feature-icon">
+            <i class="fa-solid fa-user-gear"></i>
+          </span>
+          <div class="feedback-hero__feature-text">
+            <p class="feedback-hero__feature-title">We Improve</p>
+            <p class="feedback-hero__feature-desc">
+              Your input helps us serve you better.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- feedbackform -->
+
+<section class="fbform-section">
+  <div class="fbform-container">
+    <!-- ---------- Top: 3 quick-action cards ---------- -->
+    <div class="fbform-topcards">
+      <div class="fbform-topcard">
+        <span class="fbform-topcard__icon">
+          <i class="fa-solid fa-pen-to-square"></i>
+        </span>
+        <div class="fbform-topcard__text">
+          <p class="fbform-topcard__title">Share Your Feedback</p>
+          <p class="fbform-topcard__desc">
+            Tell us what you liked or how we can do better.
+          </p>
+        </div>
+      </div>
+
+      <div class="fbform-topcard">
+        <span class="fbform-topcard__icon">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </span>
+        <div class="fbform-topcard__text">
+          <p class="fbform-topcard__title">Report a Concern</p>
+          <p class="fbform-topcard__desc">
+            Facing an issue? Let us know and we'll take care of it.
+          </p>
+        </div>
+      </div>
+
+      <div class="fbform-topcard">
+        <span class="fbform-topcard__icon">
+          <i class="fa-regular fa-lightbulb"></i>
+        </span>
+        <div class="fbform-topcard__text">
+          <p class="fbform-topcard__title">Suggest an Idea</p>
+          <p class="fbform-topcard__desc">
+            Have an idea or suggestion? We'd love to hear it.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- Main grid: form + sidebar ---------- -->
+    <div class="fbform-grid">
+      <!-- ===== Left: form card ===== -->
+      <div class="fbform-card">
+        <h2 class="fbform-card__title">Send Us Your Feedback or Concern</h2>
+        <span class="fbform-card__underline"></span>
+
+        <form id="fbForm" novalidate>
+          <div class="fbform-row">
+            <div class="fbform-field">
+              <label for="fbFullName">
+                Full Name <span class="fbform-required">*</span>
+              </label>
+              <input
+                type="text"
+                id="fbFullName"
+                name="fullName"
+                placeholder="Enter your full name"
+                autocomplete="name"
+              />
+              <p class="fbform-error" id="fbFullNameError"></p>
+            </div>
+
+            <div class="fbform-field">
+              <label for="fbEmail">
+                Email Address <span class="fbform-required">*</span>
+              </label>
+              <input
+                type="email"
+                id="fbEmail"
+                name="email"
+                placeholder="Enter your email address"
+                autocomplete="email"
+              />
+              <p class="fbform-error" id="fbEmailError"></p>
+            </div>
+          </div>
+
+          <div class="fbform-row">
+            <div class="fbform-field">
+              <label for="fbSubject">
+                Subject <span class="fbform-required">*</span>
+              </label>
+              <div class="fbform-select-wrap">
+                <select id="fbSubject" name="subject">
+                  <option value="" disabled selected>Select a subject</option>
+                  <option value="service-quality">Service Quality</option>
+                  <option value="certification-process">
+                    Certification Process
+                  </option>
+                  <option value="website-support">Website / Support</option>
+                  <option value="billing">Billing</option>
+                  <option value="other">Other</option>
+                </select>
+                <i class="fa-solid fa-chevron-down fbform-select-arrow"></i>
+              </div>
+              <p class="fbform-error" id="fbSubjectError"></p>
+            </div>
+
+            <div class="fbform-field">
+              <label>Type <span class="fbform-required">*</span></label>
+              <div class="fbform-radio-row">
+                <label class="fbform-radio">
+                  <input
+                    type="radio"
+                    name="type"
+                    value="Feedback"
+                    checked
+                  />
+                  <span class="fbform-radio__dot"></span>
+                  Feedback
+                </label>
+                <label class="fbform-radio">
+                  <input type="radio" name="type" value="Concern" />
+                  <span class="fbform-radio__dot"></span>
+                  Concern
+                </label>
+                <label class="fbform-radio">
+                  <input type="radio" name="type" value="Suggestion" />
+                  <span class="fbform-radio__dot"></span>
+                  Suggestion
+                </label>
+                <label class="fbform-radio">
+                  <input type="radio" name="type" value="Other" />
+                  <span class="fbform-radio__dot"></span>
+                  Other
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="fbform-field">
+            <label for="fbMessage">
+              Message <span class="fbform-required">*</span>
+            </label>
+            <textarea
+              id="fbMessage"
+              name="message"
+              rows="5"
+              placeholder="Write your feedback or concern in detail..."
+              maxlength="1000"
+            ></textarea>
+            <div class="fbform-textarea-footer">
+              <p class="fbform-error" id="fbMessageError"></p>
+              <span class="fbform-char-count" id="fbMessageCount">0 / 1000</span>
+            </div>
+          </div>
+
+          <button type="submit" class="fbform-submit-btn" id="fbSubmitBtn">
+            <i class="fa-solid fa-paper-plane"></i>
+            Submit
+          </button>
+        </form>
+
+        <!-- ===== Thank-you success state (hidden until submit) ===== -->
+        <div class="fbform-success" id="fbSuccess" aria-hidden="true">
+          <span class="fbform-success__icon">
+            <i class="fa-solid fa-check"></i>
+          </span>
+          <h3 class="fbform-success__title">Thank You!</h3>
+          <p class="fbform-success__text">
+            Your feedback has been received. Our team will review it and
+            get back to you if needed.
+          </p>
+          <button type="button" class="fbform-success__btn" id="fbResetBtn">
+            Submit Another Response
+          </button>
+        </div>
+      </div>
+
+      <!-- ===== Right: sidebar ===== -->
+      <div class="fbform-sidebar">
+        <!-- We're Here to Help -->
+        <div class="fbform-help-card">
+          <h3 class="fbform-help-card__title">We're Here to Help</h3>
+          <span class="fbform-card__underline"></span>
+          <p class="fbform-help-card__text">
+            Our dedicated team is always ready to listen and assist you.
+          </p>
+          <span class="fbform-help-card__icon">
+            <i class="fa-solid fa-headset"></i>
+          </span>
+        </div>
+
+        <!-- What Happens Next -->
+        <div class="fbform-steps-card">
+          <h3 class="fbform-steps-card__title">What Happens Next?</h3>
+          <span class="fbform-card__underline"></span>
+
+          <div class="fbform-steps">
+            <div class="fbform-step">
+              <span class="fbform-step__number">01</span>
+              <span class="fbform-step__icon">
+                <i class="fa-solid fa-envelope"></i>
+              </span>
+              <div class="fbform-step__text">
+                <p class="fbform-step__title">We Receive</p>
+                <p class="fbform-step__desc">
+                  We receive your feedback or concern.
+                </p>
+              </div>
+            </div>
+
+            <div class="fbform-step">
+              <span class="fbform-step__number">02</span>
+              <span class="fbform-step__icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </span>
+              <div class="fbform-step__text">
+                <p class="fbform-step__title">We Review</p>
+                <p class="fbform-step__desc">
+                  Our team reviews and understands your input.
+                </p>
+              </div>
+            </div>
+
+            <div class="fbform-step">
+              <span class="fbform-step__number">03</span>
+              <span class="fbform-step__icon">
+                <i class="fa-solid fa-check"></i>
+              </span>
+              <div class="fbform-step__text">
+                <p class="fbform-step__title">We Respond</p>
+                <p class="fbform-step__desc">
+                  We get back to you with a resolution or update.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- Bottom section: FAQ & Contact ---------- -->
+    <div class="fbform-bottom-grid">
+      <!-- FAQ -->
+      <div class="fbform-card fbform-faq-card">
+        <h3 class="fbform-card__title">Frequently Asked Questions</h3>
+        <span class="fbform-card__underline"></span>
+        <div class="fbform-faq-list">
+          <div class="fbform-faq-item">
+            <div class="fbform-faq-item__header">
+              <span class="fbform-faq-item__text">How long does it take to get a response?</span>
+              <i class="fa-solid fa-plus"></i>
+            </div>
+            <div class="fbform-faq-item__body">
+              <div>
+                <p>We typically review and respond to all feedback and concerns within 24-48 business hours.</p>
+              </div>
+            </div>
+          </div>
+          <div class="fbform-faq-item">
+            <div class="fbform-faq-item__header">
+              <span class="fbform-faq-item__text">Can I track the status of my concern?</span>
+              <i class="fa-solid fa-plus"></i>
+            </div>
+            <div class="fbform-faq-item__body">
+              <div>
+                <p>Yes, once submitted, you'll receive a reference number via email that you can use to check for updates.</p>
+              </div>
+            </div>
+          </div>
+          <div class="fbform-faq-item">
+            <div class="fbform-faq-item__header">
+              <span class="fbform-faq-item__text">Is my feedback confidential?</span>
+              <i class="fa-solid fa-plus"></i>
+            </div>
+            <div class="fbform-faq-item__body">
+              <div>
+                <p>Absolutely. We treat all feedback and reports with strict confidentiality and respect your privacy.</p>
+              </div>
+            </div>
+          </div>
+          <div class="fbform-faq-item">
+            <div class="fbform-faq-item__header">
+              <span class="fbform-faq-item__text">What type of feedback can I share?</span>
+              <i class="fa-solid fa-plus"></i>
+            </div>
+            <div class="fbform-faq-item__body">
+              <div>
+                <p>You can share product suggestions, report technical issues, or provide general feedback about your experience.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other ways to reach us -->
+      <div class="fbform-card fbform-contact-card">
+        <h3 class="fbform-card__title">Other Ways to Reach Us</h3>
+        <span class="fbform-card__underline"></span>
+        <div class="fbform-contact-wrap">
+          <div class="fbform-contact-list">
+            <div class="fbform-contact-item">
+              <span class="fbform-contact-item__icon"><i class="fa-regular fa-envelope"></i></span>
+              <div class="fbform-contact-item__text">
+                <strong>Email</strong>
+                <span>support@alephindia.com</span>
+              </div>
+            </div>
+            <div class="fbform-contact-item">
+              <span class="fbform-contact-item__icon"><i class="fa-solid fa-phone"></i></span>
+              <div class="fbform-contact-item__text">
+                <strong>Phone</strong>
+                <span>+91 1234 567 890</span>
+              </div>
+            </div>
+            <div class="fbform-contact-item">
+              <span class="fbform-contact-item__icon"><i class="fa-regular fa-clock"></i></span>
+              <div class="fbform-contact-item__text">
+                <strong>Work Hours</strong>
+                <span>Mon - Fri : 9:30 AM - 6:30 PM</span>
+              </div>
+            </div>
+          </div>
+          <div class="fbform-contact-graphic">
+            <i class="fa-solid fa-envelope-open-text"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thank you banner -->
+    <div class="fbform-banner">
+      <div class="fbform-banner__left">
+        <div class="fbform-banner__icon">
+          <i class="fa-solid fa-mobile-screen"></i>
+          <span class="fbform-banner__bubble"><i class="fa-solid fa-comment-dots"></i></span>
+        </div>
+        <div class="fbform-banner__text">
+          <p class="fbform-banner__title">Your feedback drives our commitment to excellence.</p>
+          <p class="fbform-banner__desc">Thank you for being a part of our journey!</p>
+        </div>
+      </div>
+      <button class="fbform-banner__btn">THANK YOU! <i class="fa-regular fa-heart"></i></button>
+    </div>
+  </div>
+</section>
     <!-- Site Footer -->
     <!-- Global Footer -->
 <!-- Global Footer -->
@@ -376,7 +735,7 @@
         <p class="footer-desc">
           Delivering regulatory compliance, certification, testing, and audit solutions for businesses across multiple industries.
         </p>
-        
+
         <!-- Newsletter Card -->
         <div class="newsletter-card">
           <div class="newsletter-card-header">
@@ -617,5 +976,238 @@
 
     <!-- Scripts -->
     <script src="js/navigation.js"></script>
+    <script src="js/about.js"></script>
+    <script>
+
+
+(function () {
+  "use strict";
+
+  const form = document.getElementById("fbForm");
+  const submitBtn = document.getElementById("fbSubmitBtn");
+  const successEl = document.getElementById("fbSuccess");
+  const resetBtn = document.getElementById("fbResetBtn");
+  const cardEl = document.querySelector(".fbform-card");
+
+  const fields = {
+    fullName: {
+      input: document.getElementById("fbFullName"),
+      error: document.getElementById("fbFullNameError"),
+      field: document.getElementById("fbFullName").closest(".fbform-field"),
+    },
+    email: {
+      input: document.getElementById("fbEmail"),
+      error: document.getElementById("fbEmailError"),
+      field: document.getElementById("fbEmail").closest(".fbform-field"),
+    },
+    subject: {
+      input: document.getElementById("fbSubject"),
+      error: document.getElementById("fbSubjectError"),
+      field: document.getElementById("fbSubject").closest(".fbform-field"),
+    },
+    message: {
+      input: document.getElementById("fbMessage"),
+      error: document.getElementById("fbMessageError"),
+      field: document.getElementById("fbMessage").closest(".fbform-field"),
+    },
+  };
+
+  const messageCount = document.getElementById("fbMessageCount");
+  const MESSAGE_MAX = 1000;
+
+  /* -----------------------------------------------------------------
+     1) Validators
+  ----------------------------------------------------------------- */
+  function validateFullName(value) {
+    const trimmed = value.trim();
+    if (!trimmed) return "Please enter your full name.";
+    if (trimmed.length < 2) return "Name looks too short.";
+    if (!/^[a-zA-Z\s.'-]+$/.test(trimmed))
+      return "Name can only contain letters, spaces, and ' . -";
+    return "";
+  }
+
+  function validateEmail(value) {
+    const trimmed = value.trim();
+    if (!trimmed) return "Please enter your email address.";
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(trimmed))
+      return "Please enter a valid email address.";
+    return "";
+  }
+
+  function validateSubject(value) {
+    if (!value) return "Please select a subject.";
+    return "";
+  }
+
+  function validateMessage(value) {
+    const trimmed = value.trim();
+    if (!trimmed) return "Please write your feedback or concern.";
+    if (trimmed.length < 10)
+      return "Please provide a bit more detail (min 10 characters).";
+    if (trimmed.length > MESSAGE_MAX)
+      return `Message must be under ${MESSAGE_MAX} characters.`;
+    return "";
+  }
+
+  const validators = {
+    fullName: validateFullName,
+    email: validateEmail,
+    subject: validateSubject,
+    message: validateMessage,
+  };
+
+  /* -----------------------------------------------------------------
+     2) Error display helpers
+  ----------------------------------------------------------------- */
+  function setFieldError(key, message) {
+    const { field, error } = fields[key];
+    if (message) {
+      field.classList.add("has-error");
+      error.textContent = message;
+    } else {
+      field.classList.remove("has-error");
+      error.textContent = "";
+    }
+  }
+
+  function validateField(key) {
+    const value = fields[key].input.value;
+    const message = validators[key](value);
+    setFieldError(key, message);
+    return !message;
+  }
+
+  /* -----------------------------------------------------------------
+     3) Select — toggle placeholder styling once a real value is chosen
+  ----------------------------------------------------------------- */
+  fields.subject.input.addEventListener("change", () => {
+    fields.subject.input.classList.toggle(
+      "has-value",
+      !!fields.subject.input.value
+    );
+  });
+
+  /* -----------------------------------------------------------------
+     4) Message textarea — live character counter
+  ----------------------------------------------------------------- */
+  fields.message.input.addEventListener("input", () => {
+    const len = fields.message.input.value.length;
+    messageCount.textContent = `${len} / ${MESSAGE_MAX}`;
+  });
+
+  /* -----------------------------------------------------------------
+     5) Validate on blur, and re-validate live once an error is shown
+  ----------------------------------------------------------------- */
+  Object.keys(fields).forEach((key) => {
+    const { input } = fields[key];
+    input.addEventListener("blur", () => validateField(key));
+    input.addEventListener("input", () => {
+      if (fields[key].field.classList.contains("has-error")) {
+        validateField(key);
+      }
+    });
+    input.addEventListener("change", () => {
+      if (fields[key].field.classList.contains("has-error")) {
+        validateField(key);
+      }
+    });
+  });
+
+  /* -----------------------------------------------------------------
+     6) Submit handler
+  ----------------------------------------------------------------- */
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const results = Object.keys(fields).map((key) => validateField(key));
+    const isValid = results.every(Boolean);
+
+    if (!isValid) {
+      const firstErrorField = document.querySelector(
+        ".fbform-field.has-error"
+      );
+      if (firstErrorField) {
+        firstErrorField.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }
+      return;
+    }
+
+    const type = form.querySelector('input[name="type"]:checked')?.value;
+
+    const payload = {
+      fullName: fields.fullName.input.value.trim(),
+      email: fields.email.input.value.trim(),
+      subject: fields.subject.input.value,
+      type,
+      message: fields.message.input.value.trim(),
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML =
+      '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+
+
+    // Simulated success for now so the flow is testable out of the box.
+    setTimeout(() => {
+      console.log("Feedback submitted:", payload);
+      showSuccess();
+    }, 900);
+  });
+
+  /* -----------------------------------------------------------------
+     7) Show the thank-you state in place of the form
+  ----------------------------------------------------------------- */
+  function showSuccess() {
+    form.style.display = "none";
+    successEl.classList.add("is-visible");
+    successEl.setAttribute("aria-hidden", "false");
+  }
+
+  /* -----------------------------------------------------------------
+     8) "Submit Another Response" — reset everything back to a blank
+     form and swap the thank-you state back out.
+  ----------------------------------------------------------------- */
+  resetBtn.addEventListener("click", () => {
+    form.reset();
+    Object.keys(fields).forEach((key) => setFieldError(key, ""));
+    fields.subject.input.classList.remove("has-value");
+    messageCount.textContent = `0 / ${MESSAGE_MAX}`;
+
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Submit';
+
+    successEl.classList.remove("is-visible");
+    successEl.setAttribute("aria-hidden", "true");
+    form.style.display = "";
+
+    cardEl.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+})();
+    </script>
+<script>
+  // FAQ Accordion Script
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.fbform-faq-item');
+    faqItems.forEach(item => {
+      const header = item.querySelector('.fbform-faq-item__header');
+      header.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        // Close all other items (optional, but standard accordion behavior)
+        faqItems.forEach(otherItem => otherItem.classList.remove('active'));
+
+        // Toggle the clicked one
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>

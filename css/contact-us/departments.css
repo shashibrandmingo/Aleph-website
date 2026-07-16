@@ -1,0 +1,437 @@
+/* ==========================================================================
+   CONNECT WITH THE RIGHT DEPARTMENT SECTION
+   4 department cards (1 featured/highlighted) + a bottom info banner.
+   Colors follow the site's blue corporate theme.
+   ========================================================================== */
+
+.dept-section {
+  --dept-navy: #003198;
+  --dept-blue: #003198;
+  --dept-blue-hover: #00276f;
+  --dept-blue-soft: #eaf1fd;
+  --dept-blue-softer: #f4f8fe;
+  --dept-text-dark: #101828;
+  --dept-text-muted: #667085;
+  --dept-border: #e7e9f0;
+  --dept-bg: #ffffff;
+  --dept-font-heading: var(--font-primary, "Poppins", "Segoe UI", sans-serif);
+  --dept-font-body: var(--font-secondary, "Inter", "Segoe UI", sans-serif);
+
+  width: 100%;
+  padding: 40px 5vw 84px;
+  background: var(--dept-bg);
+  font-family: var(--dept-font-body);
+  box-sizing: border-box;
+}
+
+.dept-section *,
+.dept-section *::before,
+.dept-section *::after {
+  box-sizing: border-box;
+}
+
+.dept-container {
+  width: 100%;
+  max-width: var(--container-width, 1320px);
+  margin: 0 auto;
+}
+
+/* ---------- Header ---------- */
+
+.dept-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px;
+  animation: deptFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.dept-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--dept-font-heading);
+  font-weight: 700;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  color: var(--dept-blue);
+  margin-bottom: 16px;
+}
+
+.dept-eyebrow i {
+  font-size: 0.4rem;
+}
+
+.dept-eyebrow-line {
+  width: 34px;
+  height: 1px;
+  background: var(--dept-blue);
+  opacity: 0.4;
+}
+
+.dept-heading {
+  font-family: var(--dept-font-heading);
+  font-weight: 800;
+  font-size: clamp(1.7rem, 1.4vw + 1.3rem, 2.5rem);
+  line-height: 1.2;
+  color: var(--dept-text-dark);
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+}
+
+.dept-subtext {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--dept-text-muted);
+  margin: 0;
+}
+
+/* ---------- Card grid ---------- */
+
+.dept-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-bottom: 36px;
+}
+
+.dept-card {
+  position: relative;
+  background: #fefefe;
+  border: 1px solid var(--dept-border);
+  border-radius: 20px;
+  padding: 28px 24px 26px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 10px rgba(16, 24, 40, 0.04);
+  animation: deptFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition:
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dept-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.dept-card:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.dept-card:nth-child(3) {
+  animation-delay: 0.19s;
+}
+.dept-card:nth-child(4) {
+  animation-delay: 0.26s;
+}
+
+.dept-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 49, 152, 0.12);
+  border-color: rgba(0, 49, 152, 0.25);
+}
+
+/* Faint dot-grid pattern in the top-right corner of every card */
+.dept-card-pattern {
+  position: absolute;
+  top: 22px;
+  right: 20px;
+  width: 60px;
+  height: 44px;
+  background-image: radial-gradient(circle, #d3daeb 1.1px, transparent 1.1px);
+  background-size: 10px 10px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* "Featured" is only a small badge in the corner — the card itself uses
+   the exact same base styling as every other card (no tinted background,
+   no highlighted border), matching the reference. */
+.dept-featured-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--dept-font-heading);
+  font-weight: 600;
+  font-size: 0.7rem;
+  color: var(--dept-blue);
+  background: #ffffff;
+  border: 1px solid rgba(0, 49, 152, 0.2);
+  padding: 4px 10px;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0, 49, 152, 0.12);
+}
+
+.dept-featured-badge i {
+  font-size: 0.62rem;
+}
+
+.dept-icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--dept-blue-soft);
+  color: var(--dept-blue);
+  font-size: 1.35rem;
+  margin-bottom: 14px;
+  box-shadow: 0 0 0 5px rgba(0, 49, 152, 0.05);
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.35s ease;
+}
+
+.dept-card:hover .dept-icon {
+  transform: scale(1.08) rotate(-4deg);
+  box-shadow: 0 0 0 7px rgba(0, 49, 152, 0.08);
+}
+
+.dept-icon-underline {
+  display: block;
+  width: 26px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--dept-blue);
+  margin-bottom: 14px;
+}
+
+.dept-title {
+  font-family: var(--dept-font-heading);
+  font-weight: 700;
+  font-size: 1.12rem;
+  color: var(--dept-text-dark);
+  margin: 0 0 8px;
+}
+
+.dept-desc {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--dept-text-muted);
+  margin: 0 0 18px;
+  flex: 1;
+}
+
+.dept-email {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--dept-font-body);
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--dept-navy);
+  background: var(--dept-blue-soft);
+  border-radius: 10px;
+  padding: 10px 12px;
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: background 0.25s ease;
+}
+
+.dept-email i {
+  color: var(--dept-blue);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.dept-email:hover {
+  background: #dfeaff;
+}
+
+.dept-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--dept-font-heading);
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #ffffff;
+  background: #003198;
+  border-radius: 10px;
+  padding: 12px 14px;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0 6px 16px rgba(0, 49, 152, 0.22);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.dept-btn i {
+  font-size: 0.76rem;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.dept-btn:hover {
+  background: #00276f;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0, 49, 152, 0.28);
+}
+
+.dept-btn:hover i {
+  transform: translateX(3px);
+}
+
+/* ---------- Bottom banner ---------- */
+
+.dept-banner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: var(--dept-bg);
+  border: 1px solid var(--dept-border);
+  border-radius: 12px;
+  padding: 24px 32px;
+  max-width: 950px;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  animation: deptFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.32s;
+}
+
+.dept-banner-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--dept-blue-softer);
+  color: var(--dept-blue);
+}
+
+.dept-banner-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke-width: 1.5;
+}
+
+.dept-banner-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.dept-banner-title {
+  font-family: var(--dept-font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--dept-text-dark);
+}
+
+.dept-banner-sub {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--dept-text-muted);
+}
+
+.dept-banner-divider {
+  width: 1px;
+  align-self: stretch;
+  background: var(--dept-border);
+  flex-shrink: 0;
+  margin: 0 8px;
+}
+
+.dept-banner-avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: var(--dept-blue);
+}
+
+.dept-banner-avatar svg {
+  width: 48px;
+  height: 48px;
+  stroke-width: 1.2;
+}
+
+@keyframes deptFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dept-header,
+  .dept-card,
+  .dept-banner {
+    animation: none !important;
+  }
+  .dept-icon,
+  .dept-btn,
+  .dept-btn i {
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .dept-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .dept-section {
+    padding: 30px 6vw 68px;
+  }
+  .dept-header {
+    margin-bottom: 36px;
+  }
+  .dept-banner {
+    flex-wrap: wrap;
+  }
+  .dept-banner-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .dept-section {
+    padding: 20px 6vw 56px;
+  }
+  .dept-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .dept-heading {
+    font-size: clamp(1.4rem, 6vw, 1.8rem);
+  }
+  .dept-banner {
+    padding: 18px 20px;
+  }
+  .dept-banner-avatar {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .dept-eyebrow {
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+  }
+  .dept-eyebrow-line {
+    width: 20px;
+  }
+}

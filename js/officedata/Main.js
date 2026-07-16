@@ -92,9 +92,10 @@ function renderCountryButtons() {
   const countries = getCountryList();
   const VISIBLE_COUNT = 7; // matches the reference's row before "More"
 
-  countryButtonsEl.innerHTML = "";
+  if (countryButtonsEl) {
+    countryButtonsEl.innerHTML = "";
 
-  countries.forEach((c, index) => {
+    countries.forEach((c, index) => {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "gp-country-btn";
@@ -123,31 +124,38 @@ function renderCountryButtons() {
       hidden.forEach((b) => (b.hidden = false));
       moreBtn.remove();
     });
-    countryButtonsEl.appendChild(moreBtn);
+      countryButtonsEl.appendChild(moreBtn);
+    }
   }
 
   // Footer summary line, e.g. "India · USA · Germany · ... · and more"
-  const names = countries.slice(0, 6).map((c) => c.country);
-  const suffix = countries.length > 6 ? " · and more" : "";
-  countryFooterEl.textContent = names.join(" · ") + suffix;
+  if (countryFooterEl) {
+    const names = countries.slice(0, 6).map((c) => c.country);
+    const suffix = countries.length > 6 ? " · and more" : "";
+    countryFooterEl.textContent = names.join(" · ") + suffix;
+  }
 }
 
 function setActiveCountryButton(country) {
-  countryButtonsEl.querySelectorAll(".gp-country-btn").forEach((btn) => {
-    btn.classList.toggle("is-active", btn.dataset.country === country);
-  });
+  if (countryButtonsEl) {
+    countryButtonsEl.querySelectorAll(".gp-country-btn").forEach((btn) => {
+      btn.classList.toggle("is-active", btn.dataset.country === country);
+    });
+  }
 }
 
 /* -----------------------------------------------------------------
    5) "View On Google Maps" — opens a maps search centered on the
    currently active office (falls back to the Head Office).
 ----------------------------------------------------------------- */
-mapsButton.addEventListener("click", (e) => {
-  const office = getOfficeById(activeOfficeId) || HEAD_OFFICE;
-  if (office) {
-    e.currentTarget.href = `https://www.google.com/maps?q=${office.lat},${office.lng}`;
-  }
-});
+if (mapsButton) {
+  mapsButton.addEventListener("click", (e) => {
+    const office = getOfficeById(activeOfficeId) || HEAD_OFFICE;
+    if (office) {
+      e.currentTarget.href = `https://www.google.com/maps?q=${office.lat},${office.lng}`;
+    }
+  });
+}
 
 /* -----------------------------------------------------------------
    6) Init

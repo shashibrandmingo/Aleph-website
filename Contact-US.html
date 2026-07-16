@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/Header.css">
     <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/homegobaloffice.css">
+    <link rel="stylesheet" href="css/contact-us/contacthero.css">
+    <link rel="stylesheet" href="css/contact-us/departments.css">
+    <link rel="stylesheet" href="css/contact-us/offices.css">
+    <link rel="stylesheet" href="css/contact-us/helpsection.css">
+    <link rel="stylesheet" href="css/contact-us/faqsection.css">
+    <link rel="stylesheet" href="css/homeconsultationsection.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
@@ -60,7 +68,7 @@
           </svg>
         </a>
       </div>
-      
+
       <div class="top-bar-divider"></div>
       <a href="CRM-Client-Login.html" class="client-login-btn">
         <!-- SVG User Icon -->
@@ -87,7 +95,7 @@
       <div class="nav-item" data-page="index">
         <a href="index.html" class="nav-link">Home</a>
       </div>
-      
+
       <!-- 2. About -->
       <div class="nav-item has-dropdown" data-page="about">
         <a href="#" class="nav-link">
@@ -278,7 +286,7 @@
         <path d="M5 12h14M12 5l7 7-7 7" />
       </svg>
     </a>
-    
+
     <div class="mobile-contact-info">
       <div class="mobile-contact-item">
         <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -316,76 +324,922 @@
 </div>
     </header>
 
-    <!-- Main Container -->
-    <main id="main-content">
-        
-        <section class="page-header-section">
-            <div class="container">
-                <nav class="breadcrumb"><a href="index.html">Home</a> &gt; <span>Contact Us</span></nav>
-                <h1>Contact Us</h1>
-                <p>Have questions? Need a certification? Get in touch with our experts today.</p>
+
+    <!-- hero section -->
+    <section class="contact-hero-section">
+      <div class="contact-hero-container">
+        <!-- Left Content -->
+        <div class="contact-hero-left">
+          <div class="ch-badge">
+            <span class="ch-badge-dot"></span>
+            Get Expert Compliance Support
+          </div>
+
+          <h1 class="ch-heading">Connect With Our<br>Compliance Experts</h1>
+
+          <p class="ch-desc">We are here to help you navigate complex regulatory landscapes with confidence and clarity.</p>
+
+          <form class="ch-form" id="chContactForm">
+            <div class="ch-inputs">
+              <div class="ch-input-group">
+                <i class="fa-regular fa-user"></i>
+                <input type="text" placeholder="Your Name" required>
+              </div>
+              <div class="ch-input-group">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" placeholder="Your Email" required>
+              </div>
+              <button type="submit" class="ch-submit-btn">
+                Subscribe
+              </button>
             </div>
-        </section>
-        <section class="section-padding">
-            <div class="container">
-                <div class="two-col-grid">
-                    <!-- Form -->
-                    <div class="card-wrapper form-card">
-                        <h3>Get a Quote / Inquiry</h3>
-                        <form class="styled-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.');">
-                            <div class="form-group">
-                                <label for="name">Full Name *</label>
-                                <input type="text" id="name" required placeholder="Enter your full name">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" required placeholder="Enter your email address">
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number *</label>
-                                <input type="tel" id="phone" required placeholder="Enter your phone number">
-                            </div>
-                            <div class="form-group">
-                                <label for="service">Select Service *</label>
-                                <select id="service" required>
-                                    <option value="">-- Choose Certification --</option>
-                                    <option value="bis">BIS Certification</option>
-                                    <option value="wpc">WPC ETA Approval</option>
-                                    <option value="tec">TEC Certification</option>
-                                    <option value="bee">BEE Star Labeling</option>
-                                    <option value="other">Other Certifications</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message *</label>
-                                <textarea id="message" rows="5" required placeholder="Write your project requirements details here..."></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Send Message</button>
-                        </form>
-                    </div>
-                    <!-- Contact Details -->
-                    <div class="contact-details-side">
-                        <div class="detail-card">
-                            <h4>Corporate Office</h4>
-                            <p><strong>Aleph INDIA</strong><br>A-123, Sector 63, Noida, Uttar Pradesh 201301, India</p>
-                        </div>
-                        <div class="detail-card">
-                            <h4>Quick Contacts</h4>
-                            <p>
-                                📞 Phone: <a href="tel:+911234567890">+91 12345 67890</a><br>
-                                ✉️ Email: <a href="mailto:info@yourcompany.com">info@yourcompany.com</a>
-                            </p>
-                        </div>
-                        <div class="detail-card">
-                            <h4>Hours of Operation</h4>
-                            <p>Monday - Saturday: 9:00 AM to 6:00 PM<br>Sunday: Closed</p>
-                        </div>
-                    </div>
+          </form>
+
+          <h3 class="ch-help-title">How We Can Help You</h3>
+          <p class="ch-help-desc">Our team of compliance professionals provides end-to-end support tailored to your business needs. Reach out to us for reliable guidance and expert solutions.</p>
+
+          <div class="ch-features">
+            <div class="ch-feature">
+              <div class="ch-feature-icon">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <div class="ch-feature-text">
+                <h4>Fast Expert Response</h4>
+                <p>We respond within 24 hours</p>
+              </div>
+            </div>
+            <div class="ch-feature">
+              <div class="ch-feature-icon">
+                <i class="fa-solid fa-headset"></i>
+              </div>
+              <div class="ch-feature-text">
+                <h4>PAN India Support</h4>
+                <p>On-ground support across India</p>
+              </div>
+            </div>
+            <div class="ch-feature">
+              <div class="ch-feature-icon">
+                <i class="fa-solid fa-shield"></i>
+              </div>
+              <div class="ch-feature-text">
+                <h4>Dedicated Compliance Guidance</h4>
+                <p>Personalized guidance for your business</p>
+              </div>
+            </div>
+            <div class="ch-feature">
+              <div class="ch-feature-icon">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+              <div class="ch-feature-text">
+                <h4>Global Regulatory Expertise</h4>
+                <p>Stay compliant with global standards</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Content (Globe) -->
+        <div class="contact-hero-right">
+          <div class="global-presence__right">
+            <div class="gp-globe-stage" id="gpGlobeStage">
+              <canvas id="gpGlobeCanvas" class="gp-globe-canvas"></canvas>
+
+              <!-- ===== Office info popup (positioned by popup.js) ===== -->
+              <div class="globe-popup arrow-left" id="gpPopup" aria-hidden="true">
+                <button type="button" class="globe-popup__close" aria-label="Close">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <div class="globe-popup__header">
+                  <span class="globe-popup__icon"></span>
+                  <div class="globe-popup__header-text">
+                    <p class="globe-popup__name"></p>
+                    <p class="globe-popup__location"></p>
+                  </div>
                 </div>
+
+                <a class="globe-popup__phone-link" href="#">
+                  <i class="fa-solid fa-phone"></i>
+                  <span class="globe-popup__phone"></span>
+                </a>
+
+                <a class="globe-popup__email" href="#"></a>
+
+                <button type="button" class="globe-popup__view-btn">
+                  View Office Details
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
             </div>
-        </section>
-        
-    </main>
+
+            <!-- ===== Legend ===== -->
+            <div class="gp-legend">
+              <span class="gp-legend__item">
+                <span class="gp-legend__dot gp-legend__dot--head"></span>
+                Head Office
+              </span>
+              <span class="gp-legend__item">
+                <span class="gp-legend__dot gp-legend__dot--branch"></span>
+                Our Offices
+              </span>
+              <span class="gp-legend__item">
+                <span class="gp-legend__dot gp-legend__dot--line"></span>
+                Connected Regions
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- departments section -->
+
+      <section class="dept-section" id="departments">
+        <div class="dept-container">
+
+    <!-- ---------- Header ---------- -->
+    <div class="dept-header">
+      <span class="dept-eyebrow">
+        <span class="dept-eyebrow-line"></span>
+        <i class="fa-solid fa-circle-dot"></i>
+        CONNECT WITH THE RIGHT DEPARTMENT
+        <span class="dept-eyebrow-line"></span>
+      </span>
+      <h2 class="dept-heading">Connect With The Right Department</h2>
+      <p class="dept-subtext">
+        Choose the right department to get connected with our experts
+        who can help you best.
+      </p>
+    </div>
+
+    <!-- ---------- Department cards ---------- -->
+    <div class="dept-grid">
+
+      <!-- Sales -->
+      <div class="dept-card">
+        <div class="dept-card-pattern" aria-hidden="true"></div>
+        <div class="dept-icon">
+          <i class="fa-solid fa-user-group"></i>
+        </div>
+        <span class="dept-icon-underline"></span>
+        <h3 class="dept-title">Sales</h3>
+        <p class="dept-desc">
+          For product inquiries, pricing, and business solutions.
+        </p>
+        <a href="mailto:sales@alephindia.in" class="dept-email">
+          <i class="fa-regular fa-envelope"></i>
+          sales@alephindia.in
+        </a>
+        <a href="mailto:sales@alephindia.in" class="dept-btn">
+          Contact Sales
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Technical Team -->
+      <div class="dept-card">
+        <div class="dept-card-pattern" aria-hidden="true"></div>
+        <div class="dept-icon">
+          <i class="fa-solid fa-headset"></i>
+        </div>
+        <span class="dept-icon-underline"></span>
+        <h3 class="dept-title">Technical Team</h3>
+        <p class="dept-desc">
+          For technical support, product assistance, and troubleshooting.
+        </p>
+        <a href="mailto:support@alephindia.in" class="dept-email">
+          <i class="fa-regular fa-envelope"></i>
+          support@alephindia.in
+        </a>
+        <a href="mailto:support@alephindia.in" class="dept-btn">
+          Contact Technical Team
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Global Compliance — featured -->
+      <div class="dept-card dept-card--featured">
+        <div class="dept-card-pattern" aria-hidden="true"></div>
+        <span class="dept-featured-badge">
+          <i class="fa-solid fa-star"></i>
+          Featured
+        </span>
+        <div class="dept-icon">
+          <i class="fa-solid fa-earth-americas"></i>
+        </div>
+        <span class="dept-icon-underline"></span>
+        <h3 class="dept-title">Global Compliance</h3>
+        <p class="dept-desc">
+          For global compliance, regulatory affairs, and international
+          support.
+        </p>
+        <a href="mailto:global@alephindia.in" class="dept-email">
+          <i class="fa-regular fa-envelope"></i>
+          global@alephindia.in
+        </a>
+        <a href="mailto:global@alephindia.in" class="dept-btn">
+          Contact Global Compliance
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Careers -->
+      <div class="dept-card">
+        <div class="dept-card-pattern" aria-hidden="true"></div>
+        <div class="dept-icon">
+          <i class="fa-solid fa-briefcase"></i>
+        </div>
+        <span class="dept-icon-underline"></span>
+        <h3 class="dept-title">Careers</h3>
+        <p class="dept-desc">
+          For career opportunities and job-related queries.
+        </p>
+        <a href="mailto:hr@alephindia.in" class="dept-email">
+          <i class="fa-regular fa-envelope"></i>
+          hr@alephindia.in
+        </a>
+        <a href="mailto:hr@alephindia.in" class="dept-btn">
+          Explore Careers
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- ---------- Bottom banner strip ---------- -->
+    <div class="dept-banner">
+      <div class="dept-banner-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" />
+          <path d="M9.2 12.3l2 2 3.6-4" />
+        </svg>
+      </div>
+      <div class="dept-banner-text">
+        <span class="dept-banner-title">Expert Guidance. Right Direction.</span>
+        <span class="dept-banner-sub">
+          Our teams are here to provide you with accurate information and
+          the right solutions.
+        </span>
+      </div>
+      <span class="dept-banner-divider" aria-hidden="true"></span>
+      <div class="dept-banner-avatar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3a7 7 0 0 0-7 7v3" />
+          <path d="M19 13v-3a7 7 0 0 0-7-7" />
+          <rect x="3.5" y="12.5" width="3.2" height="5" rx="1.4" />
+          <rect x="17.3" y="12.5" width="3.2" height="5" rx="1.4" />
+          <path d="M19 17.5c0 2-1.8 3-4 3h-2" />
+          <circle cx="11.3" cy="20.3" r="1" />
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============ OUR GLOBAL OFFICES SECTION ============ -->
+<section class="off-section" id="offices">
+  <div class="off-container">
+
+    <!-- ---------- Header ---------- -->
+    <div class="off-header">
+      <span class="off-eyebrow">
+        <i class="fa-solid fa-shield"></i>
+        OUR OFFICES
+        <span class="off-eyebrow-line"></span>
+      </span>
+      <h2 class="off-heading">Our Global Offices</h2>
+      <p class="off-subtext">Connect with our teams around the world.</p>
+    </div>
+
+    <!-- ---------- Office cards ---------- -->
+    <div class="off-grid">
+
+      <!-- Head Office (India) — active/highlighted by default -->
+      <div class="off-card off-card--head">
+        <span class="off-corner-badge">Head Office</span>
+
+        <div class="off-card-top">
+          <div class="off-icon">
+            <i class="fa-solid fa-building-columns"></i>
+          </div>
+          <div class="off-card-top-text">
+            <span class="off-type-label">
+              <i class="fa-solid fa-star"></i>
+              HEAD OFFICE
+            </span>
+            <span class="off-country">India</span>
+          </div>
+        </div>
+
+        <div class="off-details">
+          <div class="off-detail-row">
+            <span class="off-detail-icon"><i class="fa-solid fa-location-dot"></i></span>
+            <div class="off-detail-text">
+              <span class="off-detail-title">Aleph India Head Office</span>
+              <span class="off-detail-sub">B-123, Sector 62, Noida, Uttar Pradesh 201309, India</span>
+            </div>
+          </div>
+          <div class="off-detail-row">
+            <span class="off-detail-icon"><i class="fa-solid fa-phone"></i></span>
+            <a href="tel:+911204567890" class="off-detail-link">+91 120 456 7890</a>
+          </div>
+          <div class="off-detail-row">
+            <span class="off-detail-icon"><i class="fa-regular fa-envelope"></i></span>
+            <a href="mailto:india@alephindia.in" class="off-detail-link">india@alephindia.in</a>
+          </div>
+          <div class="off-detail-row">
+            <span class="off-detail-icon"><i class="fa-regular fa-clock"></i></span>
+            <span class="off-detail-link">Mon - Sat: 9:00 AM - 7:00 PM (IST)</span>
+          </div>
+        </div>
+
+        <span class="off-divider"></span>
+
+        <a href="#" class="off-btn off-btn--outline">
+          View Office Details
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Branch Office (Overseas) — Taiwan -->
+      <div class="off-card">
+        <div class="off-card-top">
+          <div class="off-icon">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <div class="off-card-top-text">
+            <span class="off-type-label">BRANCH OFFICE (OVERSEAS)</span>
+          </div>
+        </div>
+
+        <div class="off-details">
+          <div class="off-detail-row">
+            <span class="off-detail-icon"><i class="fa-solid fa-location-dot"></i></span>
+            <div class="off-detail-text">
+              <span class="off-detail-title">Taiwan</span>
+              <span class="off-detail-sub">Taipei City, Taiwan</span>
+            </div>
+          </div>
+          <div class="off-detail-row">
+            <span class="off-detail-icon"><i class="fa-solid fa-phone"></i></span>
+            <a href="tel:+918826230531" class="off-detail-link">+91 8826230531</a>
+          </div>
+          <div class="off-detail-row">
+            <span class="off-detail-icon"><i class="fa-solid fa-phone-volume"></i></span>
+            <span class="off-detail-link">Toll Free: 0-804-803-68-69</span>
+          </div>
+          <div class="off-detail-row">
+            <span class="off-detail-icon"><i class="fa-regular fa-envelope"></i></span>
+            <a href="mailto:info@alephindia.in" class="off-detail-link">info@alephindia.in</a>
+          </div>
+        </div>
+
+        <span class="off-divider"></span>
+
+        <a href="#" class="off-btn off-btn--outline">
+          View Office Details
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Branch Office (Domestic) — Mumbai -->
+      <div class="off-card">
+        <div class="off-card-top">
+          <div class="off-icon">
+            <i class="fa-solid fa-city"></i>
+          </div>
+          <div class="off-card-top-text">
+            <span class="off-type-label">BRANCH OFFICE (DOMESTIC)</span>
+          </div>
+        </div>
+
+        <div class="off-details">
+          <div class="off-detail-row">
+            <span class="off-detail-icon"><i class="fa-solid fa-location-dot"></i></span>
+            <div class="off-detail-text">
+              <span class="off-detail-title">Mumbai</span>
+              <span class="off-detail-sub">SEEPZ, Andheri (E)</span>
+            </div>
+          </div>
+          <div class="off-detail-row">
+            <span class="off-detail-icon"><i class="fa-solid fa-phone"></i></span>
+            <a href="tel:+919990136656" class="off-detail-link">+91 99901 36656</a>
+          </div>
+          <div class="off-detail-row">
+            <span class="off-detail-icon"><i class="fa-solid fa-phone-volume"></i></span>
+            <span class="off-detail-link">0-804-803-68-69</span>
+          </div>
+          <div class="off-detail-row">
+            <span class="off-detail-icon"><i class="fa-regular fa-envelope"></i></span>
+            <a href="mailto:inbox@alephindia.in" class="off-detail-link">inbox@alephindia.in</a>
+          </div>
+          <div class="off-detail-row">
+            <span class="off-detail-icon"><i class="fa-regular fa-envelope"></i></span>
+            <a href="mailto:info@alephindia.in" class="off-detail-link">info@alephindia.in</a>
+          </div>
+        </div>
+
+        <span class="off-divider"></span>
+
+        <a href="#" class="off-btn off-btn--outline">
+          View Office Details
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- ---------- Bottom banner ---------- -->
+    <div class="off-banner">
+      <div class="off-banner-icon">
+        <i class="fa-solid fa-globe"></i>
+      </div>
+      <div class="off-banner-text">
+        <span class="off-banner-title">One World. One Standard of Compliance.</span>
+        <span class="off-banner-sub">
+          Our global presence ensures local expertise with a consistent
+          commitment to excellence.
+        </span>
+      </div>
+      <div class="off-banner-map" aria-hidden="true"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- form section  -->
+<section class="consultation-section">
+  <div class="consultation-container">
+    <div class="consultation-grid">
+      <!-- ===== Left: Form card ===== -->
+      <div class="consultation-form-card">
+        <h2 class="consultation-form-title">Request Expert Consultation</h2>
+        <p class="consultation-form-subtitle">
+          Share your requirements and our compliance experts will get
+          back to you.
+        </p>
+
+        <form id="consultationForm" novalidate>
+          <div class="consultation-row">
+            <div class="consultation-field">
+              <label for="cFullName">
+                Full Name <span class="consultation-required">*</span>
+              </label>
+              <div class="consultation-input-wrap">
+                <i class="fa-solid fa-user"></i>
+                <input
+                  type="text"
+                  id="cFullName"
+                  name="fullName"
+                  placeholder="Enter your full name"
+                  autocomplete="name"
+                />
+              </div>
+              <p class="consultation-error" id="cFullNameError"></p>
+            </div>
+
+            <div class="consultation-field">
+              <label for="cCompanyName">
+                Company Name <span class="consultation-required">*</span>
+              </label>
+              <div class="consultation-input-wrap">
+                <i class="fa-solid fa-building"></i>
+                <input
+                  type="text"
+                  id="cCompanyName"
+                  name="companyName"
+                  placeholder="Enter your company name"
+                  autocomplete="organization"
+                />
+              </div>
+              <p class="consultation-error" id="cCompanyNameError"></p>
+            </div>
+          </div>
+
+          <div class="consultation-row">
+            <div class="consultation-field">
+              <label for="cMobile">
+                Mobile (+91) <span class="consultation-required">*</span>
+              </label>
+              <div class="consultation-input-wrap">
+                <i class="fa-solid fa-phone"></i>
+                <input
+                  type="tel"
+                  id="cMobile"
+                  name="mobile"
+                  placeholder="Enter mobile number"
+                  inputmode="numeric"
+                  maxlength="10"
+                  autocomplete="tel-national"
+                />
+              </div>
+              <p class="consultation-error" id="cMobileError"></p>
+            </div>
+
+            <div class="consultation-field">
+              <label for="cEmail">
+                Email Address <span class="consultation-required">*</span>
+              </label>
+              <div class="consultation-input-wrap">
+                <i class="fa-solid fa-envelope"></i>
+                <input
+                  type="email"
+                  id="cEmail"
+                  name="email"
+                  placeholder="Enter email address"
+                  autocomplete="email"
+                />
+              </div>
+              <p class="consultation-error" id="cEmailError"></p>
+            </div>
+          </div>
+
+          <div class="consultation-field">
+            <label for="cService">
+              Service: BIS / QCO / EPR / WPC / TEC / Testing / Audit /
+              Other <span class="consultation-required">*</span>
+            </label>
+            <div class="consultation-input-wrap">
+              <i class="fa-solid fa-grip"></i>
+              <select id="cService" name="service">
+                <option value="" disabled selected>
+                  Select the service you need
+                </option>
+                <option value="BIS">BIS Certification</option>
+                <option value="QCO">QCO Compliance</option>
+                <option value="EPR">EPR Registration</option>
+                <option value="WPC">WPC Approval</option>
+                <option value="TEC">TEC Certification</option>
+                <option value="Testing">Testing</option>
+                <option value="Audit">Audit</option>
+                <option value="Other">Other</option>
+              </select>
+              <i class="fa-solid fa-chevron-down consultation-select-arrow"></i>
+            </div>
+            <p class="consultation-error" id="cServiceError"></p>
+          </div>
+
+          <div class="consultation-field">
+            <label for="cRequirement">
+              Tell us more about your requirement
+              <span class="consultation-required">*</span>
+            </label>
+            <div class="consultation-input-wrap consultation-textarea-wrap">
+              <i class="fa-solid fa-pen"></i>
+              <textarea
+                id="cRequirement"
+                name="requirement"
+                placeholder="Provide details about your requirement..."
+                maxlength="1000"
+                rows="4"
+              ></textarea>
+            </div>
+            <div class="consultation-textarea-footer">
+              <p class="consultation-error" id="cRequirementError"></p>
+              <span class="consultation-char-count" id="cRequirementCount"
+                >0 / 1000</span
+              >
+            </div>
+          </div>
+
+          <button type="submit" class="consultation-submit-btn" id="cSubmitBtn">
+            <i class="fa-solid fa-paper-plane"></i>
+            Get Free Expert Advice
+          </button>
+
+          <p class="consultation-confidential">
+            <i class="fa-solid fa-lock"></i>
+            No obligations. 100% confidential.
+          </p>
+        </form>
+
+        <div class="consultation-whatsapp-note">
+          <span class="consultation-whatsapp-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+          </span>
+          <div>
+            <p class="consultation-whatsapp-title">
+              After you submit, we'll thank you, share next steps and
+              connect on WhatsApp.
+            </p>
+            <p class="consultation-whatsapp-text">
+              You can expect a response within 24 hours.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Right: Why Contact Aleph? ===== -->
+      <div class="consultation-info-card">
+        <h3 class="consultation-info-title">Why Contact Aleph?</h3>
+        <span class="consultation-info-underline" aria-hidden="true"></span>
+
+        <div class="consultation-info-list">
+          <div class="consultation-info-item">
+            <span class="consultation-info-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </span>
+            <div>
+              <p class="consultation-info-item-title">
+                Expert Regulatory Guidance
+              </p>
+              <p class="consultation-info-item-text">
+                Advice from compliance professionals with deep industry
+                knowledge.
+              </p>
+            </div>
+          </div>
+
+          <div class="consultation-info-item">
+            <span class="consultation-info-icon">
+              <i class="fa-solid fa-bolt"></i>
+            </span>
+            <div>
+              <p class="consultation-info-item-title">
+                Faster Compliance Assistance
+              </p>
+              <p class="consultation-info-item-text">
+                Streamlined processes to help you achieve compliance
+                quickly.
+              </p>
+            </div>
+          </div>
+
+          <div class="consultation-info-item">
+            <span class="consultation-info-icon">
+              <i class="fa-solid fa-user-tie"></i>
+            </span>
+            <div>
+              <p class="consultation-info-item-title">
+                Dedicated Relationship Manager
+              </p>
+              <p class="consultation-info-item-text">
+                One point of contact for all your compliance needs.
+              </p>
+            </div>
+          </div>
+
+          <div class="consultation-info-item">
+            <span class="consultation-info-icon">
+              <i class="fa-solid fa-globe"></i>
+            </span>
+            <div>
+              <p class="consultation-info-item-title">
+                Multi-country Compliance Support
+              </p>
+              <p class="consultation-info-item-text">
+                End-to-end support across India and global markets.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--  -->
+<!-- ============ HOW CAN WE HELP YOU TODAY SECTION ============ -->
+<section class="help-section" id="help">
+  <div class="help-container">
+    <!-- ---------- Header ---------- -->
+    <div class="help-header">
+      <span class="help-eyebrow-line"></span>
+      <h2 class="help-heading">How can we help you today?</h2>
+      <p class="help-subtext">Pick the option that best fits your need.</p>
+    </div>
+    <!-- ---------- Support option cards ---------- -->
+    <div class="help-grid">
+      <!-- Training Support — green -->
+      <button type="button" class="help-card help-card--green" data-help-card>
+        <div class="help-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <span class="help-divider"></span>
+        <h3 class="help-title">Training Support</h3>
+        <p class="help-desc">
+          Get help with training programs, enrollments and resources.
+        </p>
+        <span class="help-btn">
+          Get Support
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+      </button>
+      <!-- Call Support — blue -->
+      <button type="button" class="help-card help-card--blue" data-help-card>
+        <div class="help-icon">
+          <i class="fa-solid fa-phone"></i>
+        </div>
+        <span class="help-divider"></span>
+        <h3 class="help-title">Call Support</h3>
+        <p class="help-desc">
+          Speak with our support team for immediate assistance.
+        </p>
+        <span class="help-btn">
+          Call Now
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+      </button>
+      <!-- Email Support — amber -->
+      <button type="button" class="help-card help-card--amber" data-help-card>
+        <div class="help-icon">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <span class="help-divider"></span>
+        <h3 class="help-title">Email Support</h3>
+        <p class="help-desc">
+          Send us an email and we'll get back to you soon.
+        </p>
+        <span class="help-btn">
+          Send Email
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+      </button>
+      <!-- Schedule a Call — purple -->
+      <button type="button" class="help-card help-card--purple" data-help-card>
+        <div class="help-icon">
+          <i class="fa-regular fa-comment-dots"></i>
+        </div>
+        <span class="help-divider"></span>
+        <h3 class="help-title">Schedule a Call</h3>
+        <p class="help-desc">
+          Book a call at your convenience with our experts.
+        </p>
+        <span class="help-btn">
+          Schedule Now
+          <i class="fa-solid fa-arrow-right"></i>
+        </span>
+      </button>
+    </div>
+    <!-- ---------- Hint row ---------- -->
+    <p class="help-hint">
+      <i class="fa-regular fa-lightbulb"></i>
+      Hover or click on a card to select your preferred option
+    </p>
+  </div>
+</section>
+
+
+<!-- ============ FREQUENTLY ASKED QUESTIONS SECTION ============ -->
+<section class="faq-section" id="faq">
+  <div class="faq-container">
+    <!-- ---------- Header ---------- -->
+    <div class="faq-header">
+      <span class="faq-eyebrow-line"></span>
+      <h2 class="faq-heading">Frequently Asked Questions</h2>
+      <p class="faq-subtext">Accordion layout — 5 questions</p>
+    </div>
+
+    <!-- ---------- Accordion list ---------- -->
+    <div class="faq-list" id="faqList">
+      <!-- Item 1 — open by default -->
+      <div class="faq-item is-open" data-faq-item>
+        <button
+          type="button"
+          class="faq-item__trigger"
+          aria-expanded="true"
+        >
+          <span class="faq-item__icon">
+            <i class="fa-solid fa-minus"></i>
+          </span>
+          <span class="faq-item__question">How long does certification take?</span>
+          <span class="faq-item__chevron">
+            <i class="fa-solid fa-chevron-down"></i>
+          </span>
+        </button>
+        <div class="faq-item__panel">
+          <div class="faq-item__answer">
+            <p>
+              The timeline depends on the type of certification and your
+              organization's readiness. On average, the process takes
+              3–6 weeks from application to certification.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="faq-item" data-faq-item>
+        <button
+          type="button"
+          class="faq-item__trigger"
+          aria-expanded="false"
+        >
+          <span class="faq-item__icon">
+            <i class="fa-solid fa-plus"></i>
+          </span>
+          <span class="faq-item__question">Which documents are required?</span>
+          <span class="faq-item__chevron">
+            <i class="fa-solid fa-chevron-down"></i>
+          </span>
+        </button>
+        <div class="faq-item__panel">
+          <div class="faq-item__answer">
+            <p>
+              Typically a business registration certificate, product
+              technical specifications, test reports, and manufacturer
+              details. Our team will confirm the exact list based on
+              the certification you need.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="faq-item" data-faq-item>
+        <button
+          type="button"
+          class="faq-item__trigger"
+          aria-expanded="false"
+        >
+          <span class="faq-item__icon">
+            <i class="fa-solid fa-plus"></i>
+          </span>
+          <span class="faq-item__question">Do you provide international approvals?</span>
+          <span class="faq-item__chevron">
+            <i class="fa-solid fa-chevron-down"></i>
+          </span>
+        </button>
+        <div class="faq-item__panel">
+          <div class="faq-item__answer">
+            <p>
+              Yes. We support certifications and approvals across
+              multiple countries, including the USA, Germany, UAE,
+              Singapore, South Korea, and more.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="faq-item" data-faq-item>
+        <button
+          type="button"
+          class="faq-item__trigger"
+          aria-expanded="false"
+        >
+          <span class="faq-item__icon">
+            <i class="fa-solid fa-plus"></i>
+          </span>
+          <span class="faq-item__question">What is BIS/QCO certification?</span>
+          <span class="faq-item__chevron">
+            <i class="fa-solid fa-chevron-down"></i>
+          </span>
+        </button>
+        <div class="faq-item__panel">
+          <div class="faq-item__answer">
+            <p>
+              BIS (Bureau of Indian Standards) certification and QCO
+              (Quality Control Order) compliance are mandatory
+              requirements for selling certain products in India,
+              ensuring they meet defined safety and quality standards.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="faq-item" data-faq-item>
+        <button
+          type="button"
+          class="faq-item__trigger"
+          aria-expanded="false"
+        >
+          <span class="faq-item__icon">
+            <i class="fa-solid fa-plus"></i>
+          </span>
+          <span class="faq-item__question">Do you offer testing support?</span>
+          <span class="faq-item__chevron">
+            <i class="fa-solid fa-chevron-down"></i>
+          </span>
+        </button>
+        <div class="faq-item__panel">
+          <div class="faq-item__answer">
+            <p>
+              Yes, we coordinate end-to-end product testing through
+              accredited labs and guide you through every step needed
+              to pass certification requirements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- Footer CTA ---------- -->
+    <p class="faq-footer">
+      <i class="fa-regular fa-lightbulb"></i>
+      Have more questions? Our experts are here to help.
+      <a href="#contact" class="faq-footer__link">
+        Contact us
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </p>
+  </div>
+</section>
+
 
     <!-- Site Footer -->
     <!-- Global Footer -->
@@ -402,7 +1256,7 @@
         <p class="footer-desc">
           Delivering regulatory compliance, certification, testing, and audit solutions for businesses across multiple industries.
         </p>
-        
+
         <!-- Newsletter Card -->
         <div class="newsletter-card">
           <div class="newsletter-card-header">
@@ -637,11 +1491,101 @@
         <a href="Contact-US.html">Contact Us</a>
       </div>
     </div>
-  </div>
 </footer>
 
+    <!-- Custom Toast Notification -->
+    <div class="ch-toast" id="chToast">
+      <div class="ch-toast-icon">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <div class="ch-toast-content">
+        <h4>Success!</h4>
+        <p>Thank you for subscribing! We will reach out to you shortly.</p>
+      </div>
+      <button class="ch-toast-close" type="button" aria-label="Close" onclick="document.getElementById('chToast').classList.remove('show')">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
 
     <!-- Scripts -->
     <script src="js/navigation.js"></script>
+    <script>
+      // Form submission toast logic
+      const contactForm = document.getElementById('chContactForm');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const toast = document.getElementById('chToast');
+          toast.classList.add('show');
+          this.reset();
+          // Hide toast after 5 seconds
+          setTimeout(() => {
+            toast.classList.remove('show');
+          }, 5000);
+        });
+      }
+    </script>
+
+    <!-- globle section js -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+        }
+      }
+    </script>
+    <script type="module" src="/js/officedata/Main.js"></script>
+    <script type="module" src="/js/contactus/departments.js"></script>
+    <script type="module" src="/js/contactus/offices.js"></script>
+    <!-- helps seciton js -->
+     <script>
+  (function () {
+  "use strict";
+
+  const cards = document.querySelectorAll("[data-help-card]");
+
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      cards.forEach((c) => c.classList.remove("is-active"));
+      card.classList.add("is-active");
+    });
+  });
+})();
+     </script>
+
+     <!-- Faq section js  -->
+      <script>
+
+
+(function () {
+  "use strict";
+
+  const items = document.querySelectorAll("[data-faq-item]");
+
+  function setOpen(item, isOpen) {
+    const trigger = item.querySelector(".faq-item__trigger");
+    const icon = item.querySelector(".faq-item__icon i");
+
+    item.classList.toggle("is-open", isOpen);
+    trigger.setAttribute("aria-expanded", String(isOpen));
+    icon.className = isOpen ? "fa-solid fa-minus" : "fa-solid fa-plus";
+  }
+
+  items.forEach((item) => {
+    const trigger = item.querySelector(".faq-item__trigger");
+
+    trigger.addEventListener("click", () => {
+      const willOpen = !item.classList.contains("is-open");
+
+      // Close every other item — only one question stays open at a time.
+      items.forEach((other) => {
+        if (other !== item) setOpen(other, false);
+      });
+
+      setOpen(item, willOpen);
+    });
+  });
+})();
+      </script>
 </body>
 </html>
