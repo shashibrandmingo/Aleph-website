@@ -1,0 +1,491 @@
+/* ==========================================================================
+   OUR GLOBAL OFFICES SECTION
+   3 office cards: Head Office is highlighted/active by default; the two
+   branch cards are plain by default and pick up the exact same
+   highlighted treatment on hover. Colors/button styling match the
+   "Connect With The Right Department" section (#003198 theme).
+   ========================================================================== */
+
+.off-section {
+  --off-blue: #003198;
+  --off-blue-hover: #00276f;
+  --off-blue-soft: #eaf1fd;
+  --off-blue-softer: #f4f8fe;
+  --off-text-dark: #101828;
+  --off-text-muted: #667085;
+  --off-border: #e7e9f0;
+  --off-bg: #f7fafd;
+  --off-font-heading: var(--font-primary, "Poppins", "Segoe UI", sans-serif);
+  --off-font-body: var(--font-secondary, "Inter", "Segoe UI", sans-serif);
+
+  width: 100%;
+  padding: 40px 5vw 84px;
+  background: var(--off-bg);
+  font-family: var(--off-font-body);
+  box-sizing: border-box;
+}
+
+.off-section *,
+.off-section *::before,
+.off-section *::after {
+  box-sizing: border-box;
+}
+
+.off-container {
+  width: 100%;
+  max-width: var(--container-width, 1320px);
+  margin: 0 auto;
+}
+
+/* ---------- Header ---------- */
+
+.off-header {
+  margin-bottom: 40px;
+  animation: offFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.off-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--off-font-heading);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--off-blue);
+  margin-bottom: 14px;
+}
+
+.off-eyebrow i {
+  font-size: 0.95rem;
+}
+
+.off-eyebrow-line {
+  width: 90px;
+  height: 1px;
+  background: var(--off-blue);
+  opacity: 0.35;
+}
+
+.off-heading {
+  font-family: var(--off-font-heading);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 1.6vw + 1.3rem, 2.6rem);
+  line-height: 1.15;
+  color: var(--off-text-dark);
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+
+.off-subtext {
+  font-size: 1rem;
+  color: var(--off-text-muted);
+  margin: 0;
+}
+
+/* ---------- Card grid ---------- */
+
+.off-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 30px;
+  align-items: stretch;
+}
+
+.off-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1.5px solid var(--off-border);
+  border-radius: 18px;
+  padding: 24px 22px 22px;
+  box-shadow: 0 2px 10px rgba(16, 24, 40, 0.04);
+  animation: offFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition:
+    border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.off-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.off-card:nth-child(2) {
+  animation-delay: 0.13s;
+}
+.off-card:nth-child(3) {
+  animation-delay: 0.21s;
+}
+
+/* All cards — including Head Office — are plain/normal by default and
+   pick up this exact same highlighted look only on hover. Nothing is
+   active by default. */
+.off-card:hover {
+  border-color: var(--off-blue);
+  box-shadow: 0 18px 38px rgba(0, 49, 152, 0.14);
+  transform: translateY(-5px);
+}
+
+.off-corner-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-family: var(--off-font-heading);
+  font-weight: 600;
+  font-size: 0.76rem;
+  color: #ffffff;
+  background: var(--off-blue);
+  padding: 6px 14px;
+  border-radius: 8px;
+}
+
+.off-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-right: 88px;
+}
+
+.off-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--off-blue-soft);
+  color: var(--off-blue);
+  font-size: 1.65rem;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.off-card:hover .off-icon {
+  transform: scale(1.06) rotate(-3deg);
+}
+
+.off-card-top-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.off-type-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--off-font-heading);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--off-blue);
+}
+
+.off-type-label i {
+  font-size: 0.62rem;
+}
+
+.off-country {
+  font-family: var(--off-font-heading);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--off-text-dark);
+}
+
+/* ---------- Detail rows ---------- */
+
+.off-details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.off-detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.off-detail-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--off-blue-soft);
+  color: var(--off-blue);
+  font-size: 0.78rem;
+  margin-top: 1px;
+}
+
+.off-detail-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.off-detail-title {
+  font-family: var(--off-font-heading);
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--off-text-dark);
+}
+
+.off-detail-sub {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--off-text-muted);
+}
+
+.off-detail-link {
+  font-family: var(--off-font-body);
+  font-weight: 600;
+  font-size: 0.86rem;
+  color: var(--off-text-dark);
+  text-decoration: none;
+  padding-top: 4px;
+  transition: color 0.2s ease;
+}
+
+a.off-detail-link:hover {
+  color: var(--off-blue);
+}
+
+/* ---------- Divider + button ---------- */
+
+.off-divider {
+  display: block;
+  height: 1px;
+  background: var(--off-border);
+  margin-bottom: 18px;
+}
+
+.off-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--off-font-heading);
+  font-weight: 600;
+  font-size: 0.86rem;
+  color: #ffffff;
+  background: #003198;
+  border: 1.5px solid #003198;
+  border-radius: 10px;
+  padding: 12px 16px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(0, 49, 152, 0.22);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.off-btn i {
+  font-size: 0.76rem;
+  transition: transform 0.25s ease;
+}
+
+.off-btn:hover {
+  background: #00276f;
+  border-color: #00276f;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0, 49, 152, 0.28);
+}
+
+.off-btn:hover i {
+  transform: translateX(3px);
+}
+
+/* Branch card buttons: outline by default, become the same solid button
+   as Head Office the moment the card is hovered. */
+.off-btn--outline {
+  background: transparent;
+  color: var(--off-blue);
+  box-shadow: none;
+}
+
+.off-btn--outline i {
+  color: var(--off-blue);
+}
+
+.off-card:hover .off-btn--outline {
+  background: #003198;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 49, 152, 0.22);
+}
+
+.off-card:hover .off-btn--outline i {
+  color: #ffffff;
+}
+
+.off-card:hover .off-btn--outline:hover {
+  background: #00276f;
+  border-color: #00276f;
+}
+
+/* ---------- Bottom banner ---------- */
+
+.off-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #ffffff;
+  border: 1px solid var(--off-border);
+  border-radius: 12px;
+  padding: 24px 32px;
+  max-width: 950px;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  animation: offFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.3s;
+}
+
+.off-banner-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--off-blue-softer);
+  color: var(--off-blue);
+  z-index: 1;
+}
+
+.off-banner-icon i {
+  font-size: 1.8rem;
+}
+
+.off-banner-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 1;
+  min-width: 0;
+}
+
+.off-banner-title {
+  font-family: var(--off-font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--off-text-dark);
+}
+
+.off-banner-sub {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--off-text-muted);
+}
+
+/* Decorative dotted world-map silhouette on the right side of the
+   banner, drawn as a repeating dot pattern with a soft mask so it fades
+   in from the right edge. */
+.off-banner-map {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 240px;
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 49, 152, 0.28) 1.1px,
+    transparent 1.1px
+  );
+  background-size: 8px 8px;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.5) 30%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.5) 30%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  pointer-events: none;
+}
+
+@keyframes offFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .off-header,
+  .off-card,
+  .off-banner {
+    animation: none !important;
+  }
+  .off-icon,
+  .off-btn,
+  .off-btn i {
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .off-grid {
+    grid-template-columns: 1fr;
+  }
+  .off-banner-map {
+    width: 160px;
+  }
+}
+
+@media (max-width: 640px) {
+  .off-section {
+    padding: 20px 6vw 56px;
+  }
+  .off-header {
+    margin-bottom: 30px;
+  }
+  .off-eyebrow-line {
+    display: none;
+  }
+  .off-heading {
+    font-size: clamp(1.5rem, 6vw, 1.9rem);
+  }
+  .off-card {
+    padding: 20px 18px 18px;
+  }
+  .off-corner-badge {
+    position: static;
+    align-self: flex-start;
+    margin-bottom: 12px;
+  }
+  .off-card-top {
+    padding-right: 0;
+  }
+  .off-banner {
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  .off-banner-map {
+    display: none;
+  }
+}

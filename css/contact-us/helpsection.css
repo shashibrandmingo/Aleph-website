@@ -1,0 +1,375 @@
+/* ==========================================================================
+   HOW CAN WE HELP YOU TODAY — styles
+   Uses root.css tokens if present (--font-primary, --font-secondary,
+   --primary, --secondary); falls back to sensible defaults so this file
+   also works standalone. All local tokens are prefixed --help- so
+   nothing collides with the rest of the design system.
+   ========================================================================== */
+
+:root {
+  --help-font-heading: var(--font-primary, "Poppins", sans-serif);
+  --help-font-body: var(--font-secondary, "Plus Jakarta Sans", sans-serif);
+
+  --help-text-dark: #12172b;
+  --help-text-muted: #6b7280;
+  --help-border: #eceef2;
+  --help-bg: #ffffff;
+
+  --help-accent-line: #ef7627;
+
+  /* Green — Training Support */
+  --help-green: #1f8a52;
+  --help-green-bg: #f2faf5;
+  --help-green-icon-bg: #e3f5e9;
+  --help-green-btn-bg: #1f8a52;
+  --help-green-btn-hover: #176b3f;
+
+  /* Blue — Call Support */
+  --help-blue: #2f6fed;
+  --help-blue-icon-bg: #e8effe;
+  --help-blue-btn-bg: #e3ebfe;
+  --help-blue-btn-hover: #d3e0fd;
+
+  /* Amber — Email Support */
+  --help-amber: #b3820c;
+  --help-amber-icon-bg: #fbf1da;
+  --help-amber-btn-bg: #faecd0;
+  --help-amber-btn-hover: #f6e2b6;
+
+  /* Purple — Schedule a Call */
+  --help-purple: #6c3ce0;
+  --help-purple-icon-bg: #ede7fc;
+  --help-purple-btn-bg: #eae2fb;
+  --help-purple-btn-hover: #dccef8;
+}
+
+.help-section {
+  background: var(--help-bg);
+  padding: 72px 24px 56px;
+  font-family: var(--help-font-body);
+}
+
+.help-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* ===================== Header ===================== */
+
+.help-header {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.help-eyebrow-line {
+  display: block;
+  width: 62px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--help-accent-line);
+  margin: 0 auto 22px;
+}
+
+.help-heading {
+  font-family: var(--help-font-heading);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--help-text-dark) !important;
+  text-decoration: none;
+  margin: 0 0 10px;
+}
+
+.help-subtext {
+  font-size: 15px;
+  color: var(--help-text-muted);
+  margin: 0;
+}
+
+/* ===================== Cards grid ===================== */
+
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.help-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+  border: 1px solid var(--help-border);
+  border-radius: 18px;
+  padding: 34px 26px 28px;
+  cursor: pointer;
+  font-family: inherit;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.help-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.help-card:active {
+  transform: translateY(-2px);
+  transition-duration: 0.15s;
+}
+
+/* ----- Icon box ----- */
+
+.help-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 27px;
+  margin-bottom: 22px;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.help-card:hover .help-icon {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+/* ----- Divider ----- */
+
+.help-divider {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--help-border);
+  margin-bottom: 18px;
+}
+
+/* ----- Text ----- */
+
+.help-title {
+  font-family: var(--help-font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.help-desc {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--help-text-muted);
+  margin: 0 0 24px;
+  min-height: 42px;
+}
+
+/* ----- Button pill ----- */
+
+.help-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  padding: 13px 20px;
+  border-radius: 10px;
+  font-size: 14.5px;
+  font-weight: 700;
+  margin-top: auto;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    gap 0.25s ease;
+}
+
+.help-btn i {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.help-card:hover .help-btn i {
+  transform: translateX(4px);
+}
+
+/* ===================== Color variants ===================== */
+
+/* ----- Green: Training Support ----- */
+
+.help-card--green .help-icon {
+  background: var(--help-green-icon-bg);
+  color: var(--help-green);
+}
+
+.help-card--green .help-title {
+  color: var(--help-green);
+}
+
+.help-card--green .help-btn {
+  background: var(--help-green-btn-bg);
+  color: #fff;
+}
+
+.help-card--green:hover .help-btn,
+.help-card--green.is-active .help-btn {
+  background: var(--help-green-btn-hover);
+}
+
+.help-card--green:hover,
+.help-card--green.is-active {
+  background: var(--help-green-bg);
+  border-color: var(--help-green);
+  box-shadow: 0 16px 36px rgba(31, 138, 82, 0.14);
+}
+
+/* ----- Blue: Call Support ----- */
+
+.help-card--blue .help-icon {
+  background: var(--help-blue-icon-bg);
+  color: var(--help-blue);
+}
+
+.help-card--blue .help-title {
+  color: var(--help-blue);
+}
+
+.help-card--blue .help-btn {
+  background: var(--help-blue-btn-bg);
+  color: var(--help-blue);
+}
+
+.help-card--blue:hover .help-btn,
+.help-card--blue.is-active .help-btn {
+  background: var(--help-blue-btn-hover);
+}
+
+.help-card--blue:hover,
+.help-card--blue.is-active {
+  background: #f6f9ff;
+  border-color: var(--help-blue);
+  box-shadow: 0 16px 36px rgba(47, 111, 237, 0.14);
+}
+
+/* ----- Amber: Email Support ----- */
+
+.help-card--amber .help-icon {
+  background: var(--help-amber-icon-bg);
+  color: var(--help-amber);
+}
+
+.help-card--amber .help-title {
+  color: var(--help-amber);
+}
+
+.help-card--amber .help-btn {
+  background: var(--help-amber-btn-bg);
+  color: var(--help-amber);
+}
+
+.help-card--amber:hover .help-btn,
+.help-card--amber.is-active .help-btn {
+  background: var(--help-amber-btn-hover);
+}
+
+.help-card--amber:hover,
+.help-card--amber.is-active {
+  background: #fefaf1;
+  border-color: var(--help-amber);
+  box-shadow: 0 16px 36px rgba(179, 130, 12, 0.14);
+}
+
+/* ----- Purple: Schedule a Call ----- */
+
+.help-card--purple .help-icon {
+  background: var(--help-purple-icon-bg);
+  color: var(--help-purple);
+}
+
+.help-card--purple .help-title {
+  color: var(--help-purple);
+}
+
+.help-card--purple .help-btn {
+  background: var(--help-purple-btn-bg);
+  color: var(--help-purple);
+}
+
+.help-card--purple:hover .help-btn,
+.help-card--purple.is-active .help-btn {
+  background: var(--help-purple-btn-hover);
+}
+
+.help-card--purple:hover,
+.help-card--purple.is-active {
+  background: #f8f6fe;
+  border-color: var(--help-purple);
+  box-shadow: 0 16px 36px rgba(108, 60, 224, 0.14);
+}
+
+/* ===================== Hint row ===================== */
+
+.help-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--help-text-muted);
+  margin: 36px 0 0;
+}
+
+.help-hint i {
+  font-size: 14px;
+  color: var(--help-text-muted);
+}
+
+/* ========================================================================
+   RESPONSIVE
+   ======================================================================== */
+
+@media (max-width: 1080px) {
+  .help-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .help-section {
+    padding: 52px 18px 44px;
+  }
+
+  .help-heading {
+    font-size: 26px;
+  }
+
+  .help-header {
+    margin-bottom: 34px;
+  }
+
+  .help-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .help-card {
+    padding: 28px 22px 24px;
+  }
+
+  .help-desc {
+    min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .help-card,
+  .help-icon,
+  .help-btn,
+  .help-btn i {
+    transition: none !important;
+  }
+}
