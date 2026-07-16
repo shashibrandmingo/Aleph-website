@@ -1,0 +1,758 @@
+/* ==========================================================================
+   MEDIA PRESENCE HERO SECTION (Media-Presence.css)
+   ========================================================================== */
+
+@import "root.css";
+
+.media-content-area {
+  width: 100%;
+}
+
+.media-hero-section {
+  padding: 1.5rem 0 2rem 0;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* Breadcrumb Styles inside Card */
+.media-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.media-breadcrumb-link {
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.media-breadcrumb-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.media-breadcrumb-link:hover {
+  color: #ffffff;
+}
+
+.media-breadcrumb-sep {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  font-family: var(--font-secondary), sans-serif;
+}
+
+.media-breadcrumb-current {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.media-hero-card {
+  background-image: url('../image/media/media-hero-image.jpg');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+  padding: 1.5rem 2.5rem;
+  width: 100%;
+  box-shadow: 0 12px 36px rgba(0, 46, 132, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.media-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.media-card-logo {
+  height: 42px;
+  width: auto;
+  filter: brightness(0) invert(1); /* make logo white for high contrast */
+}
+
+/* Main Hero Text Content */
+.media-hero-content {
+  max-width: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+  margin-bottom: auto;
+}
+
+.media-hero-eyebrow {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #93c5fd; /* Soft light blue */
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.media-hero-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 2.65rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.media-hero-desc {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #cbd5e1; /* soft gray */
+  margin: 0 0 1rem 0;
+  max-width: 480px;
+}
+
+.media-hero-underline {
+  background-color: var(--primary); /* royal blue accent line */
+  width: 45px;
+  height: 3px;
+  border-radius: 2px;
+  margin-bottom: 1.25rem;
+}
+
+/* Bottom Glassmorphism Features Stats Bar */
+.media-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  background: rgba(15, 23, 42, 0.45); /* dark translucent slate */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.25rem 2rem;
+  margin-top: 1.5rem;
+  z-index: 2;
+}
+
+.media-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.media-stat-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #2563eb; /* accent royal blue */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #ffffff;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+.media-stat-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.media-stat-text h3 {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.media-stat-text p {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.725rem;
+  font-weight: 500;
+  color: #94a3b8; /* muted slate */
+  margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN & MEDIA QUERIES
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .media-hero-card {
+    padding: 2.5rem 3rem;
+  }
+  .media-hero-title {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .media-hero-card {
+    min-height: auto;
+    padding: 2.5rem 2rem;
+    background-position: 75% center;
+  }
+  .media-hero-content {
+    max-width: 70%;
+  }
+  .media-stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 2rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* HIDE BG IMAGE ON MOBILE */
+  .media-hero-card {
+    background-image: none !important;
+    background: linear-gradient(135deg, #021844 0%, #002e84 100%) !important;
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+  
+  .media-hero-content {
+    max-width: 100%;
+  }
+  
+  .media-hero-title {
+    font-size: 2rem;
+  }
+  
+  .media-hero-desc {
+    font-size: 0.9rem;
+    color: #e2e8f0;
+  }
+  
+  .media-stats-bar {
+    margin-top: 2rem;
+    background: rgba(15, 23, 42, 0.6);
+    padding: 1.25rem 1rem;
+    gap: 1.25rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .media-brand-header {
+    margin-bottom: 2rem;
+    gap: 0.5rem;
+  }
+  .media-card-logo {
+    height: 32px;
+  }
+  .media-brand-title {
+    font-size: 1.15rem;
+  }
+  .media-hero-title {
+    font-size: 1.75rem;
+  }
+  .media-stats-bar {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* ==========================================================================
+   AS FEATURED IN SECTION
+   ========================================================================== */
+
+.media-featured-section {
+  background-color: #f8fafc;
+  padding: 4rem 0;
+  width: 100%;
+}
+
+.media-milestone-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.media-title-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  justify-content: center;
+}
+
+.media-title-line {
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  background-color: #2563eb;
+}
+
+.media-eyebrow-label {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: 0.1em;
+}
+
+.media-section-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.01em;
+}
+
+.media-section-desc {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0 auto;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+/* Media Features Grid */
+.media-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Featured Media Card */
+.media-feature-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 46, 132, 0.05);
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 46, 132, 0.03);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.media-feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(0, 46, 132, 0.08);
+}
+
+/* Logo Brand Styles (Typography Representation) */
+.media-card-logo-wrap {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+/* 1. Economic Times */
+.font-et {
+  gap: 0.35rem;
+}
+.font-et .et-box {
+  background-color: #d11f26;
+  color: #ffffff;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 0.15rem 0.35rem;
+  border-radius: 2px;
+}
+.font-et .et-text {
+  font-family: "Georgia", serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* 2. Mint */
+.font-mint .mint-text {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #f7931e;
+  letter-spacing: -0.02em;
+}
+
+/* 3. BW Businessworld */
+.font-bw {
+  gap: 0.35rem;
+  font-family: "Arial Black", sans-serif;
+}
+.font-bw .bw-prefix {
+  color: #0056b3;
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+.font-bw .bw-text {
+  color: #2563eb;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+/* 4. India Today */
+.font-indiatoday .it-stack {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.95;
+  font-family: "Impact", "Arial Black", sans-serif;
+  border-left: 3px solid #e11d48;
+  padding-left: 0.5rem;
+}
+.font-indiatoday .it-top {
+  color: #e11d48;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+.font-indiatoday .it-bottom {
+  color: #1e293b;
+  font-size: 1.1rem;
+}
+
+/* 5. Financial Express */
+.font-fe .fe-text {
+  font-family: "Georgia", serif;
+  font-weight: 800;
+  color: #1e3a8a;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+/* 6. Silicon India */
+.font-silicon {
+  font-family: sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.font-silicon .si-prefix {
+  color: #0f172a;
+}
+.font-silicon .si-suffix {
+  color: #dc2626;
+}
+
+/* 7. Entrepreneur */
+.font-entrepreneur .entr-text {
+  font-family: "Georgia", serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #0f172a;
+}
+
+/* 8. Outlook Business */
+.font-outlook {
+  font-family: "Arial Black", sans-serif;
+  font-size: 1.15rem;
+}
+.font-outlook .out-prefix {
+  color: #e11d48;
+  font-weight: 900;
+}
+.font-outlook .out-suffix {
+  color: #0f172a;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-left: 0.15rem;
+}
+
+/* Meta tags */
+.media-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #64748b;
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.775rem;
+  margin-bottom: 0.75rem;
+}
+
+.media-card-meta i {
+  font-size: 0.8rem;
+}
+
+.media-card-meta .meta-dot {
+  color: #cbd5e1;
+}
+
+/* Title & Links */
+.media-card-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.45;
+  margin: 0 0 1.5rem 0;
+  flex-grow: 1;
+}
+
+.media-feature-card:hover .media-card-title {
+  color: #2563eb;
+}
+
+.media-read-more {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: gap 0.2s ease;
+  margin-top: auto;
+}
+
+.media-read-more i {
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.media-read-more:hover {
+  color: #1d4ed8;
+}
+
+.media-read-more:hover i {
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   CONTACT CTA BANNER CARD
+   ========================================================================== */
+
+.media-cta-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+  border: 1px solid #bfdbfe;
+  border-radius: 20px;
+  padding: 1.2rem 2.5rem;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.05);
+}
+
+.media-cta-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.media-cta-icon-circle {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.35rem;
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.25);
+}
+
+.media-cta-info h3 {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.25rem 0;
+}
+
+.media-cta-info p {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.media-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.media-cta-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN ADDITIONS
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .media-features-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .media-featured-section {
+    padding: 3rem 0;
+  }
+  .media-section-title {
+    font-size: 1.8rem;
+  }
+  
+  /* FORCE 2 COLUMN GRID ON MOBILE DEVICES */
+  .media-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .media-feature-card {
+    padding: 1rem 0.75rem;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .media-card-logo-wrap {
+    justify-content: center;
+    margin-bottom: 0.75rem;
+    height: auto;
+    min-height: 48px;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  /* Force long text logos to stack vertically on mobile to prevent card overflow */
+  .font-et {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+  }
+  .font-et .et-text {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .font-bw {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+  }
+  .font-bw .bw-prefix {
+    font-size: 1rem;
+  }
+  .font-bw .bw-text {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+
+  .font-outlook {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+  }
+  .font-outlook .out-prefix {
+    font-size: 0.95rem;
+  }
+  .font-outlook .out-suffix {
+    font-size: 0.65rem;
+    margin-left: 0;
+  }
+
+  .font-silicon {
+    font-size: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .font-entrepreneur .entr-text {
+    font-size: 1.1rem;
+  }
+
+  .font-mint .mint-text {
+    font-size: 1.15rem;
+  }
+
+  .media-card-meta {
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .media-card-title {
+    text-align: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .media-read-more {
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  .media-cta-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+  }
+  
+  .media-cta-left {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* FORCE 2 COLUMN GRID ON NARROW MOBILE DEVICES */
+  .media-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem;
+  }
+  
+  .media-feature-card {
+    padding: 1rem;
+  }
+  
+  .media-card-logo-wrap {
+    height: auto;
+    min-height: 40px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .media-card-title {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  
+  .media-card-meta {
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .media-cta-info h3 {
+    font-size: 1.05rem;
+  }
+}
+
