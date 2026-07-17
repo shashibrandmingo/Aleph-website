@@ -191,9 +191,11 @@
 
 .off-country {
   font-family: var(--off-font-heading);
-  font-weight: 700;
-  font-size: 1.2rem;
+  font-weight: 800;
+  font-size: 1.6rem;
   color: var(--off-text-dark);
+  line-height: 1.1;
+  margin-top: 2px;
 }
 
 /* ---------- Detail rows ---------- */
@@ -489,3 +491,251 @@ a.off-detail-link:hover {
     display: none;
   }
 }
+
+/* ===================== OVERSEAS BRANCH MODAL ===================== */
+.overseas-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overseas-modal.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.overseas-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 24, 40, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.overseas-modal__content {
+  position: relative;
+  background: #f4f6f9;
+  width: 100%;
+  max-width: 1280px;
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 12px;
+  padding: 24px 30px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: translateY(30px) scale(0.95);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.overseas-modal__content.domestic-content {
+  max-width: 950px;
+}
+
+.overseas-modal.is-open .overseas-modal__content {
+  transform: translateY(0) scale(1);
+}
+
+.overseas-modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.overseas-modal__close:hover {
+  background: #ef4444;
+  color: #fff;
+  border-color: #ef4444;
+}
+
+.overseas-modal__title {
+  text-align: center;
+  font-family: var(--off-font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-top: 0;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.overseas-modal__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.overseas-modal__grid.domestic-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.overseas-modal__card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 14px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  border-top: 4px solid var(--card-color, #cbd5e1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.overseas-modal__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.12), 0 8px 12px -4px rgba(0, 0, 0, 0.06);
+}
+
+.overseas-modal__card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.overseas-modal__card-sub {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.overseas-modal__card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.overseas-modal__card-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: #475569;
+  word-break: break-word;
+}
+
+.overseas-modal__card-row i {
+  margin-top: 3px;
+  font-size: 0.8rem;
+  width: 14px;
+  text-align: center;
+  color: #1e293b;
+}
+
+.overseas-modal__card-row i.fa-phone {
+  color: #e91e63;
+}
+
+.overseas-modal__card-row a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.overseas-modal__card-row a:hover {
+  color: var(--card-color, #2b5cfd);
+}
+
+/* ===================== Head Office Modal (Card Layout) ===================== */
+.headoffice-content {
+  max-width: 900px !important;
+  padding: 24px 30px !important;
+}
+
+.ho-modal__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.ho-modal__card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 15px -5px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid var(--ho-color, #cbd5e1);
+  display: flex;
+  align-items: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ho-modal__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.12);
+}
+
+.ho-modal__icon {
+  font-size: 1.4rem;
+  color: var(--ho-color);
+  margin-right: 16px;
+  margin-top: 2px;
+}
+
+.ho-modal__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.ho-modal__title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.ho-modal__text {
+  font-size: 0.85rem;
+  color: #475569;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.ho-modal__text a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ho-modal__text a:hover {
+  color: var(--ho-color);
+}
+
+@media (max-width: 1024px) {
+  .overseas-modal__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .overseas-modal__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .overseas-modal__content {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overseas-modal__grid {
+    grid-template-columns: 1fr;
+  }
+}
+

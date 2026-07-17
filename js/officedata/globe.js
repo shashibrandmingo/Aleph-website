@@ -144,19 +144,19 @@ export class Globe {
     // Premium lighting: soft ambient fill + a directional key light so the
     // real Earth texture reads with proper day/night shading instead of
     // looking flat.
-    const ambient = new THREE.AmbientLight(0xffffff, 0.55);
+    const ambient = new THREE.AmbientLight(0xffffff, 1.6);
     this.scene.add(ambient);
 
-    this.sunLight = new THREE.DirectionalLight(0xffffff, 1.35);
+    this.sunLight = new THREE.DirectionalLight(0xffffff, 2.3);
     this.sunLight.position.set(5, 3, 6);
     this.scene.add(this.sunLight);
 
-    const rim = new THREE.DirectionalLight(0x3f6fd6, 0.35);
+    const rim = new THREE.DirectionalLight(0x3f6fd6, 0.8);
     rim.position.set(-5, -3, -4);
     this.scene.add(rim);
 
     // Subtle fill from below so the terminator (day/night line) isn't harsh
-    const fill = new THREE.DirectionalLight(0xdceaff, 0.18);
+    const fill = new THREE.DirectionalLight(0xdceaff, 0.6);
     fill.position.set(0, -5, 2);
     this.scene.add(fill);
 
