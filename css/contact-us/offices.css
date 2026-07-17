@@ -725,16 +725,24 @@ a.off-detail-link:hover {
 }
 
 @media (max-width: 768px) {
-  .overseas-modal__grid {
+  .overseas-modal__grid,
+  .overseas-modal__grid.domestic-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .ho-modal__list {
+    grid-template-columns: 1fr;
   }
   .overseas-modal__content {
     padding: 30px 20px;
   }
+  .headoffice-content {
+    padding: 30px 20px !important;
+  }
 }
 
 @media (max-width: 480px) {
-  .overseas-modal__grid {
+  .overseas-modal__grid,
+  .overseas-modal__grid.domestic-grid {
     grid-template-columns: 1fr;
   }
 }
