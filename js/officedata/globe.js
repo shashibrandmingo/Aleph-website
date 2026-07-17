@@ -6,6 +6,17 @@
    per-office markers positioned from lat/lng. Exposes a small public API
    that main.js / popup.js drive — this module never touches office data
    directly beyond the array it's given, and never touches popup DOM.
+
+   LIGHTING NOTE (fix for the "too dark / too blue" look):
+   The previous version lit the globe with one very strong directional
+   "sun" light (intensity 3.0) plus a fairly dark navy specular color
+   (0x2a3a55). That combination meant most of the globe sat outside the
+   direct light cone and read as heavy/dark blue, and any highlight that
+   *did* catch the light picked up a navy tint instead of a clean white
+   sheen. The fix below rebalances the light mix so the whole sphere
+   reads evenly bright — like a real, sunlit Earth photo — and uses a
+   light, near-white specular color so ocean highlights look like real
+   water glare instead of a blue tint.
    ========================================================================== */
 
 import * as THREE from "three";
@@ -96,7 +107,7 @@ export class Globe {
     this._autoResumeDelay = 2.5; // seconds before auto-rotate resumes after user stops
 
     this._dragPrev = { x: 0, y: 0 };
-    
+
     // Default starting rotation: Face the Head Office (India) instantly on load
     const headOffice = OFFICES.find((o) => o.type === "head") || OFFICES[0];
     const defaultTheta = (headOffice.lng + 180) * (Math.PI / 180);
@@ -106,12 +117,12 @@ export class Globe {
     const defaultX = THREE.MathUtils.clamp(
       headOffice.lat * (Math.PI / 180),
       -1.1,
-      1.1
+      1.1,
     );
 
     this._targetRotation = { x: defaultX, y: defaultY };
     this._currentRotation = { x: defaultX, y: defaultY };
-    
+
     this._clock = new THREE.Clock();
     this._disposed = false;
 
@@ -140,24 +151,41 @@ export class Globe {
     });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
+    // Filmic-ish tone mapping keeps the bright ocean/cloud highlights from
+    // clipping to flat white while still letting the overall image read
+    // bright — this is a big part of getting a "real photo" look instead
+    // of a flat-shaded sphere.
+    this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    this.renderer.toneMappingExposure = 1.15;
 
-    // Premium lighting: soft ambient fill + a directional key light so the
-    // real Earth texture reads with proper day/night shading instead of
-    // looking flat.
-    const ambient = new THREE.AmbientLight(0xffffff, 1.6);
+    /* --------------------------------------------------------------
+       Lighting — rebalanced for an evenly bright, naturally colored
+       globe instead of the previous heavy/dark-blue look:
+
+       - Ambient is now the dominant light (soft, neutral white) so no
+         part of the sphere ever falls into deep shadow.
+       - The "sun" key light is much gentler than before (was 3.0),
+         just enough to give the terrain and clouds soft directional
+         shading/depth without crushing half the globe into shadow.
+       - The rim/fill lights are kept subtle and cool, purely to add a
+         touch of atmospheric depth at the edges — not to tint the
+         whole sphere blue.
+    -------------------------------------------------------------- */
+    const ambient = new THREE.AmbientLight(0xffffff, 3.2);
     this.scene.add(ambient);
 
-    this.sunLight = new THREE.DirectionalLight(0xffffff, 2.3);
+    this.sunLight = new THREE.DirectionalLight(0xfff6e8, 1.1);
     this.sunLight.position.set(5, 3, 6);
     this.scene.add(this.sunLight);
 
-    const rim = new THREE.DirectionalLight(0x3f6fd6, 0.8);
+    const rim = new THREE.DirectionalLight(0xbcd4ff, 0.35);
     rim.position.set(-5, -3, -4);
     this.scene.add(rim);
 
-    // Subtle fill from below so the terminator (day/night line) isn't harsh
-    const fill = new THREE.DirectionalLight(0xdceaff, 0.6);
-    fill.position.set(0, -5, 2);
+    // Gentle front-left fill, just enough to soften the terminator line
+    // between lit/unlit hemispheres without washing out all shading.
+    const fill = new THREE.DirectionalLight(0xffffff, 0.9);
+    fill.position.set(-5, 0, 8);
     this.scene.add(fill);
 
     this.globeGroup = new THREE.Group();
@@ -169,7 +197,14 @@ export class Globe {
     /* 1) The real Earth — true-color day map, normal-mapped terrain,
        specular-masked oceans (so water actually catches the light
        while land stays matte), and a soft emissive night-lights layer
-       so the globe never looks dead even on its unlit side. */
+       so the globe never looks dead even on its unlit side.
+
+       Key fix: specular color is now a light neutral gray instead of
+       a dark navy — dark specular colors read as a blue/black tint
+       everywhere the material catches a highlight, which was a big
+       contributor to the "too dark/blue" complaint. Shininess is also
+       lowered slightly so ocean glare looks soft and natural rather
+       than glassy. */
     const dayMap = loadTexture(TEXTURE_PATHS.day, { srgb: true });
     const normalMap = loadTexture(TEXTURE_PATHS.normal);
     const specularMap = loadTexture(TEXTURE_PATHS.specular);
@@ -179,13 +214,13 @@ export class Globe {
     const earthMat = new THREE.MeshPhongMaterial({
       map: dayMap,
       normalMap: normalMap,
-      normalScale: new THREE.Vector2(0.75, 0.75),
+      normalScale: new THREE.Vector2(0.55, 0.55),
       specularMap: specularMap,
-      specular: new THREE.Color(0x2a3a55),
-      shininess: 14,
+      specular: new THREE.Color(0xc9d6e8), // light neutral, not dark navy
+      shininess: 8,
       emissiveMap: lightsMap,
       emissive: new THREE.Color(0xffd699),
-      emissiveIntensity: 0.55,
+      emissiveIntensity: 0.35,
     });
     this.earthMesh = new THREE.Mesh(earthGeo, earthMat);
     this.globeGroup.add(this.earthMesh);
@@ -198,19 +233,21 @@ export class Globe {
     const cloudMat = new THREE.MeshLambertMaterial({
       map: cloudsMap,
       transparent: true,
-      opacity: 0.35,
+      opacity: 0.42,
       depthWrite: false,
     });
     this.cloudMesh = new THREE.Mesh(cloudGeo, cloudMat);
     this.globeGroup.add(this.cloudMesh);
 
     /* 3) Soft outer atmosphere glow (a slightly larger, very transparent
-       backside sphere) for that premium "photographed from space" rim. */
+       backside sphere) for that premium "photographed from space" rim.
+       Lightened and shifted toward a soft sky-blue instead of a deeper
+       saturated blue, so it reads as atmosphere rather than tint. */
     const glowGeo = new THREE.SphereGeometry(this.radius * 1.06, 48, 48);
     const glowMat = new THREE.MeshBasicMaterial({
-      color: 0x7fb0ff,
+      color: 0xaed0ff,
       transparent: true,
-      opacity: 0.09,
+      opacity: 0.1,
       side: THREE.BackSide,
     });
     this.glowMesh = new THREE.Mesh(glowGeo, glowMat);
@@ -749,3 +786,4 @@ export class Globe {
     this.renderer.render(this.scene, this.camera);
   }
 }
+  
