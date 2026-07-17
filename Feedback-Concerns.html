@@ -458,34 +458,20 @@
             </div>
 
             <div class="fbform-field">
-              <label>Type <span class="fbform-required">*</span></label>
-              <div class="fbform-radio-row">
-                <label class="fbform-radio">
-                  <input
-                    type="radio"
-                    name="type"
-                    value="Feedback"
-                    checked
-                  />
-                  <span class="fbform-radio__dot"></span>
-                  Feedback
-                </label>
-                <label class="fbform-radio">
-                  <input type="radio" name="type" value="Concern" />
-                  <span class="fbform-radio__dot"></span>
-                  Concern
-                </label>
-                <label class="fbform-radio">
-                  <input type="radio" name="type" value="Suggestion" />
-                  <span class="fbform-radio__dot"></span>
-                  Suggestion
-                </label>
-                <label class="fbform-radio">
-                  <input type="radio" name="type" value="Other" />
-                  <span class="fbform-radio__dot"></span>
-                  Other
-                </label>
+              <label for="fbType">
+                Type <span class="fbform-required">*</span>
+              </label>
+              <div class="fbform-select-wrap">
+                <select id="fbType" name="type">
+                  <option value="" disabled selected>Select a type</option>
+                  <option value="Feedback">Feedback</option>
+                  <option value="Concern">Concern</option>
+                  <option value="Suggestion">Suggestion</option>
+                  <option value="Other">Other</option>
+                </select>
+                <i class="fa-solid fa-chevron-down fbform-select-arrow"></i>
               </div>
+              <p class="fbform-error" id="fbTypeError"></p>
             </div>
           </div>
 
