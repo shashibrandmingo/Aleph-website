@@ -321,13 +321,16 @@ function performPJAXNavigation(url, pushToHistory = true) {
           // Fade content back in
           mainContent.classList.remove('page-fade-out');
           
-          // Fire loaded events on new content
-          retriggerInit();
-          
-          // Safely re-enable transitions after browser has had a moment to paint the new DOM
-          setTimeout(() => {
-            document.documentElement.classList.remove('no-transitions');
-          }, 50);
+          // Synchronize and run page-specific scripts dynamically
+          updateScripts(newDocument).then(() => {
+            // Fire loaded events on new content
+            retriggerInit();
+            
+            // Safely re-enable transitions after browser has had a moment to paint the new DOM
+            setTimeout(() => {
+              document.documentElement.classList.remove('no-transitions');
+            }, 50);
+          });
         })
         .catch(err => {
           console.warn('Stylesheets sync failed. Swapping content anyway.', err);
@@ -337,8 +340,10 @@ function performPJAXNavigation(url, pushToHistory = true) {
           updateActiveLinks();
           window.scrollTo({ top: 0, behavior: 'instant' });
           mainContent.classList.remove('page-fade-out');
-          retriggerInit();
-          document.documentElement.classList.remove('no-transitions');
+          updateScripts(newDocument).then(() => {
+            retriggerInit();
+            document.documentElement.classList.remove('no-transitions');
+          });
         });
     })
     .catch(error => {
@@ -379,6 +384,39 @@ function updateStylesheets(newDoc) {
     });
   });
 }
+
+// Helper to sync scripts dynamically between PJAX page loads and return a Promise that resolves when new scripts load
+function updateScripts(newDoc) {
+  const currentScripts = Array.from(document.querySelectorAll('script'));
+  const newScripts = Array.from(newDoc.querySelectorAll('script'));
+
+  // Get absolute/resolved src values for comparison
+  const currentSrcs = currentScripts.map(script => script.src).filter(Boolean);
+
+  // Identify scripts to load (scripts on the new page that are not currently loaded)
+  // Exclude global scripts that are already loaded in index.html to avoid duplicate executes
+  const scriptsToLoad = newScripts.filter(script => {
+    return script.src && 
+           !currentSrcs.includes(script.src) && 
+           !script.src.includes('navigation.js') && 
+           !script.src.includes('service-dropdown.js');
+  });
+
+  // Create loading promises for new scripts
+  const loadPromises = scriptsToLoad.map(script => {
+    return new Promise((resolve) => {
+      const clonedScript = document.createElement('script');
+      clonedScript.src = script.src;
+      clonedScript.async = false; // Execute in order
+      clonedScript.onload = () => resolve();
+      clonedScript.onerror = () => resolve(); // Resolve anyway on error to prevent blocking transitions
+      document.body.appendChild(clonedScript);
+    });
+  });
+
+  return Promise.all(loadPromises);
+}
+
 
 // Retrigger init functions for newly loaded content if needed
 function retriggerInit() {

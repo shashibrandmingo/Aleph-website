@@ -7,9 +7,11 @@
     <!-- Favicon -->
     <link rel="icon" href="image/headers-logo.png" type="image/png">
     <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/Header.css">
     <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/Gallery.css">
 </head>
 <body>
 
@@ -319,25 +321,60 @@
     <!-- Main Container -->
     <main id="main-content">
         <!-- Page Header Section -->
-        <section class="page-header-section">
+        <section class="gallery-hero-section">
             <div class="container">
-                <nav class="breadcrumb"><a href="index.html">Home</a> &gt; <span>Gallery</span></nav>
-                <h1>Gallery</h1>
-                <p>Welcome to the official page of Gallery. Standard regulations, guidelines, and compliance details.</p>
-            </div>
-        </section>
+                <!-- Gallery Hero Card -->
+                <div class="gallery-hero-card">
+                    <div class="gallery-hero-content">
+                        <!-- Breadcrumb -->
+                        <nav class="gallery-breadcrumb" aria-label="Breadcrumb">
+                            <a href="index.html" class="gallery-breadcrumb-link">
+                                <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9 22 9 12 15 12 15 22"/>
+                                </svg>
+                            </a>
+                            <span class="gallery-breadcrumb-sep">/</span>
+                            <span class="gallery-breadcrumb-current">Gallery</span>
+                        </nav>
 
-        <!-- Page Content Section -->
-        <section class="section-padding">
-            <div class="container">
-                <div class="card-wrapper" style="text-align: center; padding: 4rem 2rem;">
-                    <h3>Gallery Content</h3>
-                    <p style="color: var(--text-muted); margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                        This section is ready for custom content related to Gallery. You can insert text, grids, tables, or list items here.
-                    </p>
+                        <h1 class="gallery-hero-title">Image <span class="title-accent">Gallery</span></h1>
+
+                        <p class="gallery-hero-desc">
+                            Moments that reflect our journey. From client meetings and successful audits to celebrations and team events — explore glimpses of our work culture, achievements, and memorable moments.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- ===== DYNAMIC GALLERY SECTION ===== -->
+        <section class="section-padding gallery-main-section">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="gallery-section-header">
+                    <span class="gallery-subtitle-tag">— OUR GALLERY —</span>
+                    <h2 class="gallery-main-title">Moments That Tell <span class="title-accent">Our Story</span></h2>
+                    <div class="title-underline"></div>
+                    <p class="gallery-desc">
+                        From successful audits and client collaborations to team celebrations and milestones, every moment reflects our commitment to excellence.
+                    </p>
+                </div>
+
+                <!-- Tabs Container (Search bar omitted as requested) -->
+                <div class="gallery-filter-wrapper">
+                    <div class="gallery-tabs-container" id="gallery-tabs-container">
+                        <!-- Category tabs will be rendered dynamically by js/gallery-data.js -->
+                    </div>
+                </div>
+
+                <!-- Dynamic Gallery Cards Grid -->
+                <div class="gallery-photos-grid" id="gallery-photos-grid">
+                    <!-- Cards will be generated dynamically by js/gallery-data.js -->
+                </div>
+            </div>
+        </section>
+        <!-- ===== END DYNAMIC GALLERY SECTION ===== -->
     </main>
 
     <!-- Site Footer -->
@@ -596,5 +633,6 @@
 
     <!-- Scripts -->
     <script src="js/navigation.js"></script>
+    <script src="js/gallery-data.js"></script>
 </body>
 </html>

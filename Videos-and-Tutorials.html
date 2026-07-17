@@ -7,9 +7,11 @@
     <!-- Favicon -->
     <link rel="icon" href="image/headers-logo.png" type="image/png">
     <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/Header.css">
     <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/Videos-and-Tutorials.css">
 </head>
 <body>
 
@@ -319,25 +321,53 @@
     <!-- Main Container -->
     <main id="main-content">
         <!-- Page Header Section -->
-        <section class="page-header-section">
+        <section class="video-hero-section">
             <div class="container">
-                <nav class="breadcrumb"><a href="index.html">Home</a> &gt; <span>Videos And Tutorials</span></nav>
-                <h1>Videos And Tutorials</h1>
-                <p>Welcome to the official page of Videos And Tutorials. Standard regulations, guidelines, and compliance details.</p>
-            </div>
-        </section>
+                <!-- Video Hero Card -->
+                <div class="video-hero-card">
+                    <div class="video-hero-content">
+                        <!-- Breadcrumb -->
+                        <nav class="video-breadcrumb" aria-label="Breadcrumb">
+                            <a href="index.html" class="video-breadcrumb-link">
+                                <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9 22 9 12 15 12 15 22"/>
+                                </svg>
+                            </a>
+                            <span class="video-breadcrumb-sep">/</span>
+                            <span class="video-breadcrumb-current">Videos & Tutorials</span>
+                        </nav>
 
-        <!-- Page Content Section -->
-        <section class="section-padding">
-            <div class="container">
-                <div class="card-wrapper" style="text-align: center; padding: 4rem 2rem;">
-                    <h3>Videos And Tutorials Content</h3>
-                    <p style="color: var(--text-muted); margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                        This section is ready for custom content related to Videos And Tutorials. You can insert text, grids, tables, or list items here.
-                    </p>
+                        <h1 class="video-hero-title">Videos & <span class="title-accent">Tutorials</span></h1>
+
+                        <p class="video-hero-desc">
+                            Expert insights, practical tutorials, and step-by-step guidance to help you understand standards, compliance, and best practices better.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- ===== DYNAMIC VIDEOS SECTION ===== -->
+        <section class="section-padding video-main-section">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="video-section-header">
+                    <span class="video-subtitle-tag">— OUR VIDEOS & TUTORIALS —</span>
+                    <h2 class="video-main-title">Knowledge That <span class="title-accent">Empowers</span></h2>
+                    <div class="title-underline"></div>
+                    <p class="video-desc">
+                        Explore expert insights, tutorials, and webinars on BIS certification, compliance, standards, and best practices.
+                    </p>
+                </div>
+
+                <!-- Dynamic Videos Grid -->
+                <div class="videos-grid" id="videos-grid">
+                    <!-- Cards will be generated dynamically by js/video-data.js -->
+                </div>
+            </div>
+        </section>
+        <!-- ===== END DYNAMIC VIDEOS SECTION ===== -->
     </main>
 
     <!-- Site Footer -->
@@ -594,7 +624,21 @@
 </footer>
 
 
+    <!-- Video Lightbox Modal -->
+    <div class="video-modal-overlay" id="video-modal">
+        <div class="video-modal-box">
+            <button class="video-modal-close" id="video-modal-close" aria-label="Close video">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="video-iframe-container">
+                <iframe id="video-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h4 class="video-modal-title" id="video-modal-title"></h4>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="js/navigation.js"></script>
+    <script src="js/video-data.js"></script>
 </body>
 </html>
