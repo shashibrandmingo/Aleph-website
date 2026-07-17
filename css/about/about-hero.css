@@ -112,10 +112,10 @@
   position: relative;
   width: 160px;
   height: 4px;
-  background: var(--about-hero-accent-blue);
+  
   border-radius: 2px;
-  margin-top: 15px;
-  margin-bottom: 2.5rem;
+  margin-top: px;
+  margin-bottom: 1rem;
 }
 
 .about-hero-underline::after {
@@ -125,7 +125,7 @@
   top: -3px;
   width: 10px;
   height: 10px;
-  background: var(--about-hero-accent-blue);
+  /* background: var(--about-hero-accent-blue); */
   border-radius: 50%;
 }
 

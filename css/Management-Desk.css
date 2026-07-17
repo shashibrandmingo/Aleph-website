@@ -89,6 +89,7 @@
   font-size: 0.8rem;
   color: var(--mgmt-text-muted);
   font-weight: 500;
+  padding-bottom: 1rem;
 }
 
 /* ── Eyebrow ─────────────────────────────────────────────────────────────── */
@@ -122,9 +123,9 @@
 .mgmt-hero-underline {
   width: 50px;
   height: 3px;
-  background-color: var(--mgmt-accent);
+  /* background-color: var(--mgmt-accent); */
   border-radius: 2px;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   position: relative;
 }
 
@@ -136,7 +137,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--mgmt-accent);
+  /* background-color: var(--mgmt-accent); */
 }
 
 /* ── Description ─────────────────────────────────────────────────────────── */
