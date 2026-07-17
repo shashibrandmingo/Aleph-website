@@ -403,18 +403,24 @@ a.off-detail-link:hover {
   right: 0;
   bottom: 0;
   width: 240px;
-  background-image: radial-gradient(circle,
-      rgba(0, 49, 152, 0.28) 1.1px,
-      transparent 1.1px);
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 49, 152, 0.28) 1.1px,
+    transparent 1.1px
+  );
   background-size: 8px 8px;
-  -webkit-mask-image: linear-gradient(90deg,
-      transparent 0%,
-      rgba(0, 0, 0, 0.5) 30%,
-      rgba(0, 0, 0, 0.9) 100%);
-  mask-image: linear-gradient(90deg,
-      transparent 0%,
-      rgba(0, 0, 0, 0.5) 30%,
-      rgba(0, 0, 0, 0.9) 100%);
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.5) 30%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.5) 30%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
   pointer-events: none;
 }
 
@@ -431,7 +437,6 @@ a.off-detail-link:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   .off-header,
   .off-card,
   .off-banner {
@@ -511,7 +516,9 @@ a.off-detail-link:hover {
   padding: 20px;
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 }
 
 .overseas-modal.is-open {
@@ -528,7 +535,8 @@ a.off-detail-link:hover {
 
 .overseas-modal__content {
   position: relative;
-  background: #f4f6f9 url('../../image/bgimages/bgcontactimg.png') no-repeat top right;
+  background: #f4f6f9 url("../../image/bgimages/bgcontactimg.png") no-repeat top
+    right;
   background-size: 35%;
   width: 100%;
   max-width: 1280px;
@@ -627,16 +635,22 @@ a.off-detail-link:hover {
   background: #fff;
   border-radius: 12px;
   padding: 16px 16px;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  box-shadow:
+    0 10px 30px -10px rgba(0, 0, 0, 0.08),
+    0 4px 6px -2px rgba(0, 0, 0, 0.04);
   border-top: 4px solid var(--card-color, #cbd5e1);
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .overseas-modal__card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.12), 0 8px 12px -4px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 20px 40px -10px rgba(0, 0, 0, 0.12),
+    0 8px 12px -4px rgba(0, 0, 0, 0.06);
 }
 
 .overseas-modal__card-header {
@@ -725,7 +739,7 @@ a.off-detail-link:hover {
 
 /* ===================== Head Office Modal (Card Layout) ===================== */
 .headoffice-content {
-  max-width: 550px !important;
+  max-width: 620px !important;
   padding: 34px 30px !important;
 }
 
@@ -751,7 +765,9 @@ a.off-detail-link:hover {
   border-left: 5px solid var(--ho-color, #cbd5e1);
   display: flex;
   align-items: flex-start;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .ho-modal__card:hover {
@@ -802,7 +818,6 @@ a.off-detail-link:hover {
 }
 
 @media (max-width: 768px) {
-
   .overseas-modal__grid,
   .overseas-modal__grid.domestic-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -827,7 +842,6 @@ a.off-detail-link:hover {
 }
 
 @media (max-width: 480px) {
-
   .overseas-modal__grid,
   .overseas-modal__grid.domestic-grid {
     grid-template-columns: 1fr;
