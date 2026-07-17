@@ -7,9 +7,11 @@
     <!-- Favicon -->
     <link rel="icon" href="image/headers-logo.png" type="image/png">
     <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/Header.css">
     <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/International-Audits.css">
 </head>
 <body>
 
@@ -319,25 +321,150 @@
     <!-- Main Container -->
     <main id="main-content">
         <!-- Page Header Section -->
-        <section class="page-header-section">
+        <section class="audit-hero-section">
             <div class="container">
-                <nav class="breadcrumb"><a href="index.html">Home</a> &gt; <span>International Audits</span></nav>
-                <h1>International Audits</h1>
-                <p>Welcome to the official page of International Audits. Standard regulations, guidelines, and compliance details.</p>
-            </div>
-        </section>
+                <!-- Audit Hero Card -->
+                <div class="audit-hero-card">
+                    <div class="audit-hero-content">
+                        <!-- Breadcrumb -->
+                        <nav class="audit-breadcrumb" aria-label="Breadcrumb">
+                            <a href="index.html" class="audit-breadcrumb-link">
+                                <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9 22 9 12 15 12 15 22"/>
+                                </svg>
+                            </a>
+                            <span class="audit-breadcrumb-sep">/</span>
+                            <span class="audit-breadcrumb-current">Audits</span>
+                        </nav>
 
-        <!-- Page Content Section -->
-        <section class="section-padding">
-            <div class="container">
-                <div class="card-wrapper" style="text-align: center; padding: 4rem 2rem;">
-                    <h3>International Audits Content</h3>
-                    <p style="color: var(--text-muted); margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                        This section is ready for custom content related to International Audits. You can insert text, grids, tables, or list items here.
-                    </p>
+                        <h1 class="audit-hero-title">International <span class="title-accent">Audits</span></h1>
+
+                        <p class="audit-hero-desc">
+                            <strong>Global Standards. Trusted Results.</strong>
+                            We deliver world-class auditing & quality assurance services to help businesses stay compliant, competitive, and future ready.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- ===== AUDITS PARTNERSHIPS / STATS SECTION ===== -->
+        <section class="section-padding audit-stats-section">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="audit-stats-header">
+                    <span class="stats-subtitle-tag">— OUR INTERNATIONAL AUDITS —</span>
+                    <h2 class="stats-main-title">Delivering Assurance <span class="title-accent">Across Borders</span></h2>
+                    <div class="title-underline"></div>
+                    <p class="stats-desc">
+                        We provide independent audit and quality assurance services to organizations worldwide, helping them achieve compliance, build trust and drive sustainable growth.
+                    </p>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="audit-stats-grid">
+                    <!-- Card 1: Countries Served -->
+                    <div class="audit-stat-card">
+                        <div class="stat-icon-circle">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div class="stat-card-divider"></div>
+                        <div class="stat-card-text">
+                            <h3>50+</h3>
+                            <h4>Countries</h4>
+                            <p>Served</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: International Audits -->
+                    <div class="audit-stat-card">
+                        <div class="stat-icon-circle">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div class="stat-card-divider"></div>
+                        <div class="stat-card-text">
+                            <h3>1000+</h3>
+                            <h4>International</h4>
+                            <p>Audits</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Years of Excellence -->
+                    <div class="audit-stat-card">
+                        <div class="stat-icon-circle">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div class="stat-card-divider"></div>
+                        <div class="stat-card-text">
+                            <h3>20+</h3>
+                            <h4>Years of</h4>
+                            <p>Excellence</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Commitment to Quality & Integrity -->
+                    <div class="audit-stat-card">
+                        <div class="stat-icon-circle">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div class="stat-card-divider"></div>
+                        <div class="stat-card-text">
+                            <h3>100%</h3>
+                            <h4>Commitment to</h4>
+                            <p>Quality & Integrity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===== END AUDITS STATS SECTION ===== -->
+
+        <!-- ===== RECENT INTERNATIONAL AUDITS SECTION ===== -->
+        <section class="section-padding recent-audits-section">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="recent-audits-header">
+                    <div class="header-left">
+                        <span class="audits-section-eyebrow">
+                            <i class="fa-solid fa-diamond"></i> Recent International Audits
+                        </span>
+                        <h2 class="audits-main-title">
+                            Building <span class="title-accent">Trust.</span> Ensuring <span class="title-accent">Compliance.</span>
+                        </h2>
+                    </div>
+                    <a href="#" class="view-all-audits-btn">
+                        <span>View All Audits</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Dynamic Audit Cards Grid -->
+                <div class="audit-cards-grid" id="audit-cards-grid">
+                    <!-- Cards will be generated dynamically by js/audit-data.js -->
+                </div>
+
+                <!-- Bottom CTA Banner (Global Presence) -->
+                <div class="audit-cta-banner">
+                    <div class="audit-cta-left">
+                        <div class="audit-cta-icon-circle">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <div class="audit-cta-info">
+                            <h3>Global Presence. Local Expertise.</h3>
+                            <p>Our auditors work across continents to help businesses meet international standards seamlessly.</p>
+                        </div>
+                    </div>
+                    <a href="Contact-US.html" class="audit-cta-btn">
+                        <span>Partner With Us</span>
+                        <div class="btn-arrow-circle">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- ===== END RECENT INTERNATIONAL AUDITS SECTION ===== -->
     </main>
 
     <!-- Site Footer -->
@@ -594,7 +721,27 @@
 </footer>
 
 
+    <!-- Audit Modal Popup -->
+    <div class="audit-modal-overlay" id="audit-modal">
+        <div class="audit-modal-box">
+            <button class="audit-modal-close" id="modal-close-btn" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="audit-modal-header">
+                <span class="modal-flag" id="modal-flag"></span>
+                <h3 class="modal-country" id="modal-country"></h3>
+            </div>
+            <div class="audit-modal-body">
+                <div class="modal-image-container">
+                    <img src="" alt="" id="modal-image">
+                </div>
+                <p class="modal-description" id="modal-description"></p>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="js/navigation.js"></script>
+    <script src="js/audit-data.js"></script>
 </body>
 </html>

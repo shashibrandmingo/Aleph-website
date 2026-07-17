@@ -7,9 +7,11 @@
     <!-- Favicon -->
     <link rel="icon" href="image/headers-logo.png" type="image/png">
     <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/Header.css">
     <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/Clientele.css">
 </head>
 <body>
 
@@ -319,25 +321,323 @@
     <!-- Main Container -->
     <main id="main-content">
         <!-- Page Header Section -->
-        <section class="page-header-section">
+        <section class="clientele-hero-section">
             <div class="container">
-                <nav class="breadcrumb"><a href="index.html">Home</a> &gt; <span>Clientele</span></nav>
-                <h1>Clientele</h1>
-                <p>Welcome to the official page of Clientele. Standard regulations, guidelines, and compliance details.</p>
-            </div>
-        </section>
+                <!-- Clientele Hero Card -->
+                <div class="clientele-hero-card">
+                    <div class="clientele-hero-content">
+                        <!-- Breadcrumb -->
+                        <nav class="clientele-breadcrumb" aria-label="Breadcrumb">
+                            <a href="index.html" class="clientele-breadcrumb-link">
+                                <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9 22 9 12 15 12 15 22"/>
+                                </svg>
+                            </a>
+                            <span class="clientele-breadcrumb-sep">/</span>
+                            <span class="clientele-breadcrumb-current">Clientele</span>
+                        </nav>
 
-        <!-- Page Content Section -->
-        <section class="section-padding">
-            <div class="container">
-                <div class="card-wrapper" style="text-align: center; padding: 4rem 2rem;">
-                    <h3>Clientele Content</h3>
-                    <p style="color: var(--text-muted); margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                        This section is ready for custom content related to Clientele. You can insert text, grids, tables, or list items here.
-                    </p>
+                        <h1 class="clientele-hero-title">Our <span class="title-accent">Clientele</span></h1>
+
+                        <p class="clientele-hero-desc">
+                            Trusted by industries. Driven by results. Explore the diverse range of clients we have partnered with across the globe.
+                        </p>
+                    </div>
+
+                    <!-- Decorative Waves -->
+                    <div class="clientele-waves-left">
+                        <svg viewBox="0 0 100 100" fill="none" stroke="#2563eb" stroke-width="0.5" opacity="0.15">
+                            <path d="M0,90 Q20,70 40,85 T80,60 T100,65"/>
+                            <path d="M0,93 Q20,73 40,88 T80,63 T100,68"/>
+                            <path d="M0,96 Q20,76 40,91 T80,66 T100,71"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- ===== CLIENTELE PARTNERSHIPS SECTION ===== -->
+        <section class="section-padding clientele-stats-section">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="clientele-stats-header">
+                    <div class="header-dots-left"></div>
+                    <span class="stats-subtitle-tag">Our Clientele</span>
+                    <h2 class="stats-main-title">Partnerships That <span class="title-accent">Drive Progress</span></h2>
+                    <p class="stats-desc">
+                        We are proud to work with global leaders and emerging innovators across diverse industries.
+                    </p>
+                    <div class="header-dots-right"></div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="clientele-stats-grid">
+                    <!-- Card 1: Happy Clients -->
+                    <div class="clientele-stat-card">
+                        <div class="stat-icon-circle">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div class="stat-card-divider"></div>
+                        <div class="stat-card-text">
+                            <h3>4000+</h3>
+                            <h4>Happy Clients</h4>
+                            <p>Worldwide</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Countries Served -->
+                    <div class="clientele-stat-card">
+                        <div class="stat-icon-circle">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div class="stat-card-divider"></div>
+                        <div class="stat-card-text">
+                            <h3>50+</h3>
+                            <h4>Countries</h4>
+                            <p>Served</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Years of Excellence -->
+                    <div class="clientele-stat-card">
+                        <div class="stat-icon-circle">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div class="stat-card-divider"></div>
+                        <div class="stat-card-text">
+                            <h3>20+</h3>
+                            <h4>Years of</h4>
+                            <p>Excellence</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Industries Empowered -->
+                    <div class="clientele-stat-card">
+                        <div class="stat-icon-circle">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div class="stat-card-divider"></div>
+                        <div class="stat-card-text">
+                            <h3>25+</h3>
+                            <h4>Industries</h4>
+                            <p>Empowered</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===== END CLIENTELE PARTNERSHIPS SECTION ===== -->
+
+        <!-- ===== CLIENTELE INDUSTRIES SECTION ===== -->
+        <section class="section-padding clientele-industries-section">
+            <div class="container">
+                <!-- Section Title -->
+                <div class="clientele-industries-header">
+                    <h2 class="industries-main-title">Trusted by Leading Industries</h2>
+                    <div class="industries-header-line"></div>
+                </div>
+
+                <!-- Tabs Filter Bar -->
+                <div class="clientele-tabs-container">
+                    <div class="clientele-tabs-track">
+                        <button class="clientele-tab-btn active" data-filter="all">
+                            <i class="fa-solid fa-border-all"></i>
+                            <span>All Industries</span>
+                        </button>
+                        <button class="clientele-tab-btn" data-filter="iron-steel">
+                            <i class="fa-solid fa-industry"></i>
+                            <span>Iron & Steel</span>
+                        </button>
+                        <button class="clientele-tab-btn" data-filter="chemical">
+                            <i class="fa-solid fa-flask"></i>
+                            <span>Chemical & Petrochemical</span>
+                        </button>
+                        <button class="clientele-tab-btn" data-filter="electronics">
+                            <i class="fa-solid fa-microchip"></i>
+                            <span>Electronics & Electrical</span>
+                        </button>
+                        <button class="clientele-tab-btn" data-filter="mechanical">
+                            <i class="fa-solid fa-gears"></i>
+                            <span>Mechanical Goods</span>
+                        </button>
+                        <button class="clientele-tab-btn" data-filter="toys">
+                            <i class="fa-solid fa-puzzle-piece"></i>
+                            <span>Toys</span>
+                        </button>
+                        <button class="clientele-tab-btn" data-filter="more">
+                            <i class="fa-solid fa-user-tie"></i>
+                            <span>The Professional Clients</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Logo Grid -->
+                <div class="clientele-logos-grid" id="clientele-logos-grid">
+                    <!-- Iron & Steel -->
+                    <div class="clientele-logo-card" data-category="iron-steel">
+                        <img src="image/Clientele/IRON  STEEL INDUSTRY/deutsch.webp" alt="Deutsche Edelstahlwerke">
+                    </div>
+                    <div class="clientele-logo-card" data-category="iron-steel">
+                        <img src="image/Clientele/IRON  STEEL INDUSTRY/ptimr.webp" alt="PT MAP ACR Steel">
+                    </div>
+                    <div class="clientele-logo-card" data-category="iron-steel">
+                        <img src="image/Clientele/IRON  STEEL INDUSTRY/lucchinirs.webp" alt="Lucchini RS">
+                    </div>
+                    <div class="clientele-logo-card" data-category="iron-steel">
+                        <img src="image/Clientele/IRON  STEEL INDUSTRY/eraSteel.webp" alt="Era Steel">
+                    </div>
+                    <div class="clientele-logo-card" data-category="iron-steel">
+                        <img src="image/Clientele/IRON  STEEL INDUSTRY/finkl-steel.webp" alt="Finkl Steel">
+                    </div>
+                    <div class="clientele-logo-card" data-category="iron-steel">
+                        <img src="image/Clientele/IRON  STEEL INDUSTRY/bgh.webp" alt="BGH">
+                    </div>
+                    <div class="clientele-logo-card" data-category="iron-steel">
+                        <img src="image/Clientele/IRON  STEEL INDUSTRY/italfond.webp" alt="Italfond">
+                    </div>
+
+                    <!-- Chemical & Petrochemical -->
+                    <div class="clientele-logo-card" data-category="chemical">
+                        <img src="image/Clientele/CHEMICAL PETROCHEMICAL INDUSTRY/che3.webp" alt="Shell">
+                    </div>
+                    <div class="clientele-logo-card" data-category="chemical">
+                        <img src="image/Clientele/CHEMICAL PETROCHEMICAL INDUSTRY/hnawa.webp" alt="Hanwha Solutions">
+                    </div>
+                    <div class="clientele-logo-card" data-category="chemical">
+                        <img src="image/Clientele/CHEMICAL PETROCHEMICAL INDUSTRY/che6.webp" alt="OCI">
+                    </div>
+                    <div class="clientele-logo-card" data-category="chemical">
+                        <img src="image/Clientele/CHEMICAL PETROCHEMICAL INDUSTRY/che10.webp" alt="EQUATE">
+                    </div>
+                    <div class="clientele-logo-card" data-category="chemical">
+                        <img src="image/Clientele/CHEMICAL PETROCHEMICAL INDUSTRY/che11.webp" alt="Lotte Chemical">
+                    </div>
+                    <div class="clientele-logo-card" data-category="chemical">
+                        <img src="image/Clientele/CHEMICAL PETROCHEMICAL INDUSTRY/lg.webp" alt="LG Chem / Mitsubishi">
+                    </div>
+                    <div class="clientele-logo-card" data-category="chemical">
+                        <img src="image/Clientele/CHEMICAL PETROCHEMICAL INDUSTRY/dow.webp" alt="Dow Chemical">
+                    </div>
+                    <div class="clientele-logo-card" data-category="chemical">
+                        <img src="image/Clientele/CHEMICAL PETROCHEMICAL INDUSTRY/solvay.webp" alt="Solvay">
+                    </div>
+                    <div class="clientele-logo-card" data-category="chemical">
+                        <img src="image/Clientele/CHEMICAL PETROCHEMICAL INDUSTRY/scg.webp" alt="SCG">
+                    </div>
+
+                    <!-- Electronics & Electrical -->
+                    <div class="clientele-logo-card" data-category="electronics">
+                        <img src="image/Clientele/THE ELECTRONIC INDUSTRY/palred.webp" alt="Parled">
+                    </div>
+                    <div class="clientele-logo-card" data-category="electronics">
+                        <img src="image/Clientele/THE ELECTRONIC INDUSTRY/vimar.webp" alt="Vimal">
+                    </div>
+                    <div class="clientele-logo-card" data-category="electronics">
+                        <img src="image/Clientele/THE ELECTRONIC INDUSTRY/salto.webp" alt="Salto">
+                    </div>
+                    <div class="clientele-logo-card" data-category="electronics">
+                        <img src="image/Clientele/THE ELECTRONIC INDUSTRY/alogic.webp" alt="Alogic">
+                    </div>
+                    <div class="clientele-logo-card" data-category="electronics">
+                        <img src="image/Clientele/THE ELECTRONIC INDUSTRY/vyanka.webp" alt="Vyanka">
+                    </div>
+
+                    <!-- Mechanical Goods -->
+                    <div class="clientele-logo-card" data-category="mechanical">
+                        <img src="image/Clientele/The MECHANICAL GOODS/pt-yamaha.webp" alt="Yamaha">
+                    </div>
+                    <div class="clientele-logo-card" data-category="mechanical">
+                        <img src="image/Clientele/The MECHANICAL GOODS/excel-rim-japan.webp" alt="Excel Rim Japan">
+                    </div>
+                    <div class="clientele-logo-card" data-category="mechanical">
+                        <img src="image/Clientele/The MECHANICAL GOODS/climech.webp" alt="Climech">
+                    </div>
+                    <div class="clientele-logo-card" data-category="mechanical">
+                        <img src="image/Clientele/The MECHANICAL GOODS/deshbandh.webp" alt="Deshbandh">
+                    </div>
+
+                    <!-- Toys -->
+                    <div class="clientele-logo-card" data-category="toys">
+                        <img src="image/Clientele/The TOY INDUSTRY/lego.webp" alt="Lego">
+                    </div>
+                    <div class="clientele-logo-card" data-category="toys">
+                        <img src="image/Clientele/The TOY INDUSTRY/mattel.webp" alt="Mattel">
+                    </div>
+                    <div class="clientele-logo-card" data-category="toys">
+                        <img src="image/Clientele/The TOY INDUSTRY/fantasticto.webp" alt="Fantastic Toys">
+                    </div>
+                    <div class="clientele-logo-card" data-category="toys">
+                        <img src="image/Clientele/The TOY INDUSTRY/billionmaxto.webp" alt="Billionmax">
+                    </div>
+
+                    <!-- And More -->
+                    <div class="clientele-logo-card" data-category="more">
+                        <img src="image/Clientele/The Professional Clients/cello.webp" alt="Cello">
+                    </div>
+                    <div class="clientele-logo-card" data-category="more">
+                        <img src="image/Clientele/The Professional Clients/omega.webp" alt="Omega">
+                    </div>
+                    <div class="clientele-logo-card" data-category="more">
+                        <img src="image/Clientele/The Professional Clients/jaipurtuff.webp" alt="Jaipur Tuff">
+                    </div>
+                    <div class="clientele-logo-card" data-category="more">
+                        <img src="image/Clientele/The Professional Clients/lgtuff.webp" alt="LG Tuff">
+                    </div>
+                </div>
+
+                <!-- Bottom CTA Banner -->
+                <div class="clientele-cta-banner">
+                    <div class="clientele-cta-left">
+                        <div class="clientele-cta-icon-circle">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <div class="clientele-cta-info">
+                            <h3>Building long-term relationships through trust, quality, and results.</h3>
+                            <p>Be a part of our growing family of successful partnerships.</p>
+                        </div>
+                    </div>
+                    <a href="Contact-US.html" class="clientele-cta-btn">
+                        <span>Partner With Us</span>
+                        <div class="btn-arrow-circle">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- ===== END CLIENTELE INDUSTRIES SECTION ===== -->
+
+        <!-- Filters Script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const tabButtons = document.querySelectorAll('.clientele-tab-btn');
+                const logoCards = document.querySelectorAll('.clientele-logo-card');
+
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        // Remove active class from all tabs
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        // Add active class to clicked tab
+                        button.classList.add('active');
+
+                        const filterValue = button.getAttribute('data-filter');
+
+                        logoCards.forEach(card => {
+                            if (filterValue === 'all') {
+                                card.style.display = 'flex';
+                            } else {
+                                if (card.getAttribute('data-category') === filterValue) {
+                                    card.style.display = 'flex';
+                                } else {
+                                    card.style.display = 'none';
+                                }
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
     </main>
 
     <!-- Site Footer -->
@@ -596,5 +896,6 @@
 
     <!-- Scripts -->
     <script src="js/navigation.js"></script>
+    <script src="js/clientele-filter.js"></script>
 </body>
 </html>

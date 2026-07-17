@@ -1,0 +1,668 @@
+/* ==========================================================================
+   CLIENTELE HERO SECTION (Clientele.css)
+   ========================================================================== */
+
+.clientele-hero-section {
+  padding: 1.5rem 0 2rem 0;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.clientele-hero-card {
+  background-color: #ffffff;
+  background-image: url('../image/Clientele/Clientele-hero-image.png');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 410px;
+  padding: 3rem 4.5rem;
+  width: 100%;
+  box-shadow: 0 12px 36px rgba(0, 46, 132, 0.05);
+  border: 1px solid rgba(0, 46, 132, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.clientele-hero-content {
+  max-width: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 4;
+  position: relative;
+  margin-top: -5.5rem;
+}
+
+/* Breadcrumb Styles inside Card */
+.clientele-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.clientele-breadcrumb-link {
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.clientele-breadcrumb-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.clientele-breadcrumb-link:hover {
+  opacity: 0.8;
+}
+
+.clientele-breadcrumb-sep {
+  font-size: 0.9rem;
+  color: #2563eb;
+  font-weight: 500;
+  font-family: var(--font-secondary), sans-serif;
+}
+
+.clientele-breadcrumb-current {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.9rem;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.clientele-hero-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 2.65rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 1.25rem 0;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.clientele-hero-title .title-accent {
+  color: #2563eb;
+}
+
+.clientele-hero-desc {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+  max-width: 440px;
+}
+
+/* Decorative Waves */
+.clientele-waves-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  height: 150px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .clientele-hero-card {
+    padding: 2.5rem 3rem;
+  }
+  .clientele-hero-title {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .clientele-hero-card {
+    min-height: auto;
+    padding: 2.5rem 2rem;
+    background-position: 75% center;
+  }
+  .clientele-hero-content {
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .clientele-hero-card {
+    background-image: none !important;
+    background: #f8fafc !important;
+    padding: 2.5rem 1.5rem;
+    min-height: auto;
+    border: 1px solid rgba(0, 46, 132, 0.08);
+  }
+  
+  .clientele-waves-left {
+    display: none !important;
+  }
+  
+  .clientele-hero-content {
+    max-width: 100%;
+    margin-top: 0;
+  }
+  
+  .clientele-hero-title {
+    font-size: 2rem;
+  }
+  
+  .clientele-hero-desc {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .clientele-hero-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* ==========================================================================
+   CLIENTELE PARTNERSHIPS SECTION
+   ========================================================================== */
+
+.clientele-stats-section {
+  padding: 2rem 0;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.clientele-stats-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: block;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Faint dots decorative grids on left/right of header */
+.header-dots-left, .header-dots-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 60px;
+  background-image: radial-gradient(#2563eb 1.5px, transparent 1.5px);
+  background-size: 10px 10px;
+  opacity: 0.15;
+}
+
+.header-dots-left {
+  left: -100px;
+}
+
+.header-dots-right {
+  right: -100px;
+}
+
+.stats-subtitle-tag {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.stats-subtitle-tag::before, .stats-subtitle-tag::after {
+  content: '•';
+  color: #2563eb;
+}
+
+.stats-main-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.stats-main-title .title-accent {
+  color: #2563eb;
+}
+
+.stats-desc {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+/* Stats Grid */
+.clientele-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Stat Card */
+.clientele-stat-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 46, 132, 0.05);
+  border-radius: 16px;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  box-shadow: 0 6px 20px rgba(0, 46, 132, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.clientele-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 46, 132, 0.06);
+}
+
+/* Blue Accent border at bottom center */
+.clientele-stat-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3.5px;
+  background-color: #2563eb;
+  border-radius: 2px 2px 0 0;
+}
+
+.clientele-stat-card .stat-icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.35rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.clientele-stat-card:hover .stat-icon-circle {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.clientele-stat-card .stat-card-divider {
+  width: 1px;
+  height: 45px;
+  background-color: #e2e8f0;
+  flex-shrink: 0;
+}
+
+.clientele-stat-card .stat-card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.clientele-stat-card .stat-card-text h3 {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color:#2563eb;
+  margin: 0 0 0.15rem 0;
+  line-height: 1.15;
+}
+
+.clientele-stat-card .stat-card-text h4 {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.clientele-stat-card .stat-card-text p {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.775rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Partnerships Responsive adjustments */
+@media (max-width: 1200px) {
+  .header-dots-left, .header-dots-right {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .clientele-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .clientele-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .stats-main-title {
+    font-size: 2rem;
+  }
+  .clientele-stat-card {
+    padding: 0.75rem;
+    gap: 0.5rem;
+    border-radius: 12px;
+  }
+  .clientele-stat-card .stat-icon-circle {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  .clientele-stat-card .stat-card-divider {
+    height: 30px;
+  }
+  .clientele-stat-card .stat-card-text h3 {
+    font-size: 1.1rem;
+  }
+  .clientele-stat-card .stat-card-text h4 {
+    font-size: 0.7rem;
+  }
+  .clientele-stat-card .stat-card-text p {
+    font-size: 0.65rem;
+  }
+}
+
+/* ==========================================================================
+   CLIENTELE INDUSTRIES LOGOS SECTION
+   ========================================================================== */
+
+.clientele-industries-section {
+  padding: 2rem 0 6rem 0;
+  background-color: #f8fafc;
+  width: 100%;
+}
+
+.clientele-industries-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.industries-main-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.75rem 0;
+}
+
+.industries-header-line {
+  width: 50px;
+  height: 3px;
+  background-color: #2563eb;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Tabs Filter Bar */
+.clientele-tabs-container {
+  width: 100%;
+  margin-bottom: 3rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.clientele-tabs-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.clientele-tabs-track {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  min-width: max-content;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.clientele-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.clientele-tab-btn i {
+  font-size: 0.85rem;
+  color: #64748b;
+  transition: color 0.25s ease;
+}
+
+.clientele-tab-btn:hover {
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.clientele-tab-btn:hover i {
+  color: #475569;
+}
+
+.clientele-tab-btn.active {
+  background-color: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.clientele-tab-btn.active i {
+  color: #ffffff;
+}
+
+/* Logos Grid */
+.clientele-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+  width: 100%;
+}
+
+.clientele-logo-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 46, 132, 0.04);
+  border-radius: 16px;
+  height: 100px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.clientele-logo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 46, 132, 0.06);
+  border-color: rgba(37, 99, 235, 0.1);
+}
+
+.clientele-logo-card img {
+  max-width: 85%;
+  max-height: 70%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.clientele-logo-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Bottom CTA Banner */
+.clientele-cta-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+  border: 1px solid #bfdbfe;
+  border-radius: 20px;
+  padding: 1.5rem 2.5rem;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.04);
+  margin: 4rem auto 0 auto;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.clientele-cta-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.clientele-cta-icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.35rem;
+}
+
+.clientele-cta-info h3 {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.25rem 0;
+}
+
+.clientele-cta-info p {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.clientele-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.65rem 1.25rem;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+  transition: all 0.25s ease;
+}
+
+.clientele-cta-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.25);
+}
+
+.clientele-cta-btn .btn-arrow-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.clientele-cta-btn:hover .btn-arrow-circle {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.clientele-cta-btn .btn-arrow-circle i {
+  font-size: 0.75rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .clientele-logos-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .clientele-industries-section {
+    padding: 3rem 0 4rem 0;
+  }
+  
+  .clientele-tabs-track {
+    justify-content: flex-start;
+  }
+  
+  .clientele-logos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .clientele-cta-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+  }
+  
+  .clientele-cta-left {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .clientele-logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .industries-main-title {
+    font-size: 1.8rem;
+  }
+  
+  .clientele-cta-info h3 {
+    font-size: 1.05rem;
+  }
+}
