@@ -330,6 +330,10 @@
   margin: 0 0 1rem 0;
   flex-grow: 1;
   text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* ── View Profile Button ── */
@@ -737,4 +741,411 @@
     flex: 1 1 100%;
     max-width: 100%;
   }
+}
+
+/* ==========================================================================
+   DIRECTOR POPUP SLIDER CSS (our-dir-team-v2.css)
+   ========================================================================== */
+
+/* ── Modal & Backdrop ── */
+.dir-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-slow);
+}
+
+.dir-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dir-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 1;
+}
+
+.dir-modal-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  padding: 1.5rem;
+}
+
+/* Close Button */
+.dir-modal-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  z-index: 100;
+}
+
+.dir-modal-close svg {
+  width: 18px;
+  height: 18px;
+}
+
+.dir-modal-close:hover {
+  background: #ffffff;
+  color: #0f172a;
+  transform: rotate(90deg);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.dir-modal-close:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* ── Slider Viewport & Track ── */
+.dir-slider-viewport {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: 80vh;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: visible;
+}
+
+.dir-slider-track {
+  display: flex;
+  gap: 50px;
+  transition: transform var(--transition-slow) cubic-bezier(0.16, 1, 0.3, 1);
+  align-items: center;
+  height: 100%;
+  will-change: transform;
+}
+
+/* ── Individual Slides ── */
+.dir-slide,
+.team-slide {
+  flex: 0 0 820px;
+  max-width: calc(100vw - 80px);
+  filter: blur(5px) grayscale(30%);
+  opacity: 0.35;
+  transform: scale(0.86);
+  transition: all var(--transition-slow) cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+/* Active Slide */
+.dir-slide.active,
+.team-slide.active {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.02);
+  cursor: default;
+  z-index: 5;
+}
+
+.dir-slide-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 24px;
+  padding: 20px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  height: auto;
+  max-height: none;
+  overflow: hidden;
+}
+
+.dir-slide-left {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1.5px solid rgba(15, 23, 42, 0.08);
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.dir-slide-right {
+  flex: 0 0 auto;
+  width: 100%;
+  padding-left: 0;
+  text-align: left;
+  overflow-y: visible;
+  max-height: none;
+}
+
+/* Avatar details inside modal card */
+.dir-slide-avatar-wrap {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dir-slide-avatar-ring {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 108px;
+  height: 108px;
+  border: 2.5px dashed #2563eb;
+  border-radius: 50%;
+  animation: dir-ring-spin 25s linear infinite;
+  pointer-events: none;
+}
+
+.dir-slide-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 3px solid #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 46, 132, 0.12);
+  z-index: 2;
+}
+
+.dir-slide-name {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1.15rem;
+  font-weight: 750;
+  color: #0f172a;
+  margin: 0 0 2px 0;
+  line-height: 1.2;
+}
+
+.dir-slide-role {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.dir-slide-social {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  z-index: 10;
+  display: flex;
+}
+
+.dir-slide-social a {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+  transition: all var(--transition-fast);
+}
+
+.dir-slide-social a:hover {
+  background: #1d4ed8;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.dir-slide-social a svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* Biography elements */
+.dir-slide-detail-header h4 {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #64748b;
+  margin: 0 0 6px 0;
+}
+
+.dir-slide-line {
+  width: 32px;
+  height: 3px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.dir-slide-bio-text {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 450;
+  line-height: 1.6;
+  color: #334155;
+  margin-bottom: 0;
+}
+
+/* ── Arrow Nav Buttons ── */
+.dir-slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  z-index: 10;
+}
+
+.dir-slider-nav svg {
+  width: 20px;
+  height: 20px;
+}
+
+.dir-slider-nav:hover {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.dir-slider-nav.disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.dir-prev {
+  left: 30px;
+}
+
+.dir-next {
+  right: 30px;
+}
+
+/* ── Spin Animation ── */
+@keyframes dir-ring-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ── Responsive Media Queries ── */
+@media (max-width: 1024px) {
+  .dir-slide,
+  .team-slide {
+    flex: 0 0 680px;
+    max-width: calc(100vw - 80px);
+  }
+  .dir-slide-card {
+    padding: 36px;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dir-slider-nav {
+    display: none; /* Hide nav arrows on mobile/tablets, rely on swipes & clicks */
+  }
+  .dir-slide,
+  .team-slide {
+    flex: 0 0 calc(100vw - 30px);
+    max-width: calc(100vw - 30px);
+    transform: scale(0.92);
+  }
+  .dir-slide.active,
+  .team-slide.active {
+    transform: scale(1);
+  }
+  .dir-slide-card {
+    padding: 24px;
+    gap: 20px;
+    max-height: 80vh;
+  }
+  .dir-slide-left {
+    padding-bottom: 16px;
+  }
+  .dir-slide-bio-text {
+    font-size: 0.86rem;
+    line-height: 1.6;
+  }
+  .dir-modal-close {
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ── Team Card Decorative Diamond Dots (Bottom-Right) ── */
+.team-dots-decor {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.team-dots-decor::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(37, 99, 235, 0.7) 1.5px, transparent 1.5px);
+  background-size: 11px 11px;
+  background-repeat: repeat;
+  transform: rotate(45deg) scale(0.85);
+  transform-origin: center;
+}
+
+.team-card-wrap:hover .team-dots-decor {
+  opacity: 1;
 }
