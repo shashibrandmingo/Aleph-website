@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QCO WTO Order - Aleph INDIA</title>
+    <title>Vendor Registration Form - Aleph INDIA</title>
     <!-- Favicon -->
     <link rel="icon" href="image/fab-iocn.png" type="image/png">
     <!-- Stylesheets -->
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/Header.css">
     <link rel="stylesheet" href="css/Footer.css">
-    <link rel="stylesheet" href="css/QCO-WTO-Order/QCO-WTO-Order.css">
+    <link rel="stylesheet" href="css/Vendor/Vendor.css">
 </head>
 <body>
 
@@ -320,162 +320,572 @@
 
     <!-- Main Container -->
 
-    <!-- QCO Hero Section -->
-    <section class="qco-hero">
-      <div class="qco-hero__banner">
+    <!-- Vendor Hero Section -->
+    <section class="vendor-hero">
+      <div class="vendor-hero__banner">
         <img
-          class="qco-hero__bg"
-          src="image/QCO-WTO-Order/QCO-WTO-Order.png"
+          class="vendor-hero__bg"
+          src="image/Vendor/Vendor.png"
           alt=""
           aria-hidden="true"
         />
 
-        <div class="qco-hero__content">
-          <div class="qco-hero__breadcrumbs">
-            <a href="index.html" class="qco-hero__breadcrumbs-link">
+        <div class="vendor-hero__content">
+          <div class="vendor-hero__breadcrumbs">
+            <a href="index.html" class="vendor-hero__breadcrumbs-link">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
               </svg>
             </a>
-            <span class="qco-hero__breadcrumbs-sep">/</span>
-            <span class="qco-hero__breadcrumbs-current">QCO Order</span>
+            <span class="vendor-hero__breadcrumbs-sep">/</span>
+            <span class="vendor-hero__breadcrumbs-current">Foreign Manufacturer</span>
           </div>
 
-          <h1 class="qco-hero__heading">
-            QCO Order &amp;<br />
-            <span class="qco-hero__heading-accent">Implementation Date</span>
+          <h1 class="vendor-hero__heading">
+            Vendor Registration<br />
+            <span class="vendor-hero__heading-accent">Form</span>
           </h1>
 
-          <p class="qco-hero__text">
-            Stay compliant with the latest Quality
-            Control Orders and their implementation
-            timelines.
+          <p class="vendor-hero__text">
+            Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ===== QCO TABLE / DASHBOARD SECTION ===== -->
-    <section class="qco-table-section">
+    <!-- ===== VENDOR REGISTRATION FORM SECTION ===== -->
+    <section class="vendor-form-section">
       <div class="container">
 
-        <!-- Top Bar: Category Dropdown + Search + Clear -->
-        <div class="qco-topbar">
-          <!-- Category Dropdown -->
-          <div class="qco-category-dropdown">
-            <button class="qco-category-btn" id="qco-category-btn">
-              <span class="qco-category-btn-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-              </span>
-              <span id="qco-category-label">All</span>
-              <svg class="qco-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <ul class="qco-category-menu" id="qco-category-menu">
-              <!-- Built by JS -->
-            </ul>
+        <!-- Top Info Alert Banner -->
+        <div class="vf-alert-box">
+          <div class="vf-alert-icon">
+            <i class="fa-solid fa-circle-info"></i>
           </div>
-
-          <!-- Search Bar -->
-          <div class="qco-search-bar" id="qco-search-bar">
-            <i class="fa-solid fa-magnifying-glass qco-search-icon"></i>
-            <input type="text" id="qco-search-input" placeholder="Search for QCO and implementation dates" autocomplete="off" />
-          </div>
-
-          <!-- Settings / Filter icon -->
-          <button class="qco-icon-btn" id="qco-filter-btn" title="Filters">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
-          </button>
-
-          <!-- Clear All -->
-          <button class="qco-clear-btn" id="qco-clear-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            Clear All
-          </button>
+          <p class="vf-alert-text">
+            Welcome to the Vendor Registration portal of Aleph INDIA. This form is intended solely for the initial data collection and preliminary evaluation of businesses and service providers interested in working with Aleph INDIA. Submission of this form does not constitute approval, or any contractual relationship. Upon review and acceptance, vendor details may be stored in Aleph INDIA's vendor database for future engagement and procurement opportunities, subject to further verification and execution of a <strong>separate formal agreement.</strong>
+          </p>
         </div>
 
-        <!-- Secondary filter row -->
-        <div class="qco-filter-row">
-          <div class="qco-filter-left">
-            <input type="text" class="qco-sub-search" placeholder="Search by product name, standard or ministry..." disabled />
-            <button class="qco-std-filter-btn" id="qco-std-filter-btn">All Standards <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
-            <button class="qco-std-filter-btn" id="qco-filters-toggle-btn">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-              Filters
-            </button>
-          </div>
-          <div class="qco-filter-right">
-            <button class="qco-icon-btn-sm" id="qco-refresh-btn" title="Refresh">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-            </button>
-            <button class="qco-export-btn" id="qco-export-btn">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Export
-            </button>
-          </div>
-        </div>
+        <!-- Main Form Card -->
+        <div class="vf-card">
+          <form id="vendor-registration-form">
+            
+            <div class="vf-mandatory-note">
+              (*) Fields are Mandatory
+            </div>
 
-        <!-- Data Table -->
-        <div class="qco-table-wrap">
-          <table class="qco-table">
-            <thead>
-              <tr>
-                <th class="qco-th-product">
-                  Product Name
-                  <button class="qco-sort-btn" data-col="productName" title="Sort">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-                  </button>
-                </th>
-                <th>
-                  Indian Standard
-                  <button class="qco-sort-btn" data-col="indianStandard" title="Sort">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-                  </button>
-                </th>
-                <th>
-                  Concern Ministry
-                  <button class="qco-sort-btn" data-col="concernMinistry" title="Sort">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-                  </button>
-                </th>
-                <th>Issue Order</th>
-                <th>Extension Order /<br>Amendment Order / Cancelled</th>
-                <th>
-                  Implementation Date
-                  <button class="qco-sort-btn" data-col="implementationDate" title="Sort">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-                  </button>
-                </th>
-              </tr>
-            </thead>
-            <tbody id="qco-table-body">
-              <!-- Rendered by JS -->
-            </tbody>
-          </table>
-        </div>
+            <!-- Row 1: 4 Dropdowns / Inputs -->
+            <div class="vf-row">
+              <div class="vf-col-3">
+                <div class="vf-field-group">
+                  <label class="vf-label">Vendor Type <span class="vf-required">*</span></label>
+                  <select class="vf-select" required>
+                    <option value="" disabled selected>Select Option</option>
+                    <option value="domestic">Domestic Vendor</option>
+                    <option value="foreign">Foreign Manufacturer / Vendor</option>
+                    <option value="service">Service Provider</option>
+                  </select>
+                </div>
+              </div>
 
-        <!-- Footer: Pagination + Rows per page -->
-        <div class="qco-table-footer">
-          <span class="qco-results-count" id="qco-results-count"></span>
-          <div class="qco-pagination" id="qco-pagination">
-            <!-- Rendered by JS -->
-          </div>
-          <div class="qco-rows-per-page">
-            <label for="qco-rows-select">Rows per page:</label>
-            <select id="qco-rows-select">
-              <option value="15" selected>15</option>
-              <option value="25">25</option>
-              <option value="50">50</option>
-            </select>
-          </div>
+              <div class="vf-col-3">
+                <div class="vf-field-group">
+                  <label class="vf-label">Name of Entity <span class="vf-required">*</span></label>
+                  <div class="vf-input-wrap">
+                    <i class="fa-solid fa-building-user vf-input-icon"></i>
+                    <input type="text" class="vf-input vf-input-has-icon" placeholder="Enter Entity Name" required />
+                  </div>
+                </div>
+              </div>
+
+              <div class="vf-col-3">
+                <div class="vf-field-group">
+                  <label class="vf-label">Nature of Business <span class="vf-required">*</span></label>
+                  <select class="vf-select" required>
+                    <option value="" disabled selected>Select Option</option>
+                    <option value="manufacturing">Manufacturing</option>
+                    <option value="consulting">Consulting / Advisory</option>
+                    <option value="testing">Testing / Laboratory</option>
+                    <option value="logistics">Logistics / Supply Chain</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="vf-col-3">
+                <div class="vf-field-group">
+                  <label class="vf-label">Type of Entity <span class="vf-required">*</span></label>
+                  <select class="vf-select" required>
+                    <option value="" disabled selected>Select Option</option>
+                    <option value="pvt">Private Limited</option>
+                    <option value="public">Public Limited</option>
+                    <option value="proprietorship">Proprietorship</option>
+                    <option value="llp">Partnership / LLP</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 2: Type of Service Brief Details -->
+            <div class="vf-row">
+              <div class="vf-col-12">
+                <div class="vf-field-group">
+                  <label class="vf-label">Type of Service (Brief Details) <span class="vf-required">*</span></label>
+                  <div class="vf-textarea-wrap">
+                    <textarea class="vf-textarea" id="vf-service-details" maxlength="1000" placeholder="Enter brief details about the service you provide..." required></textarea>
+                    <span class="vf-char-counter" id="vf-char-counter">0 / 1000</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion 1: Office Address Information -->
+            <div class="vf-accordion-section">
+              <div class="vf-accordion-header" data-target="vf-body-address">
+                <div class="vf-accordion-header-left">
+                  <i class="fa-solid fa-city"></i>
+                  <span>Office Address Information</span>
+                </div>
+                <i class="fa-solid fa-chevron-up vf-chevron-icon"></i>
+              </div>
+
+              <div class="vf-accordion-body" id="vf-body-address">
+                <div class="vf-row">
+                  <!-- Registered Office Address -->
+                  <div class="vf-col-6">
+                    <h5 class="vf-subheading">Registered Office Address</h5>
+                    
+                    <div class="vf-field-group">
+                      <label class="vf-label">Plot/ Street/ House No. <span class="vf-required">*</span></label>
+                      <textarea class="vf-textarea" id="vf-reg-address" rows="2" placeholder="Enter Address" required></textarea>
+                    </div>
+
+                    <div class="vf-row">
+                      <div class="vf-col-6">
+                        <div class="vf-field-group">
+                          <label class="vf-label">Country <span class="vf-required">*</span> (e.g. India)</label>
+                          <select class="vf-select" id="vf-reg-country" required>
+                            <option value="India" selected>India</option>
+                            <option value="USA">USA</option>
+                            <option value="Germany">Germany</option>
+                            <option value="China">China</option>
+                            <option value="Other">Other</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="vf-col-6">
+                        <div class="vf-field-group">
+                          <label class="vf-label">State <span class="vf-required">*</span></label>
+                          <select class="vf-select" id="vf-reg-state" required>
+                            <option value="" disabled selected>Select Option</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Karnataka">Karnataka</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="vf-row">
+                      <div class="vf-col-6">
+                        <div class="vf-field-group">
+                          <label class="vf-label">City <span class="vf-required">*</span></label>
+                          <input type="text" class="vf-input" id="vf-reg-city" placeholder="Enter City Name" required />
+                        </div>
+                      </div>
+                      <div class="vf-col-6">
+                        <div class="vf-field-group">
+                          <label class="vf-label">PIN Code <span class="vf-required">*</span></label>
+                          <input type="text" class="vf-input" id="vf-reg-pincode" placeholder="Enter PIN Code" required />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="vf-row">
+                      <div class="vf-col-6">
+                        <div class="vf-field-group">
+                          <label class="vf-label">Contact No. <span class="vf-required">*</span></label>
+                          <input type="tel" class="vf-input" id="vf-reg-contact" placeholder="Enter Contact No." required />
+                        </div>
+                      </div>
+                      <div class="vf-col-6">
+                        <div class="vf-field-group">
+                          <label class="vf-label">Mail ID <span class="vf-required">*</span></label>
+                          <input type="email" class="vf-input" id="vf-reg-email" placeholder="Enter Mail ID" required />
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- Corporate Office / Work Address -->
+                  <div class="vf-col-6">
+                    <div class="vf-subheading">
+                      <span>Corporate Office / Work Address</span>
+                      <label class="vf-checkbox-wrap">
+                        <input type="checkbox" id="vf-same-address" />
+                        <span>Same as Registered Office Address</span>
+                      </label>
+                    </div>
+
+                    <div class="vf-field-group">
+                      <label class="vf-label">Plot/ Street/ House No. <span class="vf-required">*</span></label>
+                      <textarea class="vf-textarea" id="vf-corp-address" rows="2" placeholder="Enter Address" required></textarea>
+                    </div>
+
+                    <div class="vf-row">
+                      <div class="vf-col-6">
+                        <div class="vf-field-group">
+                          <label class="vf-label">Country <span class="vf-required">*</span> (e.g. India)</label>
+                          <select class="vf-select" id="vf-corp-country" required>
+                            <option value="" disabled selected>Select Country</option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                            <option value="Germany">Germany</option>
+                            <option value="China">China</option>
+                            <option value="Other">Other</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="vf-col-6">
+                        <div class="vf-field-group">
+                          <label class="vf-label">State <span class="vf-required">*</span></label>
+                          <select class="vf-select" id="vf-corp-state" required>
+                            <option value="" disabled selected>Select Option</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Karnataka">Karnataka</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="vf-row">
+                      <div class="vf-col-6">
+                        <div class="vf-field-group">
+                          <label class="vf-label">City <span class="vf-required">*</span></label>
+                          <input type="text" class="vf-input" id="vf-corp-city" placeholder="Enter City Name" required />
+                        </div>
+                      </div>
+                      <div class="vf-col-6">
+                        <div class="vf-field-group">
+                          <label class="vf-label">PIN Code <span class="vf-required">*</span></label>
+                          <input type="text" class="vf-input" id="vf-corp-pincode" placeholder="Enter PIN Code" required />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="vf-row">
+                      <div class="vf-col-6">
+                        <div class="vf-field-group">
+                          <label class="vf-label">Contact No. <span class="vf-required">*</span></label>
+                          <input type="tel" class="vf-input" id="vf-corp-contact" placeholder="Enter Contact No." required />
+                        </div>
+                      </div>
+                      <div class="vf-col-6">
+                        <div class="vf-field-group">
+                          <label class="vf-label">Mail ID <span class="vf-required">*</span></label>
+                          <input type="email" class="vf-input" id="vf-corp-email" placeholder="Enter Mail ID" required />
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion 2: Contact Person Information -->
+            <div class="vf-accordion-section">
+              <div class="vf-accordion-header" data-target="vf-body-contact">
+                <div class="vf-accordion-header-left">
+                  <i class="fa-solid fa-user-tie"></i>
+                  <span>Contact Person Information</span>
+                </div>
+                <i class="fa-solid fa-chevron-up vf-chevron-icon"></i>
+              </div>
+
+              <div class="vf-accordion-body" id="vf-body-contact">
+                <div class="vf-row">
+                  <div class="vf-col-3">
+                    <div class="vf-field-group">
+                      <label class="vf-label">Contact Person Name <span class="vf-required">*</span></label>
+                      <input type="text" class="vf-input" placeholder="Enter Name" required />
+                    </div>
+                  </div>
+
+                  <div class="vf-col-3">
+                    <div class="vf-field-group">
+                      <label class="vf-label">Designation <span class="vf-required">*</span></label>
+                      <input type="text" class="vf-input" placeholder="Enter Designation" required />
+                    </div>
+                  </div>
+
+                  <div class="vf-col-3">
+                    <div class="vf-field-group">
+                      <label class="vf-label">Mobile No. <span class="vf-required">*</span></label>
+                      <div class="vf-input-wrap">
+                        <i class="fa-solid fa-phone vf-input-icon"></i>
+                        <input type="tel" class="vf-input vf-input-has-icon" placeholder="Enter Number" required />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="vf-col-3">
+                    <div class="vf-field-group">
+                      <label class="vf-label">Email ID <span class="vf-required">*</span></label>
+                      <div class="vf-input-wrap">
+                        <i class="fa-solid fa-envelope vf-input-icon"></i>
+                        <input type="email" class="vf-input vf-input-has-icon" placeholder="Enter Email ID" required />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion 3: Bank Account Information -->
+            <div class="vf-accordion-section">
+              <div class="vf-accordion-header" data-target="vf-body-bank">
+                <div class="vf-accordion-header-left">
+                  <i class="fa-solid fa-building-columns"></i>
+                  <span>Bank Account Information</span>
+                </div>
+                <i class="fa-solid fa-chevron-up vf-chevron-icon"></i>
+              </div>
+
+              <div class="vf-accordion-body" id="vf-body-bank">
+                <div class="vf-row">
+                  <div class="vf-col-3">
+                    <div class="vf-field-group">
+                      <label class="vf-label">Beneficiary Name <span class="vf-required">*</span></label>
+                      <input type="text" class="vf-input" placeholder="Enter Name" required />
+                    </div>
+                  </div>
+
+                  <div class="vf-col-3">
+                    <div class="vf-field-group">
+                      <label class="vf-label">Bank Name <span class="vf-required">*</span></label>
+                      <input type="text" class="vf-input" placeholder="Enter Bank Name" required />
+                    </div>
+                  </div>
+
+                  <div class="vf-col-3">
+                    <div class="vf-field-group">
+                      <label class="vf-label">A/C Number <span class="vf-required">*</span></label>
+                      <input type="text" class="vf-input" placeholder="Enter A/C no." required />
+                    </div>
+                  </div>
+
+                  <div class="vf-col-3">
+                    <div class="vf-field-group">
+                      <label class="vf-label">IFSC Code <span class="vf-required">*</span></label>
+                      <input type="text" class="vf-input" placeholder="Enter IFSC Code" required />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="vf-row">
+                  <div class="vf-col-3">
+                    <div class="vf-field-group">
+                      <label class="vf-label">Branch Name <span class="vf-required">*</span></label>
+                      <input type="text" class="vf-input" placeholder="Enter Branch Name" required />
+                    </div>
+                  </div>
+
+                  <div class="vf-col-3">
+                    <div class="vf-field-group">
+                      <label class="vf-label">SWIFT Code</label>
+                      <input type="text" class="vf-input" placeholder="Enter SWIFT Code" />
+                    </div>
+                  </div>
+
+                  <div class="vf-col-3">
+                    <div class="vf-field-group">
+                      <label class="vf-label">IBAN (If Any)</label>
+                      <input type="text" class="vf-input" placeholder="Enter IBAN No." />
+                    </div>
+                  </div>
+
+                  <div class="vf-col-3">
+                    <div class="vf-field-group">
+                      <label class="vf-label">Upload Cancelled Cheque <span class="vf-required">*</span></label>
+                      <div class="vf-file-upload-box">
+                        <label class="vf-file-btn">
+                          Choose file
+                          <input type="file" class="vf-file-input" style="display:none;" required />
+                        </label>
+                        <span class="vf-file-name">No file chosen</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion 4: List of Required Documents -->
+            <div class="vf-accordion-section">
+              <div class="vf-accordion-header" data-target="vf-body-docs">
+                <div class="vf-accordion-header-left">
+                  <i class="fa-solid fa-file-lines"></i>
+                  <span>List of Required Documents</span>
+                </div>
+                <i class="fa-solid fa-chevron-up vf-chevron-icon"></i>
+              </div>
+
+              <div class="vf-accordion-body" id="vf-body-docs">
+                <div class="vf-doc-table-wrap">
+                  <table class="vf-doc-table">
+                    <thead>
+                      <tr>
+                        <th style="width: 40px;">#</th>
+                        <th style="min-width: 200px;">Documents</th>
+                        <th style="min-width: 220px;">Registration No.</th>
+                        <th style="min-width: 250px;">Upload Copy</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Row 1: PAN -->
+                      <tr>
+                        <td>1.</td>
+                        <td><strong>Income Tax PAN <span class="vf-required">*</span></strong></td>
+                        <td>
+                          <input type="text" class="vf-input" placeholder="Enter PAN No." required />
+                        </td>
+                        <td>
+                          <div class="vf-file-upload-box">
+                            <label class="vf-file-btn">
+                              Choose file
+                              <input type="file" class="vf-file-input" style="display:none;" required />
+                            </label>
+                            <span class="vf-file-name">No file chosen</span>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <!-- Row 2: GST -->
+                      <tr>
+                        <td>2.</td>
+                        <td><strong>GST <span class="vf-required">*</span></strong></td>
+                        <td>
+                          <input type="text" class="vf-input" placeholder="Enter GST No." required />
+                        </td>
+                        <td>
+                          <div class="vf-file-upload-box">
+                            <label class="vf-file-btn">
+                              Choose file
+                              <input type="file" class="vf-file-input" style="display:none;" required />
+                            </label>
+                            <span class="vf-file-name">No file chosen</span>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <!-- Row 3: MSME -->
+                      <tr>
+                        <td>3.</td>
+                        <td>
+                          <div class="vf-field-group" style="margin-bottom:0;">
+                            <label class="vf-label">Has MSME Registration? <span class="vf-required">*</span></label>
+                            <select class="vf-select">
+                              <option value="" disabled selected>Select Option</option>
+                              <option value="yes">Yes</option>
+                              <option value="no">No</option>
+                            </select>
+                          </div>
+                        </td>
+                        <td>
+                          <input type="text" class="vf-input" placeholder="Enter MSME Reg. No." />
+                        </td>
+                        <td>
+                          <div class="vf-field-group" style="margin-bottom:8px;">
+                            <div class="vf-file-upload-box">
+                              <label class="vf-file-btn">
+                                Choose file
+                                <input type="file" class="vf-file-input" style="display:none;" />
+                              </label>
+                              <span class="vf-file-name">No file chosen</span>
+                            </div>
+                          </div>
+                          <div class="vf-field-group" style="margin-bottom:0;">
+                            <label class="vf-label" style="font-size:11px;">Date Of Printing (MSME)</label>
+                            <input type="date" class="vf-input" />
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Signature & Declaration Box -->
+            <div class="vf-declaration-card">
+              <h5 class="vf-declaration-title">Signature by authorised representative of the entity:</h5>
+              
+              <div class="vf-declaration-inline">
+                <span>I,</span>
+                <input type="text" class="vf-inline-input" placeholder="(Name)" required />
+                <span>, working as</span>
+                <input type="text" class="vf-inline-input" placeholder="(Designation)" required />
+                <span>do hereby declare and confirm the following:</span>
+              </div>
+
+              <ol class="vf-declaration-list">
+                <li>I hereby consent to the collection and processing of my personal and business data in accordance with the Company's Policy.</li>
+                <li>I acknowledge and confirm that the agreed payment dates for Aleph's Vendors are the 15th and the 30th of each month. I hereby give my approval for the execution of a formal vendor/associate agreement with Aleph INDIA Group.</li>
+                <li>I hereby declare that the above information is true and correct to the best of my knowledge. I will be solely responsible for any inaccuracies or omissions in the vendor's submission and agree to indemnify and hold harmless the Company from any loss, claim, or liability arising out of such inaccuracies or omissions.</li>
+              </ol>
+            </div>
+
+            <!-- reCAPTCHA & Submit Action -->
+            <div class="vf-submit-row">
+              <!-- Production Grade Google reCAPTCHA v2 Widget -->
+              <div class="g-recaptcha-box" id="g-recaptcha-widget">
+                <div class="g-recaptcha-left">
+                  <div class="g-recaptcha-checkbox-btn" id="g-recaptcha-btn" role="button" tabindex="0" aria-label="I'm not a robot checkbox">
+                    <div class="g-recaptcha-spinner" id="g-recaptcha-spinner"></div>
+                    <svg class="g-recaptcha-checkmark" id="g-recaptcha-checkmark" viewBox="0 0 24 24">
+                      <path fill="none" stroke="#009688" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" d="M4 12l5 5L20 6"/>
+                    </svg>
+                  </div>
+                  <span class="g-recaptcha-label" id="g-recaptcha-label-btn">I'm not a robot</span>
+                </div>
+
+                <div class="g-recaptcha-brand">
+                  <svg class="g-recaptcha-logo-icon" viewBox="0 0 48 48" width="30" height="30">
+                    <path fill="#1c3aa9" d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16z"/>
+                    <path fill="#4285F4" d="M24 14c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10zm0 14c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+                  </svg>
+                  <span class="g-recaptcha-brand-title">reCAPTCHA</span>
+                  <div class="g-recaptcha-privacy-links">
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy</a> - 
+                    <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hidden Checkbox for Form Validation -->
+              <input type="checkbox" id="g-recaptcha-verified-val" style="display:none;" required />
+
+              <button type="submit" class="vf-submit-btn">Submit Application</button>
+            </div>
+
+          </form>
         </div>
 
       </div>
     </section>
-    <!-- ===== END QCO TABLE SECTION ===== -->
+    <!-- ===== END VENDOR REGISTRATION FORM SECTION ===== -->
 
 
-    <!-- Site Footer -->
     <!-- Global Footer -->
 <!-- Global Footer -->
 <!-- Global Footer -->
@@ -731,5 +1141,6 @@
 
     <!-- Scripts -->
     <script src="js/navigation.js"></script>
+    <script src="js/vendor-form.js"></script>
 </body>
 </html>
