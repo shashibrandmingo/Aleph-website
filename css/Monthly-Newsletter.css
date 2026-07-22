@@ -1,0 +1,607 @@
+/* ==========================================================================
+   MONTHLY NEWSLETTER PAGE STYLES
+   ========================================================================== */
+
+.newsletter-hero-section {
+  padding: 1.5rem 0 1rem 0;
+  background-color: #f8fafc;
+  position: relative;
+}
+
+.newsletter-mobile-header {
+  display: none;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.newsletter-mobile-header img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.newsletter-hero-container {
+  width: 100%;
+  aspect-ratio: 1443 / 527;
+  background: url('../image/monthly-new-later/monthly-new-later.png') no-repeat center center / cover;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 31, 84, 0.06);
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 4rem;
+}
+
+.newsletter-hero-content {
+  max-width: 520px;
+  position: relative;
+  z-index: 5;
+}
+
+/* Breadcrumb */
+.newsletter-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.92rem;
+  margin-bottom: 1.8rem;
+}
+
+.newsletter-breadcrumb-link {
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.newsletter-breadcrumb-link:hover {
+  color: #2563eb;
+}
+
+.newsletter-breadcrumb-link .home-icon {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+.newsletter-breadcrumb-sep {
+  color: #94a3b8;
+}
+
+.newsletter-breadcrumb-current {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* Title & Subtitle */
+.newsletter-hero-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 3.2vw;
+  font-weight: 900;
+  color: #0b192c;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.2rem 0;
+}
+
+.newsletter-hero-title .title-blue {
+  color: #2563eb;
+}
+
+.newsletter-hero-desc {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+  max-width: 460px;
+}
+
+/* ==========================================================================
+   2ND SECTION - ALL NEWSLETTERS LIST (TARGET UI MATCH)
+   ========================================================================== */
+
+.newsletter-list-section {
+  padding: 0.8rem 0 5rem 0;
+  background-color: #f8fafc;
+}
+
+/* Header Row */
+.newsletter-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2.2rem;
+  flex-wrap: wrap;
+}
+
+.newsletter-list-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.list-title-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+}
+
+.list-title-icon-box svg {
+  width: 20px;
+  height: 20px;
+}
+
+.newsletter-list-title h2 {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #001f54;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Sort Dropdown Container & Menu */
+.newsletter-sort-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.newsletter-sort-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.55rem 1.1rem;
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.85rem;
+  color: #475569;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.newsletter-sort-dropdown:hover,
+.newsletter-sort-wrapper.open .newsletter-sort-dropdown {
+  border-color: #2563eb;
+  color: #0b192c;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12);
+}
+
+.newsletter-sort-dropdown .sort-icon {
+  width: 16px;
+  height: 16px;
+  stroke: #475569;
+  flex-shrink: 0;
+}
+
+.newsletter-sort-dropdown .chevron-icon {
+  width: 15px;
+  height: 15px;
+  stroke: #94a3b8;
+  margin-left: 0.25rem;
+  transition: transform 0.25s ease;
+}
+
+.newsletter-sort-wrapper.open .chevron-icon {
+  transform: rotate(180deg);
+  stroke: #2563eb;
+}
+
+/* Dropdown Menu Popup */
+.sort-options-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 210px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 31, 84, 0.12);
+  padding: 0.4rem 0;
+  margin: 0;
+  list-style: none;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.newsletter-sort-wrapper.open .sort-options-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.sort-option-item {
+  padding: 0.6rem 1.1rem;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sort-option-item:hover {
+  background-color: #f1f5f9;
+  color: #2563eb;
+}
+
+.sort-option-item.active {
+  color: #2563eb;
+  font-weight: 700;
+  background-color: #eff6ff;
+}
+
+.sort-option-item.active::after {
+  content: "✓";
+  font-weight: 900;
+  color: #2563eb;
+}
+
+/* Horizontal Row Cards List */
+.horizontal-newsletters-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.newsletter-row-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #edf2f7;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.8rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
+}
+
+.newsletter-row-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 46, 132, 0.07);
+}
+
+/* Theme Color Borders & Accents on Hover */
+.newsletter-row-card.theme-blue:hover { border-color: rgba(37, 99, 235, 0.3); }
+.newsletter-row-card.theme-teal:hover { border-color: rgba(0, 191, 165, 0.3); }
+.newsletter-row-card.theme-orange:hover { border-color: rgba(255, 143, 0, 0.3); }
+.newsletter-row-card.theme-purple:hover { border-color: rgba(126, 87, 194, 0.3); }
+
+/* Left Date Box */
+.newsletter-date-block {
+  width: 220px;
+  min-width: 220px;
+  height: 90px;
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.newsletter-date-block.theme-blue {
+  background: linear-gradient(135deg, #0052cc 0%, #1765e6 100%);
+}
+
+.newsletter-date-block.theme-teal {
+  background: linear-gradient(135deg, #00877a 0%, #00bfa5 100%);
+}
+
+.newsletter-date-block.theme-orange {
+  background: linear-gradient(135deg, #e65100 0%, #ff8f00 100%);
+}
+
+.newsletter-date-block.theme-purple {
+  background: linear-gradient(135deg, #5e35b1 0%, #7e57c2 100%);
+}
+
+.date-text-wrap {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.month-label {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+  margin-bottom: 0.25rem;
+}
+
+.year-label {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.calendar-glass-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-glass-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: #ffffff;
+}
+
+/* Info Side */
+.newsletter-info-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.newsletter-item-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0b192c;
+  margin: 0;
+  line-height: 1.35;
+  transition: color 0.2s ease;
+}
+
+.newsletter-row-card:hover .newsletter-item-title {
+  color: #2563eb;
+}
+
+.newsletter-item-desc {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Meta Side */
+.newsletter-meta-side {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  border-left: 1px dashed #e2e8f0;
+}
+
+.pub-date {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.84rem;
+  color: #64748b;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.pub-date svg {
+  width: 16px;
+  height: 16px;
+  stroke: #2563eb;
+}
+
+/* View PDF Pill Buttons */
+.newsletter-action-side {
+  flex-shrink: 0;
+}
+
+.btn-view-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.4rem;
+  border-radius: 10px;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: #ffffff;
+  transition: all 0.25s ease;
+}
+
+.btn-view-pdf svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+}
+
+/* Theme Button Outlines & Hover */
+.btn-view-pdf.theme-blue {
+  border: 1.5px solid #2563eb;
+  color: #2563eb;
+}
+
+.btn-view-pdf.theme-blue:hover {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.btn-view-pdf.theme-teal {
+  border: 1.5px solid #00bfa5;
+  color: #00877a;
+}
+
+.btn-view-pdf.theme-teal:hover {
+  background: #00877a;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 135, 122, 0.3);
+}
+
+.btn-view-pdf.theme-orange {
+  border: 1.5px solid #ff8f00;
+  color: #e65100;
+}
+
+.btn-view-pdf.theme-orange:hover {
+  background: #e65100;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(230, 81, 0, 0.3);
+}
+
+.btn-view-pdf.theme-purple {
+  border: 1.5px solid #7e57c2;
+  color: #5e35b1;
+}
+
+.btn-view-pdf.theme-purple:hover {
+  background: #5e35b1;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(94, 53, 177, 0.3);
+}
+
+/* Bottom Circular Pagination */
+.newsletter-pagination-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.page-circle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  color: #0f172a;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.page-circle-btn:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.page-circle-btn.active {
+  background-color: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.page-circle-btn.next-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+}
+
+.pagination-dots {
+  color: #94a3b8;
+  font-weight: 700;
+  padding: 0 0.2rem;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 991px) {
+  .newsletter-hero-container {
+    aspect-ratio: auto;
+    padding: 3rem 2rem;
+    min-height: 380px;
+  }
+
+  .newsletter-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .newsletter-row-card {
+    flex-wrap: wrap;
+    gap: 1.2rem;
+  }
+
+  .newsletter-meta-side {
+    border-left: none;
+    padding: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .newsletter-hero-section {
+    padding: 1rem 0 0.4rem 0;
+  }
+
+  .newsletter-mobile-header {
+    display: none !important;
+  }
+
+  .newsletter-hero-container {
+    display: block;
+    background-image: none !important;
+    background-color: #f0f7ff;
+    border: 1px solid #e2e8f0;
+    aspect-ratio: auto;
+    padding: 1.25rem 1.25rem;
+    min-height: auto;
+    border-radius: 18px;
+  }
+
+  .newsletter-hero-content {
+    max-width: 100%;
+  }
+
+  .newsletter-hero-title {
+    font-size: 1.85rem;
+  }
+
+  .newsletter-row-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .newsletter-date-block {
+    width: 100%;
+  }
+
+  .newsletter-action-side {
+    width: 100%;
+  }
+
+  .btn-view-pdf {
+    width: 100%;
+    justify-content: center;
+  }
+}

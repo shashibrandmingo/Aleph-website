@@ -6,6 +6,8 @@
     <title>Careers - Aleph INDIA</title>
     <!-- Favicon -->
     <link rel="icon" href="image/fab-iocn.png" type="image/png">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/Header.css">
@@ -419,51 +421,192 @@
             <div class="decor-dots-top-center"></div>
 
             <div class="container">
-                <div class="open-positions-header">
-                    <div class="careers-tag-indicator">
-                        <span class="indicator-arrow">→</span>
-                        <span class="indicator-text">CAREERS</span>
-                    </div>
-                    <h2 class="open-positions-title">Open <span class="title-accent">Positions</span></h2>
-                    <p class="open-positions-desc">
-                        Explore exciting opportunities at Aleph INDIA and be a part of our mission to drive excellence.
-                    </p>
-                </div>
-
-                <div class="jobs-list-v2">
-                    <!-- Job Card 1 -->
-                    <div class="job-card-v2">
-                        <div class="job-card-indicator"></div>
-                        <div class="job-card-icon-box">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                <path d="m9 11 2 2 4-4"/>
-                            </svg>
-                        </div>
-                        <div class="job-card-details">
-                            <h3>Quality Control Engineer</h3>
-                            <p>Ensure product quality and compliance with industry standards through rigorous testing and inspection.</p>
-                        </div>
-                        <div class="job-card-meta-v2">
-                            <div class="meta-v2-item location-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                    <circle cx="12" cy="10" r="3"/>
-                                </svg>
-                                <span>Indore, MP</span>
+                <div class="careers-2col-layout">
+                    <!-- Left Main Column: Open Positions -->
+                    <div class="careers-left-col">
+                        <div class="open-positions-header">
+                            <div class="careers-tag-indicator">
+                                <span class="indicator-arrow">→</span>
+                                <span class="indicator-text">CAREERS</span>
                             </div>
-                            <div class="meta-v2-item type-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <h2 class="open-positions-title">Open <span class="title-accent">Positions</span></h2>
+                            <p class="open-positions-desc">
+                                Explore exciting opportunities at Aleph INDIA and be a part of our mission to drive excellence.
+                            </p>
+                        </div>
+
+                        <div class="jobs-list-v2">
+                            <!-- Job Card 1 -->
+                            <div class="job-card-v2">
+                                <div class="job-card-indicator"></div>
+                                <div class="job-card-icon-box">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        <path d="m9 11 2 2 4-4"/>
+                                    </svg>
+                                </div>
+                                <div class="job-card-details">
+                                    <h3>Quality Control Engineer</h3>
+                                    <p>Ensure product quality and compliance with industry standards through rigorous testing and inspection.</p>
+                                </div>
+                                <div class="job-card-meta-v2">
+                                    <div class="meta-v2-item location-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                            <circle cx="12" cy="10" r="3"/>
+                                        </svg>
+                                        <span>Indore, MP</span>
+                                    </div>
+                                    <div class="meta-v2-item type-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                                        </svg>
+                                        <span>Full Time</span>
+                                    </div>
+                                </div>
+                                <div class="job-card-action">
+                                    <a href="#" class="view-job-btn-v2">
+                                        <span>View Job</span>
+                                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12"/>
+                                            <polyline points="12 5 19 12 12 19"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Job Card 2 -->
+                            <div class="job-card-v2">
+                                <div class="job-card-indicator"></div>
+                                <div class="job-card-icon-box">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                        <polyline points="14 2 14 8 20 8"/>
+                                        <line x1="16" y1="13" x2="8" y2="13"/>
+                                        <line x1="16" y1="17" x2="8" y2="17"/>
+                                        <polyline points="10 9 9 9 8 9"/>
+                                    </svg>
+                                </div>
+                                <div class="job-card-details">
+                                    <h3>Regulatory Affairs Specialist</h3>
+                                    <p>Manage regulatory submissions and ensure compliance with global standards and guidelines.</p>
+                                </div>
+                                <div class="job-card-meta-v2">
+                                    <div class="meta-v2-item location-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                            <circle cx="12" cy="10" r="3"/>
+                                        </svg>
+                                        <span>Indore, MP</span>
+                                    </div>
+                                    <div class="meta-v2-item type-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                                        </svg>
+                                        <span>Full Time</span>
+                                    </div>
+                                </div>
+                                <div class="job-card-action">
+                                    <a href="#" class="view-job-btn-v2">
+                                        <span>View Job</span>
+                                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12"/>
+                                            <polyline points="12 5 19 12 12 19"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Job Card 3 -->
+                            <div class="job-card-v2">
+                                <div class="job-card-indicator"></div>
+                                <div class="job-card-icon-box">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="3"/>
+                                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                                    </svg>
+                                </div>
+                                <div class="job-card-details">
+                                    <h3>Production Executive</h3>
+                                    <p>Oversee production processes, ensure efficiency and maintain high quality in manufacturing operations.</p>
+                                </div>
+                                <div class="job-card-meta-v2">
+                                    <div class="meta-v2-item location-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                            <circle cx="12" cy="10" r="3"/>
+                                        </svg>
+                                        <span>Indore, MP</span>
+                                    </div>
+                                    <div class="meta-v2-item type-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                                        </svg>
+                                        <span>Full Time</span>
+                                    </div>
+                                </div>
+                                <div class="job-card-action">
+                                    <a href="#" class="view-job-btn-v2">
+                                        <span>View Job</span>
+                                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12"/>
+                                            <polyline points="12 5 19 12 12 19"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Job Card 4 -->
+                            <div class="job-card-v2">
+                                <div class="job-card-indicator"></div>
+                                <div class="job-card-icon-box">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                                    </svg>
+                                </div>
+                                <div class="job-card-details">
+                                    <h3>Maintenance Engineer</h3>
+                                    <p>Maintain and optimize equipment performance to ensure smooth and uninterrupted operations.</p>
+                                </div>
+                                <div class="job-card-meta-v2">
+                                    <div class="meta-v2-item location-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                            <circle cx="12" cy="10" r="3"/>
+                                        </svg>
+                                        <span>Indore, MP</span>
+                                    </div>
+                                    <div class="meta-v2-item type-item">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                                        </svg>
+                                        <span>Full Time</span>
+                                    </div>
+                                </div>
+                                <div class="job-card-action">
+                                    <a href="#" class="view-job-btn-v2">
+                                        <span>View Job</span>
+                                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12"/>
+                                            <polyline points="12 5 19 12 12 19"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="view-all-positions-wrapper">
+                            <a href="#" class="btn-view-all-positions">
+                                <svg class="briefcase-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
                                     <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
                                 </svg>
-                                <span>Full Time</span>
-                            </div>
-                        </div>
-                        <div class="job-card-action">
-                            <a href="#" class="view-job-btn-v2">
-                                <span>View Job</span>
-                                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <span>View All Openings</span>
+                                <svg class="arrow-right-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <line x1="5" y1="12" x2="19" y2="12"/>
                                     <polyline points="12 5 19 12 12 19"/>
                                 </svg>
@@ -471,141 +614,53 @@
                         </div>
                     </div>
 
-                    <!-- Job Card 2 -->
-                    <div class="job-card-v2">
-                        <div class="job-card-indicator"></div>
-                        <div class="job-card-icon-box">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                                <polyline points="10 9 9 9 8 9"/>
-                            </svg>
-                        </div>
-                        <div class="job-card-details">
-                            <h3>Regulatory Affairs Specialist</h3>
-                            <p>Manage regulatory submissions and ensure compliance with global standards and guidelines.</p>
-                        </div>
-                        <div class="job-card-meta-v2">
-                            <div class="meta-v2-item location-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                    <circle cx="12" cy="10" r="3"/>
-                                </svg>
-                                <span>Indore, MP</span>
-                            </div>
-                            <div class="meta-v2-item type-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-                                </svg>
-                                <span>Full Time</span>
-                            </div>
-                        </div>
-                        <div class="job-card-action">
-                            <a href="#" class="view-job-btn-v2">
-                                <span>View Job</span>
-                                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12"/>
-                                    <polyline points="12 5 19 12 12 19"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
+                    <!-- Right Sidebar Column: Why Join Aleph INDIA? Card -->
+                    <aside class="why-join-sidebar-card">
+                        <h3 class="why-join-title">Why Join Aleph INDIA?</h3>
+                        <div class="why-join-underline"></div>
 
-                    <!-- Job Card 3 -->
-                    <div class="job-card-v2">
-                        <div class="job-card-indicator"></div>
-                        <div class="job-card-icon-box">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="3"/>
-                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-                            </svg>
-                        </div>
-                        <div class="job-card-details">
-                            <h3>Production Executive</h3>
-                            <p>Oversee production processes, ensure efficiency and maintain high quality in manufacturing operations.</p>
-                        </div>
-                        <div class="job-card-meta-v2">
-                            <div class="meta-v2-item location-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                    <circle cx="12" cy="10" r="3"/>
-                                </svg>
-                                <span>Indore, MP</span>
+                        <div class="why-join-items-list">
+                            <div class="why-join-item">
+                                <div class="why-join-icon-badge">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                                <div class="why-join-info">
+                                    <h4>Career Growth</h4>
+                                    <p>Opportunities to learn, grow and advance in your career.</p>
+                                </div>
                             </div>
-                            <div class="meta-v2-item type-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-                                </svg>
-                                <span>Full Time</span>
-                            </div>
-                        </div>
-                        <div class="job-card-action">
-                            <a href="#" class="view-job-btn-v2">
-                                <span>View Job</span>
-                                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12"/>
-                                    <polyline points="12 5 19 12 12 19"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
 
-                    <!-- Job Card 4 -->
-                    <div class="job-card-v2">
-                        <div class="job-card-indicator"></div>
-                        <div class="job-card-icon-box">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                            </svg>
-                        </div>
-                        <div class="job-card-details">
-                            <h3>Maintenance Engineer</h3>
-                            <p>Maintain and optimize equipment performance to ensure smooth and uninterrupted operations.</p>
-                        </div>
-                        <div class="job-card-meta-v2">
-                            <div class="meta-v2-item location-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                    <circle cx="12" cy="10" r="3"/>
-                                </svg>
-                                <span>Indore, MP</span>
+                            <div class="why-join-item">
+                                <div class="why-join-icon-badge">
+                                    <i class="fa-solid fa-users"></i>
+                                </div>
+                                <div class="why-join-info">
+                                    <h4>Inclusive Culture</h4>
+                                    <p>A diverse and inclusive workplace where everyone belongs.</p>
+                                </div>
                             </div>
-                            <div class="meta-v2-item type-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-                                </svg>
-                                <span>Full Time</span>
-                            </div>
-                        </div>
-                        <div class="job-card-action">
-                            <a href="#" class="view-job-btn-v2">
-                                <span>View Job</span>
-                                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12"/>
-                                    <polyline points="12 5 19 12 12 19"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="view-all-positions-wrapper">
-                    <a href="#" class="btn-view-all-positions">
-                        <svg class="briefcase-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-                        </svg>
-                        <span>View All Openings</span>
-                        <svg class="arrow-right-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"/>
-                            <polyline points="12 5 19 12 12 19"/>
-                        </svg>
-                    </a>
+                            <div class="why-join-item">
+                                <div class="why-join-icon-badge">
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                </div>
+                                <div class="why-join-info">
+                                    <h4>Health & Wellness</h4>
+                                    <p>We care for your well-being with health benefits and wellness programs.</p>
+                                </div>
+                            </div>
+
+                            <div class="why-join-item">
+                                <div class="why-join-icon-badge">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="why-join-info">
+                                    <h4>Recognition</h4>
+                                    <p>We recognize and celebrate your contributions and achievements.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
                 </div>
             </div>
         </section>

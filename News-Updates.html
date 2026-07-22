@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/Header.css">
     <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/News-Updates.css">
 </head>
 <body>
 
@@ -318,26 +319,237 @@
 
     <!-- Main Container -->
     <main id="main-content">
-        <!-- Page Header Section -->
-        <section class="page-header-section">
+        <!-- Hero Section -->
+        <section class="news-updates-hero">
             <div class="container">
-                <nav class="breadcrumb"><a href="index.html">Home</a> &gt; <span>News Updates</span></nav>
-                <h1>News Updates</h1>
-                <p>Welcome to the official page of News Updates. Standard regulations, guidelines, and compliance details.</p>
-            </div>
-        </section>
+                <div class="news-hero-card">
+                    <div class="news-hero-content">
+                        <!-- Breadcrumbs -->
+                        <nav class="news-breadcrumb">
+                            <a href="index.html">
+                                <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                            </a>
+                            <span class="crumb-separator">/</span>
+                            <span class="crumb-active">Latest Updates</span>
+                        </nav>
 
-        <!-- Page Content Section -->
-        <section class="section-padding">
-            <div class="container">
-                <div class="card-wrapper" style="text-align: center; padding: 4rem 2rem;">
-                    <h3>News Updates Content</h3>
-                    <p style="color: var(--text-muted); margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                        This section is ready for custom content related to News Updates. You can insert text, grids, tables, or list items here.
-                    </p>
+                        <!-- Title -->
+                        <h1 class="news-hero-title">
+                            <span>Latest News &</span>
+                            <span class="highlight-blue">updates</span>
+                        </h1>
+
+                        <!-- Description -->
+                        <p class="news-hero-desc">
+                            Get the latest updates, notifications, and announcements on regulatory standards and compliance.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- Section 2: News Categories Sidebar + Horizontal News Cards & Pagination -->
+        <section class="news-updates-2nd-section">
+            <div class="container">
+                <div class="news-2nd-grid-layout">
+                    <!-- Left Sidebar: News Categories Card -->
+                    <aside class="news-categories-card">
+                        <div class="categories-card-header">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
+                            <h3>NEWS CATEGORIES</h3>
+                        </div>
+
+                        <div class="categories-list-group">
+                            <a href="#" class="category-list-item active">
+                                <div class="category-item-left">
+                                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
+                                    <span>All Updates</span>
+                                </div>
+                                <span class="category-count-badge">120</span>
+                            </a>
+
+                            <a href="#" class="category-list-item">
+                                <div class="category-item-left">
+                                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg>
+                                    <span>General</span>
+                                </div>
+                                <span class="category-count-badge">24</span>
+                            </a>
+
+                            <a href="#" class="category-list-item">
+                                <div class="category-item-left">
+                                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 11l2 2 4-4"/></svg>
+                                    <span>BIS</span>
+                                </div>
+                                <span class="category-count-badge">18</span>
+                            </a>
+
+                            <a href="#" class="category-list-item">
+                                <div class="category-item-left">
+                                    <svg viewBox="0 0 24 24"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/><path d="M12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+                                    <span>WPC</span>
+                                </div>
+                                <span class="category-count-badge">12</span>
+                            </a>
+
+                            <a href="#" class="category-list-item">
+                                <div class="category-item-left">
+                                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                                    <span>ISI Mark</span>
+                                </div>
+                                <span class="category-count-badge">14</span>
+                            </a>
+
+                            <a href="#" class="category-list-item">
+                                <div class="category-item-left">
+                                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <span>Hallmark</span>
+                                </div>
+                                <span class="category-count-badge">8</span>
+                            </a>
+
+                            <a href="#" class="category-list-item">
+                                <div class="category-item-left">
+                                    <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                                    <span>CE</span>
+                                </div>
+                                <span class="category-count-badge">10</span>
+                            </a>
+
+                            <a href="#" class="category-list-item">
+                                <div class="category-item-left">
+                                    <svg viewBox="0 0 24 24"><path d="M7 11V7a5 5 0 0 1 10 0v4M12 2v4M5 12h14v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7z"/></svg>
+                                    <span>E-Waste</span>
+                                </div>
+                                <span class="category-count-badge">6</span>
+                            </a>
+                        </div>
+
+                        <div class="categories-view-more-wrap">
+                            <button type="button" class="categories-view-more-btn">
+                                <span>View More</span>
+                                <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                            </button>
+                        </div>
+                    </aside>
+
+                    <!-- Right Column: Horizontal News Cards List & Pagination -->
+                    <main class="news-horizontal-list">
+                        <!-- Horizontal Card 1 -->
+                        <article class="horizontal-news-card">
+                            <div class="card-thumbnail-side">
+                                <span class="card-red-badge">BIS</span>
+                                <img src="image/blog-listing/blog-1.png" alt="DPIIT Transition Facilitation" class="card-thumbnail-img">
+                            </div>
+                            <div class="card-content-side">
+                                <h3 class="horizontal-news-title">DPIIT Notifies Transition Facilitation (Quality Control) Order, 2026 to enhance India's manufacturing ecosystem</h3>
+                                <p class="horizontal-news-desc">
+                                    The Department for Promotion of Industry and Internal Trade (DPIIT), in the Ministry of Commerce and Industry, has announced the Transition Facilitation (Quality...
+                                </p>
+                                <div class="card-bottom-meta-row">
+                                    <a href="#" class="card-read-more-link">
+                                        <span>Read More</span>
+                                        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                    </a>
+                                    <div class="card-time-date-meta">
+                                        <div class="meta-item">
+                                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                            <span>2 Min Read</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                            <span>26 Jun 2026</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Horizontal Card 2 -->
+                        <article class="horizontal-news-card">
+                            <div class="card-thumbnail-side">
+                                <span class="card-red-badge">ISI Mark</span>
+                                <img src="image/blog-listing/blog-2.png" alt="CML Number Check" class="card-thumbnail-img">
+                            </div>
+                            <div class="card-content-side">
+                                <h3 class="horizontal-news-title">CML Number Check - How to Check Online Original ISI CML Number ?</h3>
+                                <p class="horizontal-news-desc">
+                                    BIS has issued a new update related to the CML number. Learn how to verify it and get a step-by-step guide to confirm the original licence number of any product...
+                                </p>
+                                <div class="card-bottom-meta-row">
+                                    <a href="#" class="card-read-more-link">
+                                        <span>Read More</span>
+                                        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                    </a>
+                                    <div class="card-time-date-meta">
+                                        <div class="meta-item">
+                                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                            <span>2 Min Read</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                            <span>10 Jun 2026</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Horizontal Card 3 -->
+                        <article class="horizontal-news-card">
+                            <div class="card-thumbnail-side">
+                                <span class="card-red-badge">BIS</span>
+                                <img src="image/blog-listing/blog-3.png" alt="All India First Licence" class="card-thumbnail-img">
+                            </div>
+                            <div class="card-content-side">
+                                <h3 class="horizontal-news-title">ALL INDIA FIRST LICENCE for IS 405 (Part 1): 1992</h3>
+                                <p class="horizontal-news-desc">
+                                    Aleph INDIA has become India's first consulting firm to achieve the 'ALL INDIA FIRST LICENCE for IS 405 (Part 1): 1992' for its esteemed client. This significant...
+                                </p>
+                                <div class="card-bottom-meta-row">
+                                    <a href="#" class="card-read-more-link">
+                                        <span>Read More</span>
+                                        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                    </a>
+                                    <div class="card-time-date-meta">
+                                        <div class="meta-item">
+                                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                            <span>2 Min Read</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                            <span>06 Jun 2026</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Bottom Pagination -->
+                        <div class="news-pagination-wrapper">
+                            <span class="pagination-info-text">Showing 1 to 10 of 120 updates</span>
+
+                            <div class="pagination-pills-list">
+                                <a href="#" class="pagination-page-pill active">1</a>
+                                <a href="#" class="pagination-page-pill">2</a>
+                                <a href="#" class="pagination-page-pill">3</a>
+                                <a href="#" class="pagination-page-pill">4</a>
+                                <a href="#" class="pagination-page-pill">5</a>
+                                <span class="pagination-dots">...</span>
+                                <a href="#" class="pagination-page-pill">12</a>
+                                <a href="#" class="pagination-page-pill" aria-label="Next Page">
+                                    <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; stroke: currentColor; stroke-width: 2.5; fill: none;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Site Footer -->
@@ -596,5 +808,7 @@
 
     <!-- Scripts -->
     <script src="js/navigation.js"></script>
+    <script src="js/service-dropdown.js"></script>
+    <script src="js/news-updates.js"></script>
 </body>
 </html>

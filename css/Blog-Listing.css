@@ -170,9 +170,9 @@
   align-items: center;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  padding: 0.25rem 0.3rem 0.25rem 0.85rem;
-  width: 460px;
+  border-radius: 12px;
+  padding: 0.3rem 0.35rem 0.3rem 1rem;
+  width: 785px;
   max-width: 100%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
   transition: all 0.25s ease;
@@ -192,13 +192,18 @@
 }
 
 .blogs-search-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 0;
   border: none;
   outline: none;
   background: transparent;
   font-family: var(--font-secondary), sans-serif;
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   color: #0f172a;
-  width: 100%;
+  padding-right: 0.5rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .blogs-search-input::placeholder {
