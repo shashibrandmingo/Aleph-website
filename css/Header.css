@@ -894,23 +894,35 @@
 .mobile-nested-link {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.65rem 1.25rem;
-  font-size: 0.82rem;
+  justify-content: flex-start;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  color: #475569;
+  color: #334155;
   cursor: pointer;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid #f1f5f9;
   transition: background-color var(--transition-fast);
+  width: 100%;
+}
+
+.mobile-nested-link > span {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
+  line-height: 1.35;
+  margin-right: 0.5rem;
 }
 
 .mobile-nested-link:hover {
-  background-color: rgba(0, 0, 0, 0.01);
+  background-color: rgba(0, 0, 0, 0.015);
 }
 
-.mobile-nested-link svg {
-  width: 10px;
-  height: 10px;
+.mobile-nested-link .arrow-indicator,
+.mobile-nested-link > svg:last-child {
+  margin-left: auto;
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
   fill: none;
   stroke: currentColor;
   stroke-width: 2.5;
@@ -922,13 +934,14 @@
   font-weight: 600;
 }
 
-.mobile-nested-link.open svg {
+.mobile-nested-link.open .arrow-indicator,
+.mobile-nested-link.open > svg:last-child {
   transform: rotate(180deg);
 }
 
 .mobile-nested-submenu {
   display: none;
-  padding-left: 1.5rem;
+  padding-left: 1.2rem;
   background-color: rgba(0, 0, 0, 0.015);
   border-left: 2px solid var(--primary-light);
 }
@@ -936,6 +949,29 @@
 .mobile-nested-submenu.open {
   display: flex;
   flex-direction: column;
+  max-height: 270px;
+  overflow-y: auto;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+/* Scrollbar for mobile nested submenus */
+.mobile-nested-submenu::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobile-nested-submenu::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 4px;
+}
+
+.mobile-nested-submenu::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.mobile-nested-submenu::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 .mobile-nested-submenu .mobile-submenu-item {
@@ -994,23 +1030,23 @@
 
 /* Mobile accordion category icon badges */
 .mobile-nested-icon {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid #bfdbfe;
-  background-color: #ffffff;
+  background-color: #f8fafc;
   color: var(--primary);
-  margin-right: 0.6rem;
+  margin-right: 0.75rem;
   flex-shrink: 0;
   transition: all var(--transition-fast);
 }
 
 .mobile-nested-icon svg {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   stroke: currentColor;
   stroke-width: 2;
   fill: none;
