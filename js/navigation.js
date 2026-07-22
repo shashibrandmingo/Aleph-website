@@ -387,29 +387,31 @@ function updateStylesheets(newDoc) {
 
 // Helper to sync scripts dynamically between PJAX page loads and return a Promise that resolves when new scripts load
 function updateScripts(newDoc) {
-  const currentScripts = Array.from(document.querySelectorAll('script'));
   const newScripts = Array.from(newDoc.querySelectorAll('script'));
 
-  // Get absolute/resolved src values for comparison
-  const currentSrcs = currentScripts.map(script => script.src).filter(Boolean);
-
-  // Identify scripts to load (scripts on the new page that are not currently loaded)
-  // Exclude global scripts that are already loaded in index.html to avoid duplicate executes
+  // Identify scripts to load (exclude global layout scripts like navigation.js / service-dropdown.js)
   const scriptsToLoad = newScripts.filter(script => {
     return script.src && 
-           !currentSrcs.includes(script.src) && 
            !script.src.includes('navigation.js') && 
            !script.src.includes('service-dropdown.js');
   });
 
-  // Create loading promises for new scripts
+  // Remove matching existing scripts from DOM before adding them again to force re-evaluation
+  scriptsToLoad.forEach(newScript => {
+    const existing = Array.from(document.querySelectorAll('script')).find(s => s.src === newScript.src);
+    if (existing) {
+      existing.remove();
+    }
+  });
+
+  // Create loading promises for the scripts
   const loadPromises = scriptsToLoad.map(script => {
     return new Promise((resolve) => {
       const clonedScript = document.createElement('script');
       clonedScript.src = script.src;
       clonedScript.async = false; // Execute in order
       clonedScript.onload = () => resolve();
-      clonedScript.onerror = () => resolve(); // Resolve anyway on error to prevent blocking transitions
+      clonedScript.onerror = () => resolve();
       document.body.appendChild(clonedScript);
     });
   });

@@ -40,6 +40,23 @@ function initPopupSlider(config) {
   // If the elements are not on this page, exit silently
   if (!modal || !track || !closeBtn || viewProfileBtns.length === 0) return;
   
+  // Dynamically inject in-card close buttons if missing
+  slides.forEach(slide => {
+    const card = slide.querySelector('.dir-slide-card');
+    if (card && !card.querySelector('.dir-modal-close-card')) {
+      const btn = document.createElement('button');
+      btn.className = 'dir-modal-close-card';
+      btn.setAttribute('aria-label', 'Close Profile');
+      btn.innerHTML = `
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      `;
+      card.prepend(btn);
+    }
+  });
+  
   let activeIndex = 0;
   
   // Position active slide and update slider layout
@@ -150,6 +167,12 @@ function initPopupSlider(config) {
   
   // Close buttons and backdrop clicks
   closeBtn.addEventListener('click', closeModal);
+  
+  const innerCloseBtns = Array.from(modal.querySelectorAll('.dir-modal-close-card'));
+  innerCloseBtns.forEach(btn => {
+    btn.addEventListener('click', closeModal);
+  });
+  
   if (backdrop) {
     backdrop.addEventListener('click', closeModal);
   }

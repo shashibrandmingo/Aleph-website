@@ -873,6 +873,7 @@
 }
 
 .dir-slide-card {
+  position: relative;
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -1158,4 +1159,43 @@
 
 .team-card-wrap:hover .team-dots-decor {
   opacity: 1;
+}
+
+/* Card Close Button inside Modal Slides (Mobile only) */
+.dir-modal-close-card {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  color: #334155;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast) ease;
+  z-index: 100;
+  padding: 0;
+}
+.dir-modal-close-card svg {
+  width: 16px;
+  height: 16px;
+}
+.dir-modal-close-card:hover {
+  background: rgba(15, 23, 42, 0.12);
+  color: #0f172a;
+}
+
+@media (max-width: 768px) {
+  /* Hide the global floating close button */
+  .dir-modal-close {
+    display: none !important;
+  }
+  /* Show the in-card close button */
+  .dir-modal-close-card {
+    display: flex !important;
+  }
 }
