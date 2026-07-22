@@ -253,6 +253,109 @@
   overflow: hidden;
 }
 
+/* 2-Column Grid Layout */
+.careers-2col-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2.5rem;
+  align-items: flex-start;
+  position: relative;
+  z-index: 5;
+}
+
+.careers-left-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Right Sidebar: Why Join Aleph INDIA? Card */
+.why-join-sidebar-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 46, 132, 0.06);
+  padding: 2rem 1.6rem;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.025);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 100px;
+}
+
+.why-join-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #001f54;
+  margin: 0 0 0.5rem 0;
+}
+
+.why-join-underline {
+  width: 36px;
+  height: 3.5px;
+  background-color: #2563eb;
+  border-radius: 4px;
+  margin-bottom: 1.8rem;
+}
+
+.why-join-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.why-join-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.why-join-icon-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #002e84 0%, #2563eb 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.why-join-icon-badge i,
+.why-join-icon-badge svg {
+  font-size: 1.15rem;
+  width: 19px;
+  height: 19px;
+  stroke: #ffffff;
+  color: #ffffff;
+  stroke-width: 2.2;
+  fill: none;
+}
+
+.why-join-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.why-join-info h4 {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.why-join-info p {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #64748b;
+  margin: 0;
+}
+
 /* Background Decorations */
 .decor-wave-top-right {
   position: absolute;
@@ -494,7 +597,7 @@
   background-color: #2563eb;
   color: #ffffff;
   padding: 0.7rem 1.8rem;
-  border-radius: 30px;
+  border-radius: 10px;
   font-weight: 500;
   font-size: 0.88rem;
   transition: all 0.25s ease;
@@ -1080,6 +1183,15 @@
 
   .apply-form-container {
     padding: 2.2rem 2rem;
+  }
+
+  .careers-2col-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .why-join-sidebar-card {
+    position: static;
   }
 }
 

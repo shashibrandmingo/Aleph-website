@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/Header.css">
     <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/Monthly-Newsletter.css">
 </head>
 <body>
 
@@ -318,23 +319,235 @@
 
     <!-- Main Container -->
     <main id="main-content">
-        <!-- Page Header Section -->
-        <section class="page-header-section">
+        <!-- Monthly Newsletter Hero Section -->
+        <section class="newsletter-hero-section">
             <div class="container">
-                <nav class="breadcrumb"><a href="index.html">Home</a> &gt; <span>Monthly Newsletter</span></nav>
-                <h1>Monthly Newsletter</h1>
-                <p>Welcome to the official page of Monthly Newsletter. Standard regulations, guidelines, and compliance details.</p>
+                <div class="newsletter-hero-container">
+                    <div class="newsletter-hero-content">
+                        <!-- Breadcrumb -->
+                        <nav class="newsletter-breadcrumb" aria-label="Breadcrumb">
+                            <a href="index.html" class="newsletter-breadcrumb-link">
+                                <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9 22 9 12 15 12 15 22"/>
+                                </svg>
+                            </a>
+                            <span class="newsletter-breadcrumb-sep">/</span>
+                            <span class="newsletter-breadcrumb-current">Newsletter</span>
+                        </nav>
+
+                        <h1 class="newsletter-hero-title">Aleph India <br><span class="title-blue">Newsletter</span></h1>
+                        <p class="newsletter-hero-desc">
+                            Stay informed with the latest news, updates, and insights on regulatory standards and compliance.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Page Content Section -->
-        <section class="section-padding">
+        <!-- 2nd Section: All Newsletters List -->
+        <section class="newsletter-list-section">
             <div class="container">
-                <div class="card-wrapper" style="text-align: center; padding: 4rem 2rem;">
-                    <h3>Monthly Newsletter Content</h3>
-                    <p style="color: var(--text-muted); margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                        This section is ready for custom content related to Monthly Newsletter. You can insert text, grids, tables, or list items here.
-                    </p>
+                <!-- Section Header Row -->
+                <div class="newsletter-list-header">
+                    <div class="newsletter-list-title">
+                        <div class="list-title-icon-box">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="8" y1="6" x2="21" y2="6"></line>
+                                <line x1="8" y1="12" x2="21" y2="12"></line>
+                                <line x1="8" y1="18" x2="21" y2="18"></line>
+                                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                            </svg>
+                        </div>
+                        <h2>All Newsletters</h2>
+                    </div>
+
+                    <div class="newsletter-sort-wrapper" id="sortWrapper">
+                        <div class="newsletter-sort-dropdown" id="sortDropdownTrigger">
+                            <svg class="sort-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M11 5h10M11 9h7M11 13h4M3 17l3 3 3-3M6 18V4"/>
+                            </svg>
+                            <span>Sort by: <strong id="selectedSortText">Newest First</strong></span>
+                            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+
+                        <!-- Dropdown Options Popup Menu -->
+                        <ul class="sort-options-menu" id="sortOptionsMenu">
+                            <li class="sort-option-item active" data-sort="newest">Newest First</li>
+                            <li class="sort-option-item" data-sort="oldest">Oldest First</li>
+                            <li class="sort-option-item" data-sort="popular">Popular</li>
+                            <li class="sort-option-item" data-sort="downloaded">Most Downloaded</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Horizontal Newsletters List -->
+                <div class="horizontal-newsletters-list">
+                    <!-- Row Card 1: October 2022 (Blue Theme) -->
+                    <div class="newsletter-row-card theme-blue">
+                        <div class="newsletter-date-block theme-blue">
+                            <div class="date-text-wrap">
+                                <span class="month-label">OCTOBER</span>
+                                <span class="year-label">2022</span>
+                            </div>
+                            <div class="calendar-glass-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="newsletter-info-side">
+                            <h3 class="newsletter-item-title">Monthly Newsletter – October 2022</h3>
+                            <p class="newsletter-item-desc">Key updates, regulatory changes and important announcements from Aleph India.</p>
+                        </div>
+
+                        <div class="newsletter-meta-side">
+                            <div class="pub-date">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                <span>31 Oct 2022</span>
+                            </div>
+                        </div>
+
+                        <div class="newsletter-action-side">
+                            <a href="#" class="btn-view-pdf theme-blue">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                                <span>View PDF</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Row Card 2: September 2022 (Teal Theme) -->
+                    <div class="newsletter-row-card theme-teal">
+                        <div class="newsletter-date-block theme-teal">
+                            <div class="date-text-wrap">
+                                <span class="month-label">SEPTEMBER</span>
+                                <span class="year-label">2022</span>
+                            </div>
+                            <div class="calendar-glass-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="newsletter-info-side">
+                            <h3 class="newsletter-item-title">Monthly Newsletter – September 2022</h3>
+                            <p class="newsletter-item-desc">Key updates, regulatory changes and important announcements from Aleph India.</p>
+                        </div>
+
+                        <div class="newsletter-meta-side">
+                            <div class="pub-date">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                <span>30 Sep 2022</span>
+                            </div>
+                        </div>
+
+                        <div class="newsletter-action-side">
+                            <a href="#" class="btn-view-pdf theme-teal">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                                <span>View PDF</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Row Card 3: August 2022 (Orange Theme) -->
+                    <div class="newsletter-row-card theme-orange">
+                        <div class="newsletter-date-block theme-orange">
+                            <div class="date-text-wrap">
+                                <span class="month-label">AUGUST</span>
+                                <span class="year-label">2022</span>
+                            </div>
+                            <div class="calendar-glass-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="newsletter-info-side">
+                            <h3 class="newsletter-item-title">Monthly Newsletter – August 2022</h3>
+                            <p class="newsletter-item-desc">Key updates, regulatory changes and important announcements from Aleph India.</p>
+                        </div>
+
+                        <div class="newsletter-meta-side">
+                            <div class="pub-date">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                <span>31 Aug 2022</span>
+                            </div>
+                        </div>
+
+                        <div class="newsletter-action-side">
+                            <a href="#" class="btn-view-pdf theme-orange">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                                <span>View PDF</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Row Card 4: July 2022 (Purple Theme) -->
+                    <div class="newsletter-row-card theme-purple">
+                        <div class="newsletter-date-block theme-purple">
+                            <div class="date-text-wrap">
+                                <span class="month-label">JULY</span>
+                                <span class="year-label">2022</span>
+                            </div>
+                            <div class="calendar-glass-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="newsletter-info-side">
+                            <h3 class="newsletter-item-title">Monthly Newsletter – July 2022</h3>
+                            <p class="newsletter-item-desc">Key updates, regulatory changes and important announcements from Aleph India.</p>
+                        </div>
+
+                        <div class="newsletter-meta-side">
+                            <div class="pub-date">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                <span>31 Jul 2022</span>
+                            </div>
+                        </div>
+
+                        <div class="newsletter-action-side">
+                            <a href="#" class="btn-view-pdf theme-purple">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                                <span>View PDF</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Circular Pagination -->
+                <div class="newsletter-pagination-row">
+                    <button class="page-circle-btn active">1</button>
+                    <button class="page-circle-btn">2</button>
+                    <button class="page-circle-btn">3</button>
+                    <span class="pagination-dots">...</span>
+                    <button class="page-circle-btn">10</button>
+                    <button class="page-circle-btn next-btn" aria-label="Next Page">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
                 </div>
             </div>
         </section>
@@ -596,5 +809,7 @@
 
     <!-- Scripts -->
     <script src="js/navigation.js"></script>
+    <script src="js/service-dropdown.js"></script>
+    <script src="js/monthly-newsletter.js"></script>
 </body>
 </html>
