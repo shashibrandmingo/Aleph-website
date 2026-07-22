@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/Header.css">
     <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/Blog-Listing.css">
 </head>
 <body>
 
@@ -318,23 +319,370 @@
 
     <!-- Main Container -->
     <main id="main-content">
-        <!-- Page Header Section -->
-        <section class="page-header-section">
+        <!-- Hero Section -->
+        <section class="blog-hero-section">
             <div class="container">
-                <nav class="breadcrumb"><a href="index.html">Home</a> &gt; <span>Blog Listing</span></nav>
-                <h1>Blog Listing</h1>
-                <p>Welcome to the official page of Blog Listing. Standard regulations, guidelines, and compliance details.</p>
+                <div class="blog-hero-container">
+                    <div class="blog-hero-content">
+                        <!-- Breadcrumbs -->
+                        <nav class="blog-breadcrumb">
+                            <a href="index.html">Home</a>
+                            <span class="separator">/</span>
+                            <a href="#">Resources</a>
+                            <span class="separator">/</span>
+                            <span class="active-crumb">Blogs</span>
+                        </nav>
+
+                        <!-- Main Title -->
+                        <h1 class="blog-hero-title">BLOGS</h1>
+
+                        <!-- Accent Line & Dot -->
+                        <div class="blog-title-accent">
+                            <span class="accent-line"></span>
+                            <span class="accent-dot"></span>
+                        </div>
+
+                        <!-- Description -->
+                        <p class="blog-hero-desc">
+                            Explore insights, trends, and expert perspectives on regulatory updates, compliance, and industry developments.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Page Content Section -->
-        <section class="section-padding">
+        <!-- Latest Blogs Section -->
+        <section class="latest-blogs-section">
             <div class="container">
-                <div class="card-wrapper" style="text-align: center; padding: 4rem 2rem;">
-                    <h3>Blog Listing Content</h3>
-                    <p style="color: var(--text-muted); margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                        This section is ready for custom content related to Blog Listing. You can insert text, grids, tables, or list items here.
-                    </p>
+                <!-- Section Header & Filter Toolbar -->
+                <div class="blogs-toolbar-header">
+                    <div class="toolbar-title-wrap">
+                        <h2 class="blogs-section-title">Latest Blogs</h2>
+                        <span class="blogs-title-underline"></span>
+                    </div>
+
+                    <div class="blogs-toolbar-actions">
+                        <!-- Search Box -->
+                        <div class="blogs-search-box">
+                            <svg class="search-box-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            <input type="text" placeholder="Search blogs by title, keyword or topic..." class="blogs-search-input" id="blogsSearchInput">
+                            <button type="button" class="blogs-search-btn">
+                                <span>Search</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Sort Dropdown -->
+                        <div class="blogs-sort-wrap">
+                            <span class="sort-label">Sort by:</span>
+                            <div class="select-wrapper blogs-sort-wrapper">
+                                <select id="blogsSortSelect">
+                                    <option value="latest">Latest First</option>
+                                    <option value="oldest">Oldest First</option>
+                                    <option value="popular">Most Popular</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 Columns Blog Cards Grid -->
+                <div class="blog-cards-grid">
+                    <!-- Blog Card 1 -->
+                    <article class="blog-card">
+                        <div class="blog-card-image-wrap">
+                            <a href="Blog-Detail-Pages.html?id=compliance-regulations-2026">
+                                <img src="image/blog-listing/blog-1.png" alt="Understanding the Latest Compliance Regulations 2026" class="blog-card-img">
+                            </a>
+                        </div>
+                        <div class="blog-card-body">
+                            <span class="blog-category-tag">Compliance</span>
+                            <div class="blog-date-meta">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>20 May 2026</span>
+                            </div>
+                            <h3 class="blog-card-title">
+                                <a href="Blog-Detail-Pages.html?id=compliance-regulations-2026">Understanding the Latest Compliance Regulations 2026</a>
+                            </h3>
+                            <p class="blog-card-excerpt">
+                                A comprehensive guide to key regulatory changes and how businesses can stay compliant and ahead.
+                            </p>
+                            <a href="Blog-Detail-Pages.html?id=compliance-regulations-2026" class="blog-card-link">
+                                <span>Read More</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 2 -->
+                    <article class="blog-card">
+                        <div class="blog-card-image-wrap">
+                            <a href="Blog-Detail-Pages.html?id=quality-assurance-2026">
+                                <img src="image/blog-listing/blog-2.png" alt="Quality Assurance Best Practices for Modern Industries" class="blog-card-img">
+                            </a>
+                        </div>
+                        <div class="blog-card-body">
+                            <span class="blog-category-tag">Quality</span>
+                            <div class="blog-date-meta">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>18 May 2026</span>
+                            </div>
+                            <h3 class="blog-card-title">
+                                <a href="Blog-Detail-Pages.html?id=quality-assurance-2026">Quality Assurance Best Practices for Modern Industries</a>
+                            </h3>
+                            <p class="blog-card-excerpt">
+                                Explore the top quality assurance strategies that improve efficiency and ensure consistent product excellence.
+                            </p>
+                            <a href="Blog-Detail-Pages.html?id=quality-assurance-2026" class="blog-card-link">
+                                <span>Read More</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 3 -->
+                    <article class="blog-card">
+                        <div class="blog-card-image-wrap">
+                            <a href="Blog-Detail-Pages.html?id=industry-trends-2026">
+                                <img src="image/blog-listing/blog-3.png" alt="Industry Trends Shaping the Future of Manufacturing" class="blog-card-img">
+                            </a>
+                        </div>
+                        <div class="blog-card-body">
+                            <span class="blog-category-tag">Industry Insights</span>
+                            <div class="blog-date-meta">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>15 May 2026</span>
+                            </div>
+                            <h3 class="blog-card-title">
+                                <a href="Blog-Detail-Pages.html?id=industry-trends-2026">Industry Trends Shaping the Future of Manufacturing</a>
+                            </h3>
+                            <p class="blog-card-excerpt">
+                                Discover emerging trends and technologies that are transforming the manufacturing landscape globally.
+                            </p>
+                            <a href="Blog-Detail-Pages.html?id=industry-trends-2026" class="blog-card-link">
+                                <span>Read More</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 4 -->
+                    <article class="blog-card">
+                        <div class="blog-card-image-wrap">
+                            <a href="Blog-Detail-Pages.html?id=aleph-milestone-2026">
+                                <img src="image/blog-listing/blog-4.png" alt="Aleph India Achieves New Milestone in Certification" class="blog-card-img">
+                            </a>
+                        </div>
+                        <div class="blog-card-body">
+                            <span class="blog-category-tag">Aleph India Updates</span>
+                            <div class="blog-date-meta">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>12 May 2026</span>
+                            </div>
+                            <h3 class="blog-card-title">
+                                <a href="Blog-Detail-Pages.html?id=aleph-milestone-2026">Aleph India Achieves New Milestone in Certification</a>
+                            </h3>
+                            <p class="blog-card-excerpt">
+                                We are proud to announce our latest achievement in quality and compliance certifications.
+                            </p>
+                            <a href="Blog-Detail-Pages.html?id=aleph-milestone-2026" class="blog-card-link">
+                                <span>Read More</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 5 -->
+                    <article class="blog-card">
+                        <div class="blog-card-image-wrap">
+                            <a href="Blog-Detail-Pages.html?id=compliance-regulations-2026">
+                                <img src="image/blog-listing/blog-1.png" alt="Understanding the Latest Compliance Regulations 2026" class="blog-card-img">
+                            </a>
+                        </div>
+                        <div class="blog-card-body">
+                            <span class="blog-category-tag">Compliance</span>
+                            <div class="blog-date-meta">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>20 May 2026</span>
+                            </div>
+                            <h3 class="blog-card-title">
+                                <a href="Blog-Detail-Pages.html?id=compliance-regulations-2026">Understanding the Latest Compliance Regulations 2026</a>
+                            </h3>
+                            <p class="blog-card-excerpt">
+                                A comprehensive guide to key regulatory changes and how businesses can stay compliant and ahead.
+                            </p>
+                            <a href="Blog-Detail-Pages.html?id=compliance-regulations-2026" class="blog-card-link">
+                                <span>Read More</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 6 -->
+                    <article class="blog-card">
+                        <div class="blog-card-image-wrap">
+                            <a href="Blog-Detail-Pages.html?id=quality-assurance-2026">
+                                <img src="image/blog-listing/blog-2.png" alt="Quality Assurance Best Practices for Modern Industries" class="blog-card-img">
+                            </a>
+                        </div>
+                        <div class="blog-card-body">
+                            <span class="blog-category-tag">Quality</span>
+                            <div class="blog-date-meta">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>18 May 2026</span>
+                            </div>
+                            <h3 class="blog-card-title">
+                                <a href="Blog-Detail-Pages.html?id=quality-assurance-2026">Quality Assurance Best Practices for Modern Industries</a>
+                            </h3>
+                            <p class="blog-card-excerpt">
+                                Explore the top quality assurance strategies that improve efficiency and ensure consistent product excellence.
+                            </p>
+                            <a href="Blog-Detail-Pages.html?id=quality-assurance-2026" class="blog-card-link">
+                                <span>Read More</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 7 -->
+                    <article class="blog-card">
+                        <div class="blog-card-image-wrap">
+                            <a href="Blog-Detail-Pages.html?id=industry-trends-2026">
+                                <img src="image/blog-listing/blog-3.png" alt="Industry Trends Shaping the Future of Manufacturing" class="blog-card-img">
+                            </a>
+                        </div>
+                        <div class="blog-card-body">
+                            <span class="blog-category-tag">Industry Insights</span>
+                            <div class="blog-date-meta">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>15 May 2026</span>
+                            </div>
+                            <h3 class="blog-card-title">
+                                <a href="Blog-Detail-Pages.html?id=industry-trends-2026">Industry Trends Shaping the Future of Manufacturing</a>
+                            </h3>
+                            <p class="blog-card-excerpt">
+                                Discover emerging trends and technologies that are transforming the manufacturing landscape globally.
+                            </p>
+                            <a href="Blog-Detail-Pages.html?id=industry-trends-2026" class="blog-card-link">
+                                <span>Read More</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 8 -->
+                    <article class="blog-card">
+                        <div class="blog-card-image-wrap">
+                            <a href="Blog-Detail-Pages.html?id=aleph-milestone-2026">
+                                <img src="image/blog-listing/blog-4.png" alt="Aleph India Achieves New Milestone in Certification" class="blog-card-img">
+                            </a>
+                        </div>
+                        <div class="blog-card-body">
+                            <span class="blog-category-tag">Aleph India Updates</span>
+                            <div class="blog-date-meta">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>12 May 2026</span>
+                            </div>
+                            <h3 class="blog-card-title">
+                                <a href="Blog-Detail-Pages.html?id=aleph-milestone-2026">Aleph India Achieves New Milestone in Certification</a>
+                            </h3>
+                            <p class="blog-card-excerpt">
+                                We are proud to announce our latest achievement in quality and compliance certifications.
+                            </p>
+                            <a href="Blog-Detail-Pages.html?id=aleph-milestone-2026" class="blog-card-link">
+                                <span>Read More</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Bottom Button: View All Blogs -->
+                <div class="view-all-blogs-wrap">
+                    <a href="#" class="btn-view-all-blogs">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        <span>View All Blogs</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
@@ -596,5 +944,6 @@
 
     <!-- Scripts -->
     <script src="js/navigation.js"></script>
+    <script src="js/blog-listing.js"></script>
 </body>
 </html>

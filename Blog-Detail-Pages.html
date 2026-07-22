@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/Header.css">
     <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/Blog-Detail-Pages.css">
 </head>
 <body>
 
@@ -318,23 +319,181 @@
 
     <!-- Main Container -->
     <main id="main-content">
-        <!-- Page Header Section -->
-        <section class="page-header-section">
+        <!-- Blog Detail Section -->
+        <section class="blog-detail-section">
             <div class="container">
-                <nav class="breadcrumb"><a href="index.html">Home</a> &gt; <span>Blog Detail Pages</span></nav>
-                <h1>Blog Detail Pages</h1>
-                <p>Welcome to the official page of Blog Detail Pages. Standard regulations, guidelines, and compliance details.</p>
+                <!-- Breadcrumbs Bar -->
+                <nav class="blog-detail-breadcrumbs" id="blogDetailBreadcrumbs">
+                    <a href="index.html">
+                        <svg class="crumb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        Home
+                    </a>
+                    <span class="crumb-separator">/</span>
+                    <a href="Blog-Listing.html">Blogs</a>
+                    <span class="crumb-separator">/</span>
+                    <span class="crumb-active">Understanding the Latest Compliance Regulations 2026</span>
+                </nav>
+
+                <!-- Hero Banner Section -->
+                <div class="blog-detail-hero-banner">
+                    <div class="blog-detail-banner-overlay">
+                        <div class="blog-detail-hero-content">
+                            <!-- Category Badge -->
+                            <span class="blog-detail-category-badge" id="blogDetailCategory">Compliance</span>
+
+                            <!-- Main Title -->
+                            <h1 class="blog-detail-main-title" id="blogDetailTitle">
+                                Understanding the Latest Compliance Regulations 2026
+                            </h1>
+
+                            <!-- Subtitle / Excerpt -->
+                            <p class="blog-detail-subtitle" id="blogDetailSubtitle">
+                                A comprehensive guide to key regulatory changes and how businesses can stay compliant and ahead.
+                            </p>
+
+                            <!-- Metadata Bar -->
+                            <div class="blog-detail-meta-bar">
+                                <div class="meta-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    </svg>
+                                    <span id="blogDetailDate">20 May 2026</span>
+                                </div>
+                                <span class="meta-divider">|</span>
+                                <div class="meta-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                    <span id="blogDetailReadTime">8 Min Read</span>
+                                </div>
+                                <span class="meta-divider">|</span>
+                                <div class="meta-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <span id="blogDetailViews">1.2K Views</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2nd Section Layout: Floating Share Bar + Main Content + Sidebar -->
+                <div class="blog-detail-layout-grid">
+                    <!-- Left: Floating Share Bar -->
+                    <div class="left-share-bar">
+                        <span class="share-bar-label">Share</span>
+                        <a href="https://linkedin.com" target="_blank" class="share-circle-btn" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.78a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="share-circle-btn" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="share-circle-btn" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5C10 7.01 11.49 5.65 13.75 5.65c1.08 0 2.22.19 2.22.19v2.44h-1.25c-1.23 0-1.62.77-1.62 1.56V12h2.77l-.44 3h-2.33v6.8C18.56 20.87 22 16.84 22 12z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="share-circle-btn" aria-label="Copy Link" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied to clipboard!'); return false;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Middle: Main Article Content -->
+                    <article class="main-article-wrap" id="blogArticleBody">
+                        <!-- Rendered dynamically from js/blog-detail-data.js -->
+                    </article>
+
+                    <!-- Right: Sidebar -->
+                    <aside class="blog-sidebar">
+                        <!-- Widget 1: About the Author -->
+                        <div class="sidebar-card-widget" id="authorCardContainer">
+                            <!-- Rendered dynamically -->
+                        </div>
+
+                        <!-- Widget 2: Categories -->
+                        <div class="sidebar-card-widget" id="categoriesCardContainer">
+                            <!-- Rendered dynamically -->
+                        </div>
+
+                        <!-- Widget 3: Recent Posts -->
+                        <div class="sidebar-card-widget" id="recentPostsCardContainer">
+                            <!-- Rendered dynamically -->
+                        </div>
+                    </aside>
+                </div>
             </div>
         </section>
 
-        <!-- Page Content Section -->
-        <section class="section-padding">
+        <!-- Section 3: Related Articles & Newsletter Banner -->
+        <section class="blog-detail-bottom-section">
             <div class="container">
-                <div class="card-wrapper" style="text-align: center; padding: 4rem 2rem;">
-                    <h3>Blog Detail Pages Content</h3>
-                    <p style="color: var(--text-muted); margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                        This section is ready for custom content related to Blog Detail Pages. You can insert text, grids, tables, or list items here.
-                    </p>
+                <!-- Related Articles Header -->
+                <div class="related-articles-header">
+                    <div class="toolbar-title-wrap">
+                        <h3 class="related-section-title">Related Articles</h3>
+                        <span class="blogs-title-underline"></span>
+                    </div>
+                    <a href="Blog-Listing.html" class="view-all-blogs-link">
+                        <span>View All Blogs</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- 4 Columns Related Articles Grid -->
+                <div class="related-articles-grid" id="relatedArticlesGrid">
+                    <!-- Dynamic 4 cards generated from js/blog-detail.js -->
+                </div>
+
+                <!-- Newsletter Callout Banner -->
+                <div class="blog-detail-newsletter-banner">
+                    <div class="newsletter-banner-left">
+                        <div class="newsletter-icon-wrapper">
+                            <img src="image/blog-details/mail.png" alt="Subscribe Newsletter" class="newsletter-mail-img">
+                            <div class="plane-dotted-trail">
+                                <svg class="trail-svg" viewBox="0 0 80 80" fill="none">
+                                    <path d="M 10 65 Q 35 15 70 12" stroke="#60a5fa" stroke-width="2.2" stroke-dasharray="4 4"/>
+                                </svg>
+                                <div class="floating-plane-icon">
+                                    <svg viewBox="0 0 24 24" fill="#2563eb">
+                                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="newsletter-banner-text">
+                            <h3>Stay Updated with Our Latest Insights</h3>
+                            <p>Subscribe to our newsletter and never miss an update.</p>
+                        </div>
+                    </div>
+                    <form class="newsletter-subscribe-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Aleph India newsletter!');">
+                        <input type="email" placeholder="Enter your email address" required class="newsletter-email-input">
+                        <button type="submit" class="newsletter-submit-btn">
+                            <span>Subscribe</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -596,5 +755,7 @@
 
     <!-- Scripts -->
     <script src="js/navigation.js"></script>
+    <script src="js/blog-detail-data.js"></script>
+    <script src="js/blog-detail.js"></script>
 </body>
 </html>
