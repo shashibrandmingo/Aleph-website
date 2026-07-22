@@ -634,5 +634,41 @@
     <!-- Scripts -->
     <script src="js/navigation.js"></script>
     <script src="js/gallery-data.js"></script>
+
+    <!-- ===== GALLERY LIGHTBOX MODAL ===== -->
+    <div class="gal-lightbox-overlay" id="gal-lightbox-overlay">
+        <div class="gal-lightbox-inner">
+            <!-- Close Button -->
+            <button class="gal-lightbox-close" id="gal-lightbox-close" aria-label="Close">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+
+            <!-- Counter -->
+            <div class="gal-lightbox-counter" id="gal-lightbox-counter">1 / 1</div>
+
+            <!-- Slider Track -->
+            <div class="gal-lightbox-viewport">
+                <div class="gal-lightbox-track" id="gal-lightbox-track">
+                    <!-- Slides injected by JS -->
+                </div>
+            </div>
+
+            <!-- Nav Arrows -->
+            <button class="gal-lb-nav gal-lb-prev" id="gal-lb-prev" aria-label="Previous">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"/>
+                </svg>
+            </button>
+            <button class="gal-lb-nav gal-lb-next" id="gal-lb-next" aria-label="Next">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <!-- ===== END GALLERY LIGHTBOX MODAL ===== -->
+
 </body>
 </html>
