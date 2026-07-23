@@ -1,0 +1,733 @@
+/* ==========================================================================
+   SECTION NAME: BIS ISI Certification FAQ Section (product-fandq.css)
+   ========================================================================== */
+
+.bis-faq-section {
+  padding: 2rem 0 3.5rem 0;
+  margin-top: 1rem;
+  background-color: #f5f5fa;
+}
+
+/* Header Container */
+.faq-section-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.faq-badge-pill {
+  display: inline-block;
+  background: #2563eb;
+  color: #ffffff;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.9rem;
+  border-radius: 10px;
+  margin-bottom: 0.4rem;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.18);
+}
+
+.faq-main-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0b192c;
+  margin: 0 0 0.3rem 0;
+  letter-spacing: -0.01em;
+}
+
+/* Underline bar with small blue accent dot */
+.faq-section-header .title-blue-underline {
+  width: 40px;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 2px;
+  margin-top: 0.3rem;
+  position: relative;
+}
+
+.faq-section-header .title-blue-underline::after {
+  content: '';
+  position: absolute;
+  right: -9px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #2563eb;
+}
+
+/* 2x2 Grid Container */
+.faq-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+/* FAQ Individual Card Item */
+.faq-card-item {
+  background: #f8fafc;
+  border: 1px solid #edf2f7;
+  border-radius: 14px;
+  padding: 1.1rem 1.4rem;
+  box-shadow: 0 4px 16px rgba(0, 30, 100, 0.018);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-card-item:hover {
+  background: #ffffff;
+  border-color: #dbeafe;
+  box-shadow: 0 6px 22px rgba(37, 99, 235, 0.07);
+}
+
+/* Top Row: Number + Question + Toggle Button */
+.faq-card-top-row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.faq-number-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #1d4ed8;
+  color: #ffffff;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(29, 78, 216, 0.22);
+}
+
+.faq-question-text {
+  flex: 1;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.faq-toggle-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #eff6ff;
+  border: none;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.faq-card-item:hover .faq-toggle-btn {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.faq-toggle-btn i {
+  font-size: 0.8rem;
+}
+
+/* Divider Line */
+.faq-divider-line {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 0.8rem 0;
+}
+
+/* Answer Content */
+.faq-answer-content {
+  flex: 1;
+}
+
+.faq-answer-text {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Responsive Grid */
+@media (max-width: 991px) {
+  .faq-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .faq-card-item {
+    padding: 1.3rem 1.4rem;
+  }
+
+  .faq-number-circle {
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+  }
+
+  .faq-question-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* ==========================================================================
+   SECTION NAME: Recent International Audits Section (product-fandq.css)
+   ========================================================================== */
+
+.recent-audits-section {
+  padding: 2.5rem 0 2rem 0;
+  background-color: #f5f5fa;
+}
+
+/* Header Row */
+.recent-audits-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 1.8rem;
+}
+
+.audits-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.audits-sub-badge {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.audits-sub-badge i {
+  font-size: 0.55rem;
+  color: #2563eb;
+}
+
+.audits-main-heading {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #0b192c;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.audits-main-heading .text-blue {
+  color: #2563eb;
+}
+
+/* View All Audits Button */
+.btn-view-all-audits {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 1.25rem;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #2563eb;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.80rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.05);
+  transition: all 0.25s ease;
+}
+
+.btn-view-all-audits:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn-view-all-audits i {
+  font-size: 0.8rem;
+  transition: transform 0.25s ease;
+}
+
+.btn-view-all-audits:hover i {
+  transform: translateX(3px);
+}
+
+/* 3 Columns Grid */
+.recent-audits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+/* Individual Card */
+.audit-item-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 30, 100, 0.025);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.audit-item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.08);
+  border-color: #cbd5e1;
+}
+
+/* Media Top Container */
+.audit-card-media {
+  width: 100%;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.audit-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.audit-item-card:hover .audit-card-img {
+  transform: scale(1.04);
+}
+
+/* Top Left Country Badge Pill */
+.audit-country-badge {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.85rem;
+  border-radius: 10px;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+}
+
+.flag-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.flag-svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card Content Area */
+.audit-card-content {
+  padding: 1.3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.audit-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin-bottom: 1.2rem;
+}
+
+.audit-shield-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+.audit-shield-icon .shield-check-svg {
+  width: 18px;
+  height: 18px;
+  stroke: #2563eb;
+}
+
+.audit-desc-text {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: black;
+  margin: 0;
+}
+
+.audit-desc-text strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+/* Bottom Read More Link */
+.audit-read-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.80rem;
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: none;
+  margin-top: auto;
+  transition: color 0.25s ease;
+}
+
+.audit-read-more-link i {
+  font-size: 0.8rem;
+  transition: transform 0.25s ease;
+}
+
+.audit-read-more-link:hover {
+  color: #1d4ed8;
+}
+
+.audit-read-more-link:hover i {
+  transform: translateX(4px);
+}
+
+/* Responsive Grid */
+@media (max-width: 991px) {
+  .recent-audits-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .recent-audits-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* ==========================================================================
+   SECTION NAME: BIS ISI Certification Testimonials Section (product-fandq.css)
+   ========================================================================== */
+
+.bis-testimonials-section {
+  padding: 2.2rem 0 3.5rem 0;
+  background-color: #f5f5fa;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background subtle wave / grid overlay */
+.bis-testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(#2563eb 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+/* Header Container */
+.testimonials-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonials-main-heading {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #0b192c;
+  margin: 0 0 0.3rem 0;
+  letter-spacing: -0.015em;
+}
+
+.testimonials-header .title-blue-underline {
+  width: 44px;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 2px;
+  margin-bottom: 0.6rem;
+}
+
+.testimonials-sub-desc {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
+  max-width: 540px;
+  line-height: 1.5;
+}
+
+/* 4 Cards Grid */
+.testimonials-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.1rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual Testimonial Card */
+.testimonial-card-item {
+  background: #ffffff;
+  border: 1px solid #e8edf5;
+  border-radius: 22px;
+  overflow: visible;
+  box-shadow: 0 8px 30px rgba(0, 30, 100, 0.07);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* padding: 0.75rem 0.75rem 0 0.75rem; */
+  margin-bottom: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.1);
+  border-color: #c3d4f5;
+}
+
+/* Top Media Box - rounded on all sides with inner margin */
+.testimonial-media-box {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: visible;
+  background: linear-gradient(145deg, #0040c8 0%, #1e60e8 60%, #3a75ed 100%);
+  border-radius: 16px;
+}
+
+/* Clip image inside rounded box (separate from overflow so button can overflow) */
+.testimonial-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 16px;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+/* Blue dot pattern on top-right of image */
+.testimonial-media-box::after {
+  content: '';
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  width: 55px;
+  height: 55px;
+  background-image: radial-gradient(rgba(255,255,255,0.3) 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* testimonial-img is defined above with media-box */
+
+.testimonial-card-item:hover .testimonial-img {
+  transform: scale(1.04);
+}
+
+/* Aleph India Brand Badge Pill (Top Left) */
+.aleph-brand-pill {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.7rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  padding: 0.28rem 0.7rem;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
+
+.brand-logo-img {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+}
+
+.aleph-brand-pill span {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #0b192c;
+}
+
+/* Center Play Button - overlapping image bottom */
+.btn-testimonial-play {
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 30, 100, 0.18);
+  cursor: pointer;
+  z-index: 4;
+  transition: all 0.25s ease;
+}
+
+.btn-testimonial-play:hover {
+  background: #2563eb;
+  color: #ffffff;
+  transform: translateX(-50%) scale(1.1);
+}
+
+.btn-testimonial-play i {
+  font-size: 0.8rem;
+  margin-left: 2px;
+}
+
+/* Card Text Body */
+.testimonial-card-body {
+  padding: 1.6rem 0.8rem 1.6rem 0.8rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.client-name {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin: 0 0 0.35rem 0;
+}
+
+.client-title-line {
+  width: 22px;
+  height: 2px;
+  background: #93c5fd;
+  border-radius: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.client-role-text {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #334155;
+  margin: 0 0 0.1rem 0;
+}
+
+.client-company-text {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.72rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* Bottom Blue Quote Icon Badge - floating below card, centered */
+.quote-badge-halo {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f0f4ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.08);
+}
+
+.quote-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.quote-badge i {
+  font-size: 0.85rem;
+}
+
+/* Responsive Grid */
+@media (max-width: 1199px) {
+  .testimonials-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonials-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+}

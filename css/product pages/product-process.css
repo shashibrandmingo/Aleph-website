@@ -1,0 +1,914 @@
+/* ==========================================================================
+   SECTION NAME: BIS ISI Certification Process Section (product-process.css)
+   ========================================================================== */
+
+.bis-process-section {
+  padding: 0.8rem 0 1rem 0;
+  background-color: #ffffff;
+}
+
+.bis-process-card-container {
+  background: #f4f8fc;
+  border: 1px solid #e8f0fe;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 30, 100, 0.025);
+  padding: 1.6rem 2.2rem;
+  position: relative;
+}
+
+/* Top Section Header */
+.process-section-header {
+  margin-bottom: 1.2rem;
+  max-width: 650px;
+}
+
+.process-badge-tag {
+  display: inline-block;
+  background: #dbeafe;
+  color: #2563eb;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.process-main-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #0b192c;
+  line-height: 1.25;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.01em;
+}
+
+.process-main-title .title-highlight-blue {
+  color: #2563eb;
+  font-weight: 600;
+  display: block;
+}
+
+.title-blue-underline {
+  width: 48px;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 2px;
+  margin-top: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.process-subtitle {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Two Column Grid */
+.bis-process-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.2rem;
+  align-items: flex-start;
+}
+
+/* Left Column: Timeline Steps List */
+.process-timeline-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+/* Vertical Timeline Track Line */
+.process-timeline-track {
+  position: absolute;
+  left: 17px;
+  top: 27px;
+  bottom: 27px;
+  width: 0;
+  border-left: 1.5px dashed #94a3b8;
+  z-index: 1;
+}
+
+.process-step-item {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+/* Timeline Dot Indicator with Outer Translucent Halo */
+.timeline-dot-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  left: 13px;
+  z-index: 3;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.step-1 .timeline-dot-indicator { 
+  background: #2563eb; 
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18); 
+}
+
+.step-2 .timeline-dot-indicator { 
+  background: #f97316; 
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.18); 
+}
+
+.step-3 .timeline-dot-indicator { 
+  background: #0d9488; 
+  box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.18); 
+}
+
+.step-4 .timeline-dot-indicator { 
+  background: #9333ea; 
+  box-shadow: 0 0 0 4px rgba(147, 51, 234, 0.18); 
+}
+
+.step-5 .timeline-dot-indicator { 
+  background: #2563eb; 
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18); 
+}
+
+/* Step Card Box */
+.step-card-box {
+  width: 100%;
+  margin-left: 32px;
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 14px;
+  padding: 0.55rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  box-shadow: 0 3px 14px rgba(0, 30, 100, 0.025);
+  transition: all 0.25s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.step-card-box:hover {
+  transform: translateX(3px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.08);
+  border-color: #dbeafe;
+}
+
+/* Outer Soft Glow Halo around Hexagon Icon */
+.step-icon-halo-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-1 .step-icon-halo-wrapper { background: rgba(37, 99, 235, 0.09); }
+.step-2 .step-icon-halo-wrapper { background: rgba(249, 115, 22, 0.09); }
+.step-3 .step-icon-halo-wrapper { background: rgba(13, 148, 136, 0.09); }
+.step-4 .step-icon-halo-wrapper { background: rgba(147, 51, 234, 0.09); }
+.step-5 .step-icon-halo-wrapper { background: rgba(37, 99, 235, 0.09); }
+
+/* Hexagon Shape Badge Icon */
+.step-icon-badge {
+  width: 36px;
+  height: 40px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.step-card-box:hover .step-icon-badge {
+  transform: scale(1.05);
+}
+
+.step-1 .step-icon-badge { background: #2563eb; }
+.step-2 .step-icon-badge { background: #f97316; }
+.step-3 .step-icon-badge { background: #0d9488; }
+.step-4 .step-icon-badge { background: #9333ea; }
+.step-5 .step-icon-badge { background: #2563eb; }
+
+.step-icon-badge i {
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+/* Soft Circular Number Pill Badge */
+.step-number-pill {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-1 .step-number-pill { color: #2563eb; background: #eff6ff; }
+.step-2 .step-number-pill { color: #ea580c; background: #fff7ed; }
+.step-3 .step-number-pill { color: #0d9488; background: #f0fdfa; }
+.step-4 .step-number-pill { color: #9333ea; background: #faf5ff; }
+.step-5 .step-number-pill { color: #2563eb; background: #eff6ff; }
+
+/* Step Text Info */
+.step-text-info {
+  flex: 1;
+}
+
+.step-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.15rem 0;
+}
+
+.step-desc {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.78rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* Arrow Icon */
+.step-arrow-icon {
+  font-size: 0.8rem;
+  transition: transform 0.25s ease;
+}
+
+.step-1 .step-arrow-icon { color: #2563eb; }
+.step-2 .step-arrow-icon { color: #ea580c; }
+.step-3 .step-arrow-icon { color: #0d9488; }
+.step-4 .step-arrow-icon { color: #9333ea; }
+.step-5 .step-arrow-icon { color: #2563eb; }
+
+.step-card-box:hover .step-arrow-icon {
+  transform: translateX(3px);
+}
+
+/* Right Column: Video & Helper Card Wrapper */
+.process-media-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Main Video Player Card Box */
+.video-player-card {
+  background: #dbeafe;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+}
+
+.video-thumbnail-container {
+  width: 100%;
+  height: 230px;
+  background: linear-gradient(135deg, #c7d2fe 0%, #dbeafe 50%, #eff6ff 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bis-watermark-overlay {
+  width: 180px;
+  opacity: 0.18;
+  filter: grayscale(100%) brightness(0.2);
+}
+
+/* Big Central Play Button */
+.btn-video-play-center {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+  border: 3px solid #ffffff;
+  cursor: pointer;
+  position: absolute;
+  z-index: 5;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.btn-video-play-center i {
+  font-size: 1.4rem;
+  margin-left: 3px;
+}
+
+.btn-video-play-center:hover {
+  transform: scale(1.08);
+  background: #1d4ed8;
+}
+
+/* Dark Video Custom Bar Controls */
+.video-controls-bar {
+  background: #0f172a;
+  padding: 0.75rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #ffffff;
+}
+
+.btn-play-pause-small {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.video-time-display {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.78rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.video-progress-track {
+  flex: 1;
+  height: 4px;
+  background: #334155;
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+}
+
+.video-progress-fill {
+  width: 25%;
+  height: 100%;
+  background: #2563eb;
+  border-radius: 2px;
+}
+
+.video-control-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.video-control-actions i {
+  color: #94a3b8;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.video-control-actions i:hover {
+  color: #ffffff;
+}
+
+/* Bottom Helper Info Card Box */
+.video-helper-card {
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.helper-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #dbeafe;
+  border: 1px solid #bfdbfe;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.helper-icon-badge i {
+  font-size: 1.2rem;
+}
+
+.helper-text-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.helper-card-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.helper-card-desc {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: #475569;
+  margin: 0;
+}
+
+/* Responsive Layout */
+@media (max-width: 991px) {
+  .bis-process-card-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .bis-process-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .process-main-title {
+    font-size: 1.7rem;
+  }
+
+  .step-card-box {
+    margin-left: 38px;
+    padding: 0.9rem 1rem;
+    gap: 0.8rem;
+  }
+
+  .step-icon-badge {
+    width: 40px;
+    height: 40px;
+  }
+
+  .step-icon-badge i {
+    font-size: 1rem;
+  }
+}
+
+/* ==========================================================================
+   SECTION NAME: BIS ISI Certification Note & Procedure Links Section (product-process.css)
+   ========================================================================== */
+
+.bis-note-procedure-section {
+  padding: 0 0 1rem 0;
+  background-color: #ffffff;
+}
+
+.bis-note-card-box {
+  background: url('../../image/product-image/product-page-note.png') no-repeat center center / 100% 100%;
+  /* border: 1px solid #e8f0fe; */
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 30, 100, 0.025);
+  padding: 2.2rem 2.8rem;
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  gap: 2.5rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle Dot Pattern Overlay Background */
+.note-dot-pattern-overlay {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 280px;
+  background-image: radial-gradient(#2563eb 1px, transparent 1px);
+  background-size: 14px 14px;
+  opacity: 0.075;
+  pointer-events: none;
+}
+
+/* Left Note Block */
+.note-left-block {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Outer Translucent Halo Circle around Note Icon */
+.note-icon-badge-halo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(0, 46, 132, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.note-icon-badge {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #002e84;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 46, 132, 0.25);
+}
+
+.note-icon-badge i {
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
+/* Vertical Blue Divider Line */
+.note-divider-line {
+  width: 2px;
+  height: 48px;
+  background: #2563eb;
+  flex-shrink: 0;
+  border-radius: 2px;
+}
+
+.note-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.note-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.note-desc {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #334155;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Right Links Card Container Box */
+.note-right-links-box {
+  background: #eff3fd;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  position: relative;
+  z-index: 2;
+}
+
+.procedure-link-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.65rem 0.8rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.procedure-link-row:hover {
+  background: #f0f6ff;
+  transform: translateX(4px);
+}
+
+.proc-icon-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.procedure-link-row:hover .proc-icon-badge {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.proc-icon-badge i {
+  font-size: 1.1rem;
+}
+
+.proc-link-text {
+  flex: 1;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+  transition: color 0.25s ease;
+}
+
+.procedure-link-row:hover .proc-link-text {
+  color: #2563eb;
+}
+
+.proc-arrow-icon {
+  color: #2563eb;
+  font-size: 0.85rem;
+  transition: transform 0.25s ease;
+}
+
+.procedure-link-row:hover .proc-arrow-icon {
+  transform: translateX(3px);
+}
+
+/* Responsive Layout */
+@media (max-width: 991px) {
+  .bis-note-card-box {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.8rem 1.5rem;
+  }
+
+  .note-right-links-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .note-left-block {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .note-divider-line {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   SECTION NAME: BIS ISI Certification Timeline & Conclusion Section (product-process.css)
+   ========================================================================== */
+
+.bis-timeline-conclusion-section {
+  padding: 0.5rem 0 2.5rem 0;
+  background-color: #ffffff;
+}
+
+.bis-tc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.2rem;
+  align-items: stretch;
+}
+
+/* Common Card Base Style */
+.tc-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 30, 100, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card Blue Header Banner Bar */
+.tc-card-header {
+  background: linear-gradient(135deg, #0045c4 0%, #1e60dc 100%);
+  padding: 1.1rem 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+/* Subtle background shield emblem inside header */
+.tc-card-header::after {
+  content: '';
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgba(255,255,255,0.08)' viewBox='0 0 24 24'%3E%3Cpath d='M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3z'/%3E%3C/svg%3E") no-repeat center center / contain;
+  pointer-events: none;
+}
+
+.tc-header-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tc-header-icon-box i {
+  color: #0045c4;
+  font-size: 1.15rem;
+}
+
+.tc-header-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Card Inner Content Body */
+.tc-card-body {
+  padding: 1.8rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tc-intro-text,
+.tc-conclusion-desc {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: black;
+  margin: 0 0 1.8rem 0;
+}
+
+.tc-intro-text strong,
+.tc-conclusion-desc strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+/* Timeline Left Rows Container */
+.tc-timeline-rows-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin-top: 0.5rem;
+}
+
+.tc-vertical-track {
+  position: absolute;
+  left: 8px;
+  top: 22px;
+  bottom: 22px;
+  width: 2px;
+  background: #2563eb;
+  z-index: 1;
+}
+
+.tc-timeline-row {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tc-timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+  flex-shrink: 0;
+  margin-left: 4px;
+}
+
+.tc-flag-icon-badge,
+.tc-globe-icon-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.flag-svg-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.tc-globe-icon-badge i {
+  color: #2563eb;
+  font-size: 1.3rem;
+}
+
+.tc-row-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.tc-row-title {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e40af;
+  margin: 0;
+}
+
+.tc-row-subtitle {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.8rem;
+  color: black;
+}
+
+.tc-days-badge {
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.55rem 1.1rem;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+/* Right Card: Partner Banner Box with Handshake Logo */
+.tc-partner-banner-box {
+  background: #eff6ff;
+  border-radius: 16px;
+  padding: 1.3rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: auto;
+  border: 1px solid #dbeafe;
+}
+
+.tc-handshake-icon-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #dbeafe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.handshake-img-icon {
+  width: 37px;
+  height: 37px;
+  object-fit: contain;
+  filter: drop-shadow(0.2px 0 0 #2563eb) drop-shadow(-0.2px 0 0 #2563eb);
+}
+
+.tc-partner-text {
+  font-family: var(--font-secondary), sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: black;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Responsive Grid */
+@media (max-width: 991px) {
+  .bis-tc-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

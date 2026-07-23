@@ -466,7 +466,7 @@
                                     </div>
                                 </div>
                                 <div class="job-card-action">
-                                    <a href="#" class="view-job-btn-v2">
+                                    <a href="#" class="view-job-btn-v2" data-job="Quality Control Engineer" onclick="openJobModal('Quality Control Engineer'); return false;">
                                         <span>View Job</span>
                                         <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <line x1="5" y1="12" x2="19" y2="12"/>
@@ -509,7 +509,7 @@
                                     </div>
                                 </div>
                                 <div class="job-card-action">
-                                    <a href="#" class="view-job-btn-v2">
+                                    <a href="#" class="view-job-btn-v2" data-job="Regulatory Affairs Specialist" onclick="openJobModal('Regulatory Affairs Specialist'); return false;">
                                         <span>View Job</span>
                                         <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <line x1="5" y1="12" x2="19" y2="12"/>
@@ -549,7 +549,7 @@
                                     </div>
                                 </div>
                                 <div class="job-card-action">
-                                    <a href="#" class="view-job-btn-v2">
+                                    <a href="#" class="view-job-btn-v2" data-job="Production Executive" onclick="openJobModal('Production Executive'); return false;">
                                         <span>View Job</span>
                                         <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <line x1="5" y1="12" x2="19" y2="12"/>
@@ -588,7 +588,7 @@
                                     </div>
                                 </div>
                                 <div class="job-card-action">
-                                    <a href="#" class="view-job-btn-v2">
+                                    <a href="#" class="view-job-btn-v2" data-job="Maintenance Engineer" onclick="openJobModal('Maintenance Engineer'); return false;">
                                         <span>View Job</span>
                                         <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <line x1="5" y1="12" x2="19" y2="12"/>
@@ -1187,8 +1187,57 @@
 </footer>
 
 
+    <!-- ===================== JOB DETAIL MODAL ===================== -->
+    <div class="job-modal-overlay" id="jobModalOverlay" onclick="closeJobModal(event)">
+        <div class="job-modal-box" id="jobModalBox" role="dialog" aria-modal="true" aria-labelledby="modalJobTitle">
+            <!-- Close Button -->
+            <button class="job-modal-close" id="jobModalCloseBtn" onclick="closeJobModal()" aria-label="Close">&times;</button>
+
+            <!-- Modal Header -->
+            <div class="job-modal-header">
+                <div class="job-modal-icon" id="jobModalIcon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                    </svg>
+                </div>
+                <div>
+                    <p class="job-modal-tag">Open Position</p>
+                    <h2 class="job-modal-title" id="modalJobTitle">Job Title</h2>
+                    <div class="job-modal-badges" id="jobModalBadges"></div>
+                </div>
+            </div>
+
+            <!-- Details Table -->
+            <div class="job-modal-table-wrap">
+                <table class="job-detail-table">
+                    <thead>
+                        <tr>
+                            <th>Brief Description</th>
+                            <th>Experience</th>
+                            <th>Qualification &amp; Requirements</th>
+                        </tr>
+                    </thead>
+                    <tbody id="jobModalTableBody">
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Apply Now -->
+            <div class="job-modal-footer">
+                <button class="job-modal-apply-btn" id="jobModalApplyBtn" onclick="applyNowFromModal()">
+                    Apply Now
+                </button>
+                <p class="job-modal-apply-hint">To apply for this position, submit the form below.</p>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================ -->
+
     <!-- Scripts -->
     <script src="js/navigation.js"></script>
     <script src="js/careers-form.js"></script>
+    <script src="js/job-data.js"></script>
+    <script src="js/job-modal.js"></script>
 </body>
 </html>
