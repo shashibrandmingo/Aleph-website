@@ -6,10 +6,13 @@
     <title>Online Payment Gateway - Aleph INDIA</title>
     <!-- Favicon -->
     <link rel="icon" href="image/fab-iocn.png" type="image/png">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/Header.css">
     <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/Payment-Page.css">
 </head>
 <body>
 
@@ -317,67 +320,373 @@
     </header>
 
     <!-- Main Container -->
-    <main id="main-content">
-        
-        <section class="page-header-section">
+        <!-- =========================================================
+             SECTION NAME: Payment Hero Section
+             ========================================================= -->
+        <section class="payment-hero-section">
             <div class="container">
-                <nav class="breadcrumb"><a href="index.html">Home</a> &gt; <span>Online Payment Gateway</span></nav>
-                <h1>Online Payment Gateway</h1>
-                <p>Pay online safely and securely for certification fees, audits, and retainer services.</p>
+                <div class="payment-hero-card">
+                    <div class="payment-hero-content">
+                        <nav class="payment-breadcrumb" aria-label="Breadcrumb">
+                            <a href="index.html" class="breadcrumb-home-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9 22 9 12 15 12 15 22"/>
+                                </svg>
+                            </a>
+                            <span class="breadcrumb-separator">/</span>
+                            <span class="breadcrumb-current">Payment</span>
+                        </nav>
+                        
+                        <h1 class="payment-hero-title">Secure <span class="title-blue">Payment</span></h1>
+                        <p class="payment-hero-subtitle">
+                            Your payment is secure and encrypted.<br>
+                            We never store your card details.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
-        <section class="section-padding">
+        <!-- ========================================================= -->
+        <!-- =========================================================
+             SECTION NAME: Payment Gateway Section
+             ========================================================= -->
+        <section class="payment-gateway-section">
             <div class="container">
-                <div class="two-col-grid" style="grid-template-columns: 1.5fr 1fr;">
-                    <!-- Payment Form -->
-                    <div class="card-wrapper form-card">
-                        <h3>Online Invoice Payment</h3>
-                        <form class="styled-form" onsubmit="event.preventDefault(); alert('Redirecting to payment gateway...');">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="client-name">Company Name *</label>
-                                    <input type="text" id="client-name" required placeholder="Your Company Ltd.">
+                <div class="payment-gateway-grid">
+                    <!-- Left Panel: Payment Method Selection -->
+                    <div class="pg-left-card">
+                        <!-- Step 1 Header -->
+                        <div class="pg-step-header">
+                            <span class="pg-step-number">1</span>
+                            <h2>Choose a Payment Method</h2>
+                        </div>
+
+                        <!-- Domestic / International Toggle -->
+                        <div class="pg-region-toggle">
+                            <button type="button" class="region-btn active" data-region="domestic">
+                                <span class="flag-icon">
+                                    <svg viewBox="0 0 640 480" width="22" height="15" style="border-radius:2px; display:inline-block; vertical-align:middle; box-shadow: 0 1px 2px rgba(0,0,0,0.15);">
+                                        <path fill="#f93" d="M0 0h640v160H0z"/>
+                                        <path fill="#fff" d="M0 160h640v160H0z"/>
+                                        <path fill="#128807" d="M0 320h640v160H0z"/>
+                                        <g transform="matrix(3.2 0 0 3.2 320 240)">
+                                            <circle r="20" fill="none" stroke="#000080" stroke-width="2"/>
+                                            <circle r="3" fill="#000080"/>
+                                            <path fill="#000080" d="M0-20L2-3 0 0l-2-3zM0 20l2 3 0 3-2-3zM-20 0l17-2L0 0l-17 2zM20 0l-17-2L0 0l17 2zM-14-14l13 11 1 3-3-1zM14 14l-13-11-1-3 3 1zM-14 14l11-13 3 1-1 3zM14-14l-11 13-3-1 1-3zM-7-19l8 15 2 2-3 0zM7 19l-8-15-2-2 3 0zM-19-7l15 8 2 2 0-3zM19 7l-15-8-2-2 0 3zM-19 7l15-8 2-2 0 3zM19-7l-15 8-2 2 0-3zM-7 19l8-15 2-2-3 0zM7-19l-8 15-2 2 3 0z"/>
+                                        </g>
+                                    </svg>
+                                </span> 
+                                <span>Domestic</span>
+                            </button>
+                            <button type="button" class="region-btn" data-region="international">
+                                <span class="globe-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <line x1="2" y1="12" x2="22" y2="12"/>
+                                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                    </svg>
+                                </span> 
+                                <span>International</span>
+                            </button>
+                        </div>
+
+                        <!-- Main Method Tabs -->
+                        <div class="pg-method-tabs">
+                            <button type="button" class="method-tab active" data-method="upi">
+                                <span class="tab-badge-icon"><img src="image/payment-image/upi.png" alt="UPI Logo" class="tab-logo-img"></span>
+                                <span class="tab-label">UPI</span>
+                                <span class="check-circle"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>
+                            </button>
+                            <button type="button" class="method-tab" data-method="cards">
+                                <span class="tab-badge-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span>
+                                <span class="tab-label">Cards</span>
+                                <span class="check-circle"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>
+                            </button>
+                            <button type="button" class="method-tab" data-method="netbanking">
+                                <span class="tab-badge-icon"><i class="fa-solid fa-building-columns"></i></span>
+                                <span class="tab-label">Net Banking</span>
+                                <span class="check-circle"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>
+                            </button>
+                            <button type="button" class="method-tab" data-method="wallets">
+                                <span class="tab-badge-icon"><svg viewBox="0 0 24 24"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4M4 6v12a2 2 0 0 0 2 2h14v-4M18 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg></span>
+                                <span class="tab-label">Wallets</span>
+                                <span class="check-circle"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>
+                            </button>
+                        </div>
+
+                        <!-- Sub-tab Content: UPI -->
+                        <div class="method-content-panel active" id="panel-upi">
+                            <h4 class="sub-panel-title">Pay via UPI</h4>
+                            <div class="upi-apps-row">
+                                <div class="upi-app-item">
+                                    <div class="upi-app-box">
+                                        <img src="image/payment-image/gpay.png" alt="Google Pay" class="app-logo-img">
+                                    </div>
+                                    <span>Google Pay</span>
                                 </div>
-                                <div class="form-group">
-                                    <label for="invoice-no">Invoice Number *</label>
-                                    <input type="text" id="invoice-no" required placeholder="AL/2026/0045">
+                                <div class="upi-app-item">
+                                    <div class="upi-app-box">
+                                        <img src="image/payment-image/phonepe.png" alt="PhonePe" class="app-logo-img">
+                                    </div>
+                                    <span>PhonePe</span>
+                                </div>
+                                <div class="upi-app-item">
+                                    <div class="upi-app-box">
+                                        <img src="image/payment-image/paytm.png" alt="Paytm" class="app-logo-img">
+                                    </div>
+                                    <span>Paytm</span>
+                                </div>
+                                <div class="upi-app-item">
+                                    <div class="upi-app-box">
+                                        <img src="image/payment-image/bhim.png" alt="BHIM" class="app-logo-img">
+                                    </div>
+                                    <span>BHIM</span>
+                                </div>
+                                <div class="upi-app-item">
+                                    <div class="upi-app-box">
+                                        <img src="image/payment-image/upi.png" alt="Any UPI App" class="app-logo-img">
+                                    </div>
+                                    <span>Any UPI App</span>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="amount">Payment Amount (INR) *</label>
-                                <input type="number" id="amount" required min="1" placeholder="Enter amount to pay">
+
+                            <!-- UPI Input Form -->
+                            <div class="upi-input-group">
+                                <div class="upi-input-wrapper">
+                                    <input type="text" id="upiIdInput" placeholder="Enter your UPI ID">
+                                    <span class="upi-suffix">@upi</span>
+                                </div>
+                                <button type="button" class="btn-verify-upi" id="btnVerifyUpi">Verify UPI ID</button>
                             </div>
-                            <div class="form-group">
-                                <label>Select Payment Method</label>
-                                <div class="payment-options">
-                                    <label class="radio-label">
-                                        <input type="radio" name="paymethod" checked> <span>Credit/Debit Card</span>
-                                    </label>
-                                    <label class="radio-label">
-                                        <input type="radio" name="paymethod"> <span>UPI (GPay/PhonePe)</span>
-                                    </label>
-                                    <label class="radio-label">
-                                        <input type="radio" name="paymethod"> <span>Net Banking</span>
-                                    </label>
+                            <div class="upi-status-message" id="upiStatusMsg"></div>
+
+                            <!-- OR Divider -->
+                            <div class="pg-divider">
+                                <span>OR</span>
+                            </div>
+
+                            <!-- UPI Handles & QR Code Box -->
+                            <div class="upi-qr-container">
+                                <div class="upi-handles-col">
+                                    <div class="upi-handle-card">
+                                        <div class="handle-info">
+                                            <span class="handle-logo">UPI</span>
+                                            <div>
+                                                <strong>UPI Payment (Kotak)</strong>
+                                                <p id="kotakUpiText">alephindia@kotak</p>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn-copy" onclick="copyText('kotakUpiText', this)">COPY</button>
+                                    </div>
+
+                                    <div class="upi-handle-card">
+                                        <div class="handle-info">
+                                            <span class="handle-logo hdfc-logo">HDFC</span>
+                                            <div>
+                                                <strong>UPI Payment (HDFC)</strong>
+                                                <p id="hdfcUpiText">vyapar.172928565826@hdfcbank</p>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn-copy" onclick="copyText('hdfcUpiText', this)">COPY</button>
+                                    </div>
+
+                                    <div class="upi-handle-card scan-card active">
+                                        <div class="handle-info">
+                                            <span class="handle-logo qr-icon-logo"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM14 18h3v3h-3z"/></svg></span>
+                                            <div>
+                                                <strong>Scan &amp; Pay</strong>
+                                                <p>UPI QR Code</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="qr-display-col">
+                                    <p class="company-name-text">ALEPH ACCREDITATION AND TESTING C P LTD</p>
+                                    <span class="company-code">82008162</span>
+                                    <div class="qr-code-wrapper">
+                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=alephindia@kotak&pn=ALEPH%20ACCREDITATION%20AND%20TESTING%20C%20P%20LTD&cu=INR" alt="Scan & Pay UPI QR Code" class="qr-img">
+                                    </div>
+                                    <span class="scan-pay-label">Scan &amp; Pay</span>
                                 </div>
                             </div>
-                            <button type="submit" class="submit-btn">Proceed to Pay</button>
+                        </div>
+
+                        <!-- Sub-tab Content: Cards -->
+                        <div class="method-content-panel" id="panel-cards">
+                            <h4 class="sub-panel-title">Pay via Credit / Debit Card</h4>
+                            <div class="card-form-grid">
+                                <div class="pg-input-field full-width">
+                                    <label>Card Number</label>
+                                    <input type="text" placeholder="4532 •••• •••• 8921" maxlength="19">
+                                </div>
+                                <div class="pg-input-field">
+                                    <label>Expiry Date</label>
+                                    <input type="text" placeholder="MM / YY" maxlength="5">
+                                </div>
+                                <div class="pg-input-field">
+                                    <label>CVV / CVC</label>
+                                    <input type="password" placeholder="•••" maxlength="4">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sub-tab Content: Net Banking -->
+                        <div class="method-content-panel" id="panel-netbanking">
+                            <h4 class="sub-panel-title">Select Popular Bank</h4>
+                            <div class="banks-grid">
+                                <button type="button" class="bank-item">SBI</button>
+                                <button type="button" class="bank-item">HDFC</button>
+                                <button type="button" class="bank-item">ICICI</button>
+                                <button type="button" class="bank-item">Axis</button>
+                                <button type="button" class="bank-item">Kotak</button>
+                            </div>
+                        </div>
+
+                        <!-- Sub-tab Content: Wallets -->
+                        <div class="method-content-panel" id="panel-wallets">
+                            <h4 class="sub-panel-title">Select Wallet</h4>
+                            <div class="banks-grid">
+                                <button type="button" class="bank-item">Paytm Wallet</button>
+                                <button type="button" class="bank-item">Mobikwik</button>
+                                <button type="button" class="bank-item">Amazon Pay</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Panel: Any Time, Any Where & Receipt Form -->
+                    <div class="pg-right-card">
+                        <!-- Any Time Banner -->
+                        <div class="pg-banner-box">
+                            <div class="banner-header-row">
+                                <img src="image/payment-image/bhim-hero.png" alt="BHIM Logo" class="bhim-hero-img">
+                                <h2 class="banner-title">Any <span class="title-blue">Time</span>, Any <span class="title-blue">Where!</span></h2>
+                            </div>
+                            <p class="banner-sub">Seamless payments. Global reach. Always with you.</p>
+                            <div class="payment-partners-bar">
+                                <span class="partner-tag img-tag"><img src="image/payment-image/upi.png" alt="UPI"></span>
+                                <span class="partner-tag img-tag"><img src="image/payment-image/pupay.png" alt="RuPay"></span>
+                                <span class="partner-tag img-tag"><img src="image/payment-image/visa.png" alt="VISA"></span>
+                                <span class="partner-tag img-tag"><img src="image/payment-image/mastercard.png" alt="MasterCard"></span>
+                                <span class="partner-tag img-tag"><img src="image/payment-image/paytm.png" alt="Paytm"></span>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Payment Receipt Form -->
+                        <form class="pg-receipt-form" id="paymentReceiptForm" onsubmit="handlePaymentSubmit(event)">
+                            <div class="pg-step-header">
+                                <span class="pg-step-number">3</span>
+                                <h2>Payment Receipt</h2>
+                            </div>
+
+                            <div class="form-two-col">
+                                <div class="pg-input-field">
+                                    <label for="fullName">Full Name</label>
+                                    <div class="input-with-icon">
+                                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                        <input type="text" id="fullName" placeholder="Enter your full name" required>
+                                    </div>
+                                </div>
+
+                                <div class="pg-input-field">
+                                    <label for="emailAddress">Email Address</label>
+                                    <div class="input-with-icon">
+                                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                        <input type="email" id="emailAddress" placeholder="Enter your email" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-two-col">
+                                <div class="pg-input-field">
+                                    <label for="mobileNumber">Mobile Number</label>
+                                    <div class="input-with-icon">
+                                        <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                                        <input type="tel" id="mobileNumber" placeholder="Enter mobile number" required>
+                                    </div>
+                                </div>
+
+                                <div class="pg-input-field">
+                                    <label for="projectRef">Project / PO / Reference No.</label>
+                                    <div class="input-with-icon">
+                                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                                        <input type="text" id="projectRef" placeholder="Enter reference number">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Upload Receipt -->
+                            <div class="pg-input-field full-width">
+                                <label for="uploadReceipt">Upload Receipt (Optional)</label>
+                                <div class="custom-file-box">
+                                    <input type="file" id="uploadReceipt" onchange="updateFileName(this)">
+                                    <span class="file-choose-btn">Choose File</span>
+                                    <span class="file-name-label" id="receiptFileName">No file chosen</span>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn-pay-securely">
+                                <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                <span>Pay Securely ₹ 590.00</span>
+                            </button>
+
+                            <p class="terms-note">
+                                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                                By proceeding, you agree to our <a href="#">Terms &amp; Conditions</a> and <a href="#">Privacy Policy</a>.
+                            </p>
                         </form>
                     </div>
-                    <!-- Sidebar info -->
-                    <div class="contact-details-side">
-                        <div class="detail-card info-card">
-                            <h4>Payment Safety</h4>
-                            <p>We use SSL encryption to ensure your transaction is completely secure. No card details are stored on our servers.</p>
+                </div>
+
+                <!-- Bottom Support / Need Help Bar -->
+                <div class="pg-support-bar">
+                    <div class="support-left">
+                        <div class="support-icon-headphone">
+                            <img src="image/payment-image/headset.png" alt="Headset Support" class="headset-img-icon">
                         </div>
-                        <div class="detail-card info-card">
-                            <h4>Billing Queries</h4>
-                            <p>If you face any issues with your payment, please email us at <a href="mailto:accounts@alephindia.in">accounts@alephindia.in</a> or call accounts desk at +91-120-123456.</p>
+                        <div class="support-text-box">
+                            <h4>Need Help?</h4>
+                            <p>If you face any issues during payment, our support team is here to help.</p>
+                        </div>
+                    </div>
+
+                    <div class="support-contacts">
+                        <div class="support-item">
+                            <div class="support-item-icon-badge">
+                                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </div>
+                            <div>
+                                <small>Call Us</small>
+                                <strong>+91 1234 567 890</strong>
+                            </div>
+                        </div>
+
+                        <div class="support-item">
+                            <div class="support-item-icon-badge">
+                                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </div>
+                            <div>
+                                <small>Email Us</small>
+                                <strong>support@alephindia.in</strong>
+                            </div>
+                        </div>
+
+                        <div class="support-item">
+                            <div class="support-item-icon-badge">
+                                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            </div>
+                            <div>
+                                <small>Live Chat</small>
+                                <strong>Chat with us now</strong>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- ========================================================= -->
         
     </main>
 
@@ -637,5 +946,6 @@
 
     <!-- Scripts -->
     <script src="js/navigation.js"></script>
+    <script src="js/Payment-Page.js"></script>
 </body>
 </html>
