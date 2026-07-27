@@ -5,13 +5,14 @@
 /* Page Background Wrapper */
 .crm-login-page-wrapper {
     width: 100%;
-    min-height: calc(100vh - 120px);
+    min-height: 580px;
     background: url('../image/crm-client-login/crm-clinrnt-login.png') no-repeat center top / cover;
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 60px 20px;
+    padding: 60px 20px 50px;
     box-sizing: border-box;
 }
 
@@ -31,7 +32,7 @@
     color: #ffffff;
     max-width: 480px;
     padding: 10px;
-    margin-top: -300px; /* Lift text upwards */
+    margin-top: 0; /* Properly centered with login card */
 }
 
 .crm-hero-content .tagline {
@@ -361,15 +362,17 @@
 
 /* Bottom Features Bar - Matching Exact Reference Image */
 .crm-features-section {
-    background: #f8fafc;
-    padding: 30px 20px;
-    border-top: 1px solid #e2e8f0;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    margin-top: -30px;
+    background: #ffffff;
+    padding: 24px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    margin-top: 45px;
+    width: 100%;
+    max-width: 1180px;
     position: relative;
     z-index: 5;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
 }
 
 .crm-features-grid {
@@ -475,5 +478,22 @@
     }
     .crm-feature-card:not(:last-child)::after {
         display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .crm-login-page-wrapper {
+        background: #0537af !important; /* Remove background image and set solid blue background on mobile */
+        padding: 30px 15px;
+    }
+    
+    .crm-full-overlay {
+        justify-content: center;
+    }
+
+    .crm-hero-content {
+        margin-top: 0;
+        text-align: center;
+        margin-bottom: 20px;
     }
 }
