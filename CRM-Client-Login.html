@@ -7,9 +7,12 @@
     <!-- Favicon -->
     <link rel="icon" href="image/fab-iocn.png" type="image/png">
     <!-- Stylesheets -->
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/Header.css">
     <link rel="stylesheet" href="css/Footer.css">
+    <link rel="stylesheet" href="css/CRM-Client-Login.css">
 </head>
 <body>
 
@@ -318,42 +321,225 @@
 
     <!-- Main Container -->
     <main id="main-content">
-        
-        <section class="page-header-section flex-center" style="min-height: 300px;">
-            <div class="container text-center">
-                <h1>Client Login Portal</h1>
-                <p>Access your certification projects, status, reports, and invoices.</p>
-            </div>
-        </section>
-        <section class="section-padding flex-center" style="background-color: #f1f5f9;">
-            <div class="login-container">
-                <div class="card-wrapper login-card">
-                    <h3 class="text-center">Secure Client Login</h3>
-                    <p class="text-center text-muted" style="font-size: 0.9rem; margin-bottom: 1.5rem;">Enter your credentials to enter the Aleph CRM dashboard.</p>
-                    <form class="styled-form" onsubmit="event.preventDefault(); alert('Login simulated successfully!');">
-                        <div class="form-group">
-                            <label for="username">Username / Email</label>
-                            <input type="text" id="username" required placeholder="name@company.com">
+        <div class="crm-login-page-wrapper">
+            <div class="crm-full-overlay">
+                <!-- Left Content -->
+                <div class="crm-hero-content">
+                    <div class="tagline">WELCOME TO ALEPH INDIA</div>
+                    <h1>CRM ACCESS PORTAL</h1>
+                    <p>Secure access for our team and clients.<br>Please login to continue.</p>
+                </div>
+
+                <!-- Right Card -->
+                <div class="crm-card">
+                    <div class="crm-tabs">
+                        <button class="crm-tab-btn active" id="crm-tab-btn" type="button" onclick="switchLoginTab('crm')">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                            CRM Login
+                        </button>
+                        <button class="crm-tab-btn" id="client-tab-btn" type="button" onclick="switchLoginTab('client')">
+                            <i class="fa-regular fa-user"></i> Client Login
+                        </button>
+                    </div>
+                    <div class="crm-card-body">
+                        <!-- 1. CRM Login View -->
+                        <div id="crm-login-view">
+                            <div class="crm-logo-wrapper">
+                                <img src="image/crm-client-login/about-logo.png" alt="Aleph INDIA Logo">
+                                <p>CRM Access Portal</p>
+                            </div>
+                            <form onsubmit="event.preventDefault(); alert('CRM Login submitted');">
+                                <div class="crm-form-group">
+                                    <label for="crm-country">Choose Country</label>
+                                    <div class="custom-dropdown-container" id="crm-country-dropdown">
+                                        <div class="crm-input-icon-wrap custom-select-trigger" onclick="toggleCustomDropdown('crm-country-dropdown')">
+                                            <i class="fa-solid fa-globe left-icon"></i>
+                                            <span class="selected-value">-- Select Country --</span>
+                                            <i class="fa-solid fa-chevron-down right-icon"></i>
+                                        </div>
+                                        <div class="custom-options-menu">
+                                            <div class="custom-option" onclick="selectCustomOption('crm-country-dropdown', '')">-- Select Country --</div>
+                                            <div class="custom-option" onclick="selectCustomOption('crm-country-dropdown', 'India')">India</div>
+                                            <div class="custom-option" onclick="selectCustomOption('crm-country-dropdown', 'Korea')">Korea</div>
+                                            <div class="custom-option" onclick="selectCustomOption('crm-country-dropdown', 'Vietnam')">Vietnam</div>
+                                            <div class="custom-option" onclick="selectCustomOption('crm-country-dropdown', 'China')">China</div>
+                                            <div class="custom-option" onclick="selectCustomOption('crm-country-dropdown', 'Russia')">Russia</div>
+                                            <div class="custom-option" onclick="selectCustomOption('crm-country-dropdown', 'Taiwan')">Taiwan</div>
+                                            <div class="custom-option" onclick="selectCustomOption('crm-country-dropdown', 'Brazil')">Brazil</div>
+                                            <div class="custom-option" onclick="selectCustomOption('crm-country-dropdown', 'Germany')">Germany</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="crm-form-group">
+                                    <label for="crm-email">Email Address</label>
+                                    <div class="crm-input-icon-wrap">
+                                        <i class="fa-regular fa-envelope left-icon"></i>
+                                        <input type="email" id="crm-email" placeholder="Enter your email" required>
+                                    </div>
+                                </div>
+
+                                <div class="crm-form-group">
+                                    <label for="crm-password">Password</label>
+                                    <div class="crm-input-icon-wrap">
+                                        <i class="fa-solid fa-lock left-icon"></i>
+                                        <input type="password" id="crm-password" placeholder="Enter your password" required>
+                                        <i class="fa-regular fa-eye right-icon"></i>
+                                    </div>
+                                </div>
+
+                                <div class="crm-form-row">
+                                    <label class="crm-remember">
+                                        <input type="checkbox" checked> Remember me
+                                    </label>
+                                    <a href="#" class="crm-forgot">Forgot Password?</a>
+                                </div>
+
+                                <button type="submit" class="crm-submit-btn">
+                                    Login <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+
+                                <div class="crm-divider">
+                                    <span>or</span>
+                                </div>
+
+                                <div class="crm-admin-access">
+                                    Need access? <a href="Contact-US.html">Contact your administrator.</a>
+                                </div>
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" required placeholder="••••••••">
+
+                        <!-- 2. Client Login View (Fixed Size Matching CRM Login View) -->
+                        <div id="client-login-view" style="display: none;">
+                            <div class="crm-logo-wrapper" style="margin-bottom: 16px;">
+                                <img src="image/crm-client-login/about-logo.png" alt="Aleph INDIA Logo" style="max-height: 55px; width: auto; display: block; margin: 0 auto 6px auto;">
+                                <p style="font-size: 0.70rem; font-weight: 600; color: black; margin: 0;">Client Portal Login</p>
+                            </div>
+                            <form onsubmit="event.preventDefault(); alert('Client Login submitted');">
+                                <div class="crm-form-group">
+                                    <label for="client-country">Choose Country</label>
+                                    <div class="custom-dropdown-container" id="client-country-dropdown">
+                                        <div class="crm-input-icon-wrap custom-select-trigger" onclick="toggleCustomDropdown('client-country-dropdown')">
+                                            <i class="fa-solid fa-globe left-icon"></i>
+                                            <span class="selected-value">-- Select Country --</span>
+                                            <i class="fa-solid fa-chevron-down right-icon"></i>
+                                        </div>
+                                        <div class="custom-options-menu">
+                                            <div class="custom-option" onclick="selectCustomOption('client-country-dropdown', '')">-- Select Country --</div>
+                                            <div class="custom-option" onclick="selectCustomOption('client-country-dropdown', 'India')">India</div>
+                                            <div class="custom-option" onclick="selectCustomOption('client-country-dropdown', 'Korea')">Korea</div>
+                                            <div class="custom-option" onclick="selectCustomOption('client-country-dropdown', 'Vietnam')">Vietnam</div>
+                                            <div class="custom-option" onclick="selectCustomOption('client-country-dropdown', 'China')">China</div>
+                                            <div class="custom-option" onclick="selectCustomOption('client-country-dropdown', 'Russia')">Russia</div>
+                                            <div class="custom-option" onclick="selectCustomOption('client-country-dropdown', 'Taiwan')">Taiwan</div>
+                                            <div class="custom-option" onclick="selectCustomOption('client-country-dropdown', 'Brazil')">Brazil</div>
+                                            <div class="custom-option" onclick="selectCustomOption('client-country-dropdown', 'Germany')">Germany</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="crm-form-group">
+                                    <label for="client-email">Email Address</label>
+                                    <div class="crm-input-icon-wrap">
+                                        <i class="fa-regular fa-envelope left-icon"></i>
+                                        <input type="email" id="client-email" placeholder="Enter your email" required>
+                                    </div>
+                                </div>
+
+                                <div class="crm-form-group">
+                                    <label for="client-password">Password</label>
+                                    <div class="crm-input-icon-wrap">
+                                        <i class="fa-solid fa-lock left-icon"></i>
+                                        <input type="password" id="client-password" placeholder="Enter your password" required>
+                                        <i class="fa-regular fa-eye right-icon"></i>
+                                    </div>
+                                </div>
+
+                                <div class="crm-form-row">
+                                    <label class="crm-remember">
+                                        <input type="checkbox" checked> Remember me
+                                    </label>
+                                    <a href="#" class="crm-forgot">Forgot Password?</a>
+                                </div>
+
+                                <button type="submit" class="crm-submit-btn">
+                                    Login <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+
+                                <div class="crm-divider">
+                                    <span>or</span>
+                                </div>
+
+                                <div class="crm-admin-access">
+                                    Need access? <a href="Contact-US.html">Contact your administrator.</a>
+                                </div>
+                            </form>
                         </div>
-                        <div class="form-options">
-                            <label class="checkbox-label">
-                                <input type="checkbox"> Remember me
-                            </label>
-                            <a href="#" class="forgot-pwd">Forgot password?</a>
-                        </div>
-                        <button type="submit" class="submit-btn" style="margin-top: 1rem;">Log In</button>
-                    </form>
-                    <div class="login-footer">
-                        Don't have an account? <a href="Contact-US.html">Contact admin</a>
                     </div>
                 </div>
             </div>
-        </section>
-        
+        </div>
+
+        <!-- Features Bar -->
+        <div class="crm-features-section">
+            <div class="crm-features-grid">
+                <div class="crm-feature-card">
+                    <div class="crm-feature-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div class="crm-feature-info">
+                        <h4>Secure & Trusted</h4>
+                        <p>Bank-level security to protect your data</p>
+                    </div>
+                </div>
+                <div class="crm-feature-card">
+                    <div class="crm-feature-icon">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <div class="crm-feature-info">
+                        <h4>Anytime Access</h4>
+                        <p>Access your dashboard anytime, anywhere</p>
+                    </div>
+                </div>
+                <div class="crm-feature-card">
+                    <div class="crm-feature-icon">
+                        <i class="fa-solid fa-user-gear"></i>
+                    </div>
+                    <div class="crm-feature-info">
+                        <h4>Role Based Access</h4>
+                        <p>Secure access based on your role and permissions</p>
+                    </div>
+                </div>
+                <div class="crm-feature-card">
+                    <div class="crm-feature-icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <div class="crm-feature-info">
+                        <h4>Need Help?</h4>
+                        <p>Our support team is always here to help</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="crm-footer-bottom">
+            <div class="crm-footer-container">
+                <div>
+                    <i class="fa-regular fa-circle-check"></i> &copy; 2026 Aleph INDIA. All rights reserved.
+                </div>
+                <div class="crm-footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- Site Footer -->
@@ -612,5 +798,49 @@
 
     <!-- Scripts -->
     <script src="js/navigation.js"></script>
+    <script>
+        function switchLoginTab(type) {
+            const crmTab = document.getElementById('crm-tab-btn');
+            const clientTab = document.getElementById('client-tab-btn');
+            const crmView = document.getElementById('crm-login-view');
+            const clientView = document.getElementById('client-login-view');
+
+            if (type === 'client') {
+                crmTab.classList.remove('active');
+                clientTab.classList.add('active');
+                crmView.style.display = 'none';
+                clientView.style.display = 'block';
+            } else {
+                clientTab.classList.remove('active');
+                crmTab.classList.add('active');
+                clientView.style.display = 'none';
+                crmView.style.display = 'block';
+            }
+        }
+
+        function toggleCustomDropdown(id) {
+            const container = document.getElementById(id);
+            const isOpen = container.classList.contains('open');
+            // Close all open dropdowns
+            document.querySelectorAll('.custom-dropdown-container').forEach(el => el.classList.remove('open'));
+            if (!isOpen) {
+                container.classList.add('open');
+            }
+        }
+
+        function selectCustomOption(id, val) {
+            const container = document.getElementById(id);
+            const displaySpan = container.querySelector('.selected-value');
+            displaySpan.textContent = val ? val : '-- Select Country --';
+            container.classList.remove('open');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.custom-dropdown-container')) {
+                document.querySelectorAll('.custom-dropdown-container').forEach(el => el.classList.remove('open'));
+            }
+        });
+    </script>
 </body>
 </html>
