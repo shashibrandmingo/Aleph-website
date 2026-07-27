@@ -7,7 +7,7 @@
   --team-secondary: #2563eb;
   --team-accent: #3b82f6;
   --team-text-dark: #0f172a;
-  --team-text-muted: #475569;
+  --team-text-muted: #0f172a;
   --team-card-bg: linear-gradient(135deg, #f0f6ff 0%, #f9fbff 100%);
   --team-card-border: rgba(0, 46, 132, 0.08);
 }
@@ -22,9 +22,20 @@ body {
 }
 
 .team-hero-section {
-  padding: 1.5rem 0 2rem 0;
+  padding: 0.4rem 0 0.5rem 0;
   width: 100%;
   background-color: #ffffff;
+}
+
+section.section-padding {
+  padding: 0.5rem 0 !important;
+}
+
+section.founders-section {
+  padding: 1.5rem 0 2rem 0 !important;
+  background: url('../../image/our-team-image/director-bg.png') no-repeat center center !important;
+  background-size: 100% 100% !important;
+  width: 100%;
 }
 
 /* Container Card */
@@ -208,7 +219,7 @@ body {
 
 .founders-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
   position: relative;
   z-index: 5;
 }
@@ -245,7 +256,7 @@ body {
   width: 50px;
   height: 3px;
   background-color: var(--team-secondary);
-  margin: 1.5rem auto 0 auto;
+  margin: 0.5rem auto 0 auto;
   border-radius: 2px;
 }
 
@@ -255,8 +266,8 @@ body {
   justify-content: center; /* Centered instead of space-between to look clean with narrow cards */
   align-items: stretch;
   position: relative;
-  margin-top: 2rem;
-  margin-bottom: 4rem;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
   width: 100%;
 }
 
@@ -403,6 +414,11 @@ body {
   height: 12px;
 }
 
+.founder-badge-pill i {
+  font-size: 0.78rem;
+  color: #ffffff;
+}
+
 .founder-linkedin {
   color: #0a66c2;
   display: inline-flex;
@@ -477,17 +493,16 @@ body {
   margin-top: 2px;
 }
 
-/* Concentric white inner border ring line inside the icon circle */
+.founder-body-icon-container i {
+  font-size: 1.15rem;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+/* Concentric white inner border ring line removed */
 .founder-body-icon-container::after {
-  content: '';
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  right: 3px;
-  bottom: 3px;
-  border: 1.5px solid rgba(255, 255, 255, 0.75);
-  border-radius: 50%;
-  pointer-events: none;
+  display: none;
 }
 
 .founder-body-icon-container svg {
@@ -555,6 +570,12 @@ body {
 .founder-badge-icon svg {
   width: 28px;
   height: 28px;
+}
+
+.founder-badge-logo-img {
+  width:40px;
+  height: 40px;
+  object-fit: contain;
 }
 
 .founder-badge-label {
@@ -791,6 +812,21 @@ body {
   line-height: 1.15;
 }
 
+.dir-slide-role {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin: 0 0 6px 0;
+}
+
+.dir-slide-bio {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #0f172a;
+  margin: 0;
+  text-align: justify;
+}
+
 .career-title-accent {
   color: #2563eb;
   display: block;
@@ -834,6 +870,11 @@ body {
 .career-feature-icon-circle svg {
   width: 16px;
   height: 16px;
+}
+
+.career-feature-icon-circle i {
+  font-size: 0.9rem;
+  color: #2563eb;
 }
 
 .career-feature-label {
