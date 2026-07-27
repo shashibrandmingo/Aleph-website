@@ -799,6 +799,35 @@
     }
 }
 
+@media (max-width: 992px) {
+    .requirement-diagram-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .requirement-center-bubble {
+        flex: 0 0 auto;
+        width: 100%;
+        margin: 0 auto 1.25rem auto;
+        justify-content: center;
+    }
+
+    .company-shall-img {
+        margin-left: 0 !important;
+        margin: 0 auto !important;
+        max-width: 190px;
+    }
+
+    .req-connector-spacer,
+    .req-connector-abs-svg {
+        display: none !important;
+    }
+
+    .requirement-cards-list {
+        width: 100%;
+    }
+}
+
 @media (max-width: 640px) {
     .req-card {
         padding: 0.55rem 0.85rem;

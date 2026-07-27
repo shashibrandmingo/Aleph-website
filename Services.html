@@ -1179,16 +1179,21 @@
                     <aside class="service-toc-sidebar">
                         <!-- Table of Content Card -->
                         <div class="toc-card">
-                            <div class="toc-header">
-                                <svg class="toc-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#0056b3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="8" y1="6" x2="21" y2="6"></line>
-                                    <line x1="8" y1="12" x2="21" y2="12"></line>
-                                    <line x1="8" y1="18" x2="21" y2="18"></line>
-                                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
-                                </svg>
-                                <span class="toc-title">TABLE OF CONTENT</span>
+                            <div class="toc-header" id="tocHeaderToggle">
+                                <div class="toc-header-left">
+                                    <svg class="toc-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#0056b3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="8" y1="6" x2="21" y2="6"></line>
+                                        <line x1="8" y1="12" x2="21" y2="12"></line>
+                                        <line x1="8" y1="18" x2="21" y2="18"></line>
+                                        <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                        <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                                    </svg>
+                                    <span class="toc-title">TABLE OF CONTENT</span>
+                                </div>
+                                <button type="button" class="toc-mobile-toggle-btn" aria-label="Toggle Navigation">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
                             </div>
                             <div class="toc-header-line"><span class="toc-header-line-dot"></span></div>
 
@@ -1890,15 +1895,21 @@
             const startIndex = (bisCurrentPage - 1) * bisPageSize;
             const endIndex = Math.min(startIndex + bisPageSize, total);
 
+            // Check search query state to determine if blur should be applied
+            const searchInput = document.getElementById('bisProductSearchInput');
+            const isSearching = searchInput && searchInput.value.trim().length > 0;
+
             // 1. Render Products Grid Items
             gridContainer.innerHTML = '';
             if (total === 0) {
                 gridContainer.innerHTML = '<div style="grid-column: 1/-1; padding: 2rem; text-align: center; color: #64748b; font-size: 13px;">No matching products found.</div>';
             } else {
                 const pageItems = bisFilteredProducts.slice(startIndex, endIndex);
-                pageItems.forEach(item => {
+                pageItems.forEach((item, index) => {
                     const div = document.createElement('div');
-                    div.className = 'bis-product-row-item';
+                    // By default when search is empty, blur all items after the first 4 (index >= 4)
+                    const isBlurred = !isSearching && index >= 8;
+                    div.className = `bis-product-row-item ${isBlurred ? 'bis-product-blurred' : ''}`;
                     div.innerHTML = `
                         <span>${item}</span>
                         <i class="fa-solid fa-chevron-right"></i>
@@ -1989,13 +2000,30 @@
            ====================================================== */
         document.addEventListener('DOMContentLoaded', function () {
             const tocItems = document.querySelectorAll('.toc-menu .toc-item');
-            const sections = document.querySelectorAll('.service-left-content .service-content-block');
+            const sections = document.querySelectorAll('.service-article-container article[id]');
+            const tocHeader = document.getElementById('tocHeaderToggle');
+            const tocCard = document.querySelector('.toc-card');
+
+            // Toggle Mobile TOC Accordion
+            if (tocHeader && tocCard) {
+                tocHeader.addEventListener('click', function () {
+                    if (window.innerWidth <= 992) {
+                        tocCard.classList.toggle('expanded');
+                    }
+                });
+            }
 
             // 1. Smooth Scroll on TOC Item Click
             tocItems.forEach(item => {
                 item.addEventListener('click', function (e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
+
+                    // Auto-collapse mobile TOC menu on link click
+                    if (window.innerWidth <= 992 && tocCard) {
+                        tocCard.classList.remove('expanded');
+                    }
+
                     if (targetId && targetId !== '#') {
                         const targetSection = document.querySelector(targetId);
                         if (targetSection) {
@@ -2019,28 +2047,31 @@
 
             // 2. Highlight Active TOC Item on Scroll (ScrollSpy)
             function highlightTocOnScroll() {
+                const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+                const headerOffset = 160;
                 let currentSectionId = '';
-                const scrollPosition = window.pageYOffset + 140;
 
                 sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.offsetHeight;
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    const top = section.offsetTop - headerOffset;
+                    const height = section.offsetHeight;
+                    if (scrollPos >= top && scrollPos < top + height) {
                         currentSectionId = section.getAttribute('id');
                     }
                 });
 
                 if (currentSectionId) {
                     tocItems.forEach(item => {
-                        item.classList.remove('active');
                         if (item.getAttribute('href') === `#${currentSectionId}`) {
                             item.classList.add('active');
+                        } else {
+                            item.classList.remove('active');
                         }
                     });
                 }
             }
 
-            window.addEventListener('scroll', highlightTocOnScroll);
+            window.addEventListener('scroll', highlightTocOnScroll, { passive: true });
+            window.addEventListener('resize', highlightTocOnScroll, { passive: true });
             highlightTocOnScroll(); // Trigger initial check
         });
 

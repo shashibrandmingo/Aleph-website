@@ -96,34 +96,77 @@ html {
 @media (max-width: 1200px) {
     .service-hero-container {
         aspect-ratio: auto;
-        min-height: 380px;
-        padding: 2.5rem 3rem;
+        min-height: 340px;
+        padding: 2.2rem 2.8rem;
     }
 }
 
 @media (max-width: 992px) {
+    .service-hero-section {
+        padding: 1rem 0 0.5rem 0;
+    }
+
     .service-hero-container {
-        padding: 2rem 2.5rem;
-        background-size: cover;
+        aspect-ratio: auto;
+        min-height: auto;
+        padding: 2.5rem 2rem;
+        background-image: none !important;
+        background-color: #f6f6fd !important;
+        border: 1px solid rgba(0, 46, 132, 0.1);
+        box-shadow: 0 10px 30px rgba(0, 46, 132, 0.05);
+    }
+
+    .service-hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
     }
 
     .service-hero-title {
-        font-size: 36px;
+        font-size: 2.5rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.15;
     }
 
     .service-hero-desc {
-        font-size: 15px;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #475569;
+        max-width: 100%;
     }
 }
 
 @media (max-width: 768px) {
+    .service-hero-section {
+        padding: 0.8rem 0 0.5rem 0;
+    }
+
     .service-hero-container {
         padding: 2rem 1.5rem;
+        border-radius: 20px;
+        background-image: none !important;
+        background-color: #f6f6fd !important;
+    }
+
+    .service-hero-title {
+        font-size: 2rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .service-hero-desc {
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-hero-container {
+        padding: 1.5rem 1.1rem;
         border-radius: 16px;
     }
 
     .service-hero-title {
-        font-size: 28px;
+        font-size: 1.75rem;
     }
 }
 
@@ -237,8 +280,8 @@ html {
 /* Content With Badge */
 .content-with-badge {
     display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
+    gap: 1rem;
+    align-items: center;
 }
 
 .content-with-badge .text-side {
@@ -249,26 +292,31 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
-    min-width: 110px;
-    margin-top: 1.5rem;
+    justify-content: center;
+    gap: 4px;
+    min-width: 80px;
+    margin-top: 0;
+    flex-shrink: 0;
 }
 
 .badge-label {
-    font-size: 10px;
+    font-size: 9.5px;
     font-weight: 700;
     color: #475569;
     letter-spacing: 0.05em;
 }
 
 .isi-badge-box {
-    padding: 4px;
+    padding: 2px;
     background: #ffffff;
-    border-radius: 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .isi-badge-img {
-    width: 90px;
+    width: 68px;
     height: auto;
     display: block;
     object-fit: contain;
@@ -480,20 +528,101 @@ html {
     color: #0066ff;
 }
 
-.toc-text {
-    flex: 1;
+.toc-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/* Responsive Styles for Section 2 */
+.toc-mobile-toggle-btn {
+    display: none;
+    background: #eff6ff;
+    border: 1px solid #cbd5e1;
+    color: #0056b3;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.2s ease;
+}
+
+.toc-mobile-toggle-btn i {
+    transition: transform 0.25s ease;
+}
+
+/* Responsive Styles for Section 2 & Mobile TOC Accordion */
 @media (max-width: 992px) {
     .service-details-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
     }
 
     .service-toc-sidebar {
-        position: static;
-        order: -1; /* Shows Table of Contents on top or below hero in mobile */
+        display: contents;
+    }
+
+    .toc-card {
+        order: 1;
+        width: 100%;
+        margin-bottom: 1.5rem;
+        padding: 0.95rem 1.15rem;
+        box-sizing: border-box;
+    }
+
+    .sidebar-video-banner-card {
+        order: 2;
+        width: 100%;
+        height: auto;
+        min-height: 155px;
+        margin-bottom: 1.5rem;
+        box-sizing: border-box;
+    }
+
+    .service-article-container {
+        order: 3;
+        width: 100%;
+    }
+
+    .sidebar-faq-card {
+        order: 4;
+        width: 100%;
+        margin-top: 2.5rem;
+        box-sizing: border-box;
+    }
+
+    .toc-header {
+        justify-content: space-between;
+        cursor: pointer;
+        user-select: none;
+        margin-bottom: 0;
+    }
+
+    .toc-mobile-toggle-btn {
+        display: flex;
+    }
+
+    .toc-header-line {
+        margin-bottom: 0.5rem;
+    }
+
+    /* By default on mobile: HIDE the TOC menu list */
+    .toc-menu {
+        display: none;
+        margin-top: 0.75rem;
+    }
+
+    /* When expanded / open on mobile */
+    .toc-card.expanded .toc-menu {
+        display: flex;
+    }
+
+    .toc-card.expanded .toc-mobile-toggle-btn i {
+        transform: rotate(180deg);
     }
 
     .content-with-badge {
