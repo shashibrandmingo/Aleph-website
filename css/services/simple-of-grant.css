@@ -1,0 +1,784 @@
+/* ======================================================
+   CSS STYLES FOR:
+   - SECTION 07: SAMPLE OF A GRANT CERTIFICATE FOR FMCS
+   - SECTION 08: TIMELINE FOR BIS LICENCE
+   ====================================================== */
+
+/* Section Article Block Spacing */
+#sec-sample, #sec-timeline {
+    margin-top: 2.5rem;
+}
+
+/* --- Section 07: Sample Grant Grid --- */
+.sample-grant-grid {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+    align-items: flex-start;
+}
+
+.grant-info-left-col {
+    flex: 0 0 46%;
+    max-width: 46%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Indemnity Bond Card */
+.grant-bond-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0.95rem 1.15rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.grant-bond-header {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin-bottom: 0.85rem;
+}
+
+.grant-icon-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.badge-blue-soft {
+    background-color: #ebf5ff;
+    color: #0056b3;
+}
+
+.grant-bond-title-group {
+    flex: 1;
+}
+
+.grant-bond-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0056b3;
+    margin: 0 0 2px 0;
+}
+
+.grant-bond-sub {
+    font-size: 11.5px;
+    color: #475569;
+    line-height: 1.35;
+    margin: 0;
+}
+
+/* 8 Provisions List */
+.grant-provisions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    background: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 10px;
+    padding: 0.65rem 0.85rem;
+}
+
+.provision-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.prov-check-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.prov-text {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* Note Banners */
+.grant-note-banner {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    border-radius: 10px;
+    padding: 0.65rem 0.95rem;
+}
+
+.grant-note-banner.banner-info {
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+}
+
+.grant-note-banner.banner-note {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.grant-note-icon-badge {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.bg-blue-solid {
+    background-color: #0056b3;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: serif, sans-serif;
+}
+
+.bg-blue-light {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background-color: #ebf5ff;
+    border: 1px solid #dbeafe;
+    color: #0056b3;
+}
+
+.grant-note-text {
+    font-size: 11.5px;
+    color: #1e293b;
+    line-height: 1.4;
+    flex: 1;
+}
+
+/* Right Column Certificate Image Card */
+.grant-cert-right-col {
+    flex: 1;
+}
+
+.grant-cert-img-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.grant-cert-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+/* --- Section 08: Timeline Grid --- */
+.timeline-section-grid {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+    align-items: flex-start;
+}
+
+.timeline-info-left-col {
+    flex: 0 0 42%;
+    max-width: 42%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.timeline-lead-desc {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #475569;
+    margin-bottom: 0.25rem;
+}
+
+.timeline-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 0.65rem 0.95rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.timeline-stat-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.bg-blue-soft {
+    background-color: #ebf5ff;
+    color: #0056b3;
+}
+
+.timeline-stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.t-stat-label {
+    font-size: 11.5px;
+    color: #475569;
+    font-weight: 500;
+}
+
+.t-stat-val {
+    font-size: 12.5px;
+    color: #1e293b;
+}
+
+.t-stat-val strong {
+    color: #0056b3;
+    font-weight: 700;
+}
+
+.t-stat-sub {
+    font-size: 11.5px;
+    color: #1e293b;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+/* Right Column Chart Image Card */
+.timeline-chart-right-col {
+    flex: 1;
+}
+
+.timeline-chart-img-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.timeline-chart-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+    .sample-grant-grid,
+    .timeline-section-grid {
+        flex-direction: column;
+    }
+
+    .grant-info-left-col,
+    .timeline-info-left-col {
+        flex: initial;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .surveillance-three-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ======================================================
+   SECTION 09: SURVEILLANCE / COMPLAINT / RENEWAL (COMPACT)
+   ====================================================== */
+#sec-surveillance, #sec-air-guidelines {
+    margin-top: 2rem;
+}
+
+.surveillance-three-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-top: 1.15rem;
+}
+
+.surv-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0.85rem 0.85rem 0.6rem 0.85rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.surv-card:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
+}
+
+.surv-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.75rem;
+}
+
+.surv-icon-badge {
+    width: 36px;
+    height: 36px;
+    border-radius:100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.surv-icon-badge svg,
+.surv-icon-img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.bg-green-light {
+    background-color: #d1fae5;
+    color: #059669;
+}
+
+.bg-orange-light {
+    background-color: #ffedd5;
+    color: #ea580c;
+}
+
+.bg-purple-light {
+    background-color: #f3e8ff;
+    color: #9333ea;
+}
+
+.surv-title-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.surv-card-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #1e293b;
+    line-height: 1.25;
+    margin: 0;
+}
+
+.surv-title-line {
+    height: 2.5px;
+    width: 22px;
+    border-radius: 2px;
+    margin-top: 3px;
+}
+
+.line-blue { background-color: #0056b3; }
+.line-green { background-color: #059669; }
+.line-orange { background-color: #ea580c; }
+
+.surv-card-text {
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: #475569;
+    flex: 1;
+    margin-bottom: 0.85rem;
+}
+
+.surv-card-bottom-bar {
+    height: 3px;
+    width: 100%;
+    margin-top: auto;
+    border-radius: 3px;
+}
+
+.bar-blue { background-color: #0056b3; }
+.bar-green { background-color: #059669; }
+.bar-orange { background-color: #ea580c; }
+
+/* ======================================================
+   SECTION 10: AIR GUIDELINES FOR FOREIGN MANUFACTURER
+   ====================================================== */
+.air-guidelines-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 1.5rem;
+}
+
+.air-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease;
+}
+
+.air-card-blue,
+.air-card-green,
+.air-card-purple {
+    border-left: 1px solid #e2e8f0;
+}
+
+.air-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
+}
+
+.air-icon-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 0.2rem;
+}
+
+.air-icon-box svg,
+.air-icon-box i,
+.air-icon-img {
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+}
+
+.air-card-body {
+    flex: 1;
+    padding-left: 0.85rem;
+}
+
+/* Vertical colored line between icon box and content */
+.air-card-blue .air-card-body {
+    border-left: 1.5px solid #60a5fa;
+}
+
+.air-card-green .air-card-body {
+    border-left: 1.5px solid #34d399;
+}
+
+.air-card-purple .air-card-body {
+    border-left: 1.5px solid #c084fc;
+}
+
+.air-card-body p {
+    font-size: 11.5px;
+    line-height: 1.55;
+    color: #334155;
+    margin: 0;
+}
+
+/* Points List in Card 3 */
+.air-points-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.air-point-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.air-num-badge {
+    font-size: 10.5px;
+    font-weight: 800;
+    color: #9333ea;
+    background: #f3e8ff;
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.air-point-text {
+    font-size: 11.5px;
+    line-height: 1.45;
+    color: #334155;
+}
+
+/* ======================================================
+   SECTION 11: PRODUCTS UNDER BIS CERTIFICATION SCHEME
+   ====================================================== */
+#sec-bis-products {
+    margin-top: 2.5rem;
+}
+
+/* Banner Title Header */
+.bis-products-title-banner {
+    background: #003380;
+    border-radius: 8px;
+    padding: 0.85rem 1.25rem;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 14.5px;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.bis-title-dash {
+    width: 36px;
+    height: 2px;
+    background-color: #f59e0b;
+    display: inline-block;
+}
+
+/* Top Notice Card */
+.bis-notice-banner {
+    background: #f0f7ff;
+    border: 1px solid #d0e3ff;
+    border-radius: 10px;
+    padding: 0.85rem 1.15rem;
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+}
+
+.bis-notice-icon {
+    color: #0056b3;
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.bis-notice-content {
+    flex: 1;
+}
+
+.bis-notice-text {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #334155;
+    margin-bottom: 0.5rem;
+}
+
+.bis-notice-contacts {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 11.5px;
+    color: #1e293b;
+    font-weight: 600;
+    flex-wrap: wrap;
+}
+
+.bis-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.bis-contact-item i {
+    color: #0056b3;
+}
+
+/* Products Table Container */
+.bis-products-table-box {
+    margin-top: 1.25rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+}
+
+/* Header Bar with Search */
+.bis-table-header-bar {
+    background: #003380;
+    padding: 0.65rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.bis-table-title-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-size: 12.5px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.bis-table-title-badge i {
+    color: #f59e0b;
+    font-size: 14px;
+}
+
+.bis-search-box-wrap {
+    position: relative;
+    width: 420px;
+    max-width: 100%;
+}
+
+.bis-search-box-wrap i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    font-size: 13px;
+}
+
+.bis-search-input {
+    width: 100%;
+    padding: 0.45rem 1rem 0.45rem 2.4rem;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    color: #1e293b;
+    background: #ffffff;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.bis-search-input::placeholder {
+    color: #94a3b8;
+}
+
+/* 2-Column Product Grid List */
+.bis-products-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-left: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+}
+
+.bis-product-row-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 0.95rem;
+    border-bottom: 1px solid #f1f5f9;
+    border-right: 1px solid #f1f5f9;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: #1e293b;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    background: #ffffff;
+}
+
+.bis-product-row-item:nth-child(4n+3),
+.bis-product-row-item:nth-child(4n+4) {
+    background: #f8fafc;
+}
+
+.bis-product-row-item:hover {
+    background: #eff6ff;
+    color: #0056b3;
+}
+
+.bis-product-row-item i {
+    color: #94a3b8;
+    font-size: 10px;
+    transition: transform 0.15s ease;
+}
+
+.bis-product-row-item:hover i {
+    color: #0056b3;
+    transform: translateX(2px);
+}
+
+/* Footer & Pagination Bar */
+.bis-table-footer-bar {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 0.65rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11.5px;
+    color: #64748b;
+}
+
+.bis-pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.bis-page-btn {
+    min-width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #475569;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    padding: 0 4px;
+}
+
+.bis-page-btn:hover:not(.disabled) {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.bis-page-btn.active {
+    background: #0056b3;
+    border-color: #0056b3;
+    color: #ffffff;
+}
+
+.bis-page-btn.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .bis-products-grid-container {
+        grid-template-columns: 1fr;
+    }
+    .bis-table-header-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .bis-search-box-wrap {
+        width: 100%;
+    }
+    .bis-table-footer-bar {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
