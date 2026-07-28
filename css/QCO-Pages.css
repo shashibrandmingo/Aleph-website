@@ -81,7 +81,7 @@
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 0.76rem;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.8px;
     margin-bottom: 24px;
 }
@@ -92,7 +92,7 @@
 
 .qco-title {
     font-size: 1.85rem;
-    font-weight: 800;
+    font-weight: 700;
     color: #0f172a;
     line-height: 1.25;
     letter-spacing: -0.5px;
@@ -187,7 +187,7 @@
 
 .qco-compliance-text h3 {
     font-size: 0.88rem;
-    font-weight: 800;
+    font-weight: 700;
     color: #1e3a8a;
     letter-spacing: 0.3px;
     margin-bottom: 4px;
@@ -247,7 +247,7 @@
 
 .qco-feature-item h4 {
     font-size: 0.76rem;
-    font-weight: 700;
+    font-weight: 600;
     color: #1e3a8a;
     margin-bottom: 6px;
     line-height: 1.35;
@@ -333,8 +333,8 @@
 }
 
 .qco-meta-value {
-    font-size: 1.05rem;
-    font-weight: 800;
+    font-size: 1rem;
+    font-weight: 600;
     color: #0f172a;
 }
 
@@ -373,7 +373,7 @@
 
 .qco-page-main-heading {
     font-size: 2.1rem;
-    font-weight: 800;
+    font-weight: 700;
     color: #233582;
     letter-spacing: -0.5px;
     margin-bottom: 6px;
@@ -438,7 +438,7 @@
 
 .qco-side-info-card h3 {
     font-size: 0.95rem;
-    font-weight: 800;
+    font-weight: 700;
     color: #0f172a;
     margin-bottom: 6px;
 }
@@ -461,7 +461,7 @@
 /* Sidebar Dates List */
 .qco-sidebar-card-title {
     font-size: 0.88rem;
-    font-weight: 800;
+    font-weight: 700;
     color: #1e3a8a;
     margin-bottom: 10px;
     border-bottom: 2px solid #f1f5f9;
@@ -515,7 +515,7 @@
     color: #ffffff;
     padding: 10px 14px;
     font-size: 0.8rem;
-    font-weight: 700;
+    font-weight: 600;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -629,7 +629,7 @@
     padding: 8px 12px;
     border-radius: 6px;
     font-size: 0.78rem;
-    font-weight: 700;
+    font-weight: 500;
     cursor: pointer;
     transition: background 0.2s ease;
     display: inline-flex;
@@ -693,7 +693,7 @@
     color: #ffffff;
     padding: 10px 18px;
     font-size: 0.88rem;
-    font-weight: 800;
+    font-weight: 600;
     letter-spacing: 0.5px;
     display: flex;
     align-items: center;
@@ -703,7 +703,7 @@
 .qco-block-section-title {
     padding: 12px 18px;
     font-size: 0.95rem;
-    font-weight: 800;
+    font-weight: 600;
     color: #1e3a8a;
     border-bottom: 1px solid #f1f5f9;
     display: flex;
@@ -956,7 +956,7 @@
 
 .qco-auth-details h2 {
     font-size: 1.15rem;
-    font-weight: 800;
+    font-weight: 600;
     color: #0f172a;
     margin-bottom: 6px;
 }
@@ -1002,7 +1002,7 @@
 
 .qco-date-grid-col h4 {
     font-size: 0.8rem;
-    font-weight: 700;
+    font-weight: 600;
     color: #1e293b;
     margin-bottom: 2px;
 }
@@ -1274,9 +1274,18 @@
         line-height: 1.45;
     }
 
+    /* Mobile Column Reset to prevent right side clipping */
+    .qco-left-col, .qco-right-col {
+        min-width: unset !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
     .qco-compliance-box {
         padding: 10px 12px;
         gap: 10px;
+        box-sizing: border-box;
+        width: 100%;
     }
 
     .qco-shield-icon {
@@ -1300,6 +1309,8 @@
     .qco-features-row {
         flex-direction: column;
         gap: 10px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .qco-feature-item {
@@ -1307,9 +1318,11 @@
         text-align: left;
         align-items: center;
         gap: 12px;
-        padding: 8px;
+        padding: 10px 12px;
         background: #f8fafc;
-        border-radius: 8px;
+        border-radius: 10px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .qco-feature-item:not(:last-child)::after {
@@ -1317,22 +1330,68 @@
     }
 
     .qco-icon-circle {
-        margin-bottom: 0;
-        width: 34px;
-        height: 34px;
-        font-size: 0.85rem;
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        min-height: 40px !important;
+        flex-shrink: 0 !important;
+        border-radius: 50% !important;
+        margin-bottom: 0 !important;
+        font-size: 0.95rem;
     }
 
-    /* Bottom Bar Mobile Layout */
+    /* Bottom Bar Mobile Layout - Keep items side-by-side */
     .qco-bottom-bar {
-        padding: 12px 16px;
-        flex-direction: column;
+        padding: 12px 14px;
+        flex-direction: row;
         align-items: center;
-        gap: 10px;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .qco-meta-item {
+        gap: 8px;
+    }
+
+    .qco-meta-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+
+    .qco-meta-label {
+        font-size: 0.65rem;
+    }
+
+    .qco-meta-value {
+        font-size: 0.82rem;
     }
 
     .qco-meta-divider {
-        display: none;
+        display: block;
+        height: 28px;
+        margin: 0 4px;
+    }
+
+    .qco-implementation-pills-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    /* Implementation Dates 2x2 Grid Layout on Mobile */
+    .qco-implementation-dates-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px 10px !important;
+        padding: 16px 12px !important;
+    }
+
+    .qco-date-grid-col {
+        padding: 6px 4px;
+    }
+
+    .qco-date-grid-divider {
+        display: none !important;
     }
 
     /* 2-Column Section Mobile Scaling */
@@ -1375,15 +1434,46 @@
         padding: 4px 10px 10px 36px;
     }
 
+    /* Concerned Authorities Mobile Layout Fix */
     .qco-authorities-block .qco-authority-card-content {
         flex-direction: column;
-        text-align: center;
-        padding: 14px;
+        text-align: left;
+        padding: 16px 14px;
         gap: 12px;
+        align-items: center;
+    }
+
+    .qco-auth-logo-circle {
+        margin: 0 auto 4px auto;
+        width: 52px;
+        height: 52px;
+        font-size: 1.3rem;
+    }
+
+    .qco-auth-details {
+        width: 100%;
+        text-align: left;
+    }
+
+    .qco-auth-details h2 {
+        font-size: 1.05rem;
+        text-align: center;
+        margin-bottom: 12px;
     }
 
     .qco-auth-row {
-        justify-content: center;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        font-size: 0.78rem;
+        gap: 10px;
+        margin-bottom: 6px;
+        padding-left: 4px;
+    }
+
+    .qco-auth-row i {
+        margin-top: 3px;
+        flex-shrink: 0;
     }
 
     /* PDF Viewer Modal Mobile Fix */
