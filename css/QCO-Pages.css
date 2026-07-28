@@ -1,0 +1,1407 @@
+/* ==========================================================================
+   QCO Pages Document Details Section Stylesheet
+   ========================================================================== */
+
+.qco-card-section {
+    padding: 1.5rem 0 2rem 0;
+    background: #f8fafc;
+}
+
+.qco-main-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+/* Top Right Blue Curved Wave Shape Accent — concave inner corner */
+.qco-card-top-accent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 130px;
+    background: #0537af;
+    z-index: 1;
+    /* Top-right corner matches the card border-radius */
+    border-top-right-radius: 24px;
+}
+
+/* White circle cutout at bottom-left of shape creates concave curve */
+.qco-card-top-accent::before {
+    content: '';
+    position: absolute;
+    bottom: -55px;
+    left: -55px;
+    width: 110px;
+    height: 110px;
+    background: #ffffff;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Dot grid — positioned to the right below the concave curve */
+.qco-card-top-accent::after {
+    content: '';
+    position: absolute;
+    bottom: -90px;
+    right: 4px;
+    width: 70px;
+    height: 90px;
+    background-image: radial-gradient(circle, #94a3b8 1.5px, transparent 1.5px);
+    background-size: 10px 10px;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.qco-card-body {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 44px 30px;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Left Column --- */
+.qco-left-col {
+    flex: 1.1;
+    min-width: 320px;
+}
+
+.qco-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #0537af;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    margin-bottom: 24px;
+}
+
+.qco-badge i {
+    font-size: 0.88rem;
+}
+
+.qco-title {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.qco-sub-spec {
+    font-size: 0.9rem;
+    color: #000000;
+    font-weight: 600;
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+.qco-ministry {
+    font-size: 0.9rem;
+    color: #000000;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.qco-title-divider {
+    width: 100%;
+    height: 1px;
+    background: #e2e8f0;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.qco-title-divider::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -1px;
+    width: 50px;
+    height: 3px;
+    background: #2563eb;
+    border-radius: 2px;
+}
+
+.qco-desc {
+    font-size: 0.88rem;
+    color: #000000;
+    font-weight: 500;
+    line-height: 1.65;
+    max-width: 520px;
+}
+
+/* --- Right Column --- */
+.qco-right-col {
+    flex: 1;
+    min-width: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Light Blue Compliance Banner Box */
+.qco-compliance-box {
+    background: #eff6ff;
+    border-radius: 18px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    border: 1px solid #dbeafe;
+}
+
+.qco-shield-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #0537af;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+    border: 1px solid #bfdbfe;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.qco-shield-img {
+    width: 35px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.qco-compliance-text h3 {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    letter-spacing: 0.3px;
+    margin-bottom: 4px;
+    line-height: 1.35;
+}
+
+.qco-compliance-text p {
+    font-size: 0.78rem;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* 4 Features Row */
+.qco-features-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    position: relative;
+}
+
+.qco-feature-item {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 0 4px;
+}
+
+/* Vertical Divider Lines */
+.qco-feature-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background: #e2e8f0;
+}
+
+.qco-icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #0537af;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.qco-feature-item h4 {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 6px;
+    line-height: 1.35;
+}
+
+.qco-feature-item p {
+    font-size: 0.7rem;
+    color: #64748b;
+    line-height: 1.35;
+    margin: 0;
+    
+}
+
+/* --- Bottom Bar: Date & Place --- */
+.qco-bottom-bar {
+    position: relative;
+    background: #ebf5fa;
+    padding: 20px 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    border-top: 1px solid #bae6fd;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* Bottom Left Dot Pattern in White Body Area just above bottom bar */
+.qco-card-body::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    width: 100px;
+    height: 40px;
+    background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
+    background-size: 10px 10px;
+    opacity: 0.90;
+    pointer-events: none;
+}
+
+/* Bottom Left Diagonal Light Blue Accent inside Bottom Bar */
+.qco-bottom-bar::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 180px;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(186, 230, 253, 0.6) 0%, rgba(186, 230, 253, 0.6) 45%, transparent 45.5%);
+    pointer-events: none;
+}
+
+.qco-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.qco-meta-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #0537af;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+}
+
+.qco-meta-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.qco-meta-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #2563eb;
+    letter-spacing: 1px;
+}
+
+.qco-meta-value {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.qco-meta-divider {
+    width: 1px;
+    height: 40px;
+    background: #93c5fd;
+    align-self: center;
+    flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+}
+
+/* ==========================================================================
+   Full Page 2-Column Layout (Sidebar ~28% | Main Content ~72%)
+   ========================================================================== */
+
+.qco-page-layout-section {
+    padding: 1.5rem 0 4rem 0;
+    background: #f1f5f9;
+}
+
+.qco-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Page Main Heading */
+.qco-header-header-wrap {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.qco-page-main-heading {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #233582;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+}
+
+.qco-page-sub-heading {
+    font-size: 1rem;
+    color: #000000;
+    font-weight: 600;
+}
+
+/* Grid Container Ratio: 22% Sidebar | 78% Main */
+.qco-grid-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* LEFT SIDEBAR (~25%) */
+.qco-sidebar-col {
+    flex: 0 0 22%;
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.qco-sidebar-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* Sidebar Info Card */
+.qco-side-info-card {
+    text-align: center;
+    padding: 18px 14px;
+}
+
+.qco-side-icon-box {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 12px;
+    background: #eff6ff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #bfdbfe;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.qco-doc-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.qco-side-info-card h3 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.qco-side-info-card p {
+    font-size: 0.78rem;
+    color: #000000;
+    line-height: 1.35;
+    font-weight: 500;
+}
+
+.qco-card-bottom-line {
+    width: 32px;
+    height: 3px;
+    background: #0537af;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Sidebar Dates List */
+.qco-sidebar-card-title {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 6px;
+}
+
+.qco-sidebar-dates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.qco-side-date-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qco-side-date-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: #eff6ff;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.88rem;
+    flex-shrink: 0;
+}
+
+.qco-side-date-item strong {
+    display: block;
+    font-size: 0.76rem;
+    color: #1e293b;
+}
+
+.qco-side-date-item span {
+    font-size: 0.72rem;
+    color: #64748b;
+}
+
+/* Official Gazette PDF Card */
+.qco-official-pdf-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.qco-pdf-header-bar {
+    background: #0537af;
+    color: #ffffff;
+    padding: 10px 14px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qco-pdf-preview-wrap {
+    padding: 12px;
+    text-align: center;
+}
+
+.qco-gazette-paper {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 10px;
+    overflow: hidden;
+    height: 260px;
+    position: relative;
+}
+
+.qco-pdf-thumb-iframe {
+    width: calc(100% + 22px);
+    height: 100%;
+    border: none;
+    pointer-events: none;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.qco-gazette-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.5rem;
+    color: #475569;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 2px;
+}
+
+.qco-gazette-emblem {
+    font-size: 1.4rem;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.qco-gazette-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 6px;
+    line-height: 1.15;
+}
+
+.qco-gazette-title small {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #334155;
+}
+
+.qco-gazette-meta p {
+    font-size: 0.52rem;
+    color: #475569;
+    margin: 1px 0;
+    font-weight: 600;
+}
+
+.qco-pdf-meta-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 6px 8px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.qco-pdf-file-icon {
+    font-size: 1.2rem;
+    color: #ef4444;
+}
+
+.qco-pdf-file-info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.qco-pdf-filename {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #1e293b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.qco-pdf-size {
+    font-size: 0.62rem;
+    color: #64748b;
+}
+
+.btn-qco-view-pdf {
+    width: 100%;
+    background: #0537af;
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.btn-qco-view-pdf:hover {
+    background: #1e40af;
+}
+
+/* Download CTA Card */
+.qco-download-card {
+    text-align: center;
+}
+
+.btn-qco-download {
+    width: 100%;
+    background: #f8fafc;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 4px;
+    transition: all 0.2s ease;
+}
+
+.btn-qco-download:hover {
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+.qco-download-card p {
+    font-size: 0.68rem;
+    color: #64748b;
+    margin: 0;
+}
+
+/* RIGHT MAIN CONTENT (~72%) */
+.qco-main-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.qco-main-block {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+}
+
+.qco-block-header-blue {
+    background: #0537af;
+    color: #ffffff;
+    padding: 10px 18px;
+    font-size: 0.88rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qco-block-section-title {
+    padding: 12px 18px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qco-block-body {
+    padding: 16px 18px;
+}
+
+/* Info Alert */
+.qco-info-alert {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.qco-info-icon {
+    color: #2563eb;
+    font-size: 1.1rem;
+    margin-top: 1px;
+}
+
+.qco-info-alert p {
+    margin: 0;
+    font-size: 0.82rem;
+    color: #1e40af;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.qco-overview-text p {
+    font-size: 0.84rem;
+    color: #334155;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Implementation Horizontal Pills */
+.qco-implementation-pills-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.qco-impl-pill {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.qco-impl-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #dbeafe;
+    color: #0537af;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.qco-impl-details strong {
+    display: block;
+    font-size: 0.82rem;
+    color: #1e293b;
+}
+
+.qco-impl-details span {
+    font-size: 0.78rem;
+    color: #64748b;
+}
+
+/* Orders Table */
+.qco-table-responsive {
+    overflow-x: auto;
+}
+
+.qco-orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.qco-orders-table th {
+    background: #f8fafc;
+    color: #475569;
+    font-size: 0.74rem;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.qco-orders-table td {
+    padding: 10px 18px;
+    font-size: 0.8rem;
+    color: #334155;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.qco-orders-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.btn-table-view {
+    background: #0537af;
+    color: #ffffff;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: background 0.2s ease;
+}
+
+.btn-table-view:hover {
+    background: #1e40af;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Provisions List Accordion */
+.qco-provisions-list {
+    padding: 10px 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.qco-provision-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.25s ease;
+}
+
+.qco-provision-item.active {
+    background: #ffffff;
+    border-color: #bfdbfe;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+}
+
+.qco-prov-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.qco-prov-number {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #0537af;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.qco-prov-text {
+    flex: 1;
+    font-size: 0.8rem;
+    color: #334155;
+    line-height: 1.35;
+    font-weight: 600;
+}
+
+.qco-prov-arrow {
+    color: #94a3b8;
+    font-size: 0.78rem;
+    transition: transform 0.25s ease;
+}
+
+.qco-provision-item.active .qco-prov-arrow {
+    transform: rotate(180deg);
+    color: #2563eb;
+}
+
+.qco-prov-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 14px 0 48px;
+}
+
+.qco-provision-item.active .qco-prov-body {
+    max-height: 300px;
+    padding: 4px 14px 12px 48px;
+}
+
+.qco-prov-body ul {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 0.78rem;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.qco-prov-body li {
+    margin-bottom: 4px;
+}
+
+/* Concerned Authorities Card */
+.qco-authorities-block .qco-authority-card-content {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.qco-auth-logo-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #eff6ff;
+    color: #0537af;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    border: 2px solid #bfdbfe;
+}
+
+.qco-auth-details h2 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.qco-auth-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: #475569;
+    margin-bottom: 4px;
+}
+
+.qco-auth-row i {
+    color: #2563eb;
+    width: 14px;
+}
+
+/* Implementation Dates Bottom Grid */
+.qco-implementation-dates-grid {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+}
+
+.qco-date-grid-col {
+    flex: 1;
+    text-align: center;
+}
+
+.qco-date-circle-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #eff6ff;
+    color: #2563eb;
+    margin: 0 auto 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.qco-date-grid-col h4 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 2px;
+}
+
+.qco-date-grid-col p {
+    font-size: 0.76rem;
+    color: #64748b;
+    margin: 0;
+}
+
+.qco-date-grid-divider {
+    width: 1px;
+    height: 32px;
+    background: #e2e8f0;
+}
+
+/* Contact Links Card */
+.qco-contact-links-card {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    padding: 6px 18px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.qco-contact-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.82rem;
+    color: #334155;
+    padding: 10px 0;
+}
+
+.qco-contact-row:not(:last-child) {
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.qco-c-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #0537af;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+}
+
+.qco-contact-row a {
+    color: #2563eb;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/* Disclaimer Box */
+.qco-disclaimer-box {
+    background: #fffbeb;
+    border: 1px solid #fef3c7;
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.78rem;
+    color: #92400e;
+    line-height: 1.4;
+}
+
+.qco-disc-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #fde68a;
+    color: #d97706;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.qco-page-copyright {
+    text-align: right;
+    font-size: 0.78rem;
+    color: #64748b;
+    margin-top: 10px;
+}
+
+/* PDF Modal Overlay */
+.qco-pdf-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.75);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+}
+
+.qco-pdf-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.qco-pdf-modal-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 860px;
+    height: 90vh;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.qco-pdf-modal-header {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.qco-pdf-modal-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qco-pdf-modal-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-modal-action {
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-modal-close {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.btn-modal-close:hover {
+    color: #ffffff;
+}
+
+.qco-pdf-modal-body {
+    flex: 1;
+    background: #334155;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.qco-pdf-render-frame {
+    width: 100%;
+    max-width: 680px;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    padding: 40px;
+    color: #0f172a;
+}
+
+.qco-sheet-header h4 {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.qco-sheet-header p {
+    font-size: 0.72rem;
+    text-align: center;
+    color: #64748b;
+}
+
+.qco-sheet-content h3, .qco-sheet-content h4, .qco-sheet-content h5 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+.qco-sheet-content p {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+/* Responsive Rules for Grid Layout */
+@media (max-width: 992px) {
+    .qco-grid-container {
+        flex-direction: column;
+    }
+    .qco-sidebar-col {
+        width: 100%;
+        flex: 1 1 100%;
+        min-width: unset;
+    }
+    .qco-implementation-pills-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .qco-implementation-dates-grid {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .qco-date-grid-divider {
+        display: none;
+    }
+}
+
+/* Mobile Devices Optimization (@media max-width: 768px) */
+@media (max-width: 768px) {
+    .qco-container {
+        padding: 0 12px;
+    }
+    
+    .qco-card-section, .qco-page-layout-section {
+        padding: 1rem 0 2rem 0;
+    }
+
+    /* Top Hero Card Mobile Adjustments */
+    .qco-card-body {
+        padding: 20px 16px 14px;
+        gap: 20px;
+    }
+
+    .qco-title {
+        font-size: 1.35rem;
+        line-height: 1.25;
+    }
+
+    .qco-sub-spec, .qco-ministry {
+        font-size: 0.8rem;
+    }
+
+    .qco-desc {
+        font-size: 0.82rem;
+        line-height: 1.45;
+    }
+
+    .qco-compliance-box {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .qco-shield-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .qco-shield-img {
+        width: 24px;
+    }
+
+    .qco-compliance-text h3 {
+        font-size: 0.76rem;
+    }
+
+    .qco-compliance-text p {
+        font-size: 0.7rem;
+    }
+
+    /* Feature Grid Mobile Stacking */
+    .qco-features-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .qco-feature-item {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+        gap: 12px;
+        padding: 8px;
+        background: #f8fafc;
+        border-radius: 8px;
+    }
+
+    .qco-feature-item:not(:last-child)::after {
+        display: none;
+    }
+
+    .qco-icon-circle {
+        margin-bottom: 0;
+        width: 34px;
+        height: 34px;
+        font-size: 0.85rem;
+    }
+
+    /* Bottom Bar Mobile Layout */
+    .qco-bottom-bar {
+        padding: 12px 16px;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .qco-meta-divider {
+        display: none;
+    }
+
+    /* 2-Column Section Mobile Scaling */
+    .qco-page-main-heading {
+        font-size: 1.4rem;
+    }
+
+    .qco-page-sub-heading {
+        font-size: 0.85rem;
+    }
+
+    .qco-block-body {
+        padding: 12px;
+    }
+
+    .qco-orders-table th, .qco-orders-table td {
+        padding: 8px 10px;
+        font-size: 0.76rem;
+    }
+
+    .btn-table-view {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+
+    .qco-prov-header {
+        padding: 8px 10px;
+        gap: 8px;
+    }
+
+    .qco-prov-text {
+        font-size: 0.76rem;
+    }
+
+    .qco-prov-body {
+        padding: 0 10px 0 36px;
+    }
+
+    .qco-provision-item.active .qco-prov-body {
+        padding: 4px 10px 10px 36px;
+    }
+
+    .qco-authorities-block .qco-authority-card-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .qco-auth-row {
+        justify-content: center;
+    }
+
+    /* PDF Viewer Modal Mobile Fix */
+    .qco-pdf-modal-container {
+        height: 95vh;
+        border-radius: 10px;
+    }
+
+    .qco-pdf-modal-header {
+        padding: 10px 14px;
+    }
+
+    .qco-pdf-modal-title {
+        font-size: 0.82rem;
+    }
+
+    .qco-pdf-modal-body {
+        padding: 8px;
+    }
+}
+
