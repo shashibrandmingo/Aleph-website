@@ -22,7 +22,7 @@
   background-repeat: no-repeat;
   background-position: 100% center; /* Shift map slightly to match mockup bleeding behind text */
   background-size: 70% auto; /* Generous size to allow bleeding */
-  padding-bottom: 30px;
+  padding: 2.5rem 0 1.5rem 0;
   width: 100%;
   overflow: hidden;
 }
@@ -53,8 +53,8 @@
 
 .global-title {
   font-family: var(--global-font-primary);
-  font-size: 2.8rem; /* Tighter font size */
-  font-weight: 800;
+  font-size: 2.6rem; /* Tighter font size */
+  font-weight: 700;
   color: var(--global-primary);
   line-height: 1.25;
   margin: 0.4rem 0;
@@ -142,16 +142,16 @@
 
 .global-stats-card {
   background-color: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 15px 45px rgba(0, 46, 132, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 46, 132, 0.05);
   border: 1px solid #e2e8f0; /* Soft gray border to match mockup */
-  padding: 0.9rem 1rem; /* Reduced height by shrinking vertical padding */
+  padding: 1rem 0.6rem; /* Extra compact padding */
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
   align-items: center;
-  margin-top: 4.5rem;
-  width: 60%; /* Compact card only on the right side of the container */
-  margin-left: auto; /* Push it to align with the right side */
+  margin-top: -2.2rem; /* Shifted upwards over map background */
+  width: 56%; /* Floating card under the map area on the right */
+  margin-left: auto; /* Aligned to right side */
   position: relative;
   z-index: 5;
 }
@@ -160,9 +160,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 0.5rem; /* Tighter padding for compact layout */
+  padding: 0 0.3rem; /* Tighter padding for compact layout */
   border-right: 1px solid #e2e8f0; /* Clean vertical line separator */
-  gap: 0.7rem; /* Space between circle and text */
+  gap: 0.5rem; /* Space between circle and text */
 }
 
 .global-stat-col:last-child {
@@ -170,17 +170,17 @@
 }
 
 .global-stat-icon-wrapper {
-  width: 38px; /* Shrunk wrapper circle size */
-  height: 38px; /* Shrunk wrapper circle size */
+  width: 32px; /* Shrunk wrapper circle size */
+  height: 32px; /* Shrunk wrapper circle size */
   border-radius: 50%;
   background-color: var(--global-text-dark); /* Solid dark navy circle background */
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem; /* Smaller icon size */
+  font-size: 0.8rem; /* Smaller icon size */
   flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(10, 37, 64, 0.1);
+  box-shadow: 0 3px 8px rgba(10, 37, 64, 0.1);
 }
 
 .global-stat-info {
@@ -190,7 +190,7 @@
 
 .global-stat-number {
   font-family: var(--global-font-primary);
-  font-size: 1.35rem; /* Reduced font size */
+  font-size: 1.12rem; /* Reduced font size */
   font-weight: 700;
   color: var(--global-primary);
   line-height: 1.1;
@@ -198,11 +198,11 @@
 
 .global-stat-label {
   font-family: var(--global-font-secondary);
-  font-size: 0.72rem; /* Reduced font size */
+  font-size: 0.66rem; /* Reduced font size */
   font-weight: 600;
   color: #475569; /* Slate grey label text */
-  line-height: 1.25;
-  margin-top: 2px;
+  line-height: 1.2;
+  margin-top: 1px;
 }
 
 /* ==========================================================================
@@ -227,7 +227,7 @@
   .about-global-section {
     background-size: 70% auto;
     background-position: center bottom;
-    padding: 5rem 0;
+    padding: 2.5rem 0;
   }
 
   .global-layout {
@@ -243,9 +243,9 @@
     width: 100%; /* Stretch to full width on tablet vertical stack */
     margin-left: 0;
     grid-template-columns: repeat(2, 1fr); /* 2x2 grid on tablet */
-    gap: 2.5rem 0;
-    margin-top: 4rem;
-    padding: 1.8rem 1.5rem;
+    gap: 1.5rem 0;
+    margin-top: 1.5rem;
+    padding: 1.2rem 1rem;
   }
 
   .global-stat-col {

@@ -432,12 +432,33 @@
   border-radius: 20px;
   padding: 1.2rem 2.5rem;
   box-shadow: 0 10px 25px rgba(37, 99, 235, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.media-cta-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  background-image: url('../image/payment-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right center;
+  pointer-events: none;
+  opacity: 0.50;
+  filter: brightness(0) saturate(100%) invert(15%) sepia(100%) saturate(2500%) hue-rotate(210deg) brightness(85%);
+  z-index: 1;
 }
 
 .media-cta-left {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .media-cta-icon-circle {
@@ -480,9 +501,12 @@
   font-weight: 700;
   text-decoration: none;
   padding: 0.75rem 1.5rem;
-  border-radius: 30px;
+  border-radius: 10px;
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
   transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  z-index: 2;
+  margin-right: 65px;
 }
 
 .media-cta-btn:hover {

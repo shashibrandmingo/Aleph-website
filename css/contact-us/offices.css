@@ -345,8 +345,8 @@ a.off-detail-link:hover {
   display: flex;
   align-items: center;
   gap: 24px;
-  background: #ffffff;
-  border: 1px solid var(--off-border);
+  background: #f5faff;
+  border: 1px solid #e2eefa;
   border-radius: 12px;
   padding: 24px 32px;
   max-width: 950px;
@@ -364,7 +364,7 @@ a.off-detail-link:hover {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: var(--off-blue-softer);
+  background: #e2eefa;
   color: var(--off-blue);
   z-index: 1;
 }
@@ -402,26 +402,14 @@ a.off-detail-link:hover {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 240px;
-  background-image: radial-gradient(
-    circle,
-    rgba(0, 49, 152, 0.28) 1.1px,
-    transparent 1.1px
-  );
-  background-size: 8px 8px;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(0, 0, 0, 0.5) 30%,
-    rgba(0, 0, 0, 0.9) 100%
-  );
-  mask-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(0, 0, 0, 0.5) 30%,
-    rgba(0, 0, 0, 0.9) 100%
-  );
+  width: 200px;
+  background-image: url('../../image/payment-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right center;
   pointer-events: none;
+  opacity: 0.60;
+  filter: brightness(0) saturate(100%) invert(15%) sepia(100%) saturate(2500%) hue-rotate(210deg) brightness(85%);
 }
 
 @keyframes offFadeUp {

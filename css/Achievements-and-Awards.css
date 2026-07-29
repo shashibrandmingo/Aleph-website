@@ -194,7 +194,7 @@ body {
 
 .award-milestone-header {
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .milestone-title-wrap {
@@ -207,7 +207,7 @@ body {
 
 .milestone-title {
   font-family: var(--font-primary), sans-serif;
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   font-weight: 700;
   color: #0f172a;
   margin: 0;
@@ -247,7 +247,7 @@ body {
   background: #ffffff;
   border: 1px solid rgba(0, 46, 132, 0.06);
   border-radius: 16px;
-  padding: 2.25rem 1rem;
+  padding: 1rem 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -452,24 +452,92 @@ body {
    CERTIFICATES GALLERY & SHELVES SECTION
    ========================================================================== */
 
+/* ==========================================================================
+   CERTIFICATES GALLERY & SHELVES SECTION
+   ========================================================================== */
+
 .award-certificates-section {
   margin-top: 1rem;
   width: 100%;
+  position: relative;
+  background: linear-gradient(180deg, #f3f7fd 0%, #ffffff 100%);
+  padding: 0rem 1.5rem 4rem 1.5rem;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* Background Decors */
+.cert-decor-wavy {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 240px;
+  height: 240px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cert-decor-dots {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 100px;
+  height: 120px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Header Eyebrow with Flanking Lines */
+.cert-eyebrow-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 2;
+}
+
+.cert-eyebrow-text {
+  font-family: var(--font-primary), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #2563eb;
+  text-transform: uppercase;
+}
+
+.cert-eyebrow-line {
+  width: 32px;
+  height: 2px;
+  background-color: #2563eb;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.cert-header-underline {
+  width: 48px;
+  height: 3px;
+  background-color: #2563eb;
+  border-radius: 2px;
+  margin: 1rem auto 1.5rem auto;
 }
 
 .award-tabs-link {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .award-tabs-link .tab-link-item {
   font-family: var(--font-primary), sans-serif;
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--award-accent);
+  color: #2563eb;
   text-decoration: none;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--award-accent);
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #2563eb;
   transition: opacity 0.2s ease;
 }
 
@@ -477,25 +545,26 @@ body {
   opacity: 0.85;
 }
 
-/* Shelves Container */
+/* Shelves Container & Grid */
 .award-shelves-container {
   display: flex;
   flex-direction: column;
-  gap: 4.5rem;
+  gap: 2.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .award-shelf-row {
   position: relative;
-  padding-bottom: 12px;
 }
 
 .award-shelf-cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 2rem;
+  gap: 2.2rem 1.8rem;
   position: relative;
   z-index: 2;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
 }
 
 /* Row 4 centering with 4 cards */
@@ -505,15 +574,25 @@ body {
   margin: 0 auto;
 }
 
+/* Individual Certificate Item Unit */
+.cert-item-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
 .award-cert-card {
   background: #ffffff;
-  border: 2px solid #d4af37; /* Elegant gold outer border frame */
-  border-radius: 8px;
-  padding: 6px; /* White margins inside the gold frame */
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  border: 2px solid #d4af37; /* Gold border frame */
+  border-radius: 6px;
+  padding: 5px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
   cursor: pointer;
   aspect-ratio: 1/1;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -523,36 +602,40 @@ body {
 }
 
 .award-cert-card:hover {
-  transform: translateY(-12px) scale(1.04);
-  box-shadow:
-    0 24px 40px rgba(0, 0, 0, 0.14),
-    0 0 0 2px rgba(212, 175, 55, 0.5); /* gold glow on hover */
-  z-index: 10;
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.14), 0 0 0 2px rgba(212, 175, 55, 0.5);
+  z-index: 5;
 }
 
 .award-cert-card .cert-img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Fit certificate inside the gold border without cropping */
-  border-radius: 4px;
+  object-fit: contain;
+  border-radius: 3px;
   background-color: #ffffff;
-  transition: transform 0.3s ease;
 }
 
-/* Shelf Board Effect */
-.award-shelf-board {
-  height: 18px;
-  background: #ffffff;
-  border-radius: 0 0 6px 6px;
-  border: 1px solid #e2e8f0;
-  border-top: none;
-  margin-top: -2px;
+/* Base Stand Image underneath each card */
+.cert-base-stand {
+  width: 105%;
+  margin-top: -6px;
   position: relative;
-  z-index: 3;
-  box-shadow:
-    0 5px 0 0 #eaecef,
-    0 9px 0 0 #dde0e4,
-    0 14px 18px rgba(0, 0, 0, 0.12);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cert-base-stand img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  margin-top: 5px;
+}
+
+.award-shelf-board {
+  display: none;
 }
 
 /* Features Info Bar */
@@ -734,18 +817,18 @@ body {
 
 /* Main Section padding override */
 .section-padding {
-  padding: 3rem 0;
+  padding: 1rem 0;
 }
 
 /* Margins for the certificate section header */
 .cert-section-header {
-  margin-top: 4rem;
-  margin-bottom: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Gap between rows of shelves */
 .award-shelves-container {
-  gap: 3.5rem;
+  gap: 1.5rem;
 }
 
 @media (max-width: 768px) {

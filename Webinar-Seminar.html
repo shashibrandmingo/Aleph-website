@@ -159,6 +159,21 @@
           <a href="Feedback-Concerns.html" class="dropdown-item">Feedback & Concerns</a>
         </div>
       </div>
+    
+
+      <!-- 7. Login -->
+      <div class="nav-item has-dropdown" data-page="login">
+        <a href="#" class="nav-link">
+          Login
+          <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="dropdown-menu">
+          <a href="CRM-Client-Login.html?tab=crm" class="dropdown-item">CRM Login</a>
+          <a href="CRM-Client-Login.html?tab=client" class="dropdown-item">Client Login</a>
+          <a href="Payment-Page.html" class="dropdown-item">Payment</a>
+          <a href="Vendor.html" class="dropdown-item">Vendor Registration Form</a>
+        </div>
+      </div>
     </nav>
 
     <!-- Header Actions -->
@@ -270,6 +285,21 @@
         <a href="Feedback-Concerns.html" class="mobile-submenu-item">Feedback & Concerns</a>
       </div>
     </div>
+  
+
+    <!-- 7. Login -->
+    <div class="mobile-nav-item">
+      <div class="mobile-nav-link" data-mobile-page="login">
+        <span>Login</span>
+        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="mobile-submenu">
+        <a href="CRM-Client-Login.html?tab=crm" class="mobile-submenu-item">CRM Login</a>
+        <a href="CRM-Client-Login.html?tab=client" class="mobile-submenu-item">Client Login</a>
+        <a href="Payment-Page.html" class="mobile-submenu-item">Payment</a>
+        <a href="Vendor.html" class="mobile-submenu-item">Vendor Registration Form</a>
+      </div>
+    </div>
   </nav>
 
   <div class="mobile-drawer-footer">
@@ -352,23 +382,72 @@
                 <div class="webinar-status-row">
                     <!-- Status Card 1: Event Status -->
                     <div class="webinar-status-card">
+                        <!-- Outer Left Dots Decor -->
+                        <svg class="dots-decor-left" width="28" height="52" viewBox="0 0 28 52" fill="none">
+                            <circle cx="4" cy="4" r="2" fill="#cbe0fc"/>
+                            <circle cx="14" cy="4" r="2" fill="#cbe0fc"/>
+                            <circle cx="24" cy="4" r="2" fill="#cbe0fc"/>
+                            <circle cx="4" cy="15" r="2" fill="#cbe0fc"/>
+                            <circle cx="14" cy="15" r="2" fill="#cbe0fc"/>
+                            <circle cx="24" cy="15" r="2" fill="#cbe0fc"/>
+                            <circle cx="4" cy="26" r="2" fill="#cbe0fc"/>
+                            <circle cx="14" cy="26" r="2" fill="#cbe0fc"/>
+                            <circle cx="24" cy="26" r="2" fill="#cbe0fc"/>
+                            <circle cx="4" cy="37" r="2" fill="#cbe0fc"/>
+                            <circle cx="14" cy="37" r="2" fill="#cbe0fc"/>
+                            <circle cx="24" cy="37" r="2" fill="#cbe0fc"/>
+                            <circle cx="4" cy="48" r="2" fill="#cbe0fc"/>
+                            <circle cx="14" cy="48" r="2" fill="#cbe0fc"/>
+                            <circle cx="24" cy="48" r="2" fill="#cbe0fc"/>
+                        </svg>
+
                         <div class="status-icon-badge">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                                 <line x1="16" y1="2" x2="16" y2="6"></line>
                                 <line x1="8" y1="2" x2="8" y2="6"></line>
                                 <line x1="3" y1="10" x2="21" y2="10"></line>
-                                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/>
+                                <circle cx="7.5" cy="13.5" r="1" fill="#2563eb"/>
+                                <circle cx="12" cy="13.5" r="1" fill="#2563eb"/>
+                                <circle cx="16.5" cy="13.5" r="1" fill="#2563eb"/>
+                                <circle cx="7.5" cy="17.5" r="1" fill="#2563eb"/>
+                                <circle cx="12" cy="17.5" r="1" fill="#2563eb"/>
+                                <circle cx="16.5" cy="17.5" r="1" fill="#2563eb"/>
                             </svg>
                         </div>
+                        
+                        <!-- Inner Icon Dots Decor -->
+                        <svg class="dots-decor-icon" width="16" height="24" viewBox="0 0 16 24" fill="none">
+                            <circle cx="3" cy="3" r="1.8" fill="#d0e2ff"/>
+                            <circle cx="13" cy="3" r="1.8" fill="#d0e2ff"/>
+                            <circle cx="3" cy="12" r="1.8" fill="#d0e2ff"/>
+                            <circle cx="13" cy="12" r="1.8" fill="#d0e2ff"/>
+                            <circle cx="3" cy="21" r="1.8" fill="#d0e2ff"/>
+                            <circle cx="13" cy="21" r="1.8" fill="#d0e2ff"/>
+                        </svg>
+
                         <span class="status-title">Event has started!</span>
                     </div>
 
                     <!-- Status Card 2: Date & Time -->
                     <div class="webinar-date-card">
-                        <span class="new-pill-tag">NEW</span>
+                        <div class="new-pill-wrapper">
+                            <span class="pill-line"></span>
+                            <span class="new-pill-tag">NEW</span>
+                            <span class="pill-line"></span>
+                        </div>
                         <h3 class="webinar-event-date">January 1, 1970</h3>
                         <p class="webinar-event-time">05:30 AM – 05:30 AM IST</p>
+
+                        <!-- Corner Dots Decor inside Card 2 -->
+                        <svg class="dots-decor-card" width="18" height="26" viewBox="0 0 18 26" fill="none">
+                            <circle cx="4" cy="4" r="1.8" fill="#d0e2ff"/>
+                            <circle cx="14" cy="4" r="1.8" fill="#d0e2ff"/>
+                            <circle cx="4" cy="13" r="1.8" fill="#d0e2ff"/>
+                            <circle cx="14" cy="13" r="1.8" fill="#d0e2ff"/>
+                            <circle cx="4" cy="22" r="1.8" fill="#d0e2ff"/>
+                            <circle cx="14" cy="22" r="1.8" fill="#d0e2ff"/>
+                        </svg>
                     </div>
 
                     <!-- Status Card 3: Register Button -->
@@ -403,7 +482,29 @@
                     <div class="registration-2col-layout">
                         <!-- Left Image Column -->
                         <div class="registration-image-side">
-                            <img src="image/blog-listing/blog-1.png" alt="Webinar Event Cover">
+                            <!-- Top Left Dots Decor -->
+                            <svg class="dots-decor-form-image" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                <circle cx="4" cy="4" r="1.8" fill="#cbe0fc"/>
+                                <circle cx="14" cy="4" r="1.8" fill="#cbe0fc"/>
+                                <circle cx="24" cy="4" r="1.8" fill="#cbe0fc"/>
+                                <circle cx="34" cy="4" r="1.8" fill="#cbe0fc"/>
+
+                                <circle cx="4" cy="14" r="1.8" fill="#cbe0fc"/>
+                                <circle cx="14" cy="14" r="1.8" fill="#cbe0fc"/>
+                                <circle cx="24" cy="14" r="1.8" fill="#cbe0fc"/>
+                                <circle cx="34" cy="14" r="1.8" fill="#cbe0fc"/>
+
+                                <circle cx="4" cy="24" r="1.8" fill="#cbe0fc"/>
+                                <circle cx="14" cy="24" r="1.8" fill="#cbe0fc"/>
+                                <circle cx="24" cy="24" r="1.8" fill="#cbe0fc"/>
+                                <circle cx="34" cy="24" r="1.8" fill="#cbe0fc"/>
+
+                                <circle cx="4" cy="34" r="1.8" fill="#cbe0fc"/>
+                                <circle cx="14" cy="34" r="1.8" fill="#cbe0fc"/>
+                                <circle cx="24" cy="34" r="1.8" fill="#cbe0fc"/>
+                                <circle cx="34" cy="34" r="1.8" fill="#cbe0fc"/>
+                            </svg>
+                            <img src="image/webinar-image/railway-image.png" alt="Webinar Event Cover">
                         </div>
 
                         <!-- Right Form Column -->
@@ -450,7 +551,7 @@
                                 <!-- Company Name/Designation -->
                                 <div class="form-group-wrap full-width">
                                     <div class="input-icon-box">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="6" x2="9.01" y2="6"></line><line x1="15" y1="6" x2="15.01" y2="6"></line><line x1="9" y1="10" x2="9.01" y2="10"></line><line x1="15" y1="10" x2="15.01" y2="10"></line><line x1="9" y1="14" x2="9.01" y2="14"></line><line x1="15" y1="14" x2="15.01" y2="14"></line></svg>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18M6 12h12M6 7h12M6 17h12"></path></svg>
                                     </div>
                                     <input type="text" class="form-control-input" placeholder="Company Name/Designation" required>
                                 </div>
@@ -723,7 +824,10 @@
                             <p>Partner with us to educate and empower exporters worldwide.</p>
                         </div>
                     </div>
-                    <a href="Contact-US.html" class="btn-collaborate-host">Collaborate With Us →</a>
+                    <div class="host-right-action">
+                        <a href="Contact-US.html" class="btn-collaborate-host">Collaborate With Us →</a>
+                    </div>
+                    <img src="image/webinar-image/collab-image.png" alt="Collaborate Decor" class="host-bg-decor-img">
                 </div>
 
             </div>

@@ -5,10 +5,25 @@
 document.addEventListener("DOMContentLoaded", function () {
   /* 1. Region Toggle (Domestic / International) */
   const regionBtns = document.querySelectorAll(".region-btn");
+  const methodTabsContainer = document.querySelector(".pg-method-tabs");
+  const upiPanel = document.getElementById("panel-upi");
+  const intlNoticeBox = document.getElementById("internationalNoticeBox");
+
   regionBtns.forEach((btn) => {
     btn.addEventListener("click", function () {
       regionBtns.forEach((b) => b.classList.remove("active"));
       this.classList.add("active");
+
+      const region = this.getAttribute("data-region");
+      if (region === "international") {
+        if (methodTabsContainer) methodTabsContainer.style.display = "none";
+        if (upiPanel) upiPanel.style.display = "none";
+        if (intlNoticeBox) intlNoticeBox.style.display = "block";
+      } else {
+        if (methodTabsContainer) methodTabsContainer.style.display = "";
+        if (upiPanel) upiPanel.style.display = "";
+        if (intlNoticeBox) intlNoticeBox.style.display = "none";
+      }
     });
   });
 
@@ -18,15 +33,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   methodTabs.forEach((tab) => {
     tab.addEventListener("click", function () {
-      const targetMethod = this.getAttribute("data-method");
-
       methodTabs.forEach((t) => t.classList.remove("active"));
       this.classList.add("active");
 
+      // Always show UPI panel content for all tabs
       methodPanels.forEach((panel) => {
-        panel.classList.remove("active");
-        if (panel.id === `panel-${targetMethod}`) {
+        if (panel.id === "panel-upi") {
           panel.classList.add("active");
+        } else {
+          panel.classList.remove("active");
         }
       });
     });

@@ -230,7 +230,22 @@
                 >
               </div>
             </div>
-          </nav>
+          
+
+      <!-- 7. Login -->
+      <div class="nav-item has-dropdown" data-page="login">
+        <a href="#" class="nav-link">
+          Login
+          <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="dropdown-menu">
+          <a href="CRM-Client-Login.html?tab=crm" class="dropdown-item">CRM Login</a>
+          <a href="CRM-Client-Login.html?tab=client" class="dropdown-item">Client Login</a>
+          <a href="Payment-Page.html" class="dropdown-item">Payment</a>
+          <a href="Vendor.html" class="dropdown-item">Vendor Registration Form</a>
+        </div>
+      </div>
+    </nav>
 
           <!-- Header Actions -->
           <div class="header-actions">
@@ -395,7 +410,22 @@
                 >
               </div>
             </div>
-          </nav>
+          
+
+    <!-- 7. Login -->
+    <div class="mobile-nav-item">
+      <div class="mobile-nav-link" data-mobile-page="login">
+        <span>Login</span>
+        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="mobile-submenu">
+        <a href="CRM-Client-Login.html?tab=crm" class="mobile-submenu-item">CRM Login</a>
+        <a href="CRM-Client-Login.html?tab=client" class="mobile-submenu-item">Client Login</a>
+        <a href="Payment-Page.html" class="mobile-submenu-item">Payment</a>
+        <a href="Vendor.html" class="mobile-submenu-item">Vendor Registration Form</a>
+      </div>
+    </div>
+  </nav>
 
           <div class="mobile-drawer-footer">
             <a href="Contact-US.html?quote=true" class="quote-btn">
@@ -509,44 +539,46 @@
 
     <!-- QCO Hero Section -->
     <section class="qco-hero">
-      <div class="qco-hero__banner">
-        <img
-          class="qco-hero__bg"
-          src="image/QCO-WTO-Order/QCO-WTO-Order.png"
-          alt=""
-          aria-hidden="true"
-        />
+      <div class="container">
+        <div class="qco-hero__banner">
+          <img
+            class="qco-hero__bg"
+            src="image/QCO-WTO-Order/QCO-WTO-Order.png"
+            alt=""
+            aria-hidden="true"
+          />
 
-        <div class="qco-hero__content">
-          <div class="qco-hero__breadcrumbs">
-            <a href="index.html" class="qco-hero__breadcrumbs-link">
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-              </svg>
-            </a>
-            <span class="qco-hero__breadcrumbs-sep">/</span>
-            <span class="qco-hero__breadcrumbs-current">QCO Order</span>
+          <div class="qco-hero__content">
+            <div class="qco-hero__breadcrumbs">
+              <a href="index.html" class="qco-hero__breadcrumbs-link">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+              </a>
+              <span class="qco-hero__breadcrumbs-sep">/</span>
+              <span class="qco-hero__breadcrumbs-current">QCO Order</span>
+            </div>
+
+            <h1 class="qco-hero__heading">
+              QCO Order &amp;<br />
+              <span class="qco-hero__heading-accent">Implementation Date</span>
+            </h1>
+
+            <p class="qco-hero__text">
+              Stay compliant with the latest Quality Control Orders and their
+              implementation timelines.
+            </p>
           </div>
-
-          <h1 class="qco-hero__heading">
-            QCO Order &amp;<br />
-            <span class="qco-hero__heading-accent">Implementation Date</span>
-          </h1>
-
-          <p class="qco-hero__text">
-            Stay compliant with the latest Quality Control Orders and their
-            implementation timelines.
-          </p>
         </div>
       </div>
     </section>
@@ -646,86 +678,7 @@
           </button>
         </div>
 
-        <!-- Secondary filter row -->
-        <div class="qco-filter-row">
-          <div class="qco-filter-left">
-            <input
-              type="text"
-              class="qco-sub-search"
-              placeholder="Search by product name, standard or ministry..."
-              disabled
-            />
-            <button class="qco-std-filter-btn" id="qco-std-filter-btn">
-              All Standards
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M6 9l6 6 6-6" />
-              </svg>
-            </button>
-            <button class="qco-std-filter-btn" id="qco-filters-toggle-btn">
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
-              </svg>
-              Filters
-            </button>
-          </div>
-          <div class="qco-filter-right">
-            <button
-              class="qco-icon-btn-sm"
-              id="qco-refresh-btn"
-              title="Refresh"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="23 4 23 10 17 10" />
-                <polyline points="1 20 1 14 7 14" />
-                <path
-                  d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"
-                />
-              </svg>
-            </button>
-            <button class="qco-export-btn" id="qco-export-btn">
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-              Export
-            </button>
-          </div>
-        </div>
+
 
         <!-- Data Table -->
         <div class="qco-table-wrap">

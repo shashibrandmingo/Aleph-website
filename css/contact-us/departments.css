@@ -18,7 +18,7 @@
   --dept-font-body: var(--font-secondary, "Inter", "Segoe UI", sans-serif);
 
   width: 100%;
-  padding: 40px 5vw 84px;
+  padding: 10px 5vw 40px;
   background: var(--dept-bg);
   font-family: var(--dept-font-body);
   box-sizing: border-box;
@@ -70,7 +70,7 @@
 
 .dept-heading {
   font-family: var(--dept-font-heading);
-  font-weight: 800;
+  font-weight: 700;
   font-size: clamp(1.7rem, 1.4vw + 1.3rem, 2.5rem);
   line-height: 1.2;
   color: var(--dept-text-dark);
@@ -288,7 +288,7 @@
   display: flex;
   align-items: center;
   gap: 24px;
-  background: var(--dept-bg);
+  background: #f5faff;
   border: 1px solid var(--dept-border);
   border-radius: 12px;
   padding: 24px 32px;
@@ -306,13 +306,13 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: var(--dept-blue-softer);
+  background:#dce7f0;
   color: var(--dept-blue);
 }
 
 .dept-banner-icon svg {
-  width: 32px;
-  height: 32px;
+  width: 45px;
+  height: 45px;
   stroke-width: 1.5;
 }
 
@@ -356,6 +356,13 @@
   width: 48px;
   height: 48px;
   stroke-width: 1.2;
+}
+
+.dept-banner-avatar img,
+.expert-guidance-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
 
 @keyframes deptFadeUp {

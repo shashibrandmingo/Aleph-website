@@ -375,6 +375,29 @@
   background: url('../../image/our-team-image/OUR TEAM-bg.png') no-repeat center center;
   background-size: cover;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.our-team-dots-tl {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.our-team-wavy-tr,
+.founders-wavy-tr {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 180px;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .team-header {
