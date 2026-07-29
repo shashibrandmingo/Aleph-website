@@ -139,34 +139,48 @@
    ========================================================================== */
 
 .webinar-event-section {
-  padding: 1.8rem 0 4rem 0;
+  padding: 1rem 0 1rem 0;
   background-color: #f8fafc;
 }
 
 /* Status Cards Row */
 .webinar-status-row {
   display: grid;
-  grid-template-columns: 270px 1fr 260px;
-  gap: 1.1rem;
+  grid-template-columns: 280px 1fr 260px;
+  gap: 1.2rem;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
+  position: relative;
 }
 
 /* Card 1: Event Status */
 .webinar-status-card {
   background: #ffffff;
-  border: 1px solid #edf2f7;
+  border: 1px solid #e2e8f0;
   border-radius: 14px;
-  padding: 0.85rem 1.2rem;
+  padding: 1.1rem 1.4rem;
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.02);
+  gap: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+}
+
+/* Outer Left Dots Decor */
+.dots-decor-left {
+  position: absolute;
+  left: -22px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .status-icon-badge {
-  width: 38px;
-  height: 38px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background-color: #eff6ff;
   display: flex;
@@ -174,32 +188,66 @@
   justify-content: center;
   color: #2563eb;
   flex-shrink: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .status-icon-badge svg {
-  width: 19px;
-  height: 19px;
+  width: 24px;
+  height: 24px;
   stroke: #2563eb;
+}
+
+/* Inner Icon Dots Decor */
+.dots-decor-icon {
+  position: absolute;
+  left: 54px;
+  bottom: 8px;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .status-title {
   font-family: var(--font-primary), sans-serif;
-  font-size: 0.92rem;
+  font-size: 0.98rem;
   font-weight: 700;
   color: #0b192c;
+  position: relative;
+  z-index: 2;
 }
 
 /* Card 2: Date & Time */
 .webinar-date-card {
   background: #ffffff;
-  border: 1px solid #edf2f7;
+  border: 1px solid #e2e8f0;
   border-radius: 14px;
-  padding: 0.65rem 1.2rem;
+  padding: 0.9rem 1.4rem;
   text-align: center;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  max-width: 520px;
+  width: 100%;
+  justify-self: center;
+}
+
+.new-pill-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 65%;
+  margin-bottom: 0.35rem;
+}
+
+.pill-line {
+  flex: 1;
+  height: 1px;
+  background-color: #dbeafe;
 }
 
 .new-pill-tag {
@@ -208,51 +256,64 @@
   font-family: var(--font-primary), sans-serif;
   font-size: 0.68rem;
   font-weight: 700;
-  padding: 0.1rem 0.55rem;
+  padding: 0.12rem 0.65rem;
   border-radius: 10px;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.2rem;
+  letter-spacing: 0.06em;
 }
 
 .webinar-event-date {
   font-family: var(--font-primary), sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #0b192c;
-  margin: 0 0 0.1rem 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #484d84;
+  margin: 0 0 0.15rem 0;
+  position: relative;
+  z-index: 2;
 }
 
 .webinar-event-time {
   font-family: var(--font-secondary), sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: #64748b;
   margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Corner Dots Decor inside Card 2 */
+.dots-decor-card {
+  position: absolute;
+  right: 14px;
+  bottom: 10px;
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* Card 3: Register Now Button */
 .webinar-register-btn {
-  background: linear-gradient(135deg, #0052cc 0%, #1765e6 100%);
+  background: #0056d2;
   border-radius: 14px;
-  padding: 0.75rem 1.4rem;
+  padding: 0.85rem 1.4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
-  box-shadow: 0 6px 18px rgba(0, 82, 204, 0.22);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 6px 20px rgba(0, 86, 210, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
 .webinar-register-btn:hover {
+  background: #004bba;
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(0, 82, 204, 0.32);
+  box-shadow: 0 8px 25px rgba(0, 86, 210, 0.35);
 }
 
 .user-plus-badge {
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background-color: #ffffff;
-  color: #0052cc;
+  color: #0056d2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -260,22 +321,22 @@
 }
 
 .user-plus-badge svg {
-  width: 17px;
-  height: 17px;
-  stroke: #0052cc;
+  width: 19px;
+  height: 19px;
+  stroke: #0056d2;
 }
 
 .register-text {
   font-family: var(--font-primary), sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.88rem;
+  font-weight: 800;
   color: #ffffff;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
 }
 
 .chevron-right {
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   stroke: #ffffff;
 }
 
@@ -289,32 +350,36 @@
 }
 
 .registration-form-header {
-  text-align: center;
-  margin-bottom: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-bottom: 1.6rem;
 }
 
 .pen-icon-badge {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background-color: #eff6ff;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 0.4rem auto;
+  margin: 0;
+  flex-shrink: 0;
 }
 
 .pen-icon-badge svg {
-  width: 19px;
-  height: 19px;
+  width: 20px;
+  height: 20px;
   stroke: #2563eb;
 }
 
 .registration-form-header h2 {
   font-family: var(--font-primary), sans-serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #001f54;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #00205c;
   margin: 0;
 }
 
@@ -329,17 +394,28 @@
 .registration-image-side {
   width: 100%;
   height: 100%;
-  max-height: 250px;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: visible;
+}
+
+.dots-decor-form-image {
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .registration-image-side img {
   width: 100%;
   height: 100%;
+  max-height: 250px;
+  border-radius: 16px;
   object-fit: cover;
   display: block;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
 }
 
 /* Form inputs */
@@ -495,7 +571,7 @@
   font-family: var(--font-primary), sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
-  color: #0b192c;
+  color: #00205c;
   margin: 0 0 0.35rem 0;
   letter-spacing: -0.01em;
 }
@@ -888,12 +964,17 @@
   align-items: center;
   justify-content: space-between;
   gap: 1.2rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .host-left-side {
   display: flex;
   align-items: center;
   gap: 1rem;
+  position: relative;
+  z-index: 3;
 }
 
 .host-icon-badge {
@@ -930,6 +1011,12 @@
   margin: 0;
 }
 
+.host-right-action {
+  position: relative;
+  z-index: 3;
+  margin-right: 3.5rem;
+}
+
 .btn-collaborate-host {
   background-color: #0052cc;
   color: #ffffff;
@@ -942,12 +1029,28 @@
   box-shadow: 0 5px 15px rgba(0, 82, 204, 0.2);
   transition: all 0.25s ease;
   white-space: nowrap;
+  display: inline-block;
 }
 
 .btn-collaborate-host:hover {
   background-color: #1765e6;
   box-shadow: 0 8px 24px rgba(0, 82, 204, 0.35);
   transform: translateY(-2px);
+}
+
+.host-bg-decor-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  max-width: 280px;
+  object-fit: contain;
+  object-position: right center;
+  opacity: 1;
+  filter: brightness(0.82) contrast(1.15);
+  pointer-events: none;
+  z-index: 2;
 }
 
 /* --- YOUTUBE VIDEO MODAL POPUP --- */

@@ -110,14 +110,16 @@ function closeAuditModal() {
 }
 
 // Setup modal event listeners
-document.addEventListener("DOMContentLoaded", () => {
+function initAuditPage() {
   renderAuditCards();
 
   const modal = document.getElementById("audit-modal");
   const closeBtn = document.getElementById("modal-close-btn");
 
   if (closeBtn) {
-    closeBtn.addEventListener("click", closeAuditModal);
+    // Remove old listener before adding to avoid duplicates
+    closeBtn.replaceWith(closeBtn.cloneNode(true));
+    document.getElementById("modal-close-btn").addEventListener("click", closeAuditModal);
   }
 
   if (modal) {
@@ -128,13 +130,24 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+}
 
-  // Close when pressing Escape key
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal && modal.classList.contains("active")) {
-      closeAuditModal();
-    }
-  });
+document.addEventListener("DOMContentLoaded", initAuditPage);
+
+// Fix for bfcache (back-forward cache): re-init when browser restores page from cache
+window.addEventListener("pageshow", (e) => {
+  if (e.persisted) {
+    // Page was restored from bfcache — re-render cards
+    initAuditPage();
+  }
+});
+
+// Close on Escape key (global, registered once)
+document.addEventListener("keydown", (e) => {
+  const modal = document.getElementById("audit-modal");
+  if (e.key === "Escape" && modal && modal.classList.contains("active")) {
+    closeAuditModal();
+  }
 });
 
 // Helper function to return HTML for flag images using public flag CDN

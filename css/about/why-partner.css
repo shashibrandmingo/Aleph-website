@@ -20,7 +20,7 @@
 /* ── Section wrapper ────────────────────────────────────────────────────── */
 .why-partner-section {
   background-color: white;
-  padding: 2rem 0 3rem;
+  padding: 1.8rem 0 2rem;
 }
 
 /* ── Centered "WHY PARTNER WITH US?" header ─────────────────────────────── */
@@ -186,7 +186,7 @@
 /* Mobile: 2 columns */
 @media (max-width: 640px) {
   .why-partner-section {
-    padding: 3.5rem 0 4rem;
+    padding: 2rem 0;
   }
 
   .why-partner-grid {

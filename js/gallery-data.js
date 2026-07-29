@@ -113,14 +113,22 @@ function renderTabs() {
   });
 }
 
-// 4. Render Photo Grid — only date badge, no title text
+let searchQuery = "";
+
+// 4. Render Photo Grid — filtered by category & search query
 function filterGalleryGrid() {
   const gridContainer = document.getElementById("gallery-photos-grid");
   if (!gridContainer) return;
 
-  const filteredItems = activeCategory === "all"
-    ? galleryItems
-    : galleryItems.filter(item => item.category === activeCategory);
+  const filteredItems = galleryItems.filter(item => {
+    const matchesCategory = activeCategory === "all" || item.category === activeCategory;
+    const q = searchQuery.toLowerCase();
+    const matchesSearch = !q || 
+      (item.date && item.date.toLowerCase().includes(q)) || 
+      (item.description && item.description.toLowerCase().includes(q)) ||
+      (item.category && item.category.toLowerCase().includes(q));
+    return matchesCategory && matchesSearch;
+  });
 
   gridContainer.style.opacity = "0.2";
   gridContainer.style.transform = "translateY(5px)";
@@ -130,9 +138,9 @@ function filterGalleryGrid() {
 
     if (filteredItems.length === 0) {
       gridContainer.innerHTML = `
-        <div class="gallery-empty-state">
-          <i class="fa-regular fa-image"></i>
-          <p>No photos available in this category yet.</p>
+        <div class="gallery-empty-state" style="grid-column: 1 / -1; text-align: center; padding: 3rem 1rem;">
+          <i class="fa-regular fa-image" style="font-size: 2.5rem; color: #cbd5e1; margin-bottom: 0.75rem;"></i>
+          <p style="color: #64748b; font-size: 0.95rem;">No photos match your search query.</p>
         </div>
       `;
     } else {
@@ -175,6 +183,15 @@ document.addEventListener("DOMContentLoaded", () => {
   renderTabs();
   filterGalleryGrid();
   initLightbox();
+
+  // Search input handler
+  const searchInput = document.getElementById("gallery-search-input");
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      searchQuery = e.target.value.trim();
+      filterGalleryGrid();
+    });
+  }
 });
 
 /* ==========================================================================

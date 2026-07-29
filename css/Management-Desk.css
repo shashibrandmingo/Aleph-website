@@ -294,6 +294,40 @@
   gap: 1.5rem;
   text-align: left;
   box-shadow: 0 8px 30px rgba(0, 46, 132, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top-Left 5x5 Dot Grid Decor */
+.mgmt-badge-card::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 18px;
+  width: 48px;
+  height: 48px;
+  background-image: radial-gradient(#2563eb 1.5px, transparent 1.5px);
+  background-size: 10px 10px;
+  pointer-events: none;
+  opacity: 0.35;
+  z-index: 1;
+}
+
+/* Bottom-Right Fading Triangular Corner Dot Grid Decor */
+.mgmt-badge-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 140px;
+  height: 120px;
+  background-image: radial-gradient(#2563eb 1.5px, transparent 1.5px);
+  background-size: 10px 10px;
+  pointer-events: none;
+  opacity: 0.35;
+  -webkit-mask-image: linear-gradient(135deg, transparent 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,1) 100%);
+  mask-image: linear-gradient(135deg, transparent 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,1) 100%);
+  z-index: 1;
 }
 
 .mgmt-badge-avatar-wrapper {
@@ -305,6 +339,8 @@
   box-shadow: 0 6px 20px rgba(0, 46, 132, 0.1);
   margin-bottom: 0;
   flex-shrink: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .mgmt-badge-avatar {
@@ -318,6 +354,8 @@
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  position: relative;
+  z-index: 2;
 }
 
 .mgmt-badge-name {
@@ -560,20 +598,32 @@
   position: relative;
 }
 
-/* Vertical divider with blue highlight */
+/* Vertical divider with top & bottom dots and blue highlight */
 .mgmt-vertical-divider-wrapper {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   height: 100%;
+  min-height: 220px;
   position: relative;
-  width: 4px;
+  width: 40px;
+}
+
+.vertical-dots-top,
+.vertical-dots-bottom {
+  width: 32px;
+  height: 32px;
+  background-image: radial-gradient(#2563eb 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+  opacity: 0.40;
 }
 
 .vertical-divider-line {
   width: 1px;
-  height: 120px;
-  background-color: rgba(0, 46, 132, 0.08);
+  flex-grow: 1;
+  margin: 10px 0;
+  background-color: rgba(0, 46, 132, 0.12);
   position: relative;
 }
 
@@ -586,6 +636,28 @@
   top: 50%;
   transform: translateY(-50%);
   border-radius: 2px;
+}
+
+/* Kumar Profile Card Corner Dots Decor */
+.mgmt-profile-card-full.kumar-profile {
+  position: relative;
+  overflow: hidden;
+}
+
+.mgmt-profile-card-full.kumar-profile::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 160px;
+  height: 140px;
+  background-image: radial-gradient(#2563eb 1.5px, transparent 1.5px);
+  background-size: 10px 10px;
+  pointer-events: none;
+  opacity: 0.35;
+  -webkit-mask-image: linear-gradient(135deg, transparent 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,1) 100%);
+  mask-image: linear-gradient(135deg, transparent 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,1) 100%);
+  z-index: 1;
 }
 
 /* Bio Content area */

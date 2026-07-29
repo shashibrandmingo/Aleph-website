@@ -8,7 +8,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const newsList = document.querySelector('.news-horizontal-list');
   const categoryItems = document.querySelectorAll('.category-list-item');
 
+  // ── View More / View Less toggle for Sidebar Categories ──────────────────
+  const viewMoreBtn  = document.querySelector('.categories-view-more-btn');
+  const extraCats    = document.querySelectorAll('.extra-category');
+  let categoriesExpanded = false;
+
+  if (viewMoreBtn && extraCats.length) {
+    viewMoreBtn.addEventListener('click', () => {
+      categoriesExpanded = !categoriesExpanded;
+      extraCats.forEach((el, i) => {
+        if (categoriesExpanded) {
+          el.style.display = 'flex';
+          el.style.animationDelay = (i * 0.05) + 's';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+      // Toggle button label + rotate arrow
+      viewMoreBtn.querySelector('span').textContent = categoriesExpanded ? 'View Less' : 'View More';
+      viewMoreBtn.classList.toggle('expanded', categoriesExpanded);
+    });
+  }
+
   if (!newsList) return;
+
 
   // Mock News Data for Page Switching
   const newsDatabase = {

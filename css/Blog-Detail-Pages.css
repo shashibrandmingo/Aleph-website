@@ -415,6 +415,18 @@
   gap: 1.8rem;
 }
 
+#categoriesCardContainer {
+  order: 1;
+}
+
+#authorCardContainer {
+  order: 2;
+}
+
+#recentPostsCardContainer {
+  order: 3;
+}
+
 .sidebar-card-widget {
   background: #ffffff;
   border-radius: 16px;

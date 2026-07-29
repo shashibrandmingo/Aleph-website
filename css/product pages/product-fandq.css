@@ -34,7 +34,7 @@
 
 .faq-main-title {
   font-family: var(--font-primary), sans-serif;
-  font-size: 1.75rem;
+  font-size: 2.6rem;
   font-weight: 700;
   color: #0b192c;
   margin: 0 0 0.3rem 0;
@@ -453,10 +453,20 @@
    ========================================================================== */
 
 .bis-testimonials-section {
-  padding: 2.2rem 0 3.5rem 0;
+  padding: 0rem 0 3.5rem 0;
   background-color: #f5f5fa;
   position: relative;
   overflow: hidden;
+}
+
+.testimonial-top-right-wavy {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 480px;
+  height: 350px;
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* Background subtle wave / grid overlay */
@@ -486,8 +496,8 @@
 
 .testimonials-main-heading {
   font-family: var(--font-primary), sans-serif;
-  font-size: 1.85rem;
-  font-weight: 800;
+  font-size: 2.6rem;
+  font-weight: 700;
   color: #0b192c;
   margin: 0 0 0.3rem 0;
   letter-spacing: -0.015em;
@@ -532,6 +542,21 @@
   /* padding: 0.75rem 0.75rem 0 0.75rem; */
   margin-bottom: 2.5rem;
   transition: all 0.3s ease;
+}
+
+/* 2-row dot grid on bottom-left of testimonial card */
+.testimonial-card-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0.85rem;
+  left: 0.9rem;
+  width: 44px;
+  height: 16px;
+  background-image: radial-gradient(#94a3b8 1.5px, transparent 1.5px);
+  background-size: 11px 8px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
 }
 
 .testimonial-card-item:hover {

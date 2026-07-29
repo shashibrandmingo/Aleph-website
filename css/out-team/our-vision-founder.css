@@ -469,13 +469,30 @@ section.founders-section {
 .founder-card-body {
   display: flex;
   gap: 1.2rem;
-  padding: 1rem 2rem !important; /* Top/Bottom: 1.8rem | Left/Right: 2.5rem */
+  padding: 1rem 2rem !important;
   background-color: #f8faff;
   border-bottom-left-radius: 19px;
   border-bottom-right-radius: 19px;
   border-top: 1px solid rgba(0, 46, 132, 0.04);
   flex-grow: 1;
   align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 2x5 Dot Grid on bottom-left corner of Founder Card */
+.founder-card-body::before {
+  content: '';
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.75rem;
+  width: 22px;
+  height: 45px;
+  background-image: radial-gradient(#64748b 1.5px, transparent 1.5px);
+  background-size: 11px 9px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.75;
 }
 
 .founder-body-icon-container {
@@ -490,6 +507,7 @@ section.founders-section {
   flex-shrink: 0;
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
   position: relative;
+  z-index: 2;
   margin-top: 2px;
 }
 
@@ -516,6 +534,8 @@ section.founders-section {
   line-height: 1.6;
   color: var(--team-text-muted);
   margin: 0;
+  position: relative;
+  z-index: 2;
 }
 
 /* Absolute Center Badge */

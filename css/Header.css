@@ -283,7 +283,8 @@
   z-index: 2;
 }
 
-.dropdown-item:hover {
+.dropdown-item:hover,
+.dropdown-item.active {
   background-color: var(--primary-light);
   color: var(--primary);
   padding-left: 1.8rem;
@@ -729,11 +730,16 @@
   transform: translateY(0);
 }
 
-.dropdown-menu.force-hide,
+.dropdown-menu.force-hide {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateX(-50%) translateY(10px) !important;
+}
+
 .mega-menu.force-hide {
   opacity: 0 !important;
   pointer-events: none !important;
-  transform: translateY(10px) !important;
+  transform: translateX(-50%) translateY(10px) !important;
 }
 
 /* Left Sidebar in Mega Menu */

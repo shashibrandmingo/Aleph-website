@@ -12,14 +12,31 @@
   document.head.appendChild(script);
 })();
 
-document.addEventListener('DOMContentLoaded', () => {
+function initNavigation() {
   initStickyHeader();
   initSearchToggle();
   initMobileMenu();
   updateActiveLinks();
   initPJAX();
   initDropdownClicks();
+}
+
+document.addEventListener('DOMContentLoaded', initNavigation);
+
+// Fix for bfcache (back-forward cache):
+// When user navigates back/forward, browser may restore page from bfcache
+// without firing DOMContentLoaded. The pageshow event fires in both cases.
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted) {
+    // Page restored from bfcache — re-run all init functions
+    initNavigation();
+
+    // Re-run page-specific init functions if they exist on this page
+    if (typeof initAuditPage === 'function')  initAuditPage();
+    if (typeof renderAuditCards === 'function') renderAuditCards();
+  }
 });
+
 
 // 1. Sticky Header
 function initStickyHeader() {
@@ -147,12 +164,14 @@ function initMobileMenu() {
 function updateActiveLinks() {
   let path = window.location.pathname;
   let page = path.split("/").pop();
+  let search = window.location.search;
   
   if (page === "" || page === "index.html" || page === "/") {
     page = "index.html";
   }
   
   const decodedPage = decodeURIComponent(page);
+  const fullDecodedPage = decodeURIComponent(page + search);
   
   // Define page groups matching their main category
   const servicePages = ["Services.html", "Services-details.html", "Product-Pages.html", "QCO-Pages.html"];
@@ -160,6 +179,7 @@ function updateActiveLinks() {
   const resourcePages = ["Blog-Listing.html", "Blog-Detail-Pages.html", "News-Updates.html", "Latest-Notification.html", "Upcoming-Events.html", "Webinar-Seminar.html", "Monthly-Newsletter.html", "QCO-WTO-Order.html", "Careers.html"];
   const portfolioPages = ["Clientele.html", "International-Audits.html", "Gallery.html", "Videos-and-Tutorials.html"];
   const contactPages = ["Contact-US.html", "Feedback-Concerns.html"];
+  const loginPages = ["CRM-Client-Login.html", "Payment-Page.html", "Vendor.html"];
   
   let category = "index";
   if (servicePages.includes(decodedPage)) category = "services";
@@ -167,6 +187,7 @@ function updateActiveLinks() {
   else if (resourcePages.includes(decodedPage)) category = "update";
   else if (portfolioPages.includes(decodedPage)) category = "portfolio";
   else if (contactPages.includes(decodedPage)) category = "contact";
+  else if (loginPages.includes(decodedPage)) category = "login";
   
   // Update Desktop Menu Active Style
   const navItems = document.querySelectorAll('.nav-item');
@@ -195,65 +216,31 @@ function updateActiveLinks() {
     }
   });
   
-  // Highlight individual sub-menu items
+  // Highlight individual sub-menu items (support exact query param match)
   const allSubmenuItems = document.querySelectorAll('.dropdown-item, .mobile-submenu-item');
   allSubmenuItems.forEach(item => {
     const href = item.getAttribute('href');
-    if (href && (href === decodedPage || decodeURIComponent(href) === decodedPage)) {
+    if (!href) return;
+    const decodedHref = decodeURIComponent(href);
+
+    let isMatch = false;
+    if (search) {
+      isMatch = (decodedHref === fullDecodedPage);
+    } else {
+      isMatch = (decodedHref === decodedPage || (decodedPage === "CRM-Client-Login.html" && decodedHref.includes("tab=crm")));
+    }
+
+    if (isMatch) {
       item.classList.add('active');
-      item.style.color = 'var(--primary)';
-      item.style.fontWeight = '600';
     } else {
       item.classList.remove('active');
-      item.style.color = '';
-      item.style.fontWeight = '';
     }
   });
 }
 
-// 5. Flicker-Free PJAX Router
+// 5. Instant Native Navigation
 function initPJAX() {
-  if (window.pjaxInitialized) return;
-  window.pjaxInitialized = true;
-  
-  // Catch link click event on document level
-  document.addEventListener('click', (e) => {
-    const link = e.target.closest('a');
-    if (!link) return;
-    
-    const href = link.getAttribute('href');
-    
-    // Ignore internal page section jumps, javascript calls, external sites, mail/phone, or new tab links
-    if (!href || 
-        href.startsWith('#') || 
-        href.startsWith('javascript:') || 
-        href.startsWith('mailto:') || 
-        href.startsWith('tel:') || 
-        link.getAttribute('target') === '_blank') {
-      return;
-    }
-    
-    // Parse URL relative to window
-    const targetUrl = new URL(link.href, window.location.href);
-    
-    // Check if it is a different domain
-    if (targetUrl.origin !== window.location.origin) {
-      return;
-    }
-    
-    // CORS prevents fetch on local file:// paths, fallback to normal navigation if so
-    if (window.location.protocol === 'file:') {
-      return;
-    }
-    
-    e.preventDefault();
-    performPJAXNavigation(targetUrl.href);
-  });
-  
-  // Handle back/forward history navigation
-  window.addEventListener('popstate', () => {
-    performPJAXNavigation(window.location.href, false);
-  });
+  // PJAX interceptor disabled for zero-lag native page loading
 }
 
 function performPJAXNavigation(url, pushToHistory = true) {
@@ -432,6 +419,7 @@ function initDropdownClicks() {
   if (navItems.length === 0 || window.dropdownClicksInitialized) return;
   window.dropdownClicksInitialized = true;
   
+
   // Click listener inside dropdowns
   document.addEventListener('click', (e) => {
     const dropdownLink = e.target.closest('.dropdown-item, .mega-link-item');

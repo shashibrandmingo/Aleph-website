@@ -118,7 +118,7 @@
    PAGE SECTION - LATEST BLOGS
    ========================================================================== */
 .latest-blogs-section {
-  padding: 3.5rem 0 5rem 0;
+  padding: 0rem 0 5rem 0;
   background-color: #f8fafc;
   position: relative;
 }
@@ -172,7 +172,7 @@
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 0.3rem 0.35rem 0.3rem 1rem;
-  width: 785px;
+  width: 650px;
   max-width: 100%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
   transition: all 0.25s ease;

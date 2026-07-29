@@ -20,7 +20,7 @@
   background-position: center;
   background-size: cover;
   background-color: #ffffff;
-  padding: 6rem 0;
+  padding: 2.5rem 0;
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -53,8 +53,8 @@
 
 .who-we-are-title {
   font-family: var(--about-who-font-primary);
-  font-size: 2.8rem;
-  font-weight: 800;
+  font-size: 2.7rem;
+  font-weight: 700;
   color: var(--about-who-text-dark);
   margin: 0 0 0.75rem 0;
   line-height: 1.15;
@@ -96,14 +96,14 @@
 .who-we-are-features {
   display: flex;
   flex-direction: column;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .who-feature-item {
   display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  padding: 1.5rem 0;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 0.85rem 0;
   border-bottom: 1px dashed rgba(0, 46, 132, 0.12);
   transition: transform 0.3s ease;
 }
@@ -122,17 +122,17 @@
 }
 
 .who-feature-icon-wrapper {
-  width: 52px;
-  height: 52px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background-color: var(--about-who-text-dark);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
+  font-size: 1.05rem;
   flex-shrink: 0;
-  box-shadow: 0 6px 15px rgba(0, 46, 132, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 46, 132, 0.15);
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -148,16 +148,16 @@
 
 .who-feature-title {
   font-family: var(--about-who-font-primary);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--about-who-text-dark);
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.2rem 0;
 }
 
 .who-feature-desc {
   font-family: var(--about-who-font-secondary);
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.86rem;
+  line-height: 1.5;
   color: var(--about-who-text-muted);
   margin: 0;
 }
@@ -405,7 +405,7 @@
   background-position: center;
   background-size: cover;
   background-color: #ffffff;
-  padding: 6rem 0;
+  padding: 2.5rem 0;
   position: relative;
   width: 100%;
 }
@@ -418,7 +418,7 @@
 
 .commitment-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 1.8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -427,20 +427,20 @@
 .commitment-eyebrow {
   display: block;
   font-family: var(--about-who-font-primary);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--about-who-accent-blue);
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .commitment-title {
   font-family: var(--about-who-font-primary);
-  font-size: 2.8rem;
-  font-weight: 800;
+  font-size: 2.2rem;
+  font-weight: 700;
   color: var(--about-who-text-dark);
-  margin: 0 0 1.25rem 0;
+  margin: 0 0 0.5rem 0;
   line-height: 1.2;
 }
 
@@ -450,8 +450,8 @@
 
 .commitment-desc {
   font-family: var(--about-who-font-secondary);
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.5;
   color: #4a5568;
   max-width: 720px;
   margin: 0;
@@ -460,24 +460,24 @@
 .commitment-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 1.8rem;
   width: 100%;
 }
 
 /* Base card layout */
 .commitment-card {
-  border-radius: 20px;
-  padding: 3rem 2.5rem;
+  border-radius: 16px;
+  padding: 1.6rem 1.8rem;
   position: relative;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 15px 45px rgba(0, 46, 132, 0.04);
+  box-shadow: 0 10px 30px rgba(0, 46, 132, 0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .commitment-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 55px rgba(0, 46, 132, 0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 46, 132, 0.08);
 }
 
 /* Vision Card (Dark Blue) */
@@ -490,30 +490,30 @@
 .commitment-card.quality-card {
   background-color: #ffffff;
   color: #2d3748;
-  border: 1px solid rgba(0, 46, 132, 0.05);
+  border: 1px solid rgba(0, 46, 132, 0.08);
 }
 
 /* Card Header */
 .card-header-wrapper {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  margin-bottom: 2.5rem;
+  gap: 0.9rem;
+  margin-bottom: 1.2rem;
   position: relative;
   z-index: 2;
 }
 
 .card-header-icon {
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background-color: var(--about-who-accent-blue);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  box-shadow: 0 6px 15px rgba(0, 91, 250, 0.25);
+  font-size: 1.15rem;
+  box-shadow: 0 4px 12px rgba(0, 91, 250, 0.25);
   flex-shrink: 0;
 }
 
@@ -524,17 +524,17 @@
 
 .card-header-eyebrow {
   font-family: var(--about-who-font-primary);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   color: var(--about-who-accent-blue);
   text-transform: uppercase;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.15rem;
 }
 
 .card-header-title {
   font-family: var(--about-who-font-primary);
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   font-weight: 700;
   margin: 0;
   line-height: 1.2;
@@ -551,9 +551,9 @@
 /* Quote icon graphic in background */
 .card-quote-icon {
   position: absolute;
-  top: 1.5rem;
-  right: 2.5rem;
-  font-size: 7rem; /* Large elegant quotation mark */
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 4.5rem; /* Large elegant quotation mark */
   font-family: Georgia, serif; /* Serif font for beautiful curly quotes */
   font-weight: 700;
   line-height: 1;
@@ -581,8 +581,8 @@
 .card-body-item {
   display: flex;
   align-items: flex-start;
-  gap: 1.25rem;
-  padding: 1.75rem 0;
+  gap: 0.9rem;
+  padding: 0.85rem 0;
 }
 
 .vision-card .card-body-item {
@@ -599,13 +599,13 @@
 }
 
 .card-item-icon-wrapper {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.05rem;
+  font-size: 0.88rem;
   flex-shrink: 0;
 }
 
@@ -623,8 +623,8 @@
 
 .card-item-text {
   font-family: var(--about-who-font-secondary);
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.86rem;
+  line-height: 1.48;
   margin: 0;
 }
 
@@ -641,8 +641,8 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
+  /* margin-top: 1rem;
+  margin-bottom: 1.5rem; */
   height: 50px;
   position: relative;
   z-index: 2;
@@ -650,7 +650,7 @@
 
 .signature-font {
   font-family: 'Mrs Saint Delafield', cursive;
-  font-size: 4rem;
+  font-size: 3rem;
   line-height: 1;
   user-select: none;
 }

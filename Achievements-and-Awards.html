@@ -160,6 +160,21 @@
           <a href="Feedback-Concerns.html" class="dropdown-item">Feedback & Concerns</a>
         </div>
       </div>
+    
+
+      <!-- 7. Login -->
+      <div class="nav-item has-dropdown" data-page="login">
+        <a href="#" class="nav-link">
+          Login
+          <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="dropdown-menu">
+          <a href="CRM-Client-Login.html?tab=crm" class="dropdown-item">CRM Login</a>
+          <a href="CRM-Client-Login.html?tab=client" class="dropdown-item">Client Login</a>
+          <a href="Payment-Page.html" class="dropdown-item">Payment</a>
+          <a href="Vendor.html" class="dropdown-item">Vendor Registration Form</a>
+        </div>
+      </div>
     </nav>
 
     <!-- Header Actions -->
@@ -269,6 +284,21 @@
       <div class="mobile-submenu">
         <a href="Contact-US.html" class="mobile-submenu-item">Contact Us</a>
         <a href="Feedback-Concerns.html" class="mobile-submenu-item">Feedback & Concerns</a>
+      </div>
+    </div>
+  
+
+    <!-- 7. Login -->
+    <div class="mobile-nav-item">
+      <div class="mobile-nav-link" data-mobile-page="login">
+        <span>Login</span>
+        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="mobile-submenu">
+        <a href="CRM-Client-Login.html?tab=crm" class="mobile-submenu-item">CRM Login</a>
+        <a href="CRM-Client-Login.html?tab=client" class="mobile-submenu-item">Client Login</a>
+        <a href="Payment-Page.html" class="mobile-submenu-item">Payment</a>
+        <a href="Vendor.html" class="mobile-submenu-item">Vendor Registration Form</a>
       </div>
     </div>
   </nav>
@@ -451,14 +481,33 @@
 
                         <!-- START CERTIFICATES SECTION -->
                         <div class="award-certificates-section">
+                            <!-- Background Floating Decors -->
+                            <!-- Top-Left Circular Concentric SVG -->
+                            <svg class="cert-decor-wavy" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="10" cy="10" r="50" stroke="#2563eb" stroke-width="1.5" stroke-opacity="0.15" />
+                                <circle cx="10" cy="10" r="85" stroke="#2563eb" stroke-width="1.5" stroke-opacity="0.12" />
+                                <circle cx="10" cy="10" r="120" stroke="#2563eb" stroke-width="1.5" stroke-opacity="0.08" />
+                                <circle cx="10" cy="10" r="155" stroke="#2563eb" stroke-width="1.5" stroke-opacity="0.05" />
+                            </svg>
+
+                            <!-- Top-Right Blue Dots Grid SVG -->
+                            <svg class="cert-decor-dots" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <pattern id="cert-dots-grid" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse">
+                                    <circle cx="4" cy="4" r="2.2" fill="#2563eb" fill-opacity="0.25" />
+                                </pattern>
+                                <rect width="100" height="120" fill="url(#cert-dots-grid)" />
+                            </svg>
+
                             <!-- Section Header -->
                             <div class="award-milestone-header cert-section-header">
-                                <span class="milestone-title-wrap">
-                                    <span class="title-line"></span>
-                                    <h2 class="milestone-title">Certified Excellence. <span class="title-accent">Trusted Always.</span></h2>
-                                    <span class="title-line"></span>
-                                </span>
+                                <div class="cert-eyebrow-wrapper">
+                                    <span class="cert-eyebrow-line"></span>
+                                    <span class="cert-eyebrow-text">OUR CERTIFICATES</span>
+                                    <span class="cert-eyebrow-line"></span>
+                                </div>
+                                <h2 class="milestone-title">Certified Excellence. <span class="title-accent">Trusted Always.</span></h2>
                                 <p class="milestone-desc">Our certifications reflect our commitment to global standards, quality assurance, and continuous improvement.</p>
+                                <div class="cert-header-underline"></div>
                             </div>
 
                             <!-- Tabs link -->
@@ -471,86 +520,177 @@
                                 <!-- Row 1 -->
                                 <div class="award-shelf-row">
                                     <div class="award-shelf-cards">
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/1.jpg')">
-                                            <img src="image/Achievements-and-Awards/1.jpg" alt="Certificate 1" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/1.jpg')">
+                                                <img src="image/Achievements-and-Awards/1.jpg" alt="Certificate 1" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/2.jpg')">
-                                            <img src="image/Achievements-and-Awards/2.jpg" alt="Certificate 2" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/2.jpg')">
+                                                <img src="image/Achievements-and-Awards/2.jpg" alt="Certificate 2" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/3.jpg')">
-                                            <img src="image/Achievements-and-Awards/3.jpg" alt="Certificate 3" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/3.jpg')">
+                                                <img src="image/Achievements-and-Awards/3.jpg" alt="Certificate 3" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/4.jpg')">
-                                            <img src="image/Achievements-and-Awards/4.jpg" alt="Certificate 4" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/4.jpg')">
+                                                <img src="image/Achievements-and-Awards/4.jpg" alt="Certificate 4" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/5.jpg')">
-                                            <img src="image/Achievements-and-Awards/5.jpg" alt="Certificate 5" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/5.jpg')">
+                                                <img src="image/Achievements-and-Awards/5.jpg" alt="Certificate 5" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="award-shelf-board"></div>
                                 </div>
 
                                 <!-- Row 2 -->
                                 <div class="award-shelf-row">
                                     <div class="award-shelf-cards">
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/6.jpg')">
-                                            <img src="image/Achievements-and-Awards/6.jpg" alt="Certificate 6" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/6.jpg')">
+                                                <img src="image/Achievements-and-Awards/6.jpg" alt="Certificate 6" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/7.jpg')">
-                                            <img src="image/Achievements-and-Awards/7.jpg" alt="Certificate 7" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/7.jpg')">
+                                                <img src="image/Achievements-and-Awards/7.jpg" alt="Certificate 7" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/8.jpg')">
-                                            <img src="image/Achievements-and-Awards/8.jpg" alt="Certificate 8" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/8.jpg')">
+                                                <img src="image/Achievements-and-Awards/8.jpg" alt="Certificate 8" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/9.jpg')">
-                                            <img src="image/Achievements-and-Awards/9.jpg" alt="Certificate 9" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/9.jpg')">
+                                                <img src="image/Achievements-and-Awards/9.jpg" alt="Certificate 9" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/10.jpg')">
-                                            <img src="image/Achievements-and-Awards/10.jpg" alt="Certificate 10" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/10.jpg')">
+                                                <img src="image/Achievements-and-Awards/10.jpg" alt="Certificate 10" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="award-shelf-board"></div>
                                 </div>
 
                                 <!-- Row 3 -->
                                 <div class="award-shelf-row">
                                     <div class="award-shelf-cards">
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/11.jpg')">
-                                            <img src="image/Achievements-and-Awards/11.jpg" alt="Certificate 11" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/11.jpg')">
+                                                <img src="image/Achievements-and-Awards/11.jpg" alt="Certificate 11" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/12.jpg')">
-                                            <img src="image/Achievements-and-Awards/12.jpg" alt="Certificate 12" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/12.jpg')">
+                                                <img src="image/Achievements-and-Awards/12.jpg" alt="Certificate 12" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/13.jpg')">
-                                            <img src="image/Achievements-and-Awards/13.jpg" alt="Certificate 13" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/13.jpg')">
+                                                <img src="image/Achievements-and-Awards/13.jpg" alt="Certificate 13" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/14.jpg')">
-                                            <img src="image/Achievements-and-Awards/14.jpg" alt="Certificate 14" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/14.jpg')">
+                                                <img src="image/Achievements-and-Awards/14.jpg" alt="Certificate 14" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/15.jpg')">
-                                            <img src="image/Achievements-and-Awards/15.jpg" alt="Certificate 15" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/15.jpg')">
+                                                <img src="image/Achievements-and-Awards/15.jpg" alt="Certificate 15" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="award-shelf-board"></div>
                                 </div>
 
                                 <!-- Row 4 -->
                                 <div class="award-shelf-row">
                                     <div class="award-shelf-cards select-row-four">
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/16.jpg')">
-                                            <img src="image/Achievements-and-Awards/16.jpg" alt="Certificate 16" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/16.jpg')">
+                                                <img src="image/Achievements-and-Awards/16.jpg" alt="Certificate 16" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/17.jpg')">
-                                            <img src="image/Achievements-and-Awards/17.jpg" alt="Certificate 17" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/17.jpg')">
+                                                <img src="image/Achievements-and-Awards/17.jpg" alt="Certificate 17" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/18.jpg')">
-                                            <img src="image/Achievements-and-Awards/18.jpg" alt="Certificate 18" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/18.jpg')">
+                                                <img src="image/Achievements-and-Awards/18.jpg" alt="Certificate 18" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
-                                        <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/19.jpg')">
-                                            <img src="image/Achievements-and-Awards/19.jpg" alt="Certificate 19" class="cert-img">
+                                        <div class="cert-item-unit">
+                                            <div class="award-cert-card" onclick="openCertModal('image/Achievements-and-Awards/19.jpg')">
+                                                <img src="image/Achievements-and-Awards/19.jpg" alt="Certificate 19" class="cert-img">
+                                            </div>
+                                            <div class="cert-base-stand">
+                                                <img src="image/Achievements-and-Awards/image-base.png" alt="Base Stand">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="award-shelf-board"></div>
                                 </div>
                             </div>
 

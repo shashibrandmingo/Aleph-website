@@ -111,13 +111,16 @@
   align-items: flex-start;
 }
 
-/* Left Sidebar: News Categories Card */
+/* Left Sidebar: News Categories Card (Sticky) */
 .news-categories-card {
   background: #ffffff;
   border-radius: 16px;
   border: 1px solid #e2e8f0;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  position: sticky;
+  top: 90px;
+  align-self: flex-start;
 }
 
 .categories-card-header {
@@ -149,7 +152,7 @@
 
 /* Categories List */
 .categories-list-group {
-  padding: 0.75rem 0.6rem;
+  padding: 0.4rem 0.6rem;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
@@ -159,7 +162,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.65rem 0.85rem;
+  padding: 0.4rem 0.85rem;
   border-radius: 10px;
   color: #475569;
   text-decoration: none;
@@ -217,7 +220,7 @@
 
 /* Bottom View More Toggle */
 .categories-view-more-wrap {
-  padding: 0.75rem 1.4rem;
+  padding: 0.4rem 1.4rem;
   border-top: 1px solid #f1f5f9;
   text-align: center;
 }
@@ -242,11 +245,25 @@
   stroke: currentColor;
   stroke-width: 2.5;
   fill: none;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
 }
 
 .categories-view-more-btn:hover {
   color: #002e84;
+}
+
+.categories-view-more-btn.expanded svg {
+  transform: rotate(180deg);
+}
+
+/* Extra category slide-in animation */
+.category-list-item.extra-category {
+  animation: fadeSlideIn 0.25s ease both;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* Right Content Area: Horizontal News Cards List */
