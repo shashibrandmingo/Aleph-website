@@ -877,7 +877,7 @@
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
-.newsletter-email-input {
+.newsletter-subscribe-form .newsletter-email-input {
   flex: 1 1 auto;
   min-width: 0;
   width: 0;
@@ -890,11 +890,11 @@
   color: #0f172a;
 }
 
-.newsletter-email-input::placeholder {
+.newsletter-subscribe-form .newsletter-email-input::placeholder {
   color: #94a3b8;
 }
 
-.newsletter-submit-btn {
+.newsletter-subscribe-form .newsletter-submit-btn {
   background-color: #2563eb;
   color: #ffffff;
   border: none;
@@ -914,13 +914,13 @@
   line-height: 1;
 }
 
-.newsletter-submit-btn svg {
+.newsletter-subscribe-form .newsletter-submit-btn svg {
   width: 15px;
   height: 15px;
   flex-shrink: 0;
 }
 
-.newsletter-submit-btn:hover {
+.newsletter-subscribe-form .newsletter-submit-btn:hover {
   background-color: #002e84;
 }
 
@@ -1130,7 +1130,7 @@
     gap: 0.75rem;
   }
 
-  .newsletter-email-input {
+  .newsletter-subscribe-form .newsletter-email-input {
     width: 100% !important;
     background: #ffffff;
     border: 1px solid #cbd5e1;
@@ -1140,7 +1140,7 @@
     box-sizing: border-box;
   }
 
-  .newsletter-submit-btn {
+  .newsletter-subscribe-form .newsletter-submit-btn {
     width: 100% !important;
     border-radius: 10px;
     padding: 0.75rem 1rem;

@@ -1230,3 +1230,44 @@
     display: flex !important;
   }
 }
+
+/* ==========================================================================
+   SMOOTH FLOATING DOT ANIMATION (FOR OUR TEAM PAGE)
+   ========================================================================== */
+@keyframes floatDotsPattern {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
+
+@keyframes floatDotsPatternAlt {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(8px) scale(1.05);
+  }
+}
+
+.dir-corner-ribbon-dots::after,
+.dir-card-corner-dots,
+.dir-bottom-dots,
+.our-team-dots-tl,
+.team-dots-decor,
+.team-dots-decor::before,
+.career-dots-left,
+.career-dots-right,
+[class*="dots"] {
+  animation: floatDotsPattern 4s ease-in-out infinite !important;
+  will-change: transform;
+}
+
+.dir-bottom-dots,
+.career-dots-right {
+  animation: floatDotsPatternAlt 5s ease-in-out infinite !important;
+  animation-delay: -1.8s !important;
+}
+

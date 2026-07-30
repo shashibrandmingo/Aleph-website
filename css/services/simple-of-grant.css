@@ -660,7 +660,8 @@
     border-right: 1px solid #e2e8f0;
 }
 
-.bis-product-row-item {
+.bis-product-row-item,
+a.bis-product-row-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -671,6 +672,7 @@
     font-weight: 500;
     color: #1e293b;
     cursor: pointer;
+    text-decoration: none;
     transition: all 0.15s ease;
     background: #ffffff;
 }
@@ -680,7 +682,8 @@
     background: #f8fafc;
 }
 
-.bis-product-row-item:hover {
+.bis-product-row-item:hover,
+a.bis-product-row-item:hover {
     background: #eff6ff;
     color: #0056b3;
 }
