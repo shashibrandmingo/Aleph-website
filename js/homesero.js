@@ -54,6 +54,52 @@
     setTimeout(showDefaultView, 300);
   }
 
+  /* ---------- Custom Rounded Dropdown Logic ---------- */
+  const customSelectTrigger = document.getElementById("customSelectTrigger");
+  const customSelectWrapper = document.getElementById("customSelectWrapper");
+  const customSelectOptions = document.getElementById("customSelectOptions");
+  const serviceSelect = document.getElementById("service");
+
+  if (customSelectTrigger && customSelectOptions && serviceSelect) {
+    customSelectTrigger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      customSelectWrapper.classList.toggle("is-open");
+    });
+
+    customSelectTrigger.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        customSelectWrapper.classList.toggle("is-open");
+      }
+    });
+
+    const options = customSelectOptions.querySelectorAll(".custom-option");
+    options.forEach(function (opt) {
+      opt.addEventListener("click", function () {
+        const val = opt.getAttribute("data-value");
+        serviceSelect.value = val;
+        serviceSelect.dispatchEvent(new Event("change"));
+
+        const textEl = customSelectTrigger.querySelector(".custom-select-text");
+        if (textEl) textEl.textContent = val;
+        customSelectTrigger.classList.add("is-selected");
+
+        options.forEach(function (o) {
+          o.classList.remove("is-active");
+        });
+        opt.classList.add("is-active");
+
+        customSelectWrapper.classList.remove("is-open");
+      });
+    });
+
+    document.addEventListener("click", function (e) {
+      if (customSelectWrapper && !customSelectWrapper.contains(e.target)) {
+        customSelectWrapper.classList.remove("is-open");
+      }
+    });
+  }
+
   /* ---------- Switch between the form view and the thank-you view ---------- */
   function showSuccessView() {
     if (!formSuccessView || !formDefaultView) return;

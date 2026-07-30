@@ -35,11 +35,11 @@ window.serviceDropdownHTML = `
       <span>Licence & Certification</span>
     </div>
     <div class="mega-links-list">
-      <a href="#" class="mega-link-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>BIS (ISI MARK) FOR FOREIGN MANUFACTURERS</span></a>
-      <a href="#" class="mega-link-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg><span>DOMESTIC PRODUCT CERTIFICATION (ISI MARK)</span></a>
-      <a href="#" class="mega-link-item"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>BIS SCHEME X CERTIFICATION</span></a>
-      <a href="#" class="mega-link-item"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg><span>BIS CERTIFICATE OF CONFORMITY (CoC)</span></a>
-      <a href="#" class="mega-link-item"><svg viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/></svg><span>BIS HALLMARKING</span></a>
+      <a href="Services.html" class="mega-link-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>BIS (ISI MARK) FOR FOREIGN MANUFACTURERS</span></a>
+      <a href="Services.html" class="mega-link-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg><span>DOMESTIC PRODUCT CERTIFICATION (ISI MARK)</span></a>
+      <a href="Services.html" class="mega-link-item"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>BIS SCHEME X CERTIFICATION</span></a>
+      <a href="Services.html" class="mega-link-item"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg><span>BIS CERTIFICATE OF CONFORMITY (CoC)</span></a>
+      <a href="Services.html" class="mega-link-item"><svg viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/></svg><span>BIS HALLMARKING</span></a>
       <a href="#" class="mega-link-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>REACH CERTIFICATION (GLOBAL)</span></a>
       <a href="#" class="mega-link-item"><svg viewBox="0 0 24 24"><path d="M6 2v4l4 6v8a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2v-8l4-6V2z"/><path d="M6 6h12M8 12h8"/></svg><span>LABORATORY RECOGNITION SCHEME (LRS)</span></a>
       <a href="#" class="mega-link-item"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg><span>WORLD MANUFACTURER IDENTIFIER (WMI) CODE</span></a>
@@ -111,11 +111,11 @@ window.serviceMobileDropdownHTML = `
       <svg class="arrow-indicator" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
     </div>
     <div class="mobile-nested-submenu">
-      <a href="#" class="mobile-submenu-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>BIS (ISI MARK) FOR FOREIGN MANUFACTURERS</span></a>
-      <a href="#" class="mobile-submenu-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg><span>DOMESTIC PRODUCT CERTIFICATION (ISI MARK)</span></a>
-      <a href="#" class="mobile-submenu-item"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>BIS SCHEME X CERTIFICATION</span></a>
-      <a href="#" class="mobile-submenu-item"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg><span>BIS CERTIFICATE OF CONFORMITY (CoC)</span></a>
-      <a href="#" class="mobile-submenu-item"><svg viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/></svg><span>BIS HALLMARKING</span></a>
+      <a href="Services.html" class="mobile-submenu-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>BIS (ISI MARK) FOR FOREIGN MANUFACTURERS</span></a>
+      <a href="Services.html" class="mobile-submenu-item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg><span>DOMESTIC PRODUCT CERTIFICATION (ISI MARK)</span></a>
+      <a href="Services.html" class="mobile-submenu-item"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>BIS SCHEME X CERTIFICATION</span></a>
+      <a href="Services.html" class="mobile-submenu-item"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg><span>BIS CERTIFICATE OF CONFORMITY (CoC)</span></a>
+      <a href="Services.html" class="mobile-submenu-item"><svg viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/></svg><span>BIS HALLMARKING</span></a>
       <a href="#" class="mobile-submenu-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>REACH CERTIFICATION (GLOBAL)</span></a>
       <a href="#" class="mobile-submenu-item"><svg viewBox="0 0 24 24"><path d="M6 2v4l4 6v8a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2v-8l4-6V2z"/><path d="M6 6h12M8 12h8"/></svg><span>LABORATORY RECOGNITION SCHEME (LRS)</span></a>
       <a href="#" class="mobile-submenu-item"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg><span>WORLD MANUFACTURER IDENTIFIER (WMI) CODE</span></a>
