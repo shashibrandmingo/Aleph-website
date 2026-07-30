@@ -1,25 +1,25 @@
 :root {
   --fbh-font-heading: var(--font-primary, "Poppins", sans-serif);
   --fbh-font-body: var(--font-secondary, "Plus Jakarta Sans", sans-serif);
-
   --fbh-accent: var(--secondary, #46aefd);
 }
 
 .feedback-hero {
-  padding: 40px 24px;
-  background: #f6f8fc;
+  padding: 1.5rem 0 3rem 0;
+  width: 100%;
+  background-color: #ffffff;
 }
 
 .feedback-hero__banner {
   position: relative;
-  max-width: 1280px;
-  margin: 0 auto;
-  border-radius: 18px;
+  width: 100%;
+  border-radius: 24px;
   overflow: hidden;
-  min-height: 380px;
+  min-height: 450px;
+  background: #f6f6fd;
+  border: 1px solid rgba(0, 46, 132, 0.1);
   display: flex;
   align-items: center;
-  box-shadow: 0 10px 30px rgba(4, 12, 40, 0.08);
 }
 
 .feedback-hero__bg {
@@ -37,8 +37,11 @@
 .feedback-hero__content {
   position: relative;
   z-index: 1;
-  padding: 48px 40px;
-  max-width: 560px;
+  width: 55%;
+  padding: 0rem 2rem 3.5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   font-family: var(--fbh-font-body);
 }
 
@@ -46,96 +49,137 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
+  font-family: var(--fbh-font-body);
+  font-size: 0.85rem;
   font-weight: 500;
-  color: #003198;
-  margin-bottom: 20px;
+  color: #94a3b8;
+  margin-bottom: 1.25rem;
 }
 
 .feedback-hero__breadcrumbs-link {
-  color: #003198;
+  color: #94a3b8;
   text-decoration: none;
   display: flex;
   align-items: center;
+  transition: color 0.2s ease;
 }
 
 .feedback-hero__breadcrumbs-link:hover {
-  text-decoration: underline;
+  color: #005bfa;
 }
 
 .feedback-hero__breadcrumbs-sep {
-  color: #a0aec0;
+  color: #cbd5e1;
+}
+
+.feedback-hero__breadcrumbs-current {
+  color: #002e84;
+  font-weight: 600;
 }
 
 .feedback-hero__heading {
   font-family: var(--fbh-font-heading);
-  font-size: 34px;
+  font-size: 2.7rem;
   font-weight: 700;
-  line-height: 1.3;
-  color: #000000;
-  margin: 0 0 14px;
+  line-height: 1.1;
+  color: #0f172a;
+  margin: 0 0 1rem;
 }
 
 .feedback-hero__heading-accent {
-  color: #003198;
+  color: #005bfa;
 }
 
 .feedback-hero__text {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #333333;
-  max-width: 420px;
-  margin: 0 0 30px;
+  font-family: var(--fbh-font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #475569;
+  max-width: 580px;
+  margin: 0;
 }
 
 /* ========================================================================
    RESPONSIVE
    ======================================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .feedback-hero__content {
+    width: 60%;
+    padding: 2rem 2.5rem 3rem 4rem;
+  }
+
+  .feedback-hero__heading {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .feedback-hero__banner {
+    min-height: auto;
+  }
+
+  .feedback-hero__bg {
+    display: none; /* Hide background image on mobile/tablet for better readability */
+  }
+
+  .feedback-hero__content {
+    width: 100%;
+    padding: 3rem 2rem;
+  }
+
+  .feedback-hero__heading {
+    font-size: 2.8rem;
+  }
+
+  .feedback-hero__text {
     max-width: 100%;
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .feedback-hero {
-    padding: 28px 16px;
-  }
-
-  .feedback-hero__banner {
-    min-height: 280px;
-    border-radius: 14px;
+    padding: 2.5rem 0 1rem 0;
   }
 
   .feedback-hero__content {
-    padding: 34px 24px;
+    padding: 2.5rem 1.5rem;
   }
 
   .feedback-hero__heading {
-    font-size: 24px;
+    font-size: 2.6rem;
   }
 
   .feedback-hero__text {
-    font-size: 13px;
-    margin-bottom: 0px;
+    font-size: 0.95rem;
   }
 
-  .feedback-hero__bg {
-    object-position: left center;
+  .feedback-hero__breadcrumbs {
+    margin-bottom: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
+  .feedback-hero {
+    padding: 1.5rem 0 1rem 0;
+  }
+
   .feedback-hero__banner {
-    min-height: 260px;
+    border-radius: 16px;
   }
 
   .feedback-hero__content {
-    padding: 32px 20px;
+    width: 100%;
+    padding: 2rem 1.25rem;
   }
 
   .feedback-hero__heading {
-    font-size: 22px;
+    font-size: 2.2rem;
+  }
+
+  .feedback-hero__breadcrumbs {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
   }
 }
