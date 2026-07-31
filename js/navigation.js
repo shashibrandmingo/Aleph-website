@@ -4,8 +4,26 @@
  * and a smooth, flicker-free SPA-style PJAX page transitions.
  */
 
-// Load the Service dropdown content configuration dynamically
+// Load Popup script & Service dropdown content configuration dynamically
 (function() {
+  // Inject Font Awesome if not already loaded
+  if (!document.querySelector('link[href*="font-awesome"]')) {
+    const faLink = document.createElement('link');
+    faLink.rel = 'stylesheet';
+    faLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css';
+    document.head.appendChild(faLink);
+  }
+
+  const popupCss = document.createElement('link');
+  popupCss.rel = 'stylesheet';
+  popupCss.href = 'css/popup.css';
+  document.head.appendChild(popupCss);
+
+  const popupScript = document.createElement('script');
+  popupScript.src = 'js/popup.js';
+  popupScript.async = false;
+  document.head.appendChild(popupScript);
+
   const script = document.createElement('script');
   script.src = 'js/service-dropdown.js';
   script.async = false;
