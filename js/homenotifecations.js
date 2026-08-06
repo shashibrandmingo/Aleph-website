@@ -5,18 +5,23 @@
     const dotsWrap = document.querySelector(`[data-ue-dots="${key}"]`);
     const prevBtn = root.querySelector(`[data-ue-prev="${key}"]`);
     const nextBtn = root.querySelector(`[data-ue-next="${key}"]`);
-    const items = Array.from(track.children);
-
-    if (!items.length) return;
+    
+    // Save original items
+    const originalItems = Array.from(track.children).filter(
+      (el) => !el.classList.contains("ue-clone")
+    );
+    if (!originalItems.length) return;
 
     let itemsPerView = getItemsPerView();
-    let currentIndex = 0;
-    let maxIndex = Math.max(0, items.length - itemsPerView);
+    let userIndex = 0;
+    let totalRealItems = originalItems.length;
+    let maxUserIndex = Math.max(0, totalRealItems - itemsPerView);
     let autoplayTimer = null;
     let isDragging = false;
     let dragStartX = 0;
     let dragDeltaX = 0;
     let trackStartTransform = 0;
+    let isTransitioning = false;
 
     function getItemsPerView() {
       const w = window.innerWidth;
@@ -25,41 +30,103 @@
       return 3;
     }
 
+    function setupClones() {
+      // Remove existing clones
+      Array.from(track.querySelectorAll(".ue-clone")).forEach((el) => el.remove());
+
+      itemsPerView = getItemsPerView();
+      maxUserIndex = Math.max(0, totalRealItems - itemsPerView);
+
+      if (totalRealItems <= itemsPerView) return;
+
+      // Clone first itemsPerView items and append
+      for (let i = 0; i < itemsPerView; i++) {
+        const clone = originalItems[i % totalRealItems].cloneNode(true);
+        clone.classList.add("ue-clone");
+        clone.setAttribute("aria-hidden", "true");
+        track.appendChild(clone);
+      }
+
+      // Clone last itemsPerView items and prepend
+      for (let i = 0; i < itemsPerView; i++) {
+        const idx = (totalRealItems - 1 - i + totalRealItems) % totalRealItems;
+        const clone = originalItems[idx].cloneNode(true);
+        clone.classList.add("ue-clone");
+        clone.setAttribute("aria-hidden", "true");
+        track.insertBefore(clone, track.firstChild);
+      }
+    }
+
     function getStep() {
-      // Width of one item including the gap, measured live so it always
-      // matches the current responsive layout.
-      const itemRect = items[0].getBoundingClientRect();
+      const firstItem = track.children[0];
+      if (!firstItem) return 0;
+      const itemRect = firstItem.getBoundingClientRect();
       const gap = parseFloat(getComputedStyle(track).gap) || 0;
       return itemRect.width + gap;
     }
 
-    function clampIndex(i) {
-      return Math.max(0, Math.min(i, maxIndex));
+    function getDomIndex(uIdx) {
+      const clonePrependCount = totalRealItems > itemsPerView ? itemsPerView : 0;
+      return uIdx + clonePrependCount;
     }
 
     function goTo(index, animate = true) {
-      currentIndex = clampIndex(index);
-      const offset = -(currentIndex * getStep());
-      track.style.transition = animate
-        ? "transform 0.5s cubic-bezier(0.65, 0, 0.35, 1)"
-        : "none";
+      if (isTransitioning && animate) return;
+      userIndex = index;
+      const step = getStep();
+      const domIdx = getDomIndex(userIndex);
+      const offset = -(domIdx * step);
+
+      if (animate) {
+        isTransitioning = true;
+        track.style.transition = "transform 0.5s cubic-bezier(0.65, 0, 0.35, 1)";
+      } else {
+        track.style.transition = "none";
+      }
+
       track.style.transform = `translateX(${offset}px)`;
       updateDots();
       updateNavButtons();
     }
 
+    // Handle seamless reset on transition end
+    track.addEventListener("transitionend", (e) => {
+      if (e.target !== track) return;
+      isTransitioning = false;
+
+      if (totalRealItems <= itemsPerView) return;
+
+      const numSlides = maxUserIndex + 1; // total positions
+
+      if (userIndex >= numSlides) {
+        // We scrolled past the end into appended clones
+        userIndex = userIndex % numSlides;
+        track.style.transition = "none";
+        const offset = -(getDomIndex(userIndex) * getStep());
+        track.style.transform = `translateX(${offset}px)`;
+        void track.offsetHeight; // force reflow
+      } else if (userIndex < 0) {
+        // We scrolled before start into prepended clones
+        userIndex = (userIndex % numSlides + numSlides) % numSlides;
+        track.style.transition = "none";
+        const offset = -(getDomIndex(userIndex) * getStep());
+        track.style.transform = `translateX(${offset}px)`;
+        void track.offsetHeight; // force reflow
+      }
+    });
+
     function next() {
-      goTo(currentIndex >= maxIndex ? 0 : currentIndex + 1);
+      goTo(userIndex + 1, true);
     }
 
     function prev() {
-      goTo(currentIndex <= 0 ? maxIndex : currentIndex - 1);
+      goTo(userIndex - 1, true);
     }
 
     function buildDots() {
       if (!dotsWrap) return;
       dotsWrap.innerHTML = "";
-      const dotCount = maxIndex + 1;
+      const dotCount = maxUserIndex + 1;
       if (dotCount <= 1) {
         dotsWrap.style.display = "none";
         return;
@@ -71,7 +138,7 @@
         dot.className = "ue-dot";
         dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
         dot.addEventListener("click", () => {
-          goTo(i);
+          goTo(i, true);
           restartAutoplay();
         });
         dotsWrap.appendChild(dot);
@@ -81,22 +148,22 @@
 
     function updateDots() {
       if (!dotsWrap) return;
+      const numSlides = maxUserIndex + 1;
+      const activeIdx = (userIndex % numSlides + numSlides) % numSlides;
       Array.from(dotsWrap.children).forEach((dot, i) => {
-        dot.classList.toggle("is-active", i === currentIndex);
+        dot.classList.toggle("is-active", i === activeIdx);
       });
     }
 
     function updateNavButtons() {
-      // With looping enabled (prev/next wrap around) the buttons stay
-      // enabled whenever there's more than one slide to move to.
-      const hasMultipleSlides = maxIndex > 0;
+      const hasMultipleSlides = maxUserIndex > 0;
       if (prevBtn) prevBtn.disabled = !hasMultipleSlides;
       if (nextBtn) nextBtn.disabled = !hasMultipleSlides;
     }
 
     function startAutoplay() {
       stopAutoplay();
-      if (maxIndex <= 0) return;
+      if (maxUserIndex <= 0) return;
       autoplayTimer = setInterval(next, 4500);
     }
     function stopAutoplay() {
@@ -121,8 +188,9 @@
       });
     }
 
-    /* ---------- Drag / swipe support (mouse + touch) ---------- */
+    /* ---------- Drag / swipe support ---------- */
     function onDragStart(clientX) {
+      if (isTransitioning) return;
       isDragging = true;
       dragStartX = clientX;
       dragDeltaX = 0;
@@ -144,11 +212,11 @@
       const step = getStep();
       const threshold = step * 0.2;
       if (dragDeltaX < -threshold) {
-        goTo(currentIndex + 1);
+        goTo(userIndex + 1, true);
       } else if (dragDeltaX > threshold) {
-        goTo(currentIndex - 1);
+        goTo(userIndex - 1, true);
       } else {
-        goTo(currentIndex);
+        goTo(userIndex, true);
       }
       restartAutoplay();
     }
@@ -163,30 +231,28 @@
     track.addEventListener(
       "touchstart",
       (e) => onDragStart(e.touches[0].clientX),
-      { passive: true },
+      { passive: true }
     );
     track.addEventListener(
       "touchmove",
       (e) => onDragMove(e.touches[0].clientX),
-      { passive: true },
+      { passive: true }
     );
     track.addEventListener("touchend", onDragEnd);
 
-    // Pause autoplay while the pointer is hovering the card (desktop nicety)
     root.addEventListener("mouseenter", stopAutoplay);
     root.addEventListener("mouseleave", restartAutoplay);
 
     /* ---------- Responsive re-layout ---------- */
     function handleResize() {
-      const newItemsPerView = getItemsPerView();
-      itemsPerView = newItemsPerView;
-      maxIndex = Math.max(0, items.length - itemsPerView);
+      setupClones();
       buildDots();
-      goTo(clampIndex(currentIndex), false);
+      goTo(userIndex, false);
     }
     window.addEventListener("resize", handleResize);
 
     /* ---------- Init ---------- */
+    setupClones();
     buildDots();
     updateNavButtons();
     goTo(0, false);

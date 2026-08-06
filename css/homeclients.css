@@ -67,6 +67,8 @@
 
 .clients-viewport {
   overflow: hidden;
+  padding: 12px 0 16px;
+  margin: -12px 0 -16px;
   -webkit-mask-image: linear-gradient(
     90deg,
     transparent 0%,
