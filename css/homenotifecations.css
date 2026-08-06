@@ -257,6 +257,8 @@
   z-index: 1;
   overflow: hidden;
   flex: 1; /* let the slider fill remaining card height */
+  padding: 10px 4px 8px;
+  margin: -10px -4px -8px;
 }
 
 .ue-slider-track {
@@ -281,19 +283,19 @@
 .ue-nav {
   position: absolute;
   top: 50%;
-  translate: 0 -50%;
+  transform: translateY(-50%);
   z-index: 3;
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   border: 1px solid var(--ue-border);
   background: #ffffff;
   color: var(--ue-text-dark);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(16, 24, 40, 0.12);
+  box-shadow: 0 4px 14px rgba(16, 24, 40, 0.14);
   opacity: 0;
   transition:
     opacity 0.25s ease,
@@ -308,15 +310,19 @@
 }
 
 .ue-nav--prev {
-  left: -4px;
+  left: 4px;
 }
 
 .ue-nav--next {
-  right: -4px;
+  right: 4px;
 }
 
 .ue-nav:hover {
-  transform: translateY(-50%) scale(1.06);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.ue-nav:active {
+  transform: translateY(-50%) scale(0.95);
 }
 
 .ue-card--updates .ue-nav:hover {

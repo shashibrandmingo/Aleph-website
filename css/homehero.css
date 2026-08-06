@@ -279,21 +279,22 @@
   }
 }
 
-/* subtle ambient drift for the globe background — premium micro-motion */
+/* Premium ultra-light breathing zoom for the globe background */
 @keyframes heroBgDrift {
   0% {
-    transform: scale(1) translateX(0);
+    transform: scale(1.04);
   }
   50% {
-    transform: scale(1.035) translateX(-6px);
+    transform: scale(1.01);
   }
   100% {
-    transform: scale(1) translateX(0);
+    transform: scale(1.04);
   }
 }
 
 .hero-bg-image {
-  animation: heroBgDrift 18s ease-in-out infinite;
+  animation: heroBgDrift 20s ease-in-out infinite;
+  transform-origin: right center;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -914,17 +915,30 @@
     max-width: 460px;
     margin-left: auto;
     margin-right: auto;
-    gap: 20px;
+    gap: 0;
   }
   .feature-item {
+    flex-direction: row;
     align-items: flex-start;
     text-align: left;
-    padding-left: 0;
+    gap: 14px;
+    padding: 16px 0;
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .feature-item:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   }
   .feature-item:not(:first-child) {
     border-left: none;
-    border-top: 1px solid var(--border-glass);
-    padding-top: 18px;
+  }
+  .feature-item:hover {
+    transform: none;
+    background: transparent;
+    box-shadow: none;
   }
   .hero-actions {
     justify-content: center;
