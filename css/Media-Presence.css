@@ -633,6 +633,10 @@
     gap: 1.5rem;
   }
   
+  .media-cta-banner::after {
+    display: none !important;
+  }
+  
   .media-cta-left {
     flex-direction: column;
     gap: 1rem;
