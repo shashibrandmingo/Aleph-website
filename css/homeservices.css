@@ -57,6 +57,8 @@
   mask-image: radial-gradient(circle at 0% 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 80%);
   pointer-events: none;
   z-index: 1;
+  animation: arcDotsRunning 5s linear infinite;
+  will-change: background-position;
 }
 
 /* Bottom-Right Horizontal Fading Dot Grid Decor */
@@ -73,27 +75,26 @@
   mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 95%);
   pointer-events: none;
   z-index: 1;
+  animation: arcDotsRunningHorizontal 4s linear infinite;
+  will-change: background-position;
 }
 
-/* subtle dot pattern corners */
-#arc-services-root.arc-services-section::before,
-#arc-services-root.arc-services-section::after {
-  content: "";
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  background-image: radial-gradient(var(--arc-blue) 1.4px, transparent 1.4px);
-  background-size: 14px 14px;
-  opacity: 0.06;
-  pointer-events: none;
+@keyframes arcDotsRunning {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 24px 24px;
+  }
 }
-#arc-services-root.arc-services-section::before {
-  top: -40px;
-  right: -40px;
-}
-#arc-services-root.arc-services-section::after {
-  bottom: -40px;
-  left: -40px;
+
+@keyframes arcDotsRunningHorizontal {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 28px 0;
+  }
 }
 
 #arc-services-root .arc-services-container {
