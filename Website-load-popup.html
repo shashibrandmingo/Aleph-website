@@ -446,7 +446,19 @@
       }
 
       /* Responsive Breakpoints */
-      @media (max-width: 820px) {
+      @media (max-width: 768px) {
+        .aleph-popup-overlay {
+          padding: 12px;
+          align-items: center;
+          justify-content: center;
+        }
+        .aleph-popup-modal {
+          max-height: 90vh;
+          max-height: calc(100dvh - 24px);
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+          border-radius: 16px;
+        }
         .aleph-popup-container {
           flex-direction: column;
         }
@@ -454,146 +466,20 @@
           display: none;
         }
         .aleph-popup-left {
-          padding: 30px 24px 20px 24px;
+          padding: 20px 16px 14px 16px;
         }
         .aleph-popup-right {
-          padding: 20px 24px 30px 24px;
+          padding: 14px 16px 18px 16px;
         }
         .aleph-visual-wrapper {
-          height: 140px;
+          height: 120px;
         }
         .aleph-trust-card {
           position: relative;
           bottom: auto;
           left: auto;
-          margin-top: 15px;
-        }
-      }
-    </style>
-
-    <!-- JavaScript Logic for Automatic First-Time Popup -->
-    <script>
-      const POPUP_STORAGE_KEY = 'aleph_first_visit_shown';
-
-      function openGlobalPopup() {
-        const popup = document.getElementById('alephGlobalPopup');
-        if (popup) {
-          popup.classList.add('active');
-          popup.setAttribute('aria-hidden', 'false');
-          document.body.style.overflow = 'hidden'; // prevent background scrolling
-        }
-      }
-
-      function closeGlobalPopup() {
-        const popup = document.getElementById('alephGlobalPopup');
-        if (popup) {
-          popup.classList.remove('active');
-          popup.setAttribute('aria-hidden', 'true');
-          document.body.style.overflow = '';
-        }
-      }
-
-      function resetGlobalPopupStorage() {
-        localStorage.removeItem(POPUP_STORAGE_KEY);
-        alert('LocalStorage reset! Reload page or navigate to test first-time load popup.');
-      }
-
-      function handleAlephPopupSubmit(e) {
-        e.preventDefault();
-        const name = document.getElementById('alephName').value;
-        const email = document.getElementById('alephEmail').value;
-        const phone = document.getElementById('alephPhone').value;
-        const service = document.getElementById('alephService').value;
-
-        alert(`Thank you, ${name}! Your enquiry for "${service}" has been submitted successfully.`);
-        closeGlobalPopup();
-      }
-
-      document.addEventListener('DOMContentLoaded', () => {
-        // Close eventlisteners
-        const closeBtn = document.getElementById('alephPopupCloseBtn');
-        const overlay = document.getElementById('alephGlobalPopup');
-
-        if (closeBtn) closeBtn.addEventListener('click', closeGlobalPopup);
-        if (overlay) {
-          overlay.addEventListener('click', (e) => {
-            if (e.target === overlay) closeGlobalPopup();
-          });
-        }
-
-        // Check if first time visit
-        const hasVisited = localStorage.getItem(POPUP_STORAGE_KEY);
-        if (!hasVisited) {
-          // Trigger after 1.5 seconds delay on first visit
-          setTimeout(() => {
-            openGlobalPopup();
-            localStorage.setItem(POPUP_STORAGE_KEY, 'true');
-          }, 1500);
-        }
-      });
-    </script>
-</body>
-</html>
--shadow: 0 0 0 4px rgba(0, 86, 198, 0.1);
-      }
-
-      /* Submit Button */
-      .aleph-submit-btn {
-        margin-top: 8px;
-        width: 100%;
-        background: #0056c6;
-        color: #ffffff;
-        padding: 12px 20px;
-        border-radius: 30px;
-        font-size: 0.92rem;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        box-shadow: 0 6px 20px rgba(0, 86, 198, 0.35);
-        transition: all 0.3s ease;
-      }
-      .aleph-submit-btn:hover {
-        background: #004199;
-        box-shadow: 0 8px 25px rgba(0, 86, 198, 0.45);
-        transform: translateY(-1px);
-      }
-      .aleph-btn-arrow {
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      /* Responsive Breakpoints */
-      @media (max-width: 820px) {
-        .aleph-popup-container {
-          flex-direction: column;
-        }
-        .aleph-popup-left::after {
-          display: none;
-        }
-        .aleph-popup-left {
-          padding: 30px 24px 20px 24px;
-        }
-        .aleph-popup-right {
-          padding: 20px 24px 30px 24px;
-        }
-        .aleph-visual-wrapper {
-          height: 140px;
-        }
-        .aleph-trust-card {
-          position: relative;
-          bottom: auto;
-          left: auto;
-          margin-top: 15px;
+          margin-top: 10px;
+          padding: 8px 12px;
         }
       }
     </style>
